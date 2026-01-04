@@ -121,6 +121,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 )}></span>
             </Link>
 
+            <Link href="/parceiros" className={cn(
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 uppercase",
+                location === "/parceiros" ? "text-neon-cyan" : "text-muted-foreground"
+              )}>
+                Parceiros
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  location === "/parceiros" && "scale-x-100"
+                )}></span>
+            </Link>
+
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
                 PESQUISA <ChevronDown className="w-4 h-4" />
@@ -146,9 +157,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
                   <Link href="/fabrani-conecta/nap">NAP</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/parceiros">Parceiros</Link>
-                </DropdownMenuItem>
+                
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
                   <Link href="/fabrani-conecta/responsabilidade-social">Responsabilidade Social</Link>
                 </DropdownMenuItem>
@@ -238,6 +247,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
           </Link>
 
+          <Link href="/parceiros" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4 uppercase">
+              Parceiros
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+          </Link>
+
           <div className="border-b border-white/5 pb-4">
             <Link href="/pesquisa/pivic" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
                 PESQUISA
@@ -270,9 +284,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   NAP
                 </Link>
-                <Link href="/parceiros" className="text-lg text-muted-foreground hover:text-neon-cyan block">
-                  Parceiros
-                </Link>
+                
                 <Link href="/fabrani-conecta/responsabilidade-social" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   Responsabilidade Social
                 </Link>

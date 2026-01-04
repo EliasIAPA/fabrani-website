@@ -112,6 +112,9 @@ export default function Parceiros() {
                   <img 
                     src={partner.localPath} 
                     alt={partner.name}
+                    loading="lazy"
+                    width="150"
+                    height="150"
                     className="max-w-[80%] max-h-[80%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100 transform group-hover:scale-110"
                     onError={(e) => {
                       // Fallback para texto se a imagem falhar
