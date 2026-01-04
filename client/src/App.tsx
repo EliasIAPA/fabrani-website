@@ -22,6 +22,7 @@ import PoliticaCookies from "@/pages/PoliticaCookies";
 import PoliticaPrivacidade from "@/pages/PoliticaPrivacidade";
 import TermosDeUso from "@/pages/TermosDeUso";
 import Parceiros from "@/pages/Parceiros";
+import FabraniIAPlus from "@/pages/FabraniIAPlus";
 
 function Router() {
   return (
@@ -36,7 +37,7 @@ function Router() {
         <Route path="/fabrani-conecta/cpa" component={CPA} />
           <Route path="/fabrani-conecta/nap" component={NAP} />
         <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
-        <Route path={"/cursos-gratuitos"} component={Home} />
+        <Route path={"/cursos-gratuitos"} component={FabraniIAPlus} />
         <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
         <Route path="/pesquisa/pivic" component={PIVIC} />
