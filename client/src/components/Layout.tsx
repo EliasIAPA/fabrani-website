@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: "Graduação AI-Driven", path: "/graduacao/marketing-digital" },
     { name: "MBAs de Aplicação", path: "/mbas" },
     { name: "AI Starter Pack", path: "/cursos-gratuitos" },
-    { name: "Hub de Insights", path: "/insights" },
+    { name: "Hub de Insights", path: "/hub-insights" },
   ];
 
   return (
@@ -123,15 +123,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </Link>
 
-            <Link href="/insights">
+            <Link href="/hub-insights">
               <a className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
-                location === "/insights" ? "text-neon-cyan" : "text-muted-foreground"
+                location === "/hub-insights" ? "text-neon-cyan" : "text-muted-foreground"
               )}>
                 <span className="notranslate" translate="no">Hub</span> de <span className="notranslate" translate="no">Insights</span>
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
-                  location === "/insights" && "scale-x-100"
+                  location === "/hub-insights" && "scale-x-100"
                 )}></span>
               </a>
             </Link>

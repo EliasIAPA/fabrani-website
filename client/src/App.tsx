@@ -14,6 +14,7 @@ import GraduacaoImobiliaria from "./pages/GraduacaoImobiliaria";
 import CPA from "./pages/CPA";
 import NAP from "./pages/NAP";
 import ResponsabilidadeSocial from "./pages/ResponsabilidadeSocial";
+import HubInsights from "./pages/HubInsights";
 
 function Router() {
   return (
@@ -29,7 +30,7 @@ function Router() {
           <Route path="/fabrani-conecta/nap" component={NAP} />
         <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
         <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
-        <Route path={"/insights"} component={Home} /> {/* Placeholder for now */}
+        <Route path={"/hub-insights"} component={HubInsights} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
