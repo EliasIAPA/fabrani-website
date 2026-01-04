@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown, FileText } from "lucide-react";
 import { useState, useEffect } from "react";
 import FloatingWhatsApp from './FloatingWhatsApp';
 import CookieConsent from './CookieConsent';
@@ -355,6 +355,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-6">
               <h3 className="font-mono text-neon-cyan text-sm uppercase tracking-wider border-l-2 border-neon-cyan pl-3">Institucional</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><Link href="/termos-de-uso" className="hover:text-white transition-colors flex items-center gap-2"><FileText className="w-3 h-3" /> Termos de Uso</Link></li>
                 <li><Link href="/privacidade" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> Política de Privacidade</Link></li>
                 <li><Link href="/politica-cookies" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> Política de Cookies</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> Parceiros</a></li>
