@@ -1,12 +1,19 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileGraduacaoOpen, setIsMobileGraduacaoOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -62,20 +69,71 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a className={cn(
-                  "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
-                  location === item.path ? "text-neon-cyan" : "text-muted-foreground"
-                )}>
-                  {item.name}
-                  <span className={cn(
-                    "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
-                    location === item.path && "scale-x-100"
-                  )}></span>
-                </a>
-              </Link>
-            ))}
+            <Link href="/">
+              <a className={cn(
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                location === "/" ? "text-neon-cyan" : "text-muted-foreground"
+              )}>
+                Home
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  location === "/" && "scale-x-100"
+                )}></span>
+              </a>
+            </Link>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+                Graduação AI-Driven <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[250px]">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/graduacao/marketing-digital">Marketing Digital com Foco em IA</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/graduacao/marketing-digital">Negócios Imobiliários com Foco em IA</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link href="/mbas">
+              <a className={cn(
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                location.startsWith("/mbas") ? "text-neon-cyan" : "text-muted-foreground"
+              )}>
+                MBAs de Aplicação
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  location.startsWith("/mbas") && "scale-x-100"
+                )}></span>
+              </a>
+            </Link>
+
+            <Link href="/cursos-gratuitos">
+              <a className={cn(
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
+              )}>
+                AI Starter Pack
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  location === "/cursos-gratuitos" && "scale-x-100"
+                )}></span>
+              </a>
+            </Link>
+
+            <Link href="/insights">
+              <a className={cn(
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                location === "/insights" ? "text-neon-cyan" : "text-muted-foreground"
+              )}>
+                Hub de Insights
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  location === "/insights" && "scale-x-100"
+                )}></span>
+              </a>
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -99,17 +157,58 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6 lg:hidden flex flex-col gap-6 animate-in slide-in-from-right-10 duration-300">
-          {navItems.map((item) => (
-            <Link key={item.path} href={item.path}>
-              <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
-                {item.name}
-                <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-              </a>
-            </Link>
-          ))}
+        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6 lg:hidden flex flex-col gap-6 animate-in slide-in-from-right-10 duration-300 overflow-y-auto">
+          <Link href="/">
+            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+              Home
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+            </a>
+          </Link>
+
+          <div className="border-b border-white/5 pb-4">
+            <button 
+              onClick={() => setIsMobileGraduacaoOpen(!isMobileGraduacaoOpen)}
+              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left"
+            >
+              Graduação AI-Driven
+              <ChevronDown className={cn("transition-transform duration-300", isMobileGraduacaoOpen ? "rotate-180" : "")} />
+            </button>
+            
+            {isMobileGraduacaoOpen && (
+              <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
+                <Link href="/graduacao/marketing-digital">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Marketing Digital com Foco em IA</a>
+                </Link>
+                <Link href="/graduacao/marketing-digital">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Negócios Imobiliários com Foco em IA</a>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/mbas">
+            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+              MBAs de Aplicação
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+            </a>
+          </Link>
+
+          <Link href="/cursos-gratuitos">
+            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+              AI Starter Pack
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+            </a>
+          </Link>
+
+          <Link href="/insights">
+            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+              Hub de Insights
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+            </a>
+          </Link>
+
           <Button 
-            className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold mt-4"
+            className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold mt-4 mb-8"
           >
             ÁREA DO ALUNO
           </Button>
