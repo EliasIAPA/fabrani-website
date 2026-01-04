@@ -19,6 +19,7 @@ import InsightDetail from "@/pages/InsightDetail";
 import PIVIC from "@/pages/PIVIC";
 import TrabalheConosco from "@/pages/TrabalheConosco";
 import PoliticaCookies from "@/pages/PoliticaCookies";
+import PoliticaPrivacidade from "@/pages/PoliticaPrivacidade";
 
 function Router() {
   return (
@@ -39,6 +40,7 @@ function Router() {
         <Route path="/pesquisa/pivic" component={PIVIC} />
         <Route path="/trabalhe-conosco" component={TrabalheConosco} />
         <Route path="/politica-cookies" component={PoliticaCookies} />
+        <Route path="/privacidade" component={PoliticaPrivacidade} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
