@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Graduação AI-Driven", path: "/graduacao" },
+    { name: "Graduação AI-Driven", path: "/graduacao/marketing-digital" },
     { name: "MBAs de Aplicação", path: "/mbas" },
     { name: "AI Starter Pack", path: "/cursos-gratuitos" },
     { name: "Hub de Insights", path: "/insights" },
@@ -190,8 +190,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-6">
               <h3 className="font-mono text-neon-purple text-sm uppercase tracking-wider border-l-2 border-neon-purple pl-3">Educação AI-Driven</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li><Link href="/graduacao"><a className="hover:text-white transition-colors">Graduação em Marketing Digital</a></Link></li>
-                <li><Link href="/graduacao"><a className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</a></Link></li>
+                <li><Link href="/graduacao/marketing-digital"><a className="hover:text-white transition-colors">Graduação em Marketing Digital</a></Link></li>
+                <li><Link href="/graduacao/marketing-digital"><a className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Negócios</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Saúde</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA Jurídico</a></Link></li>

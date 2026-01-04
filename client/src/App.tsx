@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Manifesto from "./pages/Manifesto";
 import MBAs from "./pages/MBAs";
 import MBADetail from "./pages/MBADetail";
+import GraduacaoMarketing from "./pages/GraduacaoMarketing";
 import Layout from "./components/Layout";
 
 function Router() {
@@ -18,7 +19,8 @@ function Router() {
         <Route path={"/manifesto"} component={Manifesto} />
         <Route path={"/mbas"} component={MBAs} />
         <Route path={"/mbas/:id"} component={MBADetail} />
-        <Route path={"/graduacao"} component={Home} /> {/* Placeholder for now */}
+        <Route path={"/graduacao/marketing-digital"} component={GraduacaoMarketing} />
+        <Route path={"/graduacao"} component={GraduacaoMarketing} /> {/* Temporarily redirect generic to marketing */}
         <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/insights"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/404"} component={NotFound} />
