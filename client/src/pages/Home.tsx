@@ -36,7 +36,7 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-neon-cyan/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-            A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes Aumentados</strong> com chancela MEC e a velocidade do Vale do Silício.
+            A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes de IA</strong> com apoio da ciência e educação reconhecida pelo MEC e a velocidade do Vale do Silício.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600">
