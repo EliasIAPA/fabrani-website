@@ -56,10 +56,63 @@ export default function Home() {
         {/* Indicador de Rolagem */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-20"
              onClick={() => {
-               const element = document.getElementById('simulador');
+               const element = document.getElementById('carta-aberta');
                element?.scrollIntoView({ behavior: 'smooth' });
              }}>
           <ChevronDown className="w-10 h-10 text-neon-cyan opacity-70 hover:opacity-100 transition-opacity" />
+        </div>
+      </section>
+
+      {/* Seção 1.5: Carta Aberta FABRANI 2026 */}
+      <section id="carta-aberta" className="py-24 bg-black relative overflow-hidden border-b border-white/5">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-neon-purple/5 to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 font-display">
+                CARTA ABERTA <span className="text-neon-cyan">FABRANI 2026</span>
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto"></div>
+            </div>
+
+            <div className="prose prose-invert prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6 font-light">
+              <p className="text-xl md:text-2xl text-white font-medium">
+                Se você está lendo isto, não é por acaso.
+              </p>
+              
+              <p>
+                Você foi escolhido para fazer parte de algo maior: a construção de um legado. Quando a FABRANI nasceu, não foi apenas para criar mais uma empresa de educação. Ela nasceu de uma convicção profunda, forjada em anos de experiência nos corredores de treinamento e eventos que moldaram o nosso mundo digital no Brasil.
+              </p>
+
+              <p>
+                Em 2025, nos tornamos a <strong className="text-white">FACULDADE nº1 focada na transformação da Educação com IA</strong> - provando que nossa visão estava certa desde o início. Nosso propósito é audacioso e claro: transformar pessoas comuns em especialistas extraordinários e adaptáveis com IA, conectando o conhecimento acadêmico com as demandas reais do mercado inovador.
+              </p>
+
+              <div className="border-l-4 border-neon-purple pl-6 py-2 my-8 bg-white/5 italic text-gray-300">
+                "Esta carta não é um conjunto de regras. É o nosso DNA. É a transcrição da alma da FABRANI em palavras. Cada valor, cada princípio, foi cuidadosamente pensado para guiar nossas ações, nossas decisões e, mais importante, nossas interações."
+              </div>
+
+              <p>
+                Com as parcerias nacionais e internacionais construímos uma rede única de transformação educacional.
+              </p>
+
+              <p>
+                Nós não buscamos apenas os melhores talentos – alunos, colaboradores e parceiros. Buscamos os corações e mentes que ressoam com a nossa verdade. Pessoas que entendem que iniciativa não é sobre ter a resposta, mas sobre fazer a pergunta. Que a transparência não é apenas sobre falar a verdade, mas sobre criar um ambiente onde a verdade possa ser dita. Que a empatia não é sentir pelo outro, mas entender com o outro. E que a colaboração não é trabalhar junto, mas vencer junto.
+              </p>
+
+              <p className="text-lg text-white font-medium mt-8">
+                Bem-vindo à FABRANI. A jornada será desafiadora, mas a recompensa é o impacto que deixaremos no Brasil e no mundo - e será imensurável. Vamos construir o futuro, juntos!
+              </p>
+            </div>
+
+            <div className="mt-16 flex flex-col items-end">
+              <div className="text-right">
+                <div className="font-signature text-4xl text-neon-cyan mb-2 font-handwriting" style={{ fontFamily: 'cursive' }}>Elias Evangelista</div>
+                <p className="text-white font-bold uppercase tracking-wider text-sm">Diretor e Founder</p>
+                <p className="text-muted-foreground text-xs">FABRANI Education</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
