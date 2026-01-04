@@ -167,14 +167,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button 
-                variant="outline" 
-                className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan rounded-none font-mono text-xs tracking-wider"
-              >
-                ÁREA DO ALUNO
-              </Button>
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan rounded-none font-mono text-xs tracking-wider flex items-center gap-2"
+                >
+                  ÁREA DO ALUNO <ChevronDown className="w-3 h-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]" align="end">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <a href="https://play.fabrani.com.br/auth/login?redirect=%2F" target="_blank" rel="noopener noreferrer">Fabrani Play</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <a href="https://fabrani.ensinio.com/browse" target="_blank" rel="noopener noreferrer">Fabrani Ensinio</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <a href="https://portal.fabrani.com.br/m/courses" target="_blank" rel="noopener noreferrer">Fabrani Educa</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -283,13 +296,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             )}
           </div>
 
-          <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer" className="w-full mt-4 mb-8 block">
-            <Button 
-              className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold"
-            >
-              ÁREA DO ALUNO
-            </Button>
-          </a>
+          <div className="w-full mt-4 mb-8 space-y-2">
+            <p className="text-sm font-mono text-neon-cyan uppercase tracking-wider mb-2">Área do Aluno</p>
+            <a href="https://play.fabrani.com.br/auth/login?redirect=%2F" target="_blank" rel="noopener noreferrer" className="block">
+              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+                Fabrani Play
+              </Button>
+            </a>
+            <a href="https://fabrani.ensinio.com/browse" target="_blank" rel="noopener noreferrer" className="block">
+              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+                Fabrani Ensinio
+              </Button>
+            </a>
+            <a href="https://portal.fabrani.com.br/m/courses" target="_blank" rel="noopener noreferrer" className="block">
+              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+                Fabrani Educa
+              </Button>
+            </a>
+          </div>
         </div>
       )}
 
