@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Heart, Globe, Users, Leaf, ArrowRight, ShieldCheck } from "lucide-react";
+import { Heart, Globe, Users, Eye, Calendar, MapPin, ExternalLink, HandHeart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 
 export default function ResponsabilidadeSocial() {
   return (
@@ -19,138 +19,163 @@ export default function ResponsabilidadeSocial() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-purple/10 border border-neon-purple/30 text-neon-purple text-xs font-mono mb-6">
               <Heart className="w-3 h-3" />
-              <span>TECH FOR GOOD</span>
+              <span>SOCIAL IMPACT</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 font-display">
-              CODIFICANDO UM <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">FUTURO MAIS HUMANO</span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-display">
+              COMPROMISSO COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">INCLUSÃO</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Na FABRANI, acreditamos que a Inteligência Artificial é a ferramenta mais poderosa para reduzir desigualdades. Nossa missão vai além do código: formamos líderes éticos comprometidos com o impacto social positivo.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A FABRANI reafirma seu comprometimento com a responsabilidade social através de parcerias significativas e apoio a causas nobres. Nosso objetivo é promover a inclusão e melhorar a qualidade de vida de pessoas com deficiência em diversas áreas.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Pilares de Atuação */}
+      {/* Parcerias Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Globe,
-                title: "Inclusão Digital 4.0",
-                desc: "Levamos letramento em IA para comunidades carentes, democratizando o acesso às ferramentas do futuro.",
-                color: "text-neon-cyan"
-              },
-              {
-                icon: Users,
-                title: "Diversidade Tech",
-                desc: "Programas de bolsas focados em grupos sub-representados na tecnologia. A inovação precisa de múltiplas visões.",
-                color: "text-neon-purple"
-              },
-              {
-                icon: Leaf,
-                title: "Sustentabilidade",
-                desc: "Green AI: Incentivamos projetos que utilizam algoritmos para otimizar recursos e proteger o meio ambiente.",
-                color: "text-green-400"
-              },
-              {
-                icon: ShieldCheck,
-                title: "Ética em IA",
-                desc: "Nossos alunos aprendem a desenvolver sistemas justos, transparentes e livres de vieses discriminatórios.",
-                color: "text-yellow-400"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="bg-white/5 border-white/10 hover:border-neon-cyan/50 transition-all duration-300 h-full group">
-                  <CardHeader>
-                    <item.icon className={`w-10 h-10 ${item.color} mb-4 group-hover:scale-110 transition-transform`} />
-                    <CardTitle className="text-xl font-bold">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projetos em Destaque */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-white/5 border-y border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Impacto Real</h2>
-              <p className="text-muted-foreground max-w-xl">
-                Conheça algumas das iniciativas desenvolvidas por nossos alunos e professores que estão transformando a realidade local.
+        <div className="max-w-7xl mx-auto space-y-24">
+          
+          {/* Instituto Abraçar */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          >
+            <div className="order-2 lg:order-1">
+              <div className="flex items-center gap-3 mb-4">
+                <HandHeart className="w-8 h-8 text-neon-cyan" />
+                <h2 className="text-3xl font-bold">Instituto Abraçar Guariba</h2>
+              </div>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Em nossa missão de apoiar a causa autista, temos orgulho de colaborar com o Instituto Abraçar Guariba. Esta organização sem fins lucrativos é dedicada a promover a qualidade de vida de pessoas com Transtorno do Espectro Autista (TEA) e outras deficiências mentais.
               </p>
-            </div>
-            <Button variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black">
-              Ver Todos os Projetos <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-black aspect-video flex items-end p-8">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-              {/* Placeholder visual - em produção seria uma imagem real */}
-              <div className="absolute inset-0 bg-neon-purple/20 group-hover:bg-neon-purple/30 transition-colors"></div>
+              <p className="text-muted-foreground mb-8">
+                A FABRANI reconhece a importância do Instituto em assegurar o pleno exercício da cidadania e está comprometida em contribuir para continuar seu trabalho vital.
+              </p>
               
-              <div className="relative z-20">
-                <div className="text-neon-cyan text-xs font-mono mb-2">PROJETO DESTAQUE</div>
-                <h3 className="text-2xl font-bold mb-2">IA contra a Fome</h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  Sistema logístico preditivo que conecta restaurantes a ONGs, otimizando a distribuição de alimentos excedentes em tempo real.
-                </p>
-                <span className="text-xs text-white/60 border border-white/20 px-2 py-1 rounded">ODS 2: Fome Zero</span>
+              <div className="flex flex-col gap-4 mb-8">
+                <div className="flex items-start gap-3 text-sm text-gray-300">
+                  <MapPin className="w-5 h-5 text-neon-purple shrink-0" />
+                  <span>Rua São Martinho, 1575 - sala 1, Jardim Boa Vista, Guariba/SP</span>
+                </div>
+              </div>
+
+              <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black">
+                <a href="http://www.institutoabracarguariba.org.br" target="_blank" rel="noopener noreferrer">
+                  Visitar Site Oficial <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute inset-0 bg-neon-cyan/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <HandHeart className="w-24 h-24 text-white/20 group-hover:text-neon-cyan/50 transition-colors duration-500" />
+                <div className="absolute bottom-4 right-4 text-xs font-mono text-white/40">PARCEIRO OFICIAL</div>
               </div>
             </div>
+          </motion.div>
 
-            <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-black aspect-video flex items-end p-8">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-              <div className="absolute inset-0 bg-neon-cyan/20 group-hover:bg-neon-cyan/30 transition-colors"></div>
-              
-              <div className="relative z-20">
-                <div className="text-neon-cyan text-xs font-mono mb-2">PROJETO DESTAQUE</div>
-                <h3 className="text-2xl font-bold mb-2">Educação Personalizada</h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  Tutor virtual adaptativo para escolas públicas, auxiliando professores no reforço escolar de matemática e lógica.
-                </p>
-                <span className="text-xs text-white/60 border border-white/20 px-2 py-1 rounded">ODS 4: Educação de Qualidade</span>
+          {/* Congresso Autismo360 */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          >
+            <div className="order-1 relative">
+              <div className="absolute inset-0 bg-neon-purple/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-bl from-neon-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Users className="w-24 h-24 text-white/20 group-hover:text-neon-purple/50 transition-colors duration-500" />
+                <div className="absolute bottom-4 left-4 text-xs font-mono text-white/40">EVENTO 2025</div>
               </div>
             </div>
-          </div>
+            <div className="order-2">
+              <div className="flex items-center gap-3 mb-4">
+                <Globe className="w-8 h-8 text-neon-purple" />
+                <h2 className="text-3xl font-bold">Congresso Autismo360</h2>
+              </div>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Estamos entusiasmados em apoiar o maior congresso sobre autismo do Brasil. O evento reúne especialistas, palestrantes autistas e oferece experiências transformadoras.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                A colaboração da FABRANI neste evento reforça nosso compromisso com a disseminação de conhecimento e inclusão social.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                  <div className="flex items-center gap-2 text-neon-cyan mb-2">
+                    <Calendar className="w-4 h-4" />
+                    <span className="font-bold text-sm">DATA</span>
+                  </div>
+                  <p className="text-sm">07, 08 e 09 de Novembro de 2025</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                  <div className="flex items-center gap-2 text-neon-purple mb-2">
+                    <MapPin className="w-4 h-4" />
+                    <span className="font-bold text-sm">LOCAL</span>
+                  </div>
+                  <p className="text-sm">Hotel Vogue Square, Barra da Tijuca - RJ</p>
+                </div>
+              </div>
+
+              <Button asChild variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-white">
+                <a href="http://www.congressoautismo360.com" target="_blank" rel="noopener noreferrer">
+                  Saiba Mais sobre o Evento <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Associação Olhos da Alma */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          >
+            <div className="order-2 lg:order-1">
+              <div className="flex items-center gap-3 mb-4">
+                <Eye className="w-8 h-8 text-neon-cyan" />
+                <h2 className="text-3xl font-bold">Associação Olhos da Alma</h2>
+              </div>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Em nossa cidade sede, Jaboticabal, temos a honra de apoiar a Associação Olhos da Alma. Esta unidade oferece atendimento especializado a pessoas com deficiência visual.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                A associação atua em áreas vitais como Assistência e Desenvolvimento Social, Educação, Direitos, Esporte, Saúde e Cultura. Nossa parceria busca fortalecer iniciativas que promovem a autonomia e qualidade de vida.
+              </p>
+              
+              <div className="flex flex-col gap-4 mb-8">
+                <div className="flex items-start gap-3 text-sm text-gray-300">
+                  <MapPin className="w-5 h-5 text-neon-purple shrink-0" />
+                  <span>Rua Maestro Grossi, 348, Jaboticabal/SP</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute inset-0 bg-neon-cyan/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Eye className="w-24 h-24 text-white/20 group-hover:text-neon-cyan/50 transition-colors duration-500" />
+                <div className="absolute bottom-4 right-4 text-xs font-mono text-white/40">PARCEIRO LOCAL</div>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
-      {/* Call to Action - Voluntariado */}
-      <section className="py-20 px-4 md:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-2xl p-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-cyan"></div>
-          
-          <h2 className="text-3xl font-bold mb-6">Quer fazer parte dessa transformação?</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Seja você aluno, empresa parceira ou membro da comunidade, há um lugar para você em nossos projetos de responsabilidade social.
+      {/* Manifesto Final */}
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-white/5 border-t border-white/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Compromisso da FABRANI</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            A FABRANI continua comprometida em ser um agente de mudança positiva nas comunidades em que atua. Através dessas parcerias com o Instituto Abraçar, o Congresso Autismo360 e a Associação Olhos da Alma, reafirmamos nosso papel na construção de uma sociedade mais inclusiva e equitativa. Estamos empenhados em continuar nosso apoio a causas que promovem bem-estar social e qualidade de vida para todos.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-neon-cyan text-black hover:bg-cyan-400 font-bold px-8 py-6 text-lg">
-              Quero ser Voluntário
-            </Button>
-            <Button variant="outline" className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg">
-              Propor Parceria
-            </Button>
-          </div>
+          <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto rounded-full"></div>
         </div>
       </section>
 
