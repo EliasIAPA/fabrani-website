@@ -87,9 +87,11 @@ export default function InsightDetail() {
             <p className="text-gray-400 mb-6">
               Nossos especialistas podem ajudar você a implementar essas estratégias de IA em tempo recorde.
             </p>
-            <Button className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold w-full md:w-auto">
-              Agendar Consultoria Gratuita
-            </Button>
+            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold w-full md:w-auto">
+                Agendar Consultoria Gratuita
+              </Button>
+            </a>
           </div>
         </article>
 

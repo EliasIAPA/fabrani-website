@@ -167,9 +167,11 @@ export default function MBADetail() {
           <p className="text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
             {mba.subheadline}
           </p>
-          <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-            QUERO CONHECER AGORA <ArrowRight className="ml-2 w-6 h-6" />
-          </Button>
+          <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+              QUERO CONHECER AGORA <ArrowRight className="ml-2 w-6 h-6" />
+            </Button>
+          </a>
         </div>
       </section>
 
@@ -253,9 +255,11 @@ export default function MBADetail() {
       <section className="py-24 text-center bg-gradient-to-b from-black to-neon-purple/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-8">Pronto para liderar a revolução no seu setor?</h2>
-          <Button size="lg" className="bg-white text-black hover:bg-neon-cyan hover:text-black font-bold text-lg px-12 py-8 rounded-none shadow-lg transform hover:scale-105 transition-all">
-            INICIAR MINHA EVOLUÇÃO EM IA
-          </Button>
+          <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-white text-black hover:bg-neon-cyan hover:text-black font-bold text-lg px-12 py-8 rounded-none shadow-lg transform hover:scale-105 transition-all">
+              INICIAR MINHA EVOLUÇÃO EM IA
+            </Button>
+          </a>
         </div>
       </section>
     </div>

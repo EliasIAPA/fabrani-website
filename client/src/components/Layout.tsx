@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import FloatingWhatsApp from './FloatingWhatsApp';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -161,12 +162,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <Button 
-              variant="outline" 
-              className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan rounded-none font-mono text-xs tracking-wider"
-            >
-              ÁREA DO ALUNO
-            </Button>
+            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+              <Button 
+                variant="outline" 
+                className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan rounded-none font-mono text-xs tracking-wider"
+              >
+                ÁREA DO ALUNO
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -261,11 +264,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             )}
           </div>
 
-          <Button 
-            className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold mt-4 mb-8"
-          >
-            ÁREA DO ALUNO
-          </Button>
+          <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer" className="w-full mt-4 mb-8 block">
+            <Button 
+              className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold"
+            >
+              ÁREA DO ALUNO
+            </Button>
+          </a>
         </div>
       )}
 
@@ -380,6 +385,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
+      <FloatingWhatsApp />
     </div>
   );
 }

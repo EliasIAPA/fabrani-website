@@ -30,12 +30,16 @@ export default function GraduacaoImobiliaria() {
               Torne-se consultor, gestor ou empresário imobiliário com <strong className="text-white">IA aplicada a avaliação, aquisição, contratos, locação e gestão de portfólios.</strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-                INICIAR INSCRIÇÃO — VESTIBULAR 2026 <ArrowRight className="ml-2 w-6 h-6" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold text-lg px-10 py-8 rounded-none">
-                <Download className="mr-2 w-6 h-6" /> BAIXAR EMENTA
-              </Button>
+              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                  INICIAR INSCRIÇÃO — VESTIBULAR 2026 <ArrowRight className="ml-2 w-6 h-6" />
+                </Button>
+              </a>
+              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold text-lg px-10 py-8 rounded-none">
+                  <Download className="mr-2 w-6 h-6" /> BAIXAR EMENTA
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -205,12 +209,16 @@ export default function GraduacaoImobiliaria() {
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-12 py-8 rounded-none shadow-lg transform hover:scale-105 transition-all">
-              INICIAR INSCRIÇÃO AGORA
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black font-bold text-lg px-12 py-8 rounded-none">
-              FALAR COM CONSULTOR
-            </Button>
+            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-12 py-8 rounded-none shadow-lg transform hover:scale-105 transition-all">
+                INICIAR INSCRIÇÃO AGORA
+              </Button>
+            </a>
+            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black font-bold text-lg px-12 py-8 rounded-none">
+                FALAR COM CONSULTOR
+              </Button>
+            </a>
           </div>
           <div className="mt-8 flex justify-center gap-8 text-sm text-gray-400">
             <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Início: Imediato</div>
