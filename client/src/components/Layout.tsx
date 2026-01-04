@@ -276,7 +276,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/fabrani-conecta/responsabilidade-social">
                   <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Responsabilidade Social</a>
                 </Link>
-                <Link href="/fabrani-conecta/trabalhe-conosco">
+                <Link href="/trabalhe-conosco">
                   <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Trabalhe Conosco</a>
                 </Link>
               </div>
