@@ -224,7 +224,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </a>
           </Link>
 
-          <Link href="/insights">
+          <Link href="/hub-insights">
             <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               Hub de Insights
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
