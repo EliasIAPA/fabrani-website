@@ -17,6 +17,63 @@ export default function Home() {
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
         </div>
 
+        {/* Destaque MEC - Canto Superior Direito */}
+        <div className="absolute top-24 right-4 md:right-10 z-30 animate-in fade-in slide-in-from-right-8 duration-1000 delay-500 hidden md:block">
+          <div className="mec-badge-container rounded-2xl p-4 md:p-6 backdrop-blur-md bg-black/80 border border-yellow-500/30 shadow-[0_0_30px_rgba(255,215,0,0.15)] hover:scale-105 transition-transform duration-300 group cursor-default max-w-[280px]">
+            <div className="flex items-center gap-4">
+              <div className="relative flex-shrink-0">
+                <div className="w-16 h-16 rounded-full border-2 border-yellow-500/50 flex items-center justify-center bg-black relative z-10">
+                  <span className="text-3xl font-bold text-yellow-400 gold-glow">5</span>
+                </div>
+                <div className="absolute inset-0 border border-yellow-500/20 rounded-full animate-[spin_8s_linear_infinite]"></div>
+                <div className="absolute -inset-1 border border-dashed border-yellow-500/20 rounded-full animate-[spin_12s_linear_infinite_reverse]"></div>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="flex gap-0.5 mb-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-3 h-3 text-yellow-400 fill-yellow-400 animate-star-pulse" style={{ animationDelay: `${star * 0.1}s` }} />
+                  ))}
+                </div>
+                <h3 className="text-lg font-bold text-white leading-tight">
+                  NOTA MÁXIMA <br />
+                  <span className="text-yellow-400 gold-glow">MEC</span>
+                </h3>
+              </div>
+            </div>
+            
+            <div className="mt-3 pt-3 border-t border-white/10">
+              <p className="text-[10px] text-gray-500 font-mono leading-tight uppercase tracking-wide opacity-70 group-hover:opacity-100 transition-opacity">
+                Curso Superior de Tecnologia em <br />
+                <span className="font-bold text-gray-400">NEGÓCIOS IMOBILIÁRIOS (NI)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Versão Mobile do Destaque MEC (Aparece abaixo do título em telas pequenas) */}
+        <div className="md:hidden container mx-auto px-4 relative z-20 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+          <div className="mec-badge-container rounded-xl p-4 flex items-center justify-between bg-black/80 border border-yellow-500/30 mx-auto max-w-xs">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full border border-yellow-500/50 flex items-center justify-center bg-black">
+                <span className="text-2xl font-bold text-yellow-400">5</span>
+              </div>
+              <div className="text-left">
+                <div className="flex gap-0.5 mb-0.5">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-2.5 h-2.5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <div className="text-sm font-bold text-white">NOTA MÁXIMA MEC</div>
+              </div>
+            </div>
+            <div className="text-[9px] text-right text-gray-500 font-mono leading-tight max-w-[80px]">
+              CST em <br />
+              <span className="font-bold text-gray-400">NEGÓCIOS IMOBILIÁRIOS</span>
+            </div>
+          </div>
+        </div>
+
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <span className="relative flex h-2 w-2">
@@ -206,60 +263,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 3.5: Destaque MEC Disruptivo */}
-      <section className="py-24 relative overflow-hidden bg-black border-y border-yellow-500/20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent opacity-50 animate-pulse"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="mec-badge-container max-w-5xl mx-auto rounded-3xl p-12 md:p-16 relative overflow-hidden group">
-            {/* Efeitos de Fundo */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 blur-[80px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500/10 blur-[80px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000"></div>
-            
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="text-center md:text-left space-y-6 flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-widest mb-2">
-                  <Award className="w-4 h-4" /> Validação Governamental
-                </div>
-                
-                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
-                  NOTA MÁXIMA <br />
-                  <span className="text-yellow-400 gold-glow glitch-hover" data-text="MEC 5 ESTRELAS">MEC 5 ESTRELAS</span>
-                </h2>
-                
-                <div className="flex flex-col gap-2">
-                  <p className="text-2xl text-gray-300 font-light">
-                    Curso Superior de Tecnologia em
-                  </p>
-                  <p className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">
-                    NEGÓCIOS IMOBILIÁRIOS <span className="text-neon-cyan">(NI)</span>
-                  </p>
-                </div>
 
-                <p className="text-muted-foreground text-lg max-w-xl">
-                  A excelência acadêmica encontra a inovação disruptiva. O único curso do Brasil com nota máxima e foco total em Inteligência Artificial aplicada ao mercado Real Estate.
-                </p>
-              </div>
-
-              <div className="flex-shrink-0 relative">
-                <div className="relative z-10 flex flex-col items-center justify-center bg-black/80 border-2 border-yellow-500/50 rounded-full w-64 h-64 md:w-80 md:h-80 shadow-[0_0_50px_rgba(255,215,0,0.2)] backdrop-blur-sm">
-                  <div className="text-8xl font-bold text-yellow-400 gold-glow mb-2">5</div>
-                  <div className="flex gap-2 mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-8 h-8 text-yellow-400 fill-yellow-400 animate-star-pulse" style={{ animationDelay: `${star * 0.1}s` }} />
-                    ))}
-                  </div>
-                  <div className="text-sm font-bold text-yellow-500/80 tracking-[0.3em] uppercase">Excelência</div>
-                </div>
-                
-                {/* Círculos Orbitais Decorativos */}
-                <div className="absolute inset-0 border border-yellow-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                <div className="absolute -inset-4 border border-dashed border-yellow-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Seção 4: Lead Magnet */}
       <section className="py-20">
