@@ -140,7 +140,7 @@ export const insights = [
       <p>Antes de lançar, simule como o mercado reagirá a diferentes preços e features usando modelos preditivos baseados em dados históricos.</p>
     `,
     stats: "Risco -80% | Time-to-market -50%",
-    image: "/images/insight-finance.jpg", // Usando imagem de finanças como placeholder para produtos/inovação
+    image: "/images/insight-product.jpg",
     icon: "Rocket",
     color: "text-green-400",
     borderColor: "border-green-400/50"
