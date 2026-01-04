@@ -268,7 +268,7 @@ export default function Home() {
           <div className="text-center mb-24">
             <Badge variant="outline" className="border-neon-cyan text-neon-cyan rounded-none px-4 py-1 mb-6">SOBRE A FABRANI</Badge>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-              A GÊNESE <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">DIGITAL</span>
+              <span className="glitch-hover" data-text="A GÊNESE">A GÊNESE</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple glitch-hover" data-text="DIGITAL">DIGITAL</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Não nascemos apenas de um desejo, mas da urgência de reescrever o futuro. A FABRANI surgiu para preencher o abismo entre a formação tradicional e a velocidade exponencial da nova economia.
@@ -282,7 +282,7 @@ export default function Home() {
                 <img src="/images/genesis-digital.jpg" alt="Digital Genesis" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-8">
-                  <h3 className="text-3xl font-bold text-white mb-2">NOSSO DNA</h3>
+                  <h3 className="text-3xl font-bold text-white mb-2 glitch-hover" data-text="NOSSO DNA">NOSSO DNA</h3>
                   <p className="text-gray-300">Simbiose radical entre robustez acadêmica e agilidade do Vale do Silício.</p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function Home() {
             <div className="space-y-12">
               <div className="border-l-2 border-neon-cyan/30 pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-neon-cyan rounded-full"></div>
-                <h3 className="text-2xl font-bold text-white mb-4">O MARCO DE 2025</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 glitch-hover" data-text="O MARCO DE 2025">O MARCO DE 2025</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Este foi o ano da nossa consolidação como a autoridade máxima em Educação AI-Native no Brasil. Mais do que uma faculdade, tornamo-nos um ecossistema de elite, reunindo mais de <strong className="text-white">380 Mestres e Doutores</strong> das maiores universidades do mundo em nossa rede FABRANI PLAY.
                 </p>
@@ -299,7 +299,7 @@ export default function Home() {
 
               <div className="border-l-2 border-neon-purple/30 pl-8 relative">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-neon-purple rounded-full"></div>
-                <h3 className="text-2xl font-bold text-white mb-4">NOSSO PROPÓSITO</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 glitch-hover" data-text="NOSSO PROPÓSITO">NOSSO PROPÓSITO</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   <strong className="text-white">Hackear a obsolescência profissional.</strong> Capacitar indivíduos para não apenas sobreviverem, mas dominarem a nova economia global, criando a ponte definitiva entre a excelência acadêmica e as demandas de um mercado em constante disrupção.
                 </p>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 p-10 hover:border-neon-cyan/50 transition-colors group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/10 blur-[50px] rounded-full group-hover:bg-neon-cyan/20 transition-all"></div>
               <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="text-neon-cyan">01.</span> MISSÃO
+                <span className="text-neon-cyan">01.</span> <span className="glitch-hover" data-text="MISSÃO">MISSÃO</span>
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 Formar a elite adaptável da Era Digital. Desenvolver mentes ágeis através de uma metodologia imersiva, onde <strong className="text-white">90% das atividades</strong> são desafios reais propostos por parceiros estratégicos do mercado.
@@ -324,7 +324,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 p-10 hover:border-neon-purple/50 transition-colors group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 blur-[50px] rounded-full group-hover:bg-neon-purple/20 transition-all"></div>
               <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="text-neon-purple">02.</span> VISÃO
+                <span className="text-neon-purple">02.</span> <span className="glitch-hover" data-text="VISÃO">VISÃO</span>
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 Ser o epicentro global da Inteligência Artificial Aplicada. Consolidar-se como a referência indiscutível na formação de talentos que reescrevem o código da sociedade através de negócios inovadores e liderança ética.
