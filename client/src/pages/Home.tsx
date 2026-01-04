@@ -51,28 +51,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Versão Mobile do Destaque MEC (Aparece abaixo do título em telas pequenas) */}
-        <div className="md:hidden container mx-auto px-4 relative z-20 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
-          <div className="mec-badge-container rounded-xl p-4 flex items-center justify-between bg-black/80 border border-yellow-500/30 mx-auto max-w-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full border border-yellow-500/50 flex items-center justify-center bg-black">
-                <span className="text-2xl font-bold text-yellow-400">5</span>
-              </div>
-              <div className="text-left">
-                <div className="flex gap-0.5 mb-0.5">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-2.5 h-2.5 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <div className="text-sm font-bold text-white">NOTA MÁXIMA MEC</div>
-              </div>
-            </div>
-            <div className="text-[9px] text-right text-gray-500 font-mono leading-tight max-w-[80px]">
-              CST em <br />
-              <span className="font-bold text-gray-400">NEGÓCIOS IMOBILIÁRIOS</span>
-            </div>
-          </div>
-        </div>
+
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -87,6 +66,30 @@ export default function Home() {
             O MUNDO FOI <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">REESCRITO.</span>
           </h1>
+
+          {/* Versão Mobile do Destaque MEC (Reposicionado para após o título) */}
+          <div className="md:hidden mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
+            <div className="mec-badge-container rounded-xl p-3 flex items-center justify-between bg-black/80 border border-yellow-500/30 mx-auto max-w-[280px] shadow-[0_0_20px_rgba(255,215,0,0.1)]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full border border-yellow-500/50 flex items-center justify-center bg-black relative">
+                  <span className="text-xl font-bold text-yellow-400">5</span>
+                  <div className="absolute inset-0 border border-yellow-500/20 rounded-full animate-[spin_6s_linear_infinite]"></div>
+                </div>
+                <div className="text-left">
+                  <div className="flex gap-0.5 mb-0.5">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-2 h-2 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <div className="text-xs font-bold text-white leading-tight">NOTA MÁXIMA <span className="text-yellow-400">MEC</span></div>
+                </div>
+              </div>
+              <div className="text-[8px] text-right text-gray-500 font-mono leading-tight max-w-[80px] border-l border-white/10 pl-2">
+                CST em <br />
+                <span className="font-bold text-gray-400">NEGÓCIOS IMOBILIÁRIOS</span>
+              </div>
+            </div>
+          </div>
           
           <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-8 text-white animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
             VOCÊ JÁ DOMINA O <span className="text-neon-purple underline decoration-neon-purple/50 underline-offset-4">NOVO CÓDIGO?</span>
