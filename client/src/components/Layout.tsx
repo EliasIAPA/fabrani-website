@@ -103,7 +103,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
               )} translate="no">
-                AI Starter Pack
+                FABRANI IA+
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/cursos-gratuitos" && "scale-x-100"
@@ -238,7 +238,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           <Link href="/cursos-gratuitos" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
-              AI Starter Pack
+              FABRANI IA+
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
           </Link>
 
