@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Brain, Cpu, Users, Zap, Eye, Share2, ArrowRight, Upload, Video, Mail, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,8 @@ const jobs = [
     icon: Brain,
     description: 'Lidere a revolução. Você será o cérebro por trás das estratégias que integram inteligência artificial em todos os níveis da instituição.',
     requirements: ['Experiência em liderança técnica', 'Visão estratégica de IA', 'Gestão de projetos complexos'],
-    color: 'text-neon-cyan border-neon-cyan shadow-[0_0_15px_rgba(0,240,255,0.5)]'
+    color: 'text-neon-cyan border-neon-cyan shadow-[0_0_15px_rgba(0,240,255,0.5)]',
+    lineColor: '#00f0ff'
   },
   {
     id: 'professores-ia',
@@ -21,7 +22,8 @@ const jobs = [
     icon: Users,
     description: 'Ensine o futuro. Buscamos mentores capazes de traduzir conceitos complexos de IA para a próxima geração de líderes.',
     requirements: ['Mestrado ou Doutorado', 'Didática inovadora', 'Vivência de mercado'],
-    color: 'text-neon-purple border-neon-purple shadow-[0_0_15px_rgba(180,0,255,0.5)]'
+    color: 'text-neon-purple border-neon-purple shadow-[0_0_15px_rgba(180,0,255,0.5)]',
+    lineColor: '#b400ff'
   },
   {
     id: 'videomaker-ia',
@@ -29,7 +31,8 @@ const jobs = [
     icon: Video,
     description: 'Crie realidades. Utilize ferramentas generativas para produzir conteúdo visual que desafia o impossível.',
     requirements: ['Domínio de ferramentas de vídeo', 'Experiência com Runway/Pika/Sora', 'Estética cinematográfica'],
-    color: 'text-pink-500 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]'
+    color: 'text-pink-500 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]',
+    lineColor: '#ec4899'
   },
   {
     id: 'copy-ia',
@@ -37,7 +40,8 @@ const jobs = [
     icon: Sparkles,
     description: 'Escreva com alma digital. Combine criatividade humana com a escala da IA para criar narrativas persuasivas e emocionantes.',
     requirements: ['Copywriting persuasivo', 'Domínio de LLMs', 'Storytelling'],
-    color: 'text-yellow-400 border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.5)]'
+    color: 'text-yellow-400 border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.5)]',
+    lineColor: '#facc15'
   },
   {
     id: 'closer-ia',
@@ -45,7 +49,8 @@ const jobs = [
     icon: Zap,
     description: 'Feche com inteligência. Utilize dados e automação para potencializar suas negociações e quebrar recordes de conversão.',
     requirements: ['Experiência em vendas high-ticket', 'Uso de CRM e automação', 'Fome de resultados'],
-    color: 'text-green-400 border-green-400 shadow-[0_0_15px_rgba(74,222,128,0.5)]'
+    color: 'text-green-400 border-green-400 shadow-[0_0_15px_rgba(74,222,128,0.5)]',
+    lineColor: '#4ade80'
   },
   {
     id: 'coordenador-ia',
@@ -53,7 +58,8 @@ const jobs = [
     icon: Cpu,
     description: 'Arquitete o aprendizado. Estruture cursos que preparam os alunos não para o mercado de hoje, mas para o de 2030.',
     requirements: ['Gestão acadêmica', 'Inovação curricular', 'Liderança de corpo docente'],
-    color: 'text-blue-500 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]'
+    color: 'text-blue-500 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]',
+    lineColor: '#3b82f6'
   }
 ];
 
@@ -68,6 +74,7 @@ const values = [
 export default function TrabalheConosco() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const [hoveredJob, setHoveredJob] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Efeito de partículas de fundo
   useEffect(() => {
@@ -77,11 +84,16 @@ export default function TrabalheConosco() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
     const particles: { x: number; y: number; vx: number; vy: number; size: number }[] = [];
-    const particleCount = 100;
+    const particleCount = 50; // Reduzido para performance
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -92,6 +104,8 @@ export default function TrabalheConosco() {
         size: Math.random() * 2 + 1
       });
     }
+
+    let animationFrameId: number;
 
     function animate() {
       if (!ctx) return;
@@ -128,18 +142,15 @@ export default function TrabalheConosco() {
         });
       });
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     animate();
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
     };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -151,7 +162,7 @@ export default function TrabalheConosco() {
       />
 
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 py-20 text-center">
+      <section className="relative z-10 container mx-auto px-4 py-10 md:py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -160,10 +171,10 @@ export default function TrabalheConosco() {
           <Badge variant="outline" className="mb-6 border-neon-cyan text-neon-cyan px-4 py-1 text-sm tracking-widest uppercase">
             Carreiras 2026
           </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter">
             VOCÊ É O <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">ELO PERDIDO</span>?
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4">
             Não buscamos funcionários. Buscamos visionários dispostos a codificar o futuro da educação com Inteligência Artificial.
             Se você não tem medo de reescrever as regras, seu lugar é aqui.
           </p>
@@ -171,8 +182,32 @@ export default function TrabalheConosco() {
       </section>
 
       {/* Neural Network Jobs Visualization */}
-      <section className="relative z-10 container mx-auto px-4 py-10 min-h-[600px] flex flex-col items-center justify-center">
-        <div className="relative w-full max-w-5xl aspect-square md:aspect-[16/9]">
+      <section className="relative z-10 container mx-auto px-4 py-10 min-h-[500px] md:min-h-[700px] flex flex-col items-center justify-center" ref={containerRef}>
+        
+        {/* Mobile View: Lista Vertical */}
+        <div className="md:hidden w-full flex flex-col gap-6 mb-20">
+          {jobs.map((job) => (
+            <Card 
+              key={job.id} 
+              className={`bg-black/80 border-2 ${selectedJob === job.id ? job.color : 'border-gray-800'} transition-all duration-300`}
+              onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
+            >
+              <CardContent className="p-6 flex items-center gap-4">
+                <div className={`p-3 rounded-full bg-black border ${selectedJob === job.id ? job.color : 'border-gray-700'}`}>
+                  <job.icon className={`w-6 h-6 ${selectedJob === job.id ? 'text-white' : 'text-gray-400'}`} />
+                </div>
+                <div className="flex-1">
+                  <h3 className={`font-bold text-lg ${selectedJob === job.id ? 'text-white' : 'text-gray-300'}`}>{job.title}</h3>
+                  <p className="text-xs text-neon-cyan">Toque para ver detalhes</p>
+                </div>
+                <ChevronRight className={`w-5 h-5 text-gray-500 transition-transform ${selectedJob === job.id ? 'rotate-90' : ''}`} />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Desktop View: Rede Neural Radial */}
+        <div className="hidden md:block relative w-full max-w-4xl aspect-square md:aspect-[16/9]">
           
           {/* Central Hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center">
@@ -181,81 +216,84 @@ export default function TrabalheConosco() {
                 boxShadow: ['0 0 20px rgba(0,240,255,0.2)', '0 0 60px rgba(0,240,255,0.6)', '0 0 20px rgba(0,240,255,0.2)'] 
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="w-32 h-32 rounded-full bg-black border-2 border-neon-cyan flex items-center justify-center relative"
+              className="w-32 h-32 rounded-full bg-black border-2 border-neon-cyan flex items-center justify-center relative z-30"
             >
               <img src="/favicon.png" alt="FABRANI" className="w-16 h-16 opacity-80" />
               <div className="absolute inset-0 rounded-full border border-neon-cyan animate-ping opacity-20"></div>
             </motion.div>
           </div>
 
-          {/* Job Nodes */}
+          {/* Job Nodes & Connections */}
           {jobs.map((job, index) => {
-            // Calcular posição em círculo
-            const angle = (index / jobs.length) * 2 * Math.PI;
-            const radius = 280; // Raio do círculo
-            // Ajuste para telas menores seria necessário em CSS real, aqui simplificado
-            const x = 50 + 35 * Math.cos(angle); // %
-            const y = 50 + 35 * Math.sin(angle); // %
+            const angle = (index / jobs.length) * 2 * Math.PI - (Math.PI / 2); // Começar do topo
+            const radiusPercent = 35; // Distância do centro em %
+            const x = 50 + radiusPercent * Math.cos(angle);
+            const y = 50 + radiusPercent * Math.sin(angle);
 
             return (
-              <motion.div
-                key={job.id}
-                className="absolute z-20"
-                style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 + 0.5 }}
-              >
-                <button
-                  onClick={() => setSelectedJob(job.id)}
-                  onMouseEnter={() => setHoveredJob(job.id)}
-                  onMouseLeave={() => setHoveredJob(null)}
-                  className={`group relative flex flex-col items-center justify-center w-24 h-24 md:w-32 md:h-32 rounded-full bg-black/80 backdrop-blur-sm border-2 transition-all duration-300 ${
-                    selectedJob === job.id ? job.color : 'border-gray-800 hover:border-gray-600'
-                  }`}
+              <React.Fragment key={job.id}>
+                {/* Connection Line */}
+                <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+                  <line 
+                    x1="50%" 
+                    y1="50%" 
+                    x2={`${x}%`} 
+                    y2={`${y}%`} 
+                    stroke={job.lineColor} 
+                    strokeWidth="2"
+                    strokeOpacity="0.4"
+                    strokeDasharray="5,5"
+                  />
+                  <circle cx={`${x}%`} cy={`${y}%`} r="4" fill={job.lineColor} className="animate-pulse" />
+                </svg>
+
+                {/* Node Button */}
+                <motion.div
+                  className="absolute z-20"
+                  style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 + 0.5 }}
                 >
-                  <job.icon className={`w-8 h-8 mb-2 transition-colors ${selectedJob === job.id ? 'text-white' : 'text-gray-500 group-hover:text-white'}`} />
-                  <span className={`text-xs font-bold text-center px-2 ${selectedJob === job.id ? 'text-white' : 'text-gray-500 group-hover:text-white'}`}>
-                    {job.title}
-                  </span>
-                  
-                  {/* Linha conectando ao centro (visual apenas) */}
-                  <svg className="absolute top-1/2 left-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none opacity-20">
-                    <line 
-                      x1="50%" 
-                      y1="50%" 
-                      x2={50 - 35 * Math.cos(angle) + "%"} // Inverso para apontar pro centro? Não, simplificado
-                      y2={50 - 35 * Math.sin(angle) + "%"} 
-                      stroke="currentColor" 
-                      strokeWidth="1"
-                    />
-                  </svg>
-                </button>
-              </motion.div>
+                  <button
+                    onClick={() => setSelectedJob(job.id)}
+                    onMouseEnter={() => setHoveredJob(job.id)}
+                    onMouseLeave={() => setHoveredJob(null)}
+                    className={`group relative flex flex-col items-center justify-center w-28 h-28 rounded-full bg-black/90 backdrop-blur-sm border-2 transition-all duration-300 hover:scale-110 ${
+                      selectedJob === job.id ? job.color : 'border-gray-800 hover:border-gray-500'
+                    }`}
+                  >
+                    <job.icon className={`w-8 h-8 mb-2 transition-colors ${selectedJob === job.id ? 'text-white' : 'text-gray-400 group-hover:text-white'}`} />
+                    <span className={`text-xs font-bold text-center px-2 leading-tight ${selectedJob === job.id ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                      {job.title}
+                    </span>
+                  </button>
+                </motion.div>
+              </React.Fragment>
             );
           })}
         </div>
 
-        {/* Job Details Panel */}
+        {/* Job Details Panel (Shared for Mobile/Desktop) */}
         <AnimatePresence mode="wait">
           {selectedJob && (
             <motion.div
               key={selectedJob}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
-              className="fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur-xl border-t border-gray-800 p-8 z-50 md:relative md:bg-transparent md:border-none md:p-0 md:mt-[-100px] md:max-w-4xl"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              className="fixed bottom-0 left-0 w-full md:absolute md:bottom-auto md:top-full md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-50 p-4 md:p-0 md:mt-8"
             >
-              <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 relative overflow-hidden">
+              <div className="bg-gray-900/95 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
                 <div className={`absolute top-0 left-0 w-1 h-full ${jobs.find(j => j.id === selectedJob)?.color.split(' ')[0].replace('text-', 'bg-')}`}></div>
                 
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="flex-1">
-                    <h3 className="text-3xl font-bold mb-2 flex items-center gap-3">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 flex flex-wrap items-center gap-3 text-white">
                       {jobs.find(j => j.id === selectedJob)?.title}
-                      <Badge className="bg-neon-cyan text-black hover:bg-neon-cyan/80">Vaga Aberta</Badge>
+                      <Badge className="bg-neon-cyan text-black hover:bg-neon-cyan/80 border-none">Vaga Aberta</Badge>
                     </h3>
-                    <p className="text-gray-300 text-lg mb-6">
+                    <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
                       {jobs.find(j => j.id === selectedJob)?.description}
                     </p>
                     
@@ -263,7 +301,7 @@ export default function TrabalheConosco() {
                       <h4 className="text-sm font-bold uppercase tracking-wider text-gray-500">Requisitos Essenciais</h4>
                       <div className="flex flex-wrap gap-2">
                         {jobs.find(j => j.id === selectedJob)?.requirements.map((req, i) => (
-                          <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700">
+                          <span key={i} className="px-3 py-1 bg-black/50 rounded-full text-sm text-gray-300 border border-gray-700">
                             {req}
                           </span>
                         ))}
@@ -271,17 +309,17 @@ export default function TrabalheConosco() {
                     </div>
                   </div>
 
-                  <div className="w-full md:w-auto flex flex-col gap-4 min-w-[250px]">
+                  <div className="w-full md:w-auto flex flex-col gap-4 min-w-[280px]">
                     <div className="p-4 bg-black/50 rounded-xl border border-gray-800">
                       <h4 className="text-sm font-bold text-gray-400 mb-3">Processo Seletivo</h4>
                       <ol className="space-y-3 text-sm">
                         <li className="flex items-start gap-2">
                           <span className="bg-neon-cyan text-black w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
-                          <span className="text-gray-300">Envie CV + Vídeo (3min) explicando por que devemos te contratar.</span>
+                          <span className="text-gray-300">Envie CV + Vídeo (3min)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="bg-neon-purple text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
-                          <span className="text-gray-300">Entrevista Online com Gestores.</span>
+                          <span className="text-gray-300">Entrevista Online</span>
                         </li>
                       </ol>
                     </div>
@@ -299,9 +337,9 @@ export default function TrabalheConosco() {
                 
                 <button 
                   onClick={() => setSelectedJob(null)}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-white md:hidden"
+                  className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white bg-black/20 rounded-full"
                 >
-                  ✕
+                  <XIcon />
                 </button>
               </div>
             </motion.div>
@@ -310,7 +348,7 @@ export default function TrabalheConosco() {
       </section>
 
       {/* DNA Culture Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">NOSSO <span className="text-neon-cyan">DNA</span></h2>
@@ -340,10 +378,10 @@ export default function TrabalheConosco() {
 
       {/* CTA Final */}
       <section className="py-20 container mx-auto px-4 text-center">
-        <div className="max-w-3xl mx-auto bg-neon-purple/10 border border-neon-purple/30 rounded-3xl p-12 relative overflow-hidden">
+        <div className="max-w-3xl mx-auto bg-neon-purple/10 border border-neon-purple/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-purple to-transparent"></div>
           
-          <h2 className="text-3xl font-bold mb-6">Pronto para o Desafio?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Pronto para o Desafio?</h2>
           <p className="text-gray-300 mb-8 text-lg">
             Se você leu até aqui e sentiu um frio na barriga, é um bom sinal. 
             Envie seu material agora e vamos construir o futuro juntos.
@@ -352,7 +390,7 @@ export default function TrabalheConosco() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold px-8"
+              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold px-8 w-full sm:w-auto"
               onClick={() => window.location.href = 'mailto:rh@fabrani.com.br'}
             >
               Enviar CV + Vídeo
@@ -360,8 +398,8 @@ export default function TrabalheConosco() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-gray-700 hover:bg-gray-800 text-white"
-              onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+              className="border-gray-700 hover:bg-gray-800 text-white w-full sm:w-auto"
+              onClick={() => window.open('https://wa.me/5516997117597', '_blank')}
             >
               Dúvidas? Fale no WhatsApp
             </Button>
@@ -370,4 +408,13 @@ export default function TrabalheConosco() {
       </section>
     </div>
   );
+}
+
+function XIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 6 6 18"/>
+      <path d="m6 6 12 12"/>
+    </svg>
+  )
 }
