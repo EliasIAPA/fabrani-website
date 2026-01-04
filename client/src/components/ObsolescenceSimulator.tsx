@@ -133,7 +133,7 @@ export default function ObsolescenceSimulator() {
   };
 
   return (
-    <Card className="relative bg-black/80 border-white/10 backdrop-blur-xl overflow-hidden">
+    <Card className="relative bg-black/80 border-white/10 backdrop-blur-xl overflow-hidden z-10">
       <CardHeader className="border-b border-white/10 pb-6">
         <CardTitle className="flex items-center gap-3 text-xl font-mono">
           <Activity className="w-5 h-5 text-neon-purple animate-pulse" />

@@ -39,7 +39,14 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600">
-            <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none w-full sm:w-auto shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all transform hover:-translate-y-1">
+            <Button 
+              size="lg" 
+              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none w-full sm:w-auto shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all transform hover:-translate-y-1"
+              onClick={() => {
+                const element = document.getElementById('simulador');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               INICIAR MINHA EVOLUÇÃO <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
           </div>
@@ -47,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Seção 2: Interatividade (Simulador de Obsolescência) */}
-      <section className="py-24 relative bg-secondary/5 border-y border-white/5">
+      <section id="simulador" className="py-24 relative bg-secondary/5 border-y border-white/5 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
