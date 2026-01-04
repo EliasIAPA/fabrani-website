@@ -330,7 +330,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-mono text-neon-cyan text-sm uppercase tracking-wider border-l-2 border-neon-cyan pl-3">Institucional</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> Parceiros</a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> Responsabilidade Social</a></li>
+                <li><Link href="/fabrani-conecta/responsabilidade-social"><a className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> Responsabilidade Social</a></Link></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><AlertTriangle className="w-3 h-3" /> Denuncie - Anticorrupção</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> CPA - Avaliação</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> NAP - Psicopedagógico</a></li>
