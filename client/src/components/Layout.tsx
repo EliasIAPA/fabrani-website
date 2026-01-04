@@ -14,6 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileGraduacaoOpen, setIsMobileGraduacaoOpen] = useState(false);
+  const [isMobileConectaOpen, setIsMobileConectaOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -134,6 +135,29 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 )}></span>
               </a>
             </Link>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+                Fabrani Conecta <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/fabrani-conecta/cpa">CPA</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/fabrani-conecta/nde">NDE</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/fabrani-conecta/nap">NAP</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/fabrani-conecta/responsabilidade-social">Responsabilidade Social</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/fabrani-conecta/trabalhe-conosco">Trabalhe Conosco</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -206,6 +230,36 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
             </a>
           </Link>
+
+          <div className="border-b border-white/5 pb-4">
+            <button 
+              onClick={() => setIsMobileConectaOpen(!isMobileConectaOpen)}
+              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left"
+            >
+              Fabrani Conecta
+              <ChevronDown className={cn("transition-transform duration-300", isMobileConectaOpen ? "rotate-180" : "")} />
+            </button>
+            
+            {isMobileConectaOpen && (
+              <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
+                <Link href="/fabrani-conecta/cpa">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">CPA</a>
+                </Link>
+                <Link href="/fabrani-conecta/nde">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">NDE</a>
+                </Link>
+                <Link href="/fabrani-conecta/nap">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">NAP</a>
+                </Link>
+                <Link href="/fabrani-conecta/responsabilidade-social">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Responsabilidade Social</a>
+                </Link>
+                <Link href="/fabrani-conecta/trabalhe-conosco">
+                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Trabalhe Conosco</a>
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Button 
             className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 rounded-none font-bold mt-4 mb-8"
