@@ -139,6 +139,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+                PESQUISA <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/pesquisa/pivic">PIVIC - Iniciação Científica</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
                 Fabrani Conecta <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]">
@@ -233,6 +244,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
             </a>
           </Link>
+
+          <div className="border-b border-white/5 pb-4">
+            <Link href="/pesquisa/pivic">
+              <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
+                PESQUISA
+                <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+              </a>
+            </Link>
+            <div className="flex flex-col gap-4 mt-4 pl-4">
+              <Link href="/pesquisa/pivic">
+                <a className="text-lg text-muted-foreground hover:text-neon-cyan block">PIVIC - Iniciação Científica</a>
+              </Link>
+            </div>
+          </div>
 
           <div className="border-b border-white/5 pb-4">
             <button 

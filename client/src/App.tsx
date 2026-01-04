@@ -16,6 +16,7 @@ import NAP from "./pages/NAP";
 import ResponsabilidadeSocial from "./pages/ResponsabilidadeSocial";
 import HubInsights from "@/pages/HubInsights";
 import InsightDetail from "@/pages/InsightDetail";
+import PIVIC from "@/pages/PIVIC";
 
 function Router() {
   return (
@@ -32,7 +33,8 @@ function Router() {
         <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
         <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
          <Route path="/hub-insights" component={HubInsights} />
-      <Route path="/hub-insights/:id" component={InsightDetail} />
+        <Route path="/hub-insights/:id" component={InsightDetail} />
+        <Route path="/pesquisa/pivic" component={PIVIC} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
