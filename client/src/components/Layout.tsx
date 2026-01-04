@@ -58,14 +58,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-neon-cyan/10 border border-neon-cyan flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-neon-cyan/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                <span className="font-mono font-bold text-xl text-neon-cyan relative z-10">F</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tighter leading-none" translate="no">FABRANI</span>
-                <span className="text-[0.6rem] text-muted-foreground tracking-widest uppercase notranslate" translate="no">AI-Native Education</span>
-              </div>
+              <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-10 w-auto object-contain" />
             </a>
           </Link>
 
@@ -311,10 +304,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand & Contact */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-neon-cyan flex items-center justify-center">
-                  <span className="font-mono font-bold text-black">F</span>
-                </div>
-                <span className="font-bold text-xl tracking-tighter">FABRANI</span>
+                <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-8 w-auto object-contain" />
               </div>
               
               <div className="space-y-4 text-sm text-muted-foreground">
