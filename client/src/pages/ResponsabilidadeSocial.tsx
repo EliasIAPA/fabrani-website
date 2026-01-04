@@ -62,7 +62,7 @@ export default function ResponsabilidadeSocial() {
               </div>
 
               <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black">
-                <a href="http://www.institutoabracarguariba.org.br" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.institutoabracarguariba.org.br" target="_blank" rel="noopener noreferrer">
                   Visitar Site Oficial <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
               </Button>
@@ -122,7 +122,7 @@ export default function ResponsabilidadeSocial() {
               </div>
 
               <Button asChild variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-white">
-                <a href="http://www.congressoautismo360.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.congressoautismo360.com" target="_blank" rel="noopener noreferrer">
                   Saiba Mais sobre o Evento <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
               </Button>
