@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe } from "lucide-react";
 import { useState } from "react";
+import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 
 export default function Home() {
   return (
@@ -77,48 +77,7 @@ export default function Home() {
 
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-30 blur-xl"></div>
-              <Card className="relative bg-black/80 border-white/10 backdrop-blur-xl">
-                <CardHeader className="border-b border-white/10 pb-6">
-                  <CardTitle className="flex items-center gap-3 text-xl font-mono">
-                    <Activity className="w-5 h-5 text-neon-purple animate-pulse" />
-                    ANÁLISE DE RISCO PROFISSIONAL
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-8 space-y-8">
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm font-medium">
-                      <span className="text-muted-foreground">Automação do Setor (Previsão 2026)</span>
-                      <span className="text-red-400">87%</span>
-                    </div>
-                    <div className="h-2 bg-white/10 w-full rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-neon-cyan to-red-500 w-[87%] relative">
-                        <div className="absolute right-0 top-0 bottom-0 w-1 bg-white animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm font-medium">
-                      <span className="text-muted-foreground">Necessidade de Requalificação</span>
-                      <span className="text-orange-400">CRÍTICA</span>
-                    </div>
-                    <div className="h-2 bg-white/10 w-full rounded-full overflow-hidden">
-                      <div className="h-full bg-orange-500 w-[92%]"></div>
-                    </div>
-                  </div>
-
-                  <div className="bg-neon-purple/10 border border-neon-purple/30 p-4 rounded-sm">
-                    <p className="text-sm text-neon-purple font-mono mb-2">DIAGNÓSTICO DA IA:</p>
-                    <p className="text-sm text-white">
-                      Seu perfil atual tem alta probabilidade de substituição. A vacina é a especialização em gestão de IA.
-                    </p>
-                  </div>
-
-                  <Button className="w-full bg-white text-black hover:bg-gray-200 font-bold rounded-none py-6">
-                    FAZER SIMULAÇÃO COMPLETA
-                  </Button>
-                </CardContent>
-              </Card>
+              <ObsolescenceSimulator />
             </div>
           </div>
         </div>
