@@ -48,40 +48,10 @@
     "localPath": "/images/partners/Rocket Institute.png"
   },
   {
-    "name": "SaleUp",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/SaleUp.png",
-    "category": "gestao-negocios"
-  },
-  {
-    "name": "Sin Class",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Sin%20Class.png",
-    "category": "educacao"
-  },
-  {
-    "name": "Think Odonto",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Think%20Odonto.png",
-    "category": "saude"
-  },
-  {
     "name": "Patients2Python",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Patients2Python.png",
     "category": "tecnologia",
     "localPath": "/images/partners/Patients2Python.png"
-  },
-  {
-    "name": "Andrea Costa",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Andrea%20Costa.png",
-    "category": "saude"
-  },
-  {
-    "name": "Angela Moura",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Angela%20Moura.png",
-    "category": "saude"
-  },
-  {
-    "name": "Ansiedade e Mutismo Seletivo",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Ansiedade%20e%20Mutismo%20Seletivo.png",
-    "category": "saude"
   },
   {
     "name": "aTUALE",
@@ -90,50 +60,10 @@
     "localPath": "/images/partners/aTUALE.png"
   },
   {
-    "name": "Black Fox",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Black%20Fox.png",
-    "category": "gestao-negocios"
-  },
-  {
-    "name": "Centro de Astrologia Conexão e Ação",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Centro%20de%20Astrologia%20Conex%C3%A3o%20e%20A%C3%A7%C3%A3o.png",
-    "category": "educacao"
-  },
-  {
-    "name": "CEPCS",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/CEPCS.png",
-    "category": "saude"
-  },
-  {
-    "name": "EaD Educacional",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/EaD%20Educacional.png",
-    "category": "educacao"
-  },
-  {
-    "name": "Espécie Exótica Clínica Veterinária",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Esp%C3%A9cie%20Ex%C3%B3tica%20Cl%C3%ADnica%20Veterin%C3%A1ria.png",
-    "category": "saude"
-  },
-  {
-    "name": "Essência e Equilíbrio",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Ess%C3%AAncia%20e%20Equil%C3%ADbrio.png",
-    "category": "saude"
-  },
-  {
     "name": "Gabriel Investe",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Gabriel%20Investe.png",
     "category": "gestao-negocios",
     "localPath": "/images/partners/Gabriel Investe.png"
-  },
-  {
-    "name": "Gente Mais",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Gente%20Mais.png",
-    "category": "gestao-negocios"
-  },
-  {
-    "name": "HUIOS Empresarial",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/HUIOS%20Empresarial.png",
-    "category": "gestao-negocios"
   },
   {
     "name": "Instituto Alliance",
@@ -146,16 +76,6 @@
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Instituto%20EDUCAR.png",
     "category": "educacao",
     "localPath": "/images/partners/Instituto EDUCAR.png"
-  },
-  {
-    "name": "Jonas Guedes",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Jonas%20Guedes.png",
-    "category": "marketing"
-  },
-  {
-    "name": "LCC Academy",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/LCC%20Academy.png",
-    "category": "educacao"
   },
   {
     "name": "Marcia Machado Spa Capilar",
@@ -182,51 +102,16 @@
     "localPath": "/images/partners/Mãe Coruja.png"
   },
   {
-    "name": "NewSchool",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/NewSchool.png",
-    "category": "educacao"
-  },
-  {
     "name": "Paliativese",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Paliativese.png",
     "category": "saude",
     "localPath": "/images/partners/Paliativese.png"
   },
   {
-    "name": "Reconfigure-$e",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Reconfigure-$e.png",
-    "category": "gestao-negocios"
-  },
-  {
-    "name": "Tornar Simples",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Tornar%20Simples.png",
-    "category": "educacao"
-  },
-  {
-    "name": "Técnico de Futebol",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/T%C3%A9cnico%20de%20Futebol.png",
-    "category": "educacao"
-  },
-  {
-    "name": "Zalewski",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Zalewski.png",
-    "category": "juridico"
-  },
-  {
-    "name": "École Allons-y",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/%C3%89cole%20Allons-y.png",
-    "category": "educacao"
-  },
-  {
     "name": "Acqua Physio",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Acqua%20Physio.png",
     "category": "saude",
     "localPath": "/images/partners/Acqua Physio.png"
-  },
-  {
-    "name": "Cuidatoria",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Cuidatoria.png",
-    "category": "saude"
   },
   {
     "name": "Endoface Brazil",
@@ -259,51 +144,16 @@
     "localPath": "/images/partners/Levantando Mulheres.png"
   },
   {
-    "name": "Jennifer Camilly Lash Designer",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Jennifer%20Camilly%20Lash%20Designer.png",
-    "category": "saude"
-  },
-  {
-    "name": "Nova Classe",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Nova%20Classe.png",
-    "category": "educacao"
-  },
-  {
     "name": "MedPro Pesquisa",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/MedPro%20Pesquisa.png",
     "category": "saude",
     "localPath": "/images/partners/MedPro Pesquisa.png"
   },
   {
-    "name": "Bio Energy Academy",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Bio%20Energy%20Academy.png",
-    "category": "saude"
-  },
-  {
-    "name": "Bravo Mike Urgência e Emergência",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Bravo%20Mike%20Urg%C3%AAncia%20e%20Emerg%C3%AAncia.png",
-    "category": "saude"
-  },
-  {
     "name": "Centro de Astrologia e Terapias",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Centro%20de%20Astrologia%20e%20Terapias.png",
     "category": "saude",
     "localPath": "/images/partners/Centro de Astrologia e Terapias.png"
-  },
-  {
-    "name": "Centro de Estudo e Pesquisa Clínica Saúde CEPCS",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Centro%20de%20Estudo%20e%20Pesquisa%20Cl%C3%ADnica%20Sa%C3%BAde%20CEPCS.png",
-    "category": "saude"
-  },
-  {
-    "name": "Centro Integrado de Psicologia Caio Machado",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Centro%20Integrado%20de%20Psicologia%20Caio%20Machado.png",
-    "category": "saude"
-  },
-  {
-    "name": "Clínica Supere",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Cl%C3%ADnica%20Supere.png",
-    "category": "saude"
   },
   {
     "name": "Comunidade da Arte",
@@ -328,11 +178,6 @@
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Ingl%C3%AAs%20de%20Carreira.png",
     "category": "educacao",
     "localPath": "/images/partners/Inglês de Carreira.png"
-  },
-  {
-    "name": "Instituto Happiness for Business",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Instituto%20Happiness%20for%20Business.png",
-    "category": "gestao-negocios"
   },
   {
     "name": "Instituto Mãos que Cantam",
@@ -365,25 +210,10 @@
     "localPath": "/images/partners/O Advogado Estratégico.png"
   },
   {
-    "name": "Oykos Curso e Traduções",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Oykos%20Curso%20e%20Tradu%C3%A7%C3%B5es.png",
-    "category": "educacao"
-  },
-  {
-    "name": "Performance de Excelência Educação Corporativa",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Performance%20de%20Excel%C3%AAncia%20Educa%C3%A7%C3%A3o%20Corporativa.png",
-    "category": "educacao"
-  },
-  {
     "name": "Rafael Albertoni",
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Rafael%20Albertoni.png",
     "category": "marketing",
     "localPath": "/images/partners/Rafael Albertoni.png"
-  },
-  {
-    "name": "Rgolden Treinamento em Manutenção",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Rgolden%20Treinamento%20em%20Manuten%C3%A7%C3%A3o.png",
-    "category": "educacao"
   },
   {
     "name": "Terapia Multidimensional Egípcia",
@@ -402,11 +232,6 @@
     "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/Vamos%20para%20o%20Quadro.png",
     "category": "educacao",
     "localPath": "/images/partners/Vamos para o Quadro.png"
-  },
-  {
-    "name": "Fábrica de Fluentes",
-    "logoUrl": "https://fabrani.com.br/cursos-de-extensao/assets/logos/F%C3%A1brica%20de%20Fluentes.png",
-    "category": "educacao"
   },
   {
     "name": "ACGI treinamentos e Consultoria",
