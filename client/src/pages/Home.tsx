@@ -290,10 +290,12 @@ export default function Home() {
               </div>
               
               <div className="flex-shrink-0">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-bold text-lg px-10 py-8 rounded-none shadow-lg flex items-center gap-3">
-                  <Download className="w-6 h-6" />
-                  BAIXAR AGORA
-                </Button>
+                <a href="/g.prompt2026.pdf" download="Guia_50_Prompts_FABRANI_2026.pdf">
+                  <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-bold text-lg px-10 py-8 rounded-none shadow-lg flex items-center gap-3">
+                    <Download className="w-6 h-6" />
+                    BAIXAR AGORA
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
