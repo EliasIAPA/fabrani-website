@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import FloatingWhatsApp from './FloatingWhatsApp';
+import CookieConsent from './CookieConsent';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -414,6 +415,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
       <FloatingWhatsApp />
+      <CookieConsent />
     </div>
   );
 }
