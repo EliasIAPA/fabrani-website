@@ -385,6 +385,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p className="text-xs text-muted-foreground">Instituição de Ensino Superior reconhecida com excelência.</p>
               </div>
               
+              <div className="bg-white/5 p-4 border border-white/10 flex items-center justify-center gap-3 mb-6">
+                <ShieldCheck className="w-8 h-8 text-neon-cyan" />
+                <div className="text-left">
+                  <p className="font-bold text-white text-sm">Site Seguro</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Proteção SSL Ativa</p>
+                </div>
+              </div>
+              
               <div className="flex gap-4 justify-center">
                 {/* Social Icons Placeholders */}
                 <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-neon-cyan hover:text-black hover:border-neon-cyan transition-all">
