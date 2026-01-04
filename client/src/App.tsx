@@ -6,6 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Manifesto from "./pages/Manifesto";
+import MBAs from "./pages/MBAs";
+import MBADetail from "./pages/MBADetail";
 import Layout from "./components/Layout";
 
 function Router() {
@@ -14,8 +16,9 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/manifesto"} component={Manifesto} />
+        <Route path={"/mbas"} component={MBAs} />
+        <Route path={"/mbas/:id"} component={MBADetail} />
         <Route path={"/graduacao"} component={Home} /> {/* Placeholder for now */}
-        <Route path={"/mbas"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/insights"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/404"} component={NotFound} />
