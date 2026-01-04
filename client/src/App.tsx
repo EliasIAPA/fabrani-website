@@ -12,6 +12,7 @@ import MBADetail from "./pages/MBADetail";
 import GraduacaoMarketing from "./pages/GraduacaoMarketing";
 import GraduacaoImobiliaria from "./pages/GraduacaoImobiliaria";
 import CPA from "./pages/CPA";
+import NAP from "./pages/NAP";
 
 function Router() {
   return (
@@ -23,7 +24,8 @@ function Router() {
         <Route path={"/mbas/:id"} component={MBADetail} />
         <Route path={"/graduacao/marketing-digital"} component={GraduacaoMarketing} />
         <Route path={"/graduacao/negocios-imobiliarios"} component={GraduacaoImobiliaria} />
-        <Route path={"/fabrani-conecta/cpa"} component={CPA} />
+        <Route path="/fabrani-conecta/cpa" component={CPA} />
+          <Route path="/fabrani-conecta/nap" component={NAP} />
         <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/insights"} component={Home} /> {/* Placeholder for now */}
         <Route path={"/404"} component={NotFound} />

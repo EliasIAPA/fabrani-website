@@ -53,7 +53,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll Down Indicator */}
+        {/* Indicador de Rolagem */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-20"
              onClick={() => {
                const element = document.getElementById('simulador');
@@ -193,7 +193,7 @@ export default function Home() {
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Placeholder Logos - Using text for now as we don't have SVG assets */}
+            {/* Logos de Exemplo - Usando texto por enquanto pois não temos assets SVG */}
             <div className="flex items-center gap-2 text-2xl font-bold text-white">
               <ShieldCheck className="w-8 h-8" /> MEC <span className="text-xs font-normal border border-white/30 px-2 py-0.5 rounded ml-2">NOTA MÁXIMA</span>
             </div>
