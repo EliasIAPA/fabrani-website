@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown } from "lucide-react";
+import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText } from "lucide-react";
 import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
+import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -109,9 +110,14 @@ export default function Home() {
               A Elite Intelectual <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">ao seu lado</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground mb-8">
               Conexão direta com <span className="text-white font-bold">400 mestres e doutores</span>. Não ensinamos teoria, entregamos implementação real.
             </p>
+            <Link href="/manifesto">
+              <Button variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold px-8 py-6 rounded-none transition-all">
+                <FileText className="mr-2 h-5 w-5" /> LER O MANIFESTO
+              </Button>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
