@@ -411,29 +411,29 @@ export default function Home() {
             {[
               {
                 letter: "I",
-                title: "ALGORITMO DE INICIAÇÃO",
-                desc: "Não aguardamos o input. Executamos o futuro. Nossa proatividade é o código-fonte que antecipa tendências e reescreve o mercado antes que a demanda seja compilada.",
+                title: "INICIATIVA",
+                desc: "Proatividade para agir e criar",
                 color: "text-neon-cyan",
                 border: "hover:border-neon-cyan/50"
               },
               {
                 letter: "T",
-                title: "CÓDIGO ABERTO",
-                desc: "Sem caixas pretas. Operamos com honestidade radical e dados visíveis. A confiança é nosso protocolo de segurança inegociável, onde cada bit de informação é compartilhado.",
+                title: "TRANSPARÊNCIA",
+                desc: "Fale a verdade. Jogue limpo.",
                 color: "text-white",
                 border: "hover:border-white/50"
               },
               {
                 letter: "E",
-                title: "CONEXÃO NEURAL",
-                desc: "Mais que interface, buscamos conexão profunda. Decodificamos as necessidades humanas em um mundo digital, criando um ambiente onde a diversidade é o processador central da inovação.",
+                title: "EMPATIA",
+                desc: "Compreensão e cuidado mútuo",
                 color: "text-neon-purple",
                 border: "hover:border-neon-purple/50"
               },
               {
                 letter: "C",
-                title: "INTELIGÊNCIA DE ENXAME",
-                desc: "Nenhum nó da rede é mais forte que o sistema. Unimos mentes biológicas e artificiais em uma arquitetura distribuída, onde o sucesso de um é o upgrade de todos.",
+                title: "COLABORAÇÃO",
+                desc: "Construa junto. O sucesso é coletivo.",
                 color: "text-neon-cyan",
                 border: "hover:border-neon-cyan/50"
               }
