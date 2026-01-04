@@ -62,8 +62,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className="font-mono font-bold text-xl text-neon-cyan relative z-10">F</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tighter leading-none">FABRANI</span>
-                <span className="text-[0.6rem] text-muted-foreground tracking-widest uppercase">AI-Native Education</span>
+                <span className="font-bold text-xl tracking-tighter leading-none" translate="no">FABRANI</span>
+                <span className="text-[0.6rem] text-muted-foreground tracking-widest uppercase notranslate" translate="no">AI-Native Education</span>
               </div>
             </a>
           </Link>
@@ -72,9 +72,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="/">
               <a className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/" ? "text-neon-cyan" : "text-muted-foreground"
-              )}>
+              )} translate="no">
                 Home
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
@@ -85,14 +85,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
-                Graduação AI-Driven <ChevronDown className="w-4 h-4" />
+                Graduação <span className="notranslate" translate="no">AI-Driven</span> <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[250px]">
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/graduacao/marketing-digital">Marketing Digital com Foco em IA</Link>
+                  <Link href="/graduacao/marketing-digital">Marketing Digital com Foco em <span className="notranslate" translate="no">IA</span></Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/graduacao/negocios-imobiliarios">Negócios Imobiliários com Foco em IA</Link>
+                  <Link href="/graduacao/negocios-imobiliarios">Negócios Imobiliários com Foco em <span className="notranslate" translate="no">IA</span></Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -102,7 +102,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
                 location.startsWith("/mbas") ? "text-neon-cyan" : "text-muted-foreground"
               )}>
-                MBAs de Aplicação
+                <span className="notranslate" translate="no">MBAs</span> de Aplicação
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location.startsWith("/mbas") && "scale-x-100"
@@ -112,9 +112,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             <Link href="/cursos-gratuitos">
               <a className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
+                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
-              )}>
+              )} translate="no">
                 AI Starter Pack
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
@@ -128,7 +128,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
                 location === "/insights" ? "text-neon-cyan" : "text-muted-foreground"
               )}>
-                Hub de Insights
+                <span className="notranslate" translate="no">Hub</span> de <span className="notranslate" translate="no">Insights</span>
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/insights" && "scale-x-100"

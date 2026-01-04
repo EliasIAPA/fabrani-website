@@ -355,7 +355,7 @@ export default function Home() {
                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-neon-cyan rounded-full"></div>
                 <h3 className="text-2xl font-bold text-white mb-4 glitch-hover" data-text="O MARCO DE 2025">O MARCO DE 2025</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Este foi o ano da nossa consolidação como a autoridade máxima em Educação AI-Native no Brasil. Mais do que uma faculdade, tornamo-nos um ecossistema de elite, reunindo mais de <strong className="text-white">380 Mestres e Doutores</strong> das maiores universidades do mundo em nossa rede FABRANI PLAY.
+                  Este foi o ano da nossa consolidação como a autoridade máxima em Educação <span className="notranslate" translate="no">AI-Native</span> no Brasil. Mais do que uma faculdade, tornamo-nos um ecossistema de elite, reunindo mais de <strong className="text-white">380 Mestres e Doutores</strong> das maiores universidades do mundo em nossa rede <span className="notranslate" translate="no">FABRANI PLAY</span>.
                 </p>
               </div>
 
