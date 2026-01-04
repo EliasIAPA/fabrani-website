@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText } from "lucide-react";
+import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
 import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 import { Link } from "wouter";
@@ -202,6 +202,61 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 3.5: Destaque MEC Disruptivo */}
+      <section className="py-24 relative overflow-hidden bg-black border-y border-yellow-500/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent opacity-50 animate-pulse"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="mec-badge-container max-w-5xl mx-auto rounded-3xl p-12 md:p-16 relative overflow-hidden group">
+            {/* Efeitos de Fundo */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 blur-[80px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500/10 blur-[80px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000"></div>
+            
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+              <div className="text-center md:text-left space-y-6 flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-widest mb-2">
+                  <Award className="w-4 h-4" /> Validação Governamental
+                </div>
+                
+                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+                  NOTA MÁXIMA <br />
+                  <span className="text-yellow-400 gold-glow glitch-hover" data-text="MEC 5 ESTRELAS">MEC 5 ESTRELAS</span>
+                </h2>
+                
+                <div className="flex flex-col gap-2">
+                  <p className="text-2xl text-gray-300 font-light">
+                    Curso Superior de Tecnologia em
+                  </p>
+                  <p className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">
+                    NEGÓCIOS IMOBILIÁRIOS <span className="text-neon-cyan">(NI)</span>
+                  </p>
+                </div>
+
+                <p className="text-muted-foreground text-lg max-w-xl">
+                  A excelência acadêmica encontra a inovação disruptiva. O único curso do Brasil com nota máxima e foco total em Inteligência Artificial aplicada ao mercado Real Estate.
+                </p>
+              </div>
+
+              <div className="flex-shrink-0 relative">
+                <div className="relative z-10 flex flex-col items-center justify-center bg-black/80 border-2 border-yellow-500/50 rounded-full w-64 h-64 md:w-80 md:h-80 shadow-[0_0_50px_rgba(255,215,0,0.2)] backdrop-blur-sm">
+                  <div className="text-8xl font-bold text-yellow-400 gold-glow mb-2">5</div>
+                  <div className="flex gap-2 mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-8 h-8 text-yellow-400 fill-yellow-400 animate-star-pulse" style={{ animationDelay: `${star * 0.1}s` }} />
+                    ))}
+                  </div>
+                  <div className="text-sm font-bold text-yellow-500/80 tracking-[0.3em] uppercase">Excelência</div>
+                </div>
+                
+                {/* Círculos Orbitais Decorativos */}
+                <div className="absolute inset-0 border border-yellow-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                <div className="absolute -inset-4 border border-dashed border-yellow-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
