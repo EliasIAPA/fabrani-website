@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe } from "lucide-react";
+import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 
@@ -50,6 +50,15 @@ export default function Home() {
               INICIAR MINHA EVOLUÇÃO <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
           </div>
+        </div>
+
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-20"
+             onClick={() => {
+               const element = document.getElementById('simulador');
+               element?.scrollIntoView({ behavior: 'smooth' });
+             }}>
+          <ChevronDown className="w-10 h-10 text-neon-cyan opacity-70 hover:opacity-100 transition-opacity" />
         </div>
       </section>
 
