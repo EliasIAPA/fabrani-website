@@ -17,6 +17,7 @@ import ResponsabilidadeSocial from "./pages/ResponsabilidadeSocial";
 import HubInsights from "@/pages/HubInsights";
 import InsightDetail from "@/pages/InsightDetail";
 import PIVIC from "@/pages/PIVIC";
+import TrabalheConosco from "@/pages/TrabalheConosco";
 
 function Router() {
   return (
@@ -35,6 +36,7 @@ function Router() {
          <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
         <Route path="/pesquisa/pivic" component={PIVIC} />
+        <Route path="/trabalhe-conosco" component={TrabalheConosco} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

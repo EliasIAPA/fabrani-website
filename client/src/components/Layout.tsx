@@ -159,8 +159,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Link href="/fabrani-conecta/responsabilidade-social">Responsabilidade Social</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/fabrani-conecta/trabalhe-conosco">Trabalhe Conosco</Link>
+                  <Link href="/trabalhe-conosco">Trabalhe Conosco</Link>
                 </DropdownMenuItem>
+
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
