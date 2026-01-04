@@ -147,6 +147,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Link href="/fabrani-conecta/nap">NAP</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/parceiros">Parceiros</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
                   <Link href="/fabrani-conecta/responsabilidade-social">Responsabilidade Social</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
@@ -267,6 +270,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   NAP
                 </Link>
+                <Link href="/parceiros" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Parceiros
+                </Link>
                 <Link href="/fabrani-conecta/responsabilidade-social" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   Responsabilidade Social
                 </Link>
@@ -358,7 +364,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li><Link href="/termos-de-uso" className="hover:text-white transition-colors flex items-center gap-2"><FileText className="w-3 h-3" /> Termos de Uso</Link></li>
                 <li><Link href="/privacidade" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> Política de Privacidade</Link></li>
                 <li><Link href="/politica-cookies" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> Política de Cookies</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> Parceiros</a></li>
+                <li><Link href="/parceiros" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> Parceiros</Link></li>
                 <li><Link href="/fabrani-conecta/responsabilidade-social" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> Responsabilidade Social</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><AlertTriangle className="w-3 h-3" /> Denuncie - Anticorrupção</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> CPA - Avaliação</a></li>

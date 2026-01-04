@@ -21,6 +21,7 @@ import TrabalheConosco from "@/pages/TrabalheConosco";
 import PoliticaCookies from "@/pages/PoliticaCookies";
 import PoliticaPrivacidade from "@/pages/PoliticaPrivacidade";
 import TermosDeUso from "@/pages/TermosDeUso";
+import Parceiros from "@/pages/Parceiros";
 
 function Router() {
   return (
@@ -43,6 +44,7 @@ function Router() {
         <Route path="/politica-cookies" component={PoliticaCookies} />
         <Route path="/privacidade" component={PoliticaPrivacidade} />
         <Route path="/termos-de-uso" component={TermosDeUso} />
+        <Route path="/parceiros" component={Parceiros} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
