@@ -224,10 +224,10 @@ export default function Home() {
             <p className="text-xl text-muted-foreground mb-8">
               Conexão direta com <span className="text-white font-bold">400 mestres e doutores</span>. Não ensinamos teoria, entregamos implementação real.
             </p>
-            <Link href="/manifesto">
-              <Button variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold px-8 py-6 rounded-none transition-all">
-                <FileText className="mr-2 h-5 w-5" /> LER O MANIFESTO
-              </Button>
+            <Link href="/manifesto" className="inline-block">
+                <Button variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold px-8 py-6 rounded-none transition-all">
+                  <FileText className="mr-2 h-5 w-5" /> LER O MANIFESTO
+                </Button>
             </Link>
           </div>
 

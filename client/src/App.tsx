@@ -32,8 +32,8 @@ function Router() {
         <Route path="/fabrani-conecta/cpa" component={CPA} />
           <Route path="/fabrani-conecta/nap" component={NAP} />
         <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
-        <Route path={"/cursos-gratuitos"} component={Home} /> {/* Placeholder for now */}
-         <Route path="/hub-insights" component={HubInsights} />
+        <Route path={"/cursos-gratuitos"} component={Home} />
+        <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
         <Route path="/pesquisa/pivic" component={PIVIC} />
         <Route path="/trabalhe-conosco" component={TrabalheConosco} />

@@ -56,16 +56,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2 group">
-              <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-10 w-auto object-contain" />
-            </a>
+          <Link href="/" className="flex items-center gap-2 group">
+            <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-10 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="/">
-              <a className={cn(
+            <Link href="/" className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/" ? "text-neon-cyan" : "text-muted-foreground"
               )} translate="no">
@@ -74,7 +71,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/" && "scale-x-100"
                 )}></span>
-              </a>
             </Link>
 
             <DropdownMenu>
@@ -91,8 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/mbas">
-              <a className={cn(
+            <Link href="/mbas" className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
                 location.startsWith("/mbas") ? "text-neon-cyan" : "text-muted-foreground"
               )}>
@@ -101,11 +96,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location.startsWith("/mbas") && "scale-x-100"
                 )}></span>
-              </a>
             </Link>
 
-            <Link href="/cursos-gratuitos">
-              <a className={cn(
+            <Link href="/cursos-gratuitos" className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
               )} translate="no">
@@ -114,11 +107,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/cursos-gratuitos" && "scale-x-100"
                 )}></span>
-              </a>
             </Link>
 
-            <Link href="/hub-insights">
-              <a className={cn(
+            <Link href="/hub-insights" className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
                 location === "/hub-insights" ? "text-neon-cyan" : "text-muted-foreground"
               )}>
@@ -127,7 +118,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/hub-insights" && "scale-x-100"
                 )}></span>
-              </a>
             </Link>
 
             <DropdownMenu>
@@ -203,11 +193,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6 lg:hidden flex flex-col gap-6 animate-in slide-in-from-right-10 duration-300 overflow-y-auto">
-          <Link href="/">
-            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               Home
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-            </a>
           </Link>
 
           <div className="border-b border-white/5 pb-4">
@@ -221,47 +209,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {isMobileGraduacaoOpen && (
               <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
-                <Link href="/graduacao/marketing-digital">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Marketing Digital com Foco em IA</a>
+                <Link href="/graduacao/marketing-digital" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Marketing Digital com Foco em IA
                 </Link>
-                <Link href="/graduacao/negocios-imobiliarios">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Negócios Imobiliários com Foco em IA</a>
+                <Link href="/graduacao/negocios-imobiliarios" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Negócios Imobiliários com Foco em IA
                 </Link>
               </div>
             )}
           </div>
 
-          <Link href="/mbas">
-            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/mbas" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               MBAs de Aplicação
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-            </a>
           </Link>
 
-          <Link href="/cursos-gratuitos">
-            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/cursos-gratuitos" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               AI Starter Pack
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-            </a>
           </Link>
 
-          <Link href="/hub-insights">
-            <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/hub-insights" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               Hub de Insights
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-            </a>
           </Link>
 
           <div className="border-b border-white/5 pb-4">
-            <Link href="/pesquisa/pivic">
-              <a className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
+            <Link href="/pesquisa/pivic" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
                 PESQUISA
                 <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-              </a>
             </Link>
             <div className="flex flex-col gap-4 mt-4 pl-4">
-              <Link href="/pesquisa/pivic">
-                <a className="text-lg text-muted-foreground hover:text-neon-cyan block">PIVIC - Iniciação Científica</a>
+              <Link href="/pesquisa/pivic" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                PIVIC - Iniciação Científica
               </Link>
             </div>
           </div>
@@ -277,20 +257,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {isMobileConectaOpen && (
               <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
-                <Link href="/fabrani-conecta/cpa">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">CPA</a>
+                <Link href="/fabrani-conecta/cpa" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  CPA
                 </Link>
-                <Link href="/fabrani-conecta/nde">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">NDE</a>
+                <Link href="/fabrani-conecta/nde" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  NDE
                 </Link>
-                <Link href="/fabrani-conecta/nap">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">NAP</a>
+                <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  NAP
                 </Link>
-                <Link href="/fabrani-conecta/responsabilidade-social">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Responsabilidade Social</a>
+                <Link href="/fabrani-conecta/responsabilidade-social" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Responsabilidade Social
                 </Link>
-                <Link href="/trabalhe-conosco">
-                  <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Trabalhe Conosco</a>
+                <Link href="/trabalhe-conosco" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Trabalhe Conosco
                 </Link>
               </div>
             )}
@@ -375,7 +355,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-mono text-neon-cyan text-sm uppercase tracking-wider border-l-2 border-neon-cyan pl-3">Institucional</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> Parceiros</a></li>
-                <li><Link href="/fabrani-conecta/responsabilidade-social"><a className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> Responsabilidade Social</a></Link></li>
+                <li><Link href="/fabrani-conecta/responsabilidade-social" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> Responsabilidade Social</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><AlertTriangle className="w-3 h-3" /> Denuncie - Anticorrupção</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> CPA - Avaliação</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> NAP - Psicopedagógico</a></li>
@@ -388,12 +368,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-6">
               <h3 className="font-mono text-neon-purple text-sm uppercase tracking-wider border-l-2 border-neon-purple pl-3">Educação AI-Driven</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li><Link href="/graduacao/marketing-digital"><a className="hover:text-white transition-colors">Graduação em Marketing Digital</a></Link></li>
-                <li><Link href="/graduacao/negocios-imobiliarios"><a className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</a></Link></li>
-                <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Negócios</a></Link></li>
-                <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Saúde</a></Link></li>
-                <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA Jurídico</a></Link></li>
-                <li><Link href="/cursos-gratuitos"><a className="hover:text-white transition-colors text-neon-cyan">AI Starter Pack (Grátis)</a></Link></li>
+                <li><Link href="/graduacao/marketing-digital" className="hover:text-white transition-colors">Graduação em Marketing Digital</Link></li>
+                <li><Link href="/graduacao/negocios-imobiliarios" className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</Link></li>
+                <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA para Negócios</Link></li>
+                <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA para Saúde</Link></li>
+                <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA Jurídico</Link></li>
+                <li><Link href="/cursos-gratuitos" className="hover:text-white transition-colors text-neon-cyan">AI Starter Pack (Grátis)</Link></li>
               </ul>
             </div>
 
