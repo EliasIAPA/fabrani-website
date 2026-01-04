@@ -307,7 +307,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-32">
             <div className="bg-white/5 border border-white/10 p-10 hover:border-neon-cyan/50 transition-colors group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/10 blur-[50px] rounded-full group-hover:bg-neon-cyan/20 transition-all"></div>
               <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
@@ -333,6 +333,60 @@ export default function Home() {
                 <div className="h-full bg-neon-purple w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
               </div>
             </div>
+          </div>
+
+          {/* Seção 7: Valores (ITEC) */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
+              PROTOCOLOS DE <span className="text-neon-cyan glitch-hover" data-text="CULTURA">CULTURA</span> (ITEC)
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              O código-fonte que rege nossas decisões e define quem somos.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                letter: "I",
+                title: "ALGORITMO DE INICIAÇÃO",
+                desc: "Não aguardamos o input. Executamos o futuro. Nossa proatividade é o código-fonte que antecipa tendências e reescreve o mercado antes que a demanda seja compilada.",
+                color: "text-neon-cyan",
+                border: "hover:border-neon-cyan/50"
+              },
+              {
+                letter: "T",
+                title: "CÓDIGO ABERTO",
+                desc: "Sem caixas pretas. Operamos com honestidade radical e dados visíveis. A confiança é nosso protocolo de segurança inegociável, onde cada bit de informação é compartilhado.",
+                color: "text-white",
+                border: "hover:border-white/50"
+              },
+              {
+                letter: "E",
+                title: "CONEXÃO NEURAL",
+                desc: "Mais que interface, buscamos conexão profunda. Decodificamos as necessidades humanas em um mundo digital, criando um ambiente onde a diversidade é o processador central da inovação.",
+                color: "text-neon-purple",
+                border: "hover:border-neon-purple/50"
+              },
+              {
+                letter: "C",
+                title: "INTELIGÊNCIA DE ENXAME",
+                desc: "Nenhum nó da rede é mais forte que o sistema. Unimos mentes biológicas e artificiais em uma arquitetura distribuída, onde o sucesso de um é o upgrade de todos.",
+                color: "text-neon-cyan",
+                border: "hover:border-neon-cyan/50"
+              }
+            ].map((item, i) => (
+              <div key={i} className={`bg-black border border-white/10 p-8 ${item.border} transition-all duration-300 group relative overflow-hidden`}>
+                <div className={`absolute top-0 right-0 text-9xl font-bold opacity-5 ${item.color} -mr-4 -mt-4 select-none`}>
+                  {item.letter}
+                </div>
+                <div className={`text-4xl font-bold mb-4 ${item.color} mb-6`}>{item.letter}</div>
+                <h3 className="text-lg font-bold text-white mb-4 uppercase tracking-wider">{item.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
