@@ -91,7 +91,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Link href="/graduacao/marketing-digital">Marketing Digital com Foco em IA</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/graduacao/marketing-digital">Negócios Imobiliários com Foco em IA</Link>
+                  <Link href="/graduacao/negocios-imobiliarios">Negócios Imobiliários com Foco em IA</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -179,7 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/graduacao/marketing-digital">
                   <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Marketing Digital com Foco em IA</a>
                 </Link>
-                <Link href="/graduacao/marketing-digital">
+                <Link href="/graduacao/negocios-imobiliarios">
                   <a className="text-lg text-muted-foreground hover:text-neon-cyan block">Negócios Imobiliários com Foco em IA</a>
                 </Link>
               </div>
@@ -290,7 +290,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-mono text-neon-purple text-sm uppercase tracking-wider border-l-2 border-neon-purple pl-3">Educação AI-Driven</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/graduacao/marketing-digital"><a className="hover:text-white transition-colors">Graduação em Marketing Digital</a></Link></li>
-                <li><Link href="/graduacao/marketing-digital"><a className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</a></Link></li>
+                <li><Link href="/graduacao/negocios-imobiliarios"><a className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Negócios</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA para Saúde</a></Link></li>
                 <li><Link href="/mbas"><a className="hover:text-white transition-colors">MBA IA Jurídico</a></Link></li>
