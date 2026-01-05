@@ -429,31 +429,44 @@ export default function IAParaNegociosLP() {
         </div>
       </section>
 
-      {/* SEÇÃO 5: AUTORIDADE (Coordenador e Parceiros) */}
+      {/* SEÇÃO 5: AUTORIDADE (Coordenadores e Parceiros) */}
       <section className="py-24 bg-black border-t border-white/10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto mb-24">
-            <div className="md:w-1/3">
-              <div className="relative">
-                <div className="absolute inset-0 bg-neon-purple/20 rounded-full blur-3xl"></div>
-                <img src="/images/elias-evangelista.jpg" alt="Prof. Me. Elias Evangelista" className="relative z-10 rounded-2xl border border-white/20 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Liderado por Quem Faz</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              A união da visão acadêmica inovadora com a prática de mercado de alto nível.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-24">
+            {/* Elias Evangelista */}
+            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-neon-purple/50 transition-all group">
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-8 w-48 h-48">
+                  <div className="absolute inset-0 bg-neon-purple/20 rounded-full blur-3xl group-hover:bg-neon-purple/40 transition-all"></div>
+                  <img src="/images/elias-evangelista.jpg" alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+                </div>
+                <h3 className="text-neon-purple font-bold tracking-wider uppercase mb-2 text-sm">Fundador & Reitor</h3>
+                <h2 className="text-2xl font-bold text-white mb-4">Prof. Me. Elias Evangelista</h2>
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                  Pioneiro em educação AI-Native no Brasil. Mestre em Educação e visionário por trás da metodologia FABRANI. Liderou mais de 150 projetos educacionais em 2025.
+                </p>
               </div>
             </div>
-            <div className="md:w-2/3">
-              <h3 className="text-neon-purple font-bold tracking-wider uppercase mb-2">Coordenação Acadêmica</h3>
-              <h2 className="text-4xl font-bold text-white mb-6">Prof. Me. Elias Evangelista de Souza</h2>
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Fundador da FABRANI e pioneiro em educação AI-Native no Brasil. Com mais de 150 projetos educacionais liderados apenas em 2025, Elias une a profundidade acadêmica (Mestre) com a prática agressiva de mercado.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="border-l-2 border-neon-purple pl-4">
-                  <p className="text-white font-bold">Visão de Futuro</p>
-                  <p className="text-sm text-gray-500">Criador da metodologia AI-Native</p>
+
+            {/* Carlos Eduardo Pereira */}
+            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-neon-cyan/50 transition-all group">
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-8 w-48 h-48">
+                  <div className="absolute inset-0 bg-neon-cyan/20 rounded-full blur-3xl group-hover:bg-neon-cyan/40 transition-all"></div>
+                  <img src="/images/carlos-eduardo.jpg" alt="Prof. Carlos Eduardo Pereira" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
-                <div className="border-l-2 border-neon-purple pl-4">
-                  <p className="text-white font-bold">Liderança</p>
-                  <p className="text-sm text-gray-500">Coordena o time de experts do MBA</p>
-                </div>
+                <h3 className="text-neon-cyan font-bold tracking-wider uppercase mb-2 text-sm">Coordenador do MBA</h3>
+                <h2 className="text-2xl font-bold text-white mb-4">Prof. Carlos Eduardo Pereira</h2>
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                  Consultor Independente de IA para Indústria, SaaS e Mercado Digital. Especialista em Agentes de IA e Automação. Atua em projetos na Faculdade HUB (Primo Rico), FAAP e Alura.
+                </p>
               </div>
             </div>
           </div>
