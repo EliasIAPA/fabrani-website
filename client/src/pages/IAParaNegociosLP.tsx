@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Star, ShieldCheck, Users, BarChart, Brain, Ro
 import { useState } from "react";
 import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import CountdownTimer from "@/components/CountdownTimer";
 
 export default function IAParaNegociosLP() {
   const [formData, setFormData] = useState({
@@ -42,8 +43,13 @@ export default function IAParaNegociosLP() {
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
       
-      {/* Navbar Simplificada */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 py-4 transition-all duration-300">
+      {/* Contador de Urgência (Fixed Top) */}
+      <div className="fixed top-0 left-0 right-0 z-[60]">
+        <CountdownTimer />
+      </div>
+
+      {/* Navbar Simplificada (Ajustada para não sobrepor o contador) */}
+      <header className="fixed top-[52px] sm:top-[60px] left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 py-4 transition-all duration-300">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/">
             <img src="/images/logo-fabrani.png" alt="FABRANI" className="h-8 md:h-10 w-auto object-contain cursor-pointer" />
@@ -73,7 +79,7 @@ export default function IAParaNegociosLP() {
       </div>
 
       {/* SEÇÃO 1: HERO SECTION (Expandida) */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-48 pb-20 md:pt-64 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10"></div>
