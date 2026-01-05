@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMobileConectaOpen, setIsMobileConectaOpen] = useState(false);
   const [location] = useLocation();
 
-  // SEO: Canonical Tag Injection
+  // SEO: Canonical Tag Injection & Schema Markup
   useEffect(() => {
     const canonicalUrl = `https://fabrani.com.br${location === '/' ? '' : location}`;
     let link = document.querySelector("link[rel='canonical']");
@@ -29,6 +29,86 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       document.head.appendChild(link);
     }
     link.setAttribute('href', canonicalUrl);
+
+    // Open Graph Tags Injection
+    const ogTags = {
+      'og:title': 'FABRANI - Faculdade 100% IA',
+      'og:description': 'A primeira faculdade 100% focada em Inteligência Artificial do Brasil. MBAs e Graduações AI-Native.',
+      'og:image': 'https://fabrani.com.br/images/og-image.jpg',
+      'og:url': canonicalUrl,
+      'og:type': 'website',
+      'og:site_name': 'FABRANI',
+      'og:locale': 'pt_BR'
+    };
+
+    Object.entries(ogTags).forEach(([property, content]) => {
+      let meta = document.querySelector(`meta[property='${property}']`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    });
+
+    // Schema Markup Injection
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://fabrani.com.br/#organization",
+          "name": "FABRANI - Faculdade Brasileira de Negócios Inovadores",
+          "url": "https://fabrani.com.br",
+          "logo": "https://fabrani.com.br/images/logo-fabrani.png",
+          "sameAs": [
+            "https://www.instagram.com/fabranioficial",
+            "https://www.linkedin.com/school/fabrani",
+            "https://www.facebook.com/fabranioficial"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Rui Barbosa, 1555",
+            "addressLocality": "Jaboticabal",
+            "addressRegion": "SP",
+            "postalCode": "14870-300",
+            "addressCountry": "BR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-16-99711-7597",
+            "contactType": "customer service",
+            "areaServed": "BR",
+            "availableLanguage": "Portuguese"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Elias Evangelista de Souza",
+            "jobTitle": "Fundador e Especialista em IA",
+            "url": "https://fabrani.com.br/sobre"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://fabrani.com.br/#website",
+          "url": "https://fabrani.com.br",
+          "name": "FABRANI",
+          "description": "A primeira faculdade 100% focada em Inteligência Artificial do Brasil.",
+          "publisher": {
+            "@id": "https://fabrani.com.br/#organization"
+          }
+        }
+      ]
+    };
+
+    let script = document.querySelector("script[type='application/ld+json']");
+    if (!script) {
+      script = document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schemaData);
+
   }, [location]);
 
   useEffect(() => {

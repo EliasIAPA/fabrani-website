@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Search, Filter, Building2, Briefcase, GraduationCap, Heart, Scale, Cpu, X } from "lucide-react";
-import partnersData from "../data/partners.json";
+import partnersData from "@/data/partners.json";
 
 // Mapeamento de categorias para ícones e labels
 const categories = [
