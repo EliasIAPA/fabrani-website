@@ -131,6 +131,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: "Hub de Insights", path: "/hub-insights" },
   ];
 
+  // Se estiver na Landing Page, renderiza apenas o conteúdo sem o layout padrão
+  if (location === "/lp/mba-ia-negocios") {
+    return (
+      <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+        {children}
+        <FloatingWhatsApp />
+        <CookieConsent />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
       {/* Grid Background Effect */}
