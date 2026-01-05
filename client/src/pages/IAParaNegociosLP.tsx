@@ -471,8 +471,51 @@ export default function IAParaNegociosLP() {
             </div>
           </div>
 
-          {/* Parceiros */}
-          <div className="text-center border-t border-white/10 pt-16">
+        </div>
+      </section>
+
+      {/* SEÇÃO: FABRANI NA MÍDIA */}
+      <section className="py-24 bg-zinc-900/30 border-t border-white/10">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-8">
+            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+            <span className="text-red-400 text-xs font-bold tracking-wider uppercase">Destaque na Imprensa</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            IA para Negócios em <span className="text-neon-purple">2026</span>
+          </h2>
+          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+            Confira a entrevista exclusiva ao SBT/TV Thathi sobre como a Inteligência Artificial está redefinindo o mercado este ano.
+          </p>
+          
+          <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black">
+            <div className="aspect-video w-full">
+              <iframe 
+                className="w-full h-full" 
+                src="https://www.youtube.com/embed/wm3tGKLWjfI" 
+                title="Entrevista SBT/TV Thathi - IA para Negócios"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="bg-zinc-900 p-6 text-left flex flex-col md:flex-row justify-between items-center gap-4">
+              <div>
+                <p className="text-neon-cyan font-bold text-sm tracking-wider mb-1">SBT / TV THATHI • 29/01/2026</p>
+                <p className="text-white font-medium text-lg">O Impacto da IA nos Negócios e Carreiras</p>
+              </div>
+              <a href="https://www.youtube.com/watch?v=wm3tGKLWjfI" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white text-sm font-medium transition-colors border border-white/10 flex items-center gap-2">
+                Assistir no YouTube <span className="text-red-500">▶</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO: PARCEIROS (Continuação da anterior ou nova seção) */}
+      <section className="py-16 bg-black border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
             <p className="text-gray-500 uppercase tracking-widest mb-10 text-sm">Parceiros Estratégicos e Impacto</p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="text-center">
