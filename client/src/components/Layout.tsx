@@ -278,9 +278,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/fabrani-conecta/cpa" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   CPA
                 </Link>
-                <Link href="/fabrani-conecta/nde" className="text-lg text-muted-foreground hover:text-neon-cyan block">
-                  NDE
-                </Link>
+
                 <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-neon-cyan block">
                   NAP
                 </Link>
@@ -381,7 +379,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><AlertTriangle className="w-3 h-3" /> Denuncie - Anticorrupção</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> CPA - Avaliação</a></li>
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-3 h-3" /> NAP - Psicopedagógico</a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><BookOpen className="w-3 h-3" /> NDE - Docente Estruturante</a></li>
+
                 <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Users className="w-3 h-3" /> CAT - Conselho Adm.</a></li>
               </ul>
             </div>
