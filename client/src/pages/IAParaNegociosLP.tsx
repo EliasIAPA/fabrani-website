@@ -133,9 +133,9 @@ export default function IAParaNegociosLP() {
               <div className="text-xs text-gray-500 uppercase tracking-widest">Alunos Impactados</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">Nota Máxima</div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest">no MEC *</div>
-              <p className="text-[10px] text-gray-500 mt-1 max-w-[140px] leading-tight font-medium">(consulte o MEC para Curso de Negócio Imobiliário)</p>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-1 leading-none">NOTA MÁXIMA</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-1 leading-none">NO MEC *</div>
+              <p className="text-[10px] text-gray-500 mt-2 max-w-[140px] leading-tight font-medium">(consulte o MEC para Curso de Negócio Imobiliário)</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-1">100%</div>
