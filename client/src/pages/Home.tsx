@@ -54,7 +54,19 @@ export default function Home() {
 
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 relative inline-block group">
+              <span className="absolute -inset-1 bg-neon-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              FABRANI
+              <span className="absolute top-0 left-0 -ml-1 text-neon-cyan opacity-0 group-hover:opacity-70 animate-glitch-1">FABRANI</span>
+              <span className="absolute top-0 left-0 ml-1 text-neon-purple opacity-0 group-hover:opacity-70 animate-glitch-2">FABRANI</span>
+            </h2>
+            <p className="text-sm md:text-lg text-neon-cyan font-mono tracking-[0.2em] uppercase mt-2 border-t border-neon-cyan/30 pt-4 inline-block">
+              Faculdade Brasileira de Negócios Inovadores
+            </p>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-cyan"></span>
