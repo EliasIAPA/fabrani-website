@@ -151,9 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
                   <Link href="/fabrani-conecta/cpa">CPA</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
-                  <Link href="/fabrani-conecta/nde">NDE</Link>
-                </DropdownMenuItem>
+
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
                   <Link href="/fabrani-conecta/nap">NAP</Link>
                 </DropdownMenuItem>
