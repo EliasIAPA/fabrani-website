@@ -4,10 +4,16 @@ import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock
 import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-0">
+      <SEO 
+        title="Faculdade Brasileira de Negócios Inovadores | 100% IA"
+        description="A FABRANI é a primeira faculdade 100% focada em Inteligência Artificial do Brasil. Graduações, MBAs e cursos gratuitos para formar líderes do futuro digital."
+        keywords="Faculdade IA, Inteligência Artificial, Graduação Marketing Digital, MBA Executivo, Cursos Gratuitos IA, FABRANI, Negócios Inovadores"
+      />
       {/* Seção 1: Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Video/Image Placeholder */}

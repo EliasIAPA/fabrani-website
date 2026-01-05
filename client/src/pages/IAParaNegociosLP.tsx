@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CountdownTimer from "@/components/CountdownTimer";
+import { SEO } from "@/components/SEO";
 
 export default function IAParaNegociosLP() {
   const [formData, setFormData] = useState({
@@ -42,6 +43,11 @@ export default function IAParaNegociosLP() {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+      <SEO 
+        title="MBA em IA para Negócios | A Revolução da Gestão"
+        description="Domine a Inteligência Artificial e transforme sua carreira. O MBA Executivo da FABRANI ensina como aplicar IA em Vendas, Marketing, RH e Finanças."
+        keywords="MBA IA, Inteligência Artificial para Negócios, Gestão com IA, Curso IA Executivo, FABRANI MBA, IA para Vendas, Automação de Negócios"
+      />
       
       {/* Contador de Urgência (Fixed Top) */}
       <div className="fixed top-0 left-0 right-0 z-[60]">
