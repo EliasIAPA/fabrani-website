@@ -24,6 +24,7 @@ import TermosDeUso from "@/pages/TermosDeUso";
 import Parceiros from "@/pages/Parceiros";
 import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
+import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
 
 function Router() {
   return (
@@ -40,6 +41,7 @@ function Router() {
         <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
         <Route path={"/cursos-gratuitos"} component={FabraniIAPlus} />
         <Route path="/ia-para-negocios" component={IAParaNegocios} />
+      <Route path="/lp/mba-ia-negocios" component={IAParaNegociosLP} />
         <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
         <Route path="/pesquisa/pivic" component={PIVIC} />
