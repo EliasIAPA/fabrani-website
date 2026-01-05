@@ -445,12 +445,12 @@ export default function IAParaNegociosLP() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-8 w-48 h-48">
                   <div className="absolute inset-0 bg-neon-purple/20 rounded-full blur-3xl group-hover:bg-neon-purple/40 transition-all"></div>
-                  <img src="/images/elias-evangelista.jpg" alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <img src="/images/elias-evangelista-new.png" alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <h3 className="text-neon-purple font-bold tracking-wider uppercase mb-2 text-sm">Fundador & Reitor</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Me. Elias Evangelista</h2>
                 <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                  Pioneiro em educação AI-Native no Brasil. Mestre em Educação e visionário por trás da metodologia FABRANI. Liderou mais de 150 projetos educacionais em 2025.
+                  Possui mestrado e é Advogado, Contabilista. Atua com tecnologia, educação e mercado digital há 20 anos. Nos últimos 4 anos se dedica à implantação de projetos de educação e IA para empresas.
                 </p>
               </div>
             </div>
