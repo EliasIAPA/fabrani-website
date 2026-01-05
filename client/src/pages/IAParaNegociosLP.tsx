@@ -208,6 +208,81 @@ export default function IAParaNegociosLP() {
         </div>
       </section>
 
+      {/* SEÇÃO NOVA: A REVOLUÇÃO DA IA (6 Pilares + Gráfico Financeiro) */}
+      <section className="py-24 bg-black relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            <Badge variant="outline" className="border-neon-cyan/50 text-neon-cyan bg-neon-cyan/10 mb-4 px-4 py-1">O NOVO SISTEMA OPERACIONAL</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
+              IA Não é Apenas uma Ferramenta. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">É o Motor que Multiplica Resultados.</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Dominar a Inteligência Artificial muda tudo. Não se trata de pequenos ajustes, mas de reescrever como cada departamento da sua empresa opera para atingir eficiência máxima.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="order-2 lg:order-1">
+              <img 
+                src="/images/ai-business-pillars.png" 
+                alt="6 Pilares de Negócios Conectados pela IA" 
+                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(0,240,255,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+            <div className="order-1 lg:order-2 space-y-8">
+              <h3 className="text-3xl font-bold text-white">Integração Total: <span className="text-neon-cyan">6 Áreas, 1 Cérebro</span></h3>
+              <div className="space-y-6">
+                {[
+                  { title: "RH & Gestão de Talentos", desc: "Recrutamento preditivo e análise de performance em tempo real." },
+                  { title: "Finanças & Controladoria", desc: "Previsão de fluxo de caixa e detecção de anomalias com precisão cirúrgica." },
+                  { title: "Marketing de Hiperpersonalização", desc: "Campanhas que falam com cada cliente individualmente, em escala." },
+                  { title: "Vendas & CRM Inteligente", desc: "Scoring de leads automático e scripts de vendas gerados por IA." },
+                  { title: "Processos & Automação", desc: "Fluxos de trabalho que rodam sozinhos, eliminando erro humano." },
+                  { title: "Visão de Concorrência", desc: "Monitoramento 24/7 do mercado para antecipar movimentos rivais." }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple font-bold shrink-0 mt-1">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">{item.title}</h4>
+                      <p className="text-gray-400 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-white">O Salto Exponencial: <span className="text-neon-purple">Linear vs. AI-Driven</span></h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Empresas tradicionais crescem de forma linear: para dobrar o resultado, precisam dobrar a equipe e os custos. 
+                <strong className="text-white block mt-4">Empresas AI-Native quebram essa regra.</strong>
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Com IA, o custo marginal de escala tende a zero. Você atende 10 ou 10.000 clientes com a mesma eficiência. 
+                O gráfico ao lado não é uma promessa vazia, é a realidade matemática da nova economia.
+              </p>
+              <div className="p-6 bg-zinc-900/50 border border-neon-cyan/20 rounded-xl">
+                <p className="text-neon-cyan font-bold text-xl mb-2">ROI Comprovado</p>
+                <p className="text-gray-400">Alunos do MBA relatam aumento de produtividade de até 400% nos primeiros 3 meses de implementação.</p>
+              </div>
+            </div>
+            <div>
+              <img 
+                src="/images/financial-growth-chart.png" 
+                alt="Gráfico de Crescimento Exponencial com IA" 
+                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEÇÃO 3: SOLUTION SECTION (Apresentação da Oferta Única) */}
       <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-neon-purple/10 blur-[100px]"></div>
