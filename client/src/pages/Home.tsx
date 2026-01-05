@@ -76,7 +76,7 @@ export default function Home() {
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
             O MUNDO FOI <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">REESCRITO.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">REESCRITO PELA IA.</span>
           </h1>
 
           {/* Versão Mobile do Destaque MEC (Reposicionado para após o título) */}
@@ -108,7 +108,7 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-neon-cyan/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-            A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes de IA</strong> com apoio da ciência e educação reconhecida pelo MEC e a velocidade do Vale do Silício.
+            A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes de IA</strong> com MBAs e Graduações focadas em <strong>IA para Negócios</strong> e <strong>Vendas</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600">

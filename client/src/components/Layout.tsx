@@ -19,6 +19,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMobileConectaOpen, setIsMobileConectaOpen] = useState(false);
   const [location] = useLocation();
 
+  // SEO: Canonical Tag Injection
+  useEffect(() => {
+    const canonicalUrl = `https://fabrani.com.br${location === '/' ? '' : location}`;
+    let link = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', canonicalUrl);
+  }, [location]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
