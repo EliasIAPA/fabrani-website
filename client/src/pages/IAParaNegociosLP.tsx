@@ -465,7 +465,7 @@ export default function IAParaNegociosLP() {
                 <h3 className="text-neon-cyan font-bold tracking-wider uppercase mb-2 text-sm">Coordenador do MBA</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Carlos Eduardo Pereira</h2>
                 <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                  Consultor Independente de IA para Indústria, SaaS e Mercado Digital. Especialista em Agentes de IA e Automação. Atua em projetos na Faculdade HUB (Primo Rico), FAAP e Alura.
+                  Doutorando em IA pela Mackenzie. Consultor Independente de IA para Indústria, SaaS e Mercado Digital. Especialista em Agentes de IA e Automação. Atua em projetos na Faculdade HUB (Primo Rico), FAAP e Alura.
                 </p>
               </div>
             </div>
