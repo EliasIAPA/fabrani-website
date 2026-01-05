@@ -99,6 +99,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 )}></span>
             </Link>
 
+            <Link href="/ia-para-negocios" className={cn(
+                "text-sm font-bold transition-all duration-300 relative group py-1 px-3 border border-neon-purple/50 rounded hover:bg-neon-purple/10 hover:border-neon-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]",
+                location === "/ia-para-negocios" ? "text-neon-purple border-neon-purple bg-neon-purple/10" : "text-white"
+              )}>
+                IA PARA NEGÓCIOS
+            </Link>
+
             <Link href="/cursos-gratuitos" className={cn(
                 "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
                 location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
@@ -233,6 +240,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/mbas" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
               MBAs de Aplicação
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+          </Link>
+
+          <Link href="/ia-para-negocios" className="text-2xl font-bold text-neon-purple hover:text-white flex items-center justify-between group border-b border-white/5 pb-4">
+              IA PARA NEGÓCIOS
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-purple" />
           </Link>
 
           <Link href="/cursos-gratuitos" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
