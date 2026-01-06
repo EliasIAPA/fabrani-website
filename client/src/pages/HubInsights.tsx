@@ -1,12 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket } from "lucide-react";
+import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { insights } from "@/data/insights";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import BrevoForm from "@/components/BrevoForm";
 
 export default function HubInsights() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
+  const handleDownloadSuccess = () => {
+    // Iniciar download após sucesso
+    const link = document.createElement('a');
+    link.href = "/downloads/guia-prompts-2026.pdf";
+    link.download = "Guia-Prompts-2026-FABRANI.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Fechar modal após delay
+    setTimeout(() => setIsDownloadModalOpen(false), 2000);
+  };
 
   const categories = [
     "Todos", "Marketing", "Vendas", "RH", "Atendimento", "Processos", "Produtos"
@@ -125,11 +141,12 @@ export default function HubInsights() {
                 Domine a engenharia de prompts com nosso guia exclusivo. Aprenda a extrair o máximo dos LLMs mais avançados do mercado.
               </p>
               
-              <a href="/downloads/guia-prompts-2026.pdf" download className="w-full">
-                <Button className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all">
-                  BAIXAR PDF AGORA
-                </Button>
-              </a>
+              <Button 
+                onClick={() => setIsDownloadModalOpen(true)}
+                className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all"
+              >
+                BAIXAR PDF AGORA
+              </Button>
             </div>
           </div>
 
@@ -184,6 +201,27 @@ export default function HubInsights() {
           ))}
         </div>
       </section>
+
+      {/* Modal de Download */}
+      <Dialog open={isDownloadModalOpen} onOpenChange={setIsDownloadModalOpen}>
+        <DialogContent className="bg-zinc-950 border-neon-cyan/20 text-white sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center mb-2">
+              Desbloquear Guia de Prompts
+            </DialogTitle>
+            <DialogDescription className="text-center text-gray-400">
+              Preencha seus dados para liberar o download imediato do material exclusivo.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="mt-4">
+            <BrevoForm 
+              buttonText="Liberar Download" 
+              onSuccess={handleDownloadSuccess}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Seção Bloqueada (Lead Magnet) */}
       <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
