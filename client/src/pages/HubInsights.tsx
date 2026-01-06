@@ -106,6 +106,33 @@ export default function HubInsights() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card de Download do Guia de Prompts 2026 */}
+          <div className="group relative bg-gradient-to-br from-zinc-900 to-black border border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer h-full flex flex-col shadow-[0_0_20px_rgba(0,217,255,0.1)] hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]">
+            <div className="relative h-48 overflow-hidden shrink-0 bg-zinc-900 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+              <div className="relative z-20 flex flex-col items-center gap-2">
+                <Download className="w-12 h-12 text-neon-cyan animate-bounce" />
+                <Badge className="bg-neon-cyan text-black font-bold border-none">NOVO</Badge>
+              </div>
+            </div>
+            
+            <div className="p-8 relative z-20 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-neon-cyan transition-colors leading-tight">
+                Guia de Prompts 2026
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                Domine a engenharia de prompts com nosso guia exclusivo. Aprenda a extrair o máximo dos LLMs mais avançados do mercado.
+              </p>
+              
+              <a href="/downloads/guia-prompts-2026.pdf" download className="w-full">
+                <Button className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all">
+                  BAIXAR PDF AGORA
+                </Button>
+              </a>
+            </div>
+          </div>
+
           {filteredInsights.map((insight) => (
             <Link key={insight.id} href={`/hub-insights/${insight.id}`}>
               <div className="group relative bg-zinc-900/50 border border-white/5 hover:border-white/20 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer h-full flex flex-col">
