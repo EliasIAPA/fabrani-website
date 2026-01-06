@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket } from "lucide-react";
+import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { insights } from "@/data/insights";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function HubInsights() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
 
   const categories = [
     "Todos", "Marketing", "Vendas", "RH", "Atendimento", "Processos", "Produtos"
@@ -125,18 +127,12 @@ export default function HubInsights() {
                 Domine a engenharia de prompts com nosso guia exclusivo. Aprenda a extrair o máximo dos LLMs mais avançados do mercado.
               </p>
               
-              <a 
-                href="https://18a0dd9e.sibforms.com/serve/MUIFACBW_dgbNDoGOU-vfvkfZOYVg_6wpg1-KIdwke0UEQ17HZNJ5AGGtNPxb0rlXyyIdkjkol5JznmWGQK32fWvemsLXbY3Mp4bKzFog61pn89WaFzmBsMkq5ulLqRSTTrkG1OyTfKbe82ngnc7t_FWz1m4qXNHQCgfnJ2FQp4fZpoqey4xtuQp0NI3RkabW3T9yLRbasyRj01E"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
+              <Button 
+                onClick={() => setIsFormModalOpen(true)}
+                className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all"
               >
-                <Button 
-                  className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all"
-                >
-                  BAIXAR PDF AGORA
-                </Button>
-              </a>
+                BAIXAR PDF AGORA
+              </Button>
             </div>
           </div>
 
@@ -221,6 +217,42 @@ export default function HubInsights() {
           </p>
         </div>
       </section>
+
+      {/* Modal com Formulário Brevo Embutido */}
+      <Dialog open={isFormModalOpen} onOpenChange={setIsFormModalOpen}>
+        <DialogContent className="bg-zinc-950 border-neon-cyan/30 text-white max-w-2xl p-0 overflow-hidden">
+          <div className="relative">
+            <button
+              onClick={() => setIsFormModalOpen(false)}
+              className="absolute top-4 right-4 z-50 bg-black/80 hover:bg-black rounded-full p-2 transition-colors"
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
+            
+            <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 p-6 border-b border-white/10">
+              <h2 className="text-2xl font-bold text-center mb-2">
+                Baixe o Guia de Prompts 2026
+              </h2>
+              <p className="text-center text-gray-400 text-sm">
+                Preencha o formulário abaixo para receber o material exclusivo
+              </p>
+            </div>
+            
+            <div className="bg-white">
+              <iframe
+                src="https://18a0dd9e.sibforms.com/serve/MUIFACBW_dgbNDoGOU-vfvkfZOYVg_6wpg1-KIdwke0UEQ17HZNJ5AGGtNPxb0rlXyyIdkjkol5JznmWGQK32fWvemsLXbY3Mp4bKzFog61pn89WaFzmBsMkq5ulLqRSTTrkG1OyTfKbe82ngnc7t_FWz1m4qXNHQCgfnJ2FQp4fZpoqey4xtuQp0NI3RkabW3T9yLRbasyRj01E"
+                width="100%"
+                height="450"
+                frameBorder="0"
+                scrolling="auto"
+                allowFullScreen
+                style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }}
+                title="Formulário de Download - Guia de Prompts 2026"
+              />
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

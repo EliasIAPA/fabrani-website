@@ -18,3 +18,11 @@
 - [ ] Criar listas segmentadas na Brevo
 - [ ] Automação de e-mail de boas-vindas
 - [ ] Dashboard de conversão de leads
+
+## Bugs
+- [x] Botão "BAIXAR PDF AGORA" não está redirecionando para o formulário Brevo (resolvido: link funciona)
+
+## In Progress
+
+## Recently Completed
+- [x] Incorporar formulário Brevo como iframe em modal ao invés de redirecionar
