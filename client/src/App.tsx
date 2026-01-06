@@ -25,8 +25,8 @@ import Parceiros from "@/pages/Parceiros";
 import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Layout>
       <Switch>
