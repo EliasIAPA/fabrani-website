@@ -29,3 +29,8 @@
 
 ## Critical Bugs
 - [x] Botão "BAIXAR RELATÓRIO COMPLETO" no hero está redirecionando para WhatsApp ao invés de abrir modal Brevo (RESOLVIDO)
+
+## In Progress
+
+## Recently Completed
+- [x] Incorporar formulário Brevo diretamente na página (sem modal) em seção dedicada

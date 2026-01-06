@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket, X } from "lucide-react";
+import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSign, Zap, BarChart, ShieldCheck, Rocket } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { insights } from "@/data/insights";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function HubInsights() {
   const [activeCategory, setActiveCategory] = useState("Todos");
-  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
 
   const categories = [
     "Todos", "Marketing", "Vendas", "RH", "Atendimento", "Processos", "Produtos"
@@ -55,7 +53,7 @@ export default function HubInsights() {
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
                 size="lg" 
-                onClick={() => setIsFormModalOpen(true)}
+                onClick={() => document.getElementById('download-guia')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3 cursor-pointer"
               >
                 <Download className="w-6 h-6" /> BAIXAR RELATÓRIO COMPLETO
@@ -65,6 +63,59 @@ export default function HubInsights() {
                   <Play className="w-6 h-6 fill-current" /> ASSISTIR MASTERCLASS
                 </Button>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Download com Formulário Brevo */}
+      <section id="download-guia" className="py-20 bg-gradient-to-br from-zinc-950 via-black to-zinc-950 border-y border-neon-cyan/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30 mb-4 text-sm font-bold px-4 py-1">
+                MATERIAL EXCLUSIVO
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                BAIXE O GUIA:<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">
+                  50 Prompts de Ouro para Executivos
+                </span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Economize 20h da sua semana. Uma curadoria exclusiva dos comandos mais poderosos para liderança, estratégia e produtividade.
+              </p>
+            </div>
+
+            <div className="bg-zinc-900/50 backdrop-blur-md border border-neon-cyan/20 rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,217,255,0.1)]">
+              <iframe
+                src="https://18a0dd9e.sibforms.com/serve/MUIFACBW_dgbNDoGOU-vfvkfZOYVg_6wpg1-KIdwke0UEQ17HZNJ5AGGtNPxb0rlXyyIdkjkol5JznmWGQK32fWvemsLXbY3Mp4bKzFog61pn89WaFzmBsMkq5ulLqRSTTrkG1OyTfKbe82ngnc7t_FWz1m4qXNHQCgfnJ2FQp4fZpoqey4xtuQp0NI3RkabW3T9yLRbasyRj01E"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                scrolling="no"
+                style={{ display: 'block', margin: '0 auto', maxWidth: '100%', borderRadius: '12px' }}
+                title="Formulário de Download - Guia de Prompts 2026"
+              />
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-neon-cyan" />
+                <span>100% Gratuito</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Download className="w-4 h-4 text-neon-cyan" />
+                <span>Download Instantâneo</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="w-4 h-4 text-neon-cyan" />
+                <span>Dados Protegidos</span>
+              </div>
             </div>
           </div>
         </div>
@@ -130,7 +181,7 @@ export default function HubInsights() {
               </p>
               
               <Button 
-                onClick={() => setIsFormModalOpen(true)}
+                onClick={() => document.getElementById('download-guia')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all"
               >
                 BAIXAR PDF AGORA
@@ -219,42 +270,6 @@ export default function HubInsights() {
           </p>
         </div>
       </section>
-
-      {/* Modal com Formulário Brevo Embutido */}
-      <Dialog open={isFormModalOpen} onOpenChange={setIsFormModalOpen}>
-        <DialogContent className="bg-zinc-950 border-neon-cyan/30 text-white max-w-2xl p-0 overflow-hidden">
-          <div className="relative">
-            <button
-              onClick={() => setIsFormModalOpen(false)}
-              className="absolute top-4 right-4 z-50 bg-black/80 hover:bg-black rounded-full p-2 transition-colors"
-            >
-              <X className="w-5 h-5 text-white" />
-            </button>
-            
-            <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 p-6 border-b border-white/10">
-              <h2 className="text-2xl font-bold text-center mb-2">
-                Baixe Materiais Exclusivos FABRANI
-              </h2>
-              <p className="text-center text-gray-400 text-sm">
-                Preencha o formulário abaixo para receber conteúdos premium sobre IA
-              </p>
-            </div>
-            
-            <div className="bg-white">
-              <iframe
-                src="https://18a0dd9e.sibforms.com/serve/MUIFACBW_dgbNDoGOU-vfvkfZOYVg_6wpg1-KIdwke0UEQ17HZNJ5AGGtNPxb0rlXyyIdkjkol5JznmWGQK32fWvemsLXbY3Mp4bKzFog61pn89WaFzmBsMkq5ulLqRSTTrkG1OyTfKbe82ngnc7t_FWz1m4qXNHQCgfnJ2FQp4fZpoqey4xtuQp0NI3RkabW3T9yLRbasyRj01E"
-                width="100%"
-                height="450"
-                frameBorder="0"
-                scrolling="auto"
-                allowFullScreen
-                style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }}
-                title="Formulário de Download - Guia de Prompts 2026"
-              />
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
