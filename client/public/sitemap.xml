@@ -49,30 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fabrani.com.br/blog</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabrani.com.br/blog/ia-generativa-nos-negocios-2026</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fabrani.com.br/blog/agentes-autonomos-revolucao</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fabrani.com.br/blog/futuro-educacao-personalizada</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://fabrani.com.br/manifesto</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>

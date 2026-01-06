@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, AlertTriangle, Users, BookOpen, GraduationCap, ChevronDown, FileText } from "lucide-react";
 import { useState, useEffect } from "react";
-import FloatingWhatsApp from './FloatingWhatsApp';
+// import FloatingWhatsApp from './FloatingWhatsApp';
 import CookieConsent from './CookieConsent';
 import {
   DropdownMenu,
@@ -129,7 +129,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: "MBAs de Aplicação", path: "/mbas" },
     { name: "AI Starter Pack", path: "/cursos-gratuitos" },
     { name: "Hub de Insights", path: "/hub-insights" },
-    { name: "Blog", path: "/blog" },
   ];
 
   // Se estiver na Landing Page, renderiza apenas o conteúdo sem o layout padrão
@@ -137,7 +136,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
         {children}
-        <FloatingWhatsApp />
+        {/* <FloatingWhatsApp /> */}
         <CookieConsent />
       </div>
     );
@@ -229,17 +228,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className={cn(
                   "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/hub-insights" && "scale-x-100"
-                )}></span>
-            </Link>
-
-            <Link href="/blog" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
-                location.startsWith("/blog") ? "text-neon-cyan" : "text-muted-foreground"
-              )}>
-                Blog
-                <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
-                  location.startsWith("/blog") && "scale-x-100"
                 )}></span>
             </Link>
 
@@ -558,7 +546,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
-      <FloatingWhatsApp />
+      {/* <FloatingWhatsApp /> */}
       <CookieConsent />
     </div>
   );

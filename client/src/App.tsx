@@ -25,8 +25,6 @@ import Parceiros from "@/pages/Parceiros";
 import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
 
 function Router() {
   return (
@@ -46,8 +44,6 @@ function Router() {
       <Route path="/lp/mba-ia-negocios" component={IAParaNegociosLP} />
         <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/pesquisa/pivic" component={PIVIC} />
         <Route path="/trabalhe-conosco" component={TrabalheConosco} />
         <Route path="/politica-cookies" component={PoliticaCookies} />
