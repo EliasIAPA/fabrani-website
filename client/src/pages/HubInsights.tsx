@@ -53,11 +53,13 @@ export default function HubInsights() {
               Enquanto seus concorrentes discutem "se vale a pena", empresas ágeis já estão usando IA para multiplicar lucros por 5x. Descubra as 48 aplicações que estão reescrevendo as regras do jogo.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3">
-                  <Download className="w-6 h-6" /> BAIXAR RELATÓRIO COMPLETO
-                </Button>
-              </a>
+              <Button 
+                size="lg" 
+                onClick={() => setIsFormModalOpen(true)}
+                className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3 cursor-pointer"
+              >
+                <Download className="w-6 h-6" /> BAIXAR RELATÓRIO COMPLETO
+              </Button>
               <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3">
                   <Play className="w-6 h-6 fill-current" /> ASSISTIR MASTERCLASS
@@ -231,10 +233,10 @@ export default function HubInsights() {
             
             <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 p-6 border-b border-white/10">
               <h2 className="text-2xl font-bold text-center mb-2">
-                Baixe o Guia de Prompts 2026
+                Baixe Materiais Exclusivos FABRANI
               </h2>
               <p className="text-center text-gray-400 text-sm">
-                Preencha o formulário abaixo para receber o material exclusivo
+                Preencha o formulário abaixo para receber conteúdos premium sobre IA
               </p>
             </div>
             

@@ -26,3 +26,6 @@
 
 ## Recently Completed
 - [x] Incorporar formulário Brevo como iframe em modal ao invés de redirecionar
+
+## Critical Bugs
+- [x] Botão "BAIXAR RELATÓRIO COMPLETO" no hero está redirecionando para WhatsApp ao invés de abrir modal Brevo (RESOLVIDO)
