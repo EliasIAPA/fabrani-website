@@ -34,3 +34,8 @@
 
 ## Recently Completed
 - [x] Incorporar formulário Brevo diretamente na página (sem modal) em seção dedicada
+
+## In Progress
+
+## Recently Completed
+- [x] Substituir iframe bloqueado por formulário nativo integrado com API Brevo

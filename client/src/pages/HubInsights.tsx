@@ -4,6 +4,7 @@ import { Play, Download, Lock, ChevronRight, Search, TrendingUp, Users, DollarSi
 import { useState } from "react";
 import { Link } from "wouter";
 import { insights } from "@/data/insights";
+import BrevoDownloadForm from "@/components/BrevoDownloadForm";
 
 export default function HubInsights() {
   const [activeCategory, setActiveCategory] = useState("Todos");
@@ -92,15 +93,7 @@ export default function HubInsights() {
             </div>
 
             <div className="bg-zinc-900/50 backdrop-blur-md border border-neon-cyan/20 rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,217,255,0.1)]">
-              <iframe
-                src="https://18a0dd9e.sibforms.com/serve/MUIFACBW_dgbNDoGOU-vfvkfZOYVg_6wpg1-KIdwke0UEQ17HZNJ5AGGtNPxb0rlXyyIdkjkol5JznmWGQK32fWvemsLXbY3Mp4bKzFog61pn89WaFzmBsMkq5ulLqRSTTrkG1OyTfKbe82ngnc7t_FWz1m4qXNHQCgfnJ2FQp4fZpoqey4xtuQp0NI3RkabW3T9yLRbasyRj01E"
-                width="100%"
-                height="400"
-                frameBorder="0"
-                scrolling="no"
-                style={{ display: 'block', margin: '0 auto', maxWidth: '100%', borderRadius: '12px' }}
-                title="Formulário de Download - Guia de Prompts 2026"
-              />
+              <BrevoDownloadForm />
             </div>
 
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-500">
