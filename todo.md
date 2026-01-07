@@ -39,3 +39,8 @@
 
 ## Recently Completed
 - [x] Substituir iframe bloqueado por formulário nativo integrado com API Brevo
+
+## In Progress
+
+## Recently Completed
+- [x] Remover todos os links de WhatsApp dos botões do site

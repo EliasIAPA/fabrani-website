@@ -204,16 +204,8 @@ export default function CPA() {
             Os ciclos avaliativos ocorrem semestralmente. Fique atento aos comunicados e participe!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold px-8 py-6">
-                ACESSAR QUESTIONÁRIO ATUAL
-              </Button>
-            </a>
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-white/20 hover:bg-white/5 px-8 py-6">
-                VER ÚLTIMO RELATÓRIO
-              </Button>
-            </a>
+            
+            
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 text-left">

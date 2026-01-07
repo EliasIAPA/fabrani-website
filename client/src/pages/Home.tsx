@@ -123,14 +123,6 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600">
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none w-full sm:w-auto shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all transform hover:-translate-y-1"
-              >
-                INICIAR MINHA EVOLUÇÃO <ArrowRight className="ml-2 w-6 h-6" />
-              </Button>
-            </a>
           </div>
         </div>
 
@@ -310,14 +302,7 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="flex-shrink-0">
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-bold text-lg px-10 py-8 rounded-none shadow-lg flex items-center gap-3">
-                <Download className="w-6 h-6" />
-                BAIXAR AGORA
-              </Button>
-            </a>
-              </div>
+
             </div>
           </div>
         </div>

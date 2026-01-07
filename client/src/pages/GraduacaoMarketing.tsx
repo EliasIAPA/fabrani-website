@@ -29,18 +29,7 @@ export default function GraduacaoMarketing() {
             <p className="text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
               A graduação que une formação superior formal + prática com grandes players — agora com <strong className="text-white">IA como sistema operacional.</strong>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-8 rounded-none shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-                  INICIAR INSCRIÇÃO — VESTIBULAR 2026 <ArrowRight className="ml-2 w-6 h-6" />
-                </Button>
-              </a>
-              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold text-lg px-10 py-8 rounded-none">
-                  <Download className="mr-2 w-6 h-6" /> BAIXAR EMENTA
-                </Button>
-              </a>
-            </div>
+
           </div>
         </div>
       </section>
@@ -226,18 +215,7 @@ export default function GraduacaoMarketing() {
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-12 py-8 rounded-none shadow-lg transform hover:scale-105 transition-all">
-                INICIAR INSCRIÇÃO AGORA
-              </Button>
-            </a>
-            <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black font-bold text-lg px-12 py-8 rounded-none">
-                FALAR COM CONSULTOR
-              </Button>
-            </a>
-          </div>
+
           <div className="mt-8 flex justify-center gap-8 text-sm text-gray-400">
             <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Início: Imediato</div>
             <div className="flex items-center gap-2"><Globe className="w-4 h-4" /> Campus: 100% Online</div>

@@ -399,7 +399,7 @@ export default function TrabalheConosco() {
               size="lg" 
               variant="outline" 
               className="border-gray-700 hover:bg-gray-800 text-white w-full sm:w-auto"
-              onClick={() => window.open('https://wa.me/5516997117597', '_blank')}
+              
             >
               Dúvidas? Fale no WhatsApp
             </Button>

@@ -59,11 +59,6 @@ export default function HubInsights() {
               >
                 <Download className="w-6 h-6" /> BAIXAR RELATÓRIO COMPLETO
               </Button>
-              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3">
-                  <Play className="w-6 h-6 fill-current" /> ASSISTIR MASTERCLASS
-                </Button>
-              </a>
             </div>
           </div>
         </div>
@@ -252,11 +247,7 @@ export default function HubInsights() {
             Responda 7 perguntas estratégicas e descubra as 3 aplicações de IA que vão transformar sua empresa nos próximos 90 dias.
           </p>
           
-          <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-bold text-lg px-10 py-8 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-all">
-              INICIAR DIAGNÓSTICO GRATUITO
-            </Button>
-          </a>
+
           
           <p className="mt-6 text-sm text-gray-500 flex items-center justify-center gap-2">
             <ShieldCheck className="w-4 h-4" /> Suas respostas são anônimas e seguras

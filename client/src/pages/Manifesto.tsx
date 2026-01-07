@@ -66,11 +66,7 @@ export default function Manifesto() {
               <p className="text-gray-300 mb-8">
                 A história não pede licença. Ela atropela quem está parado e eleva quem se move rápido.
               </p>
-              <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold px-8 py-6 rounded-none">
-                  INICIAR MINHA JORNADA AGORA
-                </Button>
-              </a>
+              
             </div>
           </div>
         </div>

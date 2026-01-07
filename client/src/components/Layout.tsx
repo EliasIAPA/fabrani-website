@@ -468,9 +468,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-neon-cyan shrink-0" />
-                  <a href="https://wa.me/5516997117597" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                    WhatsApp Oficial
-                  </a>
+                  
                 </div>
 
                 <div className="flex items-center gap-3">
