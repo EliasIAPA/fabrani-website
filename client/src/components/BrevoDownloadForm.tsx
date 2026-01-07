@@ -86,7 +86,7 @@ export default function BrevoDownloadForm() {
             placeholder="Seu nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="bg-zinc-900/50 border-white/10 text-white placeholder:text-gray-600 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
             disabled={status === "loading"}
             required
           />
@@ -102,7 +102,7 @@ export default function BrevoDownloadForm() {
             placeholder="seu@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-zinc-900/50 border-white/10 text-white placeholder:text-gray-600 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
             disabled={status === "loading"}
             required
           />
@@ -118,7 +118,7 @@ export default function BrevoDownloadForm() {
             placeholder="(16) 99999-9999"
             value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value)}
-            className="bg-zinc-900/50 border-white/10 text-white placeholder:text-gray-600 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
             disabled={status === "loading"}
             required
           />

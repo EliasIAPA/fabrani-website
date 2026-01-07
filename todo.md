@@ -44,3 +44,6 @@
 
 ## Recently Completed
 - [x] Remover todos os links de WhatsApp dos botões do site
+
+## Critical Bugs
+- [x] Formulário Brevo não está aparecendo na página Hub de Insights (RESOLVIDO: aumentado contraste dos inputs)
