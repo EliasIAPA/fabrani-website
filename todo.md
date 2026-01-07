@@ -47,3 +47,6 @@
 
 ## Critical Bugs
 - [x] Formulário Brevo não está aparecendo na página Hub de Insights (RESOLVIDO: aumentado contraste dos inputs)
+
+## URGENT
+- [x] Formulário Brevo não aparece no site publicado fabrani.com.br - investigar e criar alternativa na Home (RESOLVIDO: cores RGBA explícitas + seção na Home)

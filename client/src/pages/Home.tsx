@@ -6,6 +6,7 @@ import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import BrevoDownloadForm from "@/components/BrevoDownloadForm";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -133,6 +134,26 @@ export default function Home() {
                element?.scrollIntoView({ behavior: 'smooth' });
              }}>
           <ChevronDown className="w-10 h-10 text-neon-cyan opacity-70 hover:opacity-100 transition-opacity" />
+        </div>
+      </section>
+
+      {/* Seção Download Guia de Prompts */}
+      <section id="download-guia" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-neon-purple/5 pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <Badge variant="outline" className="border-neon-cyan text-neon-cyan rounded-none px-4 py-1 mb-6">MATERIAL EXCLUSIVO</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              BAIXE O GUIA:<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">50 Prompts de Ouro para Executivos</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Economize 20h da sua semana. Uma curadoria exclusiva dos comandos mais poderosos para liderança, estratégia e produtividade.
+            </p>
+            
+            {/* Formulário Nativo */}
+            <BrevoDownloadForm />
+          </div>
         </div>
       </section>
 

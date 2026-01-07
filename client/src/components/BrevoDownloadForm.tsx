@@ -86,7 +86,7 @@ export default function BrevoDownloadForm() {
             placeholder="Seu nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
           />
@@ -102,7 +102,7 @@ export default function BrevoDownloadForm() {
             placeholder="seu@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
           />
@@ -118,7 +118,7 @@ export default function BrevoDownloadForm() {
             placeholder="(16) 99999-9999"
             value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value)}
-            className="bg-white/5 border-white/30 text-white placeholder:text-gray-400 focus:border-neon-cyan focus:ring-neon-cyan h-12 text-base"
+            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
           />
