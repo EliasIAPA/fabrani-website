@@ -50,3 +50,9 @@
 
 ## URGENT
 - [x] Formulário Brevo não aparece no site publicado fabrani.com.br - investigar e criar alternativa na Home (RESOLVIDO: cores RGBA explícitas + seção na Home)
+
+## In Progress
+
+## Recently Completed
+- [x] Adicionar seletor de código de país (+55) no campo WhatsApp
+- [x] Personalizar mensagem de sucesso: "Obrigado! Aproveite seu Guia! Guia enviado para seu email!"

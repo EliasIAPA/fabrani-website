@@ -2,12 +2,32 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { trpc } from "@/lib/trpc";
-import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle2, AlertCircle, ChevronDown } from "lucide-react";
+
+// Lista de códigos de país mais comuns
+const countryCodes = [
+  { code: "+55", country: "Brasil", flag: "🇧🇷" },
+  { code: "+1", country: "EUA/Canadá", flag: "🇺🇸" },
+  { code: "+351", country: "Portugal", flag: "🇵🇹" },
+  { code: "+34", country: "Espanha", flag: "🇪🇸" },
+  { code: "+44", country: "Reino Unido", flag: "🇬🇧" },
+  { code: "+49", country: "Alemanha", flag: "🇩🇪" },
+  { code: "+33", country: "França", flag: "🇫🇷" },
+  { code: "+39", country: "Itália", flag: "🇮🇹" },
+  { code: "+81", country: "Japão", flag: "🇯🇵" },
+  { code: "+86", country: "China", flag: "🇨🇳" },
+  { code: "+54", country: "Argentina", flag: "🇦🇷" },
+  { code: "+56", country: "Chile", flag: "🇨🇱" },
+  { code: "+57", country: "Colômbia", flag: "🇨🇴" },
+  { code: "+52", country: "México", flag: "🇲🇽" },
+];
 
 export default function BrevoDownloadForm() {
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
+  const [countryCode, setCountryCode] = useState("+55");
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -49,26 +69,36 @@ export default function BrevoDownloadForm() {
     setStatus("loading");
     setErrorMessage("");
 
+    // Combinar código do país com o número de WhatsApp
+    const fullWhatsapp = `${countryCode} ${whatsapp}`;
+
     subscribeMutation.mutate({
       email,
       nome,
-      whatsapp,
+      whatsapp: fullWhatsapp,
     });
   };
+
+  const selectedCountry = countryCodes.find(c => c.code === countryCode) || countryCodes[0];
 
   if (status === "success") {
     return (
       <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 border border-neon-cyan/30 rounded-2xl p-12 text-center">
-        <CheckCircle2 className="w-16 h-16 text-neon-cyan mx-auto mb-6 animate-pulse" />
-        <h3 className="text-2xl font-bold mb-3 text-white">
-          🎉 Cadastro Realizado com Sucesso!
+        <CheckCircle2 className="w-20 h-20 text-neon-cyan mx-auto mb-6 animate-pulse" />
+        <h3 className="text-3xl font-bold mb-4 text-white">
+          🎉 Obrigado!
         </h3>
-        <p className="text-gray-300 text-lg mb-2">
-          O download do <span className="text-neon-cyan font-bold">Guia de Prompts 2026</span> iniciará em instantes...
+        <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple mb-4">
+          Aproveite seu Guia!
         </p>
-        <p className="text-gray-400 text-sm">
-          Verifique também seu e-mail para acessar o material a qualquer momento.
+        <p className="text-xl text-gray-300 mb-6">
+          ✉️ Guia enviado para seu email!
         </p>
+        <div className="bg-black/30 rounded-lg p-4 border border-white/10">
+          <p className="text-gray-400 text-sm">
+            O download também iniciará automaticamente em instantes...
+          </p>
+        </div>
       </div>
     );
   }
@@ -86,7 +116,8 @@ export default function BrevoDownloadForm() {
             placeholder="Seu nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
+            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" 
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
           />
@@ -102,7 +133,8 @@ export default function BrevoDownloadForm() {
             placeholder="seu@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
+            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" 
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
           />
@@ -110,18 +142,60 @@ export default function BrevoDownloadForm() {
 
         <div>
           <label htmlFor="whatsapp" className="block text-sm font-bold text-gray-300 mb-2">
-            WhatsApp (com DDD) *
+            WhatsApp *
           </label>
-          <Input
-            id="whatsapp"
-            type="tel"
-            placeholder="(16) 99999-9999"
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
-            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
-            disabled={status === "loading"}
-            required
-          />
+          <div className="flex gap-2">
+            {/* Seletor de Código de País */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+                className="h-12 px-3 flex items-center gap-2 rounded-lg text-white font-medium transition-all hover:opacity-80"
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px', borderStyle: 'solid' }}
+                disabled={status === "loading"}
+              >
+                <span className="text-xl">{selectedCountry.flag}</span>
+                <span className="text-sm">{selectedCountry.code}</span>
+                <ChevronDown className="w-4 h-4 text-gray-400" />
+              </button>
+              
+              {showCountryDropdown && (
+                <div 
+                  className="absolute top-full left-0 mt-1 w-56 max-h-60 overflow-y-auto rounded-lg shadow-xl z-50 border"
+                  style={{ backgroundColor: '#1a1a1a', borderColor: 'rgba(255,255,255,0.2)' }}
+                >
+                  {countryCodes.map((country) => (
+                    <button
+                      key={country.code}
+                      type="button"
+                      onClick={() => {
+                        setCountryCode(country.code);
+                        setShowCountryDropdown(false);
+                      }}
+                      className="w-full px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors text-left"
+                    >
+                      <span className="text-xl">{country.flag}</span>
+                      <span className="text-white text-sm">{country.country}</span>
+                      <span className="text-gray-400 text-sm ml-auto">{country.code}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Campo de Número */}
+            <Input
+              id="whatsapp"
+              type="tel"
+              placeholder="(11) 99999-9999"
+              value={whatsapp}
+              onChange={(e) => setWhatsapp(e.target.value)}
+              className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan flex-1" 
+              style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
+              disabled={status === "loading"}
+              required
+            />
+          </div>
         </div>
       </div>
 
