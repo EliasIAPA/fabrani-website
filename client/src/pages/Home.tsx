@@ -6,7 +6,7 @@ import { useState } from "react";
 import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
-import BrevoDownloadForm from "@/components/BrevoDownloadForm";
+import BrevoFormEmbed from "@/components/BrevoFormEmbed";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -151,8 +151,8 @@ export default function Home() {
               Economize 20h da sua semana. Uma curadoria exclusiva dos comandos mais poderosos para liderança, estratégia e produtividade.
             </p>
             
-            {/* Formulário Nativo */}
-            <BrevoDownloadForm />
+            {/* Formulário Brevo Embed */}
+            <BrevoFormEmbed />
           </div>
         </div>
       </section>

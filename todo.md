@@ -56,3 +56,4 @@
 ## Recently Completed
 - [x] Adicionar seletor de código de país (+55) no campo WhatsApp
 - [x] Personalizar mensagem de sucesso: "Obrigado! Aproveite seu Guia! Guia enviado para seu email!"
+- [x] Substituir formulário nativo pelo formulário HTML da Brevo na Home Page (código fornecido pelo usuário)
