@@ -60,3 +60,8 @@
 
 ## In Progress
 - [x] Substituir formulário Brevo atual pelo novo código HTML com campos NOME, EMAIL e WHATSAPP
+
+## Bugs
+- [x] Formulário Brevo redireciona para página externa ao invés de processar na própria página (RESOLVIDO: formulário nativo com envio AJAX)
+
+- [x] Criar popup/modal para formulário Brevo responsivo para mobile (alterado para abrir em nova aba devido a bloqueio de iframe pela Brevo)
