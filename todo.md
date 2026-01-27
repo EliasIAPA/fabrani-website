@@ -65,3 +65,6 @@
 - [x] Formulário Brevo redireciona para página externa ao invés de processar na própria página (RESOLVIDO: formulário nativo com envio AJAX)
 
 - [x] Criar popup/modal para formulário Brevo responsivo para mobile (alterado para abrir em nova aba devido a bloqueio de iframe pela Brevo)
+
+## Bugs Resolvidos
+- [x] Imagens não estão carregando corretamente após mudança para Git (ex: logotipo da FABRANI no menu) - RESOLVIDO: Logotipo agora está carregando e visível no menu (aumentado de h-10 para h-12)

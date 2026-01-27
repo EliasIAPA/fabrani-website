@@ -5,6 +5,7 @@ import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, 
 import { useState, useEffect } from "react";
 // import FloatingWhatsApp from './FloatingWhatsApp';
 import CookieConsent from './CookieConsent';
+import logoFabrani from '/images/logo-fabrani.png?url';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -161,7 +162,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-10 w-auto object-contain" />
+            <img src={logoFabrani} alt="FABRANI Logo" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -439,7 +440,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand & Contact */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-6">
-                <img src="/images/logo-fabrani.png" alt="FABRANI Logo" className="h-8 w-auto object-contain" />
+                <img src={logoFabrani} alt="FABRANI Logo" className="h-10 w-auto object-contain" />
               </div>
               
               <div className="space-y-4 text-sm text-muted-foreground">
