@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2, Brain, Terminal, Zap, Shield, Users, Target, Rocket, Lock, Award } from "lucide-react";
 import CertificateMockup from "@/components/CertificateMockup";
+import iaPlusHero from '/images/ia-plus-hero.jpg?url';
+import courseLiteracy from '/images/course-literacy.jpg?url';
+import coursePromptEng from '/images/course-prompt-engineering.jpg?url';
 
 export default function FabraniIAPlus() {
   return (
@@ -14,7 +17,7 @@ export default function FabraniIAPlus() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black z-10"></div>
           <img 
-            src="/images/ia-plus-hero.jpg" 
+            src={iaPlusHero} 
             alt="Futuristic AI Landscape" 
             className="w-full h-full object-cover opacity-60 animate-slow-zoom"
           />
@@ -97,7 +100,7 @@ export default function FabraniIAPlus() {
               
               <div className="relative h-64 overflow-hidden">
                 <img 
-                  src="/images/course-literacy.jpg" 
+                  src={courseLiteracy} 
                   alt="AI Literacy" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -137,7 +140,7 @@ export default function FabraniIAPlus() {
               
               <div className="relative h-64 overflow-hidden">
                 <img 
-                  src="/images/course-prompt-engineering.jpg" 
+                  src={coursePromptEng} 
                   alt="Prompt Engineering" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />

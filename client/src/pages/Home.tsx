@@ -1,4 +1,8 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import heroNeuralNetwork from '/images/hero-neural-network.jpg?url';
+import aiStarterPack from '/images/ai-starter-pack.jpg?url';
+import globalConnection from '/images/global-connection.jpg?url';
+import genesisDig from '/images/genesis-digital.jpg?url';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
@@ -25,7 +29,7 @@ export default function Home() {
         {/* Background Video/Image Placeholder */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/90 to-background z-10"></div>
-          <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-50 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
         </div>
 
@@ -307,7 +311,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="relative rounded-2xl overflow-hidden border border-neon-cyan/30">
             <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 z-0"></div>
-            <div className="absolute inset-0 bg-[url('/images/ai-starter-pack.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay z-0"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay z-0" style={{backgroundImage: `url(${aiStarterPack})`}}></div>
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-12 md:p-20 gap-10">
               <div className="max-w-2xl space-y-6">
@@ -352,7 +356,7 @@ export default function Home() {
       {/* Seção 6: Institucional (Sobre a FABRANI) */}
       <section className="py-32 relative overflow-hidden bg-black">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-[url('/images/global-connection.jpg')] bg-cover bg-center opacity-10 mix-blend-screen fixed-bg"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen fixed-bg" style={{backgroundImage: `url(${globalConnection})`}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -370,7 +374,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               <div className="relative aspect-video overflow-hidden border border-white/10 bg-black">
-                <img src="/images/genesis-digital.jpg" alt="Digital Genesis" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <img src={genesisDig} alt="Digital Genesis" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-8">
                   <h3 className="text-3xl font-bold text-white mb-2 glitch-hover" data-text="NOSSO DNA">NOSSO DNA</h3>

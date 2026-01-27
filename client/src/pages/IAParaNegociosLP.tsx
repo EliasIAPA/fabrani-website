@@ -6,6 +6,13 @@ import { Link } from "wouter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CountdownTimer from "@/components/CountdownTimer";
 import { SEO } from "@/components/SEO";
+import logoFabrani from '/images/logo-fabrani.png?url';
+import heroNeuralNetwork from '/images/hero-neural-network.jpg?url';
+import aiBusinessPillars from '/images/ai-business-pillars.png?url';
+import financialGrowthChart from '/images/financial-growth-chart.png?url';
+import mbaAugmentedLeadership from '/images/mba-augmented-leadership.jpg?url';
+import eliasEvangelista from '/images/elias-evangelista-new.png?url';
+import carlosEduardo from '/images/carlos-eduardo.jpg?url';
 
 export default function IAParaNegociosLP() {
   const [formData, setFormData] = useState({
@@ -58,7 +65,7 @@ export default function IAParaNegociosLP() {
       <header className="fixed top-[52px] sm:top-[60px] left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 py-4 transition-all duration-300">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/">
-            <img src="/images/logo-fabrani.png" alt="FABRANI" className="h-8 md:h-10 w-auto object-contain cursor-pointer" />
+            <img src={logoFabrani} alt="FABRANI" className="h-8 md:h-10 w-auto object-contain cursor-pointer" />
           </Link>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm text-gray-400 hover:text-white hidden md:block transition-colors">
@@ -87,7 +94,7 @@ export default function IAParaNegociosLP() {
       {/* SEÇÃO 1: HERO SECTION (Expandida) */}
       <section className="relative pt-48 pb-20 md:pt-64 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10"></div>
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent"></div>
         </div>
@@ -216,7 +223,7 @@ export default function IAParaNegociosLP() {
 
       {/* SEÇÃO NOVA: A REVOLUÇÃO DA IA (6 Pilares + Gráfico Financeiro) */}
       <section className="py-24 bg-black relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-grid-white/[0.03] bg-[length:40px_40px] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             <Badge variant="outline" className="border-neon-cyan/50 text-neon-cyan bg-neon-cyan/10 mb-4 px-4 py-1">O NOVO SISTEMA OPERACIONAL</Badge>
@@ -232,7 +239,7 @@ export default function IAParaNegociosLP() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 lg:order-1">
               <img 
-                src="/images/ai-business-pillars.png" 
+                src={aiBusinessPillars} 
                 alt="6 Pilares de Negócios Conectados pela IA" 
                 className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(0,240,255,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
               />
@@ -280,7 +287,7 @@ export default function IAParaNegociosLP() {
             </div>
             <div>
               <img 
-                src="/images/financial-growth-chart.png" 
+                src={financialGrowthChart} 
                 alt="Gráfico de Crescimento Exponencial com IA" 
                 className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
               />
@@ -343,7 +350,7 @@ export default function IAParaNegociosLP() {
 
             <div className="lg:w-1/2 relative">
               <div className="relative z-10 bg-zinc-900 border border-white/10 rounded-3xl p-4 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                <img src="/images/mba-dashboard-preview.jpg" alt="Plataforma do MBA" className="rounded-2xl w-full h-auto shadow-inner" />
+                <img src={mbaAugmentedLeadership} alt="Plataforma do MBA" className="rounded-2xl w-full h-auto shadow-inner" />
                 
                 {/* Floating Badge */}
                 <div className="absolute -bottom-8 -left-8 bg-black border border-neon-purple p-6 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] flex items-center gap-4 animate-bounce-slow">
@@ -527,7 +534,7 @@ export default function IAParaNegociosLP() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-8 w-48 h-48">
                   <div className="absolute inset-0 bg-neon-purple/20 rounded-full blur-3xl group-hover:bg-neon-purple/40 transition-all"></div>
-                  <img src="/images/elias-evangelista-new.png" alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <img src={eliasEvangelista} alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <h3 className="text-neon-purple font-bold tracking-wider uppercase mb-2 text-sm">Fundador & Reitor</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Me. Elias Evangelista</h2>
@@ -542,7 +549,7 @@ export default function IAParaNegociosLP() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-8 w-48 h-48">
                   <div className="absolute inset-0 bg-neon-cyan/20 rounded-full blur-3xl group-hover:bg-neon-cyan/40 transition-all"></div>
-                  <img src="/images/carlos-eduardo.jpg" alt="Prof. Carlos Eduardo Pereira" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <img src={carlosEduardo} alt="Prof. Carlos Eduardo Pereira" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <h3 className="text-neon-cyan font-bold tracking-wider uppercase mb-2 text-sm">Coordenador do MBA</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Carlos Eduardo Pereira</h2>
@@ -822,7 +829,7 @@ export default function IAParaNegociosLP() {
       {/* Footer Simplificado */}
       <footer className="py-12 bg-black border-t border-white/10 text-center">
         <div className="container mx-auto px-4">
-          <img src="/images/logo-fabrani.png" alt="FABRANI" className="h-8 mx-auto mb-6 opacity-50 grayscale hover:grayscale-0 transition-all" />
+          <img src={logoFabrani} alt="FABRANI" className="h-8 mx-auto mb-6 opacity-50 grayscale hover:grayscale-0 transition-all" />
           <p className="text-gray-500 text-sm mb-4">
             FABRANI - Faculdade Brasileira de Negócios Inovadores <br />
             Credenciada pelo MEC. Todos os direitos reservados.

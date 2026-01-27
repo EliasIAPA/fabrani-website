@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, QrCode } from "lucide-react";
+import certificateBg from '/images/certificate-mockup-bg.jpg?url';
 
 export default function CertificateMockup() {
   return (
@@ -17,7 +18,7 @@ export default function CertificateMockup() {
         {/* Imagem de Fundo Gerada */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/certificate-mockup-bg.jpg" 
+            src={certificateBg} 
             alt="Certificate Background" 
             className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
