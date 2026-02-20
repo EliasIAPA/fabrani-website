@@ -50,7 +50,7 @@ export default function NAP() {
     <div className="min-h-screen bg-background text-foreground selection:bg-neon-cyan/30">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-neon-purple/10 to-transparent opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-background"></div>
         
         <div className="container relative z-10">

@@ -7,10 +7,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import CountdownTimer from "@/components/CountdownTimer";
 import { SEO } from "@/components/SEO";
 import logoFabrani from '/images/logo-fabrani.png?url';
-import heroNeuralNetwork from '/images/hero-neural-network.jpg?url';
-import aiBusinessPillars from '/images/ai-business-pillars.png?url';
-import financialGrowthChart from '/images/financial-growth-chart.png?url';
-import mbaAugmentedLeadership from '/images/mba-augmented-leadership.jpg?url';
+// Imagens movidas para S3
+const heroNeuralNetwork = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FeSVHhJROYRdOiNj.jpg';
+const aiBusinessPillars = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/iwlbENEsQZXlkZCh.png';
+const financialGrowthChart = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/psKDykTaDcCoIPhT.png';
+const mbaAugmentedLeadership = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/DelGfDjIarGiEjMT.jpg';
 import eliasEvangelista from '/images/elias-evangelista-new.png?url';
 import carlosEduardo from '/images/carlos-eduardo.jpg?url';
 

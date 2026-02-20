@@ -12,7 +12,7 @@ export default function IAParaNegocios() {
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(76,29,149,0.15),transparent_70%)]" />
           <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-neon-cyan/5 rounded-full blur-[120px] opacity-30" />
-          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 opacity-10" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">

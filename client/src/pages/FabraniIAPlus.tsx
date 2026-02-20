@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2, Brain, Terminal, Zap, Shield, Users, Target, Rocket, Lock, Award } from "lucide-react";
 import CertificateMockup from "@/components/CertificateMockup";
-import iaPlusHero from '/images/ia-plus-hero.jpg?url';
-import courseLiteracy from '/images/course-literacy.jpg?url';
-import coursePromptEng from '/images/course-prompt-engineering.jpg?url';
+// Imagens movidas para S3
+const iaPlusHero = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/iaPlusHero.jpg';
+const courseLiteracy = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/courseLiteracy.jpg';
+const coursePromptEng = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/coursePromptEng.jpg';
 
 export default function FabraniIAPlus() {
   return (
@@ -176,7 +177,7 @@ export default function FabraniIAPlus() {
 
       {/* Seção Certificado (Destaque Visual) */}
       <section className="py-24 bg-zinc-950 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 opacity-5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             

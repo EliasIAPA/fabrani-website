@@ -34,7 +34,7 @@ export default function HubInsights() {
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section - Estilo Netflix Destaque */}
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hub-hero.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 via-transparent to-neon-purple/10 bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
         </div>
@@ -66,7 +66,7 @@ export default function HubInsights() {
 
       {/* Seção de Download com Formulário Brevo */}
       <section id="download-guia" className="py-20 bg-gradient-to-br from-zinc-950 via-black to-zinc-950 border-y border-neon-cyan/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 opacity-5"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl"></div>
         
@@ -152,7 +152,7 @@ export default function HubInsights() {
           {/* Card de Download do Guia de Prompts 2026 */}
           <div className="group relative bg-gradient-to-br from-zinc-900 to-black border border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer h-full flex flex-col shadow-[0_0_20px_rgba(0,217,255,0.1)] hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]">
             <div className="relative h-48 overflow-hidden shrink-0 bg-zinc-900 flex items-center justify-center">
-              <div className="absolute inset-0 bg-[url('/images/hero-neural-network.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/10 to-transparent opacity-30 mix-blend-luminosity"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
               <div className="relative z-20 flex flex-col items-center gap-2">
                 <Download className="w-12 h-12 text-neon-cyan animate-bounce" />
@@ -233,7 +233,7 @@ export default function HubInsights() {
 
       {/* Seção Bloqueada (Lead Magnet) */}
       <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 opacity-5"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="w-16 h-16 bg-neon-purple/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-neon-purple/50 animate-pulse">
             <Lock className="w-8 h-8 text-neon-purple" />

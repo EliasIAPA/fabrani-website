@@ -71,3 +71,6 @@
 
 ## Tarefas Concluídas
 - [x] Auditar e corrigir TODAS as imagens do site (problema: imagens não aparecem em fabrani.com.br mas aparecem em manus.im) - RESOLVIDO: Todas as imagens agora usam importação ES com ?url
+
+## Novas Tarefas Concluídas
+- [x] Adicionar submenu "Como ser Parceiro" em PARCERIA com conteúdo sobre certificação de cursos MEC

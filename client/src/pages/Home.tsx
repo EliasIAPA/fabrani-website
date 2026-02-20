@@ -1,8 +1,9 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-import heroNeuralNetwork from '/images/hero-neural-network.jpg?url';
-import aiStarterPack from '/images/ai-starter-pack.jpg?url';
-import globalConnection from '/images/global-connection.jpg?url';
-import genesisDig from '/images/genesis-digital.jpg?url';
+// Imagens movidas para S3 - usar URLs CDN
+const heroNeuralNetwork = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FeSVHhJROYRdOiNj.jpg';
+const aiStarterPack = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/LWJsMaJfyiSBMvee.jpg';
+const globalConnection = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FQTmPnQEKuBkUyNv.jpg';
+const genesisDig = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/fueiLBnHsFJTibQF.jpg';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";

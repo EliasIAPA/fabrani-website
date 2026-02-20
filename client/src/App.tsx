@@ -22,6 +22,7 @@ import PoliticaCookies from "@/pages/PoliticaCookies";
 import PoliticaPrivacidade from "@/pages/PoliticaPrivacidade";
 import TermosDeUso from "@/pages/TermosDeUso";
 import Parceiros from "@/pages/Parceiros";
+import ComoSerParceiro from "@/pages/ComoSerParceiro";
 import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
@@ -50,6 +51,7 @@ function Router() {
         <Route path="/privacidade" component={PoliticaPrivacidade} />
         <Route path="/termos-de-uso" component={TermosDeUso} />
         <Route path="/parceiros" component={Parceiros} />
+        <Route path="/como-ser-parceiro" component={ComoSerParceiro} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

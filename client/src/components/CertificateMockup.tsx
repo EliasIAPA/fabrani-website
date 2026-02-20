@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, QrCode } from "lucide-react";
-import certificateBg from '/images/certificate-mockup-bg.jpg?url';
+// Imagem movida para S3
+const certificateBg = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/certificateBg.jpg';
 
 export default function CertificateMockup() {
   return (

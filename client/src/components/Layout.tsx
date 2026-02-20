@@ -5,7 +5,8 @@ import { Menu, X, ChevronRight, MapPin, Mail, Phone, Clock, ShieldCheck, Heart, 
 import { useState, useEffect } from "react";
 // import FloatingWhatsApp from './FloatingWhatsApp';
 import CookieConsent from './CookieConsent';
-import logoFabrani from '/images/logo-fabrani.png?url';
+// Logo local - será carregado do public
+const logoFabrani = '/images/logo-fabrani.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const ogTags = {
       'og:title': 'FABRANI - Faculdade 100% IA',
       'og:description': 'A primeira faculdade 100% focada em Inteligência Artificial do Brasil. MBAs e Graduações AI-Native.',
-      'og:image': 'https://fabrani.com.br/images/og-image.jpg',
+      'og:image': 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/ogImage.jpg',
       'og:url': canonicalUrl,
       'og:type': 'website',
       'og:site_name': 'FABRANI',
@@ -232,16 +233,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 )}></span>
             </Link>
 
-            <Link href="/parceiros" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 uppercase",
-                location === "/parceiros" ? "text-neon-cyan" : "text-muted-foreground"
-              )}>
-                Parceiros
-                <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
-                  location === "/parceiros" && "scale-x-100"
-                )}></span>
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none uppercase">
+                Parceria <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[250px]">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/parceiros">Parceiros</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                  <Link href="/como-ser-parceiro">Como Ser Parceiro</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
@@ -361,10 +365,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
           </Link>
 
-          <Link href="/parceiros" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4 uppercase">
-              Parceiros
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
-          </Link>
+          <div className="border-b border-white/5 pb-4">
+            <button 
+              onClick={() => setIsMobileGraduacaoOpen(!isMobileGraduacaoOpen)}
+              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left uppercase"
+            >
+              Parceria
+              <ChevronDown className={cn("transition-transform duration-300", isMobileGraduacaoOpen ? "rotate-180" : "")} />
+            </button>
+            
+            {isMobileGraduacaoOpen && (
+              <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
+                <Link href="/parceiros" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Parceiros
+                </Link>
+                <Link href="/como-ser-parceiro" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                  Como Ser Parceiro
+                </Link>
+              </div>
+            )}
+          </div>
 
           <div className="border-b border-white/5 pb-4">
             <Link href="/pesquisa/pivic" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
