@@ -428,7 +428,7 @@ export default function IAParaNegociosLP() {
                 topics: ["Diagnóstico Real do Seu Negócio", "Planejamento e Escopo", "Implementação Hands-on com Mentoria", "Defesa de Projeto e Resultados"]
               }
             ].map((mod, i) => (
-              <div key={i} className={`p-8 rounded-3xl border transition-all hover:-translate-y-2 duration-300 ${mod.highlight ? 'bg-gradient-to-br from-red-500/10 to-black border-red-500 shadow-[0_0_30px_rgba(6,182,212,0.15)]' : 'bg-white/5 border-white/10 hover:border-white/30'}`}>
+              <div key={i} className={`p-8 rounded-3xl border transition-all hover:-translate-y-2 duration-300 ${mod.highlight ? 'bg-gradient-to-br from-red-500/10 to-black border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.15)]' : 'bg-white/5 border-white/10 hover:border-white/30'}`}>
                 <div className="flex justify-between items-start mb-6">
                   <span className={`text-xs font-bold tracking-wider px-4 py-1.5 rounded-full ${mod.highlight ? 'bg-red-500 text-black' : 'bg-white/10 text-gray-300'}`}>
                     {mod.module}

@@ -2,13 +2,13 @@ import { useAuth } from "@/_core/hooks/useAuth";
 // Imagens geradas com IA - Paleta PRETO E VERMELHO Premium
 const logotipo2 = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/logotipo2-transparent_b33c9021.png';
 const heroNeuralNetwork = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-home-fabrani-VYdiygbaJMXdiZSVkJd2Rq.webp';
-const cardManifesto = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
-const cardSimulator = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
-const cardElite = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-elite-fabrani-XT73Q5hzwbr6yoSqMGKfss.webp';
-const cardPartners = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-partners-fabrani-XAB8MJZRw9R3gN5YQoJcqc.webp';
-const aiStarterPack = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
-const globalConnection = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-elite-fabrani-XT73Q5hzwbr6yoSqMGKfss.webp';
-const genesisDig = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
+const cardManifesto = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-manifesto-red-VCzoQfg49hgeHYPyqD9rkf.webp';
+const cardSimulator = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-ai-brain-red-cqABfSGCTfie7ioNdBfrmW.webp';
+const cardElite = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-mba-network-red-dTejyexvsHqmh6JVXWR2kn.webp';
+const cardPartners = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-hub-data-red-i4t9ppDzUkwSQHt7EMhj9r.webp';
+const aiStarterPack = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-starter-pack-red-i4AcVovJiyibvaC9PRrGfb.webp';
+const globalConnection = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-mba-network-red-dTejyexvsHqmh6JVXWR2kn.webp';
+const genesisDig = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-manifesto-red-VCzoQfg49hgeHYPyqD9rkf.webp';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
@@ -34,7 +34,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Video/Image Placeholder */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-background z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-background z-10"></div>
           <div className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
         </div>

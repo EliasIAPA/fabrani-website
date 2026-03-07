@@ -52,7 +52,7 @@ const mbas = [
 export default function MBAs() {
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-mba-business-dJ6RDouyzkiQnJXWAK8fJe.webp)`}}></div>
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-mba-network-red-dTejyexvsHqmh6JVXWR2kn.webp)`}}></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black pointer-events-none"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-1000">

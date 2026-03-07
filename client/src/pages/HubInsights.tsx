@@ -34,7 +34,7 @@ export default function HubInsights() {
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section - Estilo Netflix Destaque */}
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-red-600/10 bg-cover bg-center">
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-hub-data-red-i4t9ppDzUkwSQHt7EMhj9r.webp)`}}>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
         </div>

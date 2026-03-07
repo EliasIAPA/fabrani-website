@@ -10,7 +10,7 @@ export default function IAParaNegocios() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(76,29,149,0.15),transparent_70%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.15),transparent_70%)]" />
           <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-[120px] opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-600/10 opacity-10" />
         </div>

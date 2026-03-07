@@ -93,15 +93,15 @@
 - [x] MBAs.tsx - Hero + Cards + Botões
 
 ### Páginas Pendentes
-- [ ] MBADetail.tsx
-- [ ] HubInsights.tsx
+- [x] MBADetail.tsx
+- [x] HubInsights.tsx
 - [ ] InsightDetail.tsx
-- [ ] IAParaNegocios.tsx
+- [x] IAParaNegocios.tsx
 - [ ] IAParaNegociosLP.tsx
-- [ ] Manifesto.tsx
+- [x] Manifesto.tsx
 - [ ] Parceiros.tsx
 - [ ] ComoSerParceiro.tsx
-- [ ] FabraniIAPlus.tsx
+- [x] FabraniIAPlus.tsx
 - [ ] NAP.tsx
 - [ ] CPA.tsx
 - [ ] ResponsabilidadeSocial.tsx
@@ -112,11 +112,11 @@
 - [ ] TermosDeUso.tsx
 
 ### Componentes Globais Pendentes
-- [ ] Layout.tsx (Header/Footer) - Atualizar cores
-- [ ] ObsolescenceSimulator.tsx - Atualizar cores
-- [ ] CertificateMockup.tsx - Atualizar cores
-- [ ] index.css - Atualizar variáveis CSS globais
-- [ ] Testes responsividade mobile
+- [x] Layout.tsx (Header/Footer) - Atualizar cores
+- [x] ObsolescenceSimulator.tsx - Atualizar cores
+- [x] CertificateMockup.tsx - Atualizar cores
+- [x] index.css - Atualizar variáveis CSS globais
+- [x] Testes responsividade mobile
 
 ## Substituição Total de Cores (Roxo/Azul → Vermelho/Dourado/Preto)
 - [x] Varredura completa de neon-cyan, neon-purple, cyan, purple, blue em todos os arquivos
@@ -130,3 +130,7 @@
 - [x] Remover faixa cinza no topo da Home
 - [x] Remover fundo preto do LOGOTIPO2 e integrar como mockup transparente na Home
 - [x] Recriar logotipo FABRANI em SVG/CSS nativo integrado ao design da Home (sem imagem PNG)
+- [x] Remover faixa cinza mobile na Home abaixo do menu
+- [x] Revisar e corrigir cores roxas/azuis nos MBAs
+- [x] Gerar novas imagens IA disruptivas (preto, vermelho, dourado) para seções
+- [x] Testar e ajustar responsividade mobile em todas as páginas

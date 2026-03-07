@@ -85,7 +85,7 @@ export default function Parceiros() {
                     className={`
                       flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all border
                       ${isActive 
-                        ? "bg-red-500/10 border-red-500 text-red-500 shadow-[0_0_15px_rgba(6,182,212,0.2)]" 
+                        ? "bg-red-500/10 border-red-500 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.2)]" 
                         : "bg-black/30 border-white/10 text-muted-foreground hover:border-white/30 hover:text-white"}
                     `}
                   >
@@ -136,7 +136,7 @@ export default function Parceiros() {
                 </div>
 
                 <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_#06b6d4]" />
+                  <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_#ef4444]" />
                 </div>
               </div>
             ))}

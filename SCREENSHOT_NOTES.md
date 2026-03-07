@@ -1,2 +1,5 @@
-# Screenshot - Logo CSS v2
-O logotipo FABRANI agora está em uma única linha, tamanho adequado. Os detalhes vermelhos nos "A" estão visíveis (linhas diagonais) e o ponto do "i" está em vermelho. O "i" minúsculo está correto. O visual está integrado ao background sem fundo preto. Ficou muito mais limpo e premium. O ponto vermelho do "i" está um pouco deslocado para cima/direita - pode precisar de ajuste fino. No geral está bom e integrado ao design da página.
+# Review Visual - MBAs Page (07/03/2026)
+
+Página MBAs está com cores corretas: vermelho, preto, branco. Sem azul ou roxo visível.
+Cards com ícones vermelhos, botões brancos com hover vermelho. Background com imagem IA vermelha.
+Tudo OK nesta página. Agora preciso salvar checkpoint e entregar.

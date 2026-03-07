@@ -4,8 +4,10 @@ import { Link } from "wouter";
 
 export default function Manifesto() {
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <div className="min-h-screen bg-black text-white pt-24 pb-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-manifesto-red-VCzoQfg49hgeHYPyqD9rkf.webp)`}}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black pointer-events-none"></div>
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <Link href="/">
           <Button variant="ghost" className="mb-12 text-muted-foreground hover:text-red-500 pl-0 hover:bg-transparent">
             <ArrowLeft className="mr-2 h-4 w-4" /> Voltar para o Futuro

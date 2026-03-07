@@ -158,7 +158,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header 
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-          isScrolled ? "bg-background/80 backdrop-blur-md border-white/10 py-3" : "bg-transparent py-6"
+          isScrolled ? "bg-black/90 backdrop-blur-md border-white/10 py-3" : "bg-black/0 py-6"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">

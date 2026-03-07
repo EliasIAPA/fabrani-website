@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2, Brain, Terminal, Zap, Shield, Users, Target, Rocket, Lock, Award } from "lucide-react";
 import CertificateMockup from "@/components/CertificateMockup";
 // Imagens movidas para S3
-const iaPlusHero = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/iaPlusHero.jpg';
+const iaPlusHero = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-starter-pack-red-i4AcVovJiyibvaC9PRrGfb.webp';
 const courseLiteracy = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/courseLiteracy.jpg';
 const coursePromptEng = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/coursePromptEng.jpg';
 
