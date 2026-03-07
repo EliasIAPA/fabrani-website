@@ -74,3 +74,46 @@
 
 ## Novas Tarefas Concluídas
 - [x] Adicionar submenu "Como ser Parceiro" em PARCERIA com conteúdo sobre certificação de cursos MEC
+
+## Redesign PRETO E VERMELHO Premium (Em Andamento)
+
+### Imagens IA Geradas
+- [x] Hero Home (circuitos neon vermelho)
+- [x] Card Manifesto, Simulador, Elite, Parceiros
+- [x] Hero Graduação AI-Driven
+- [x] Hero MBA Aplicação
+- [x] Card Marketing Digital e Negócios Imobiliários
+- [x] Hero MBA Business, Hub Insights, Parceiros
+- [x] Card MBA Saúde
+
+### Páginas Atualizadas (neon-cyan/purple → vermelho)
+- [x] Home.tsx - Hero, Carta Aberta, Simulador, Elite, Lead Magnet
+- [x] GraduacaoMarketing.tsx - Hero + Cards + Acordeão
+- [x] GraduacaoImobiliaria.tsx - Hero + Cards
+- [x] MBAs.tsx - Hero + Cards + Botões
+
+### Páginas Pendentes
+- [ ] MBADetail.tsx
+- [ ] HubInsights.tsx
+- [ ] InsightDetail.tsx
+- [ ] IAParaNegocios.tsx
+- [ ] IAParaNegociosLP.tsx
+- [ ] Manifesto.tsx
+- [ ] Parceiros.tsx
+- [ ] ComoSerParceiro.tsx
+- [ ] FabraniIAPlus.tsx
+- [ ] NAP.tsx
+- [ ] CPA.tsx
+- [ ] ResponsabilidadeSocial.tsx
+- [ ] TrabalheConosco.tsx
+- [ ] PIVIC.tsx
+- [ ] PoliticaCookies.tsx
+- [ ] PoliticaPrivacidade.tsx
+- [ ] TermosDeUso.tsx
+
+### Componentes Globais Pendentes
+- [ ] Layout.tsx (Header/Footer) - Atualizar cores
+- [ ] ObsolescenceSimulator.tsx - Atualizar cores
+- [ ] CertificateMockup.tsx - Atualizar cores
+- [ ] index.css - Atualizar variáveis CSS globais
+- [ ] Testes responsividade mobile

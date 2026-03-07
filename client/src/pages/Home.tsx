@@ -1,9 +1,13 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-// Imagens movidas para S3 - usar URLs CDN
-const heroNeuralNetwork = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FeSVHhJROYRdOiNj.jpg';
-const aiStarterPack = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/LWJsMaJfyiSBMvee.jpg';
-const globalConnection = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FQTmPnQEKuBkUyNv.jpg';
-const genesisDig = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/fueiLBnHsFJTibQF.jpg';
+// Imagens geradas com IA - Paleta PRETO E VERMELHO Premium
+const heroNeuralNetwork = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-home-fabrani-VYdiygbaJMXdiZSVkJd2Rq.webp';
+const cardManifesto = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
+const cardSimulator = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
+const cardElite = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-elite-fabrani-XT73Q5hzwbr6yoSqMGKfss.webp';
+const cardPartners = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-partners-fabrani-XAB8MJZRw9R3gN5YQoJcqc.webp';
+const aiStarterPack = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
+const globalConnection = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-elite-fabrani-XT73Q5hzwbr6yoSqMGKfss.webp';
+const genesisDig = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
@@ -72,28 +76,28 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
           <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 relative inline-block group">
-              <span className="absolute -inset-1 bg-neon-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white relative inline-block group">
+              <span className="absolute -inset-1 bg-red-600/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
               FABRANI
-              <span className="absolute top-0 left-0 -ml-1 text-neon-cyan opacity-0 group-hover:opacity-70 animate-glitch-1">FABRANI</span>
-              <span className="absolute top-0 left-0 ml-1 text-neon-purple opacity-0 group-hover:opacity-70 animate-glitch-2">FABRANI</span>
+              <span className="absolute top-0 left-0 -ml-1 text-red-500 opacity-0 group-hover:opacity-70 animate-glitch-1">FABRANI</span>
+              <span className="absolute top-0 left-0 ml-1 text-red-600 opacity-0 group-hover:opacity-70 animate-glitch-2">FABRANI</span>
             </h2>
-            <p className="text-sm md:text-lg text-neon-cyan font-mono tracking-[0.2em] uppercase mt-2 border-t border-neon-cyan/30 pt-4 inline-block">
+            <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-2 border-t border-red-500/30 pt-4 inline-block">
               Faculdade Brasileira de Negócios Inovadores
             </p>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/5 text-red-500 text-xs font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-cyan"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
             </span>
             PROTOCOLO DE EVOLUÇÃO: ATIVO
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
             O MUNDO FOI <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">REESCRITO PELA IA.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">REESCRITO PELA IA.</span>
           </h1>
 
           {/* Versão Mobile do Destaque MEC (Reposicionado para após o título) */}
@@ -147,10 +151,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-neon-purple/5 pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <Badge variant="outline" className="border-neon-cyan text-neon-cyan rounded-none px-4 py-1 mb-6">MATERIAL EXCLUSIVO</Badge>
+            <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">MATERIAL EXCLUSIVO</Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               BAIXE O GUIA:<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">50 Prompts de Ouro para Executivos</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">50 Prompts de Ouro para Executivos</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Economize 20h da sua semana. Uma curadoria exclusiva dos comandos mais poderosos para liderança, estratégia e produtividade.
@@ -164,14 +168,14 @@ export default function Home() {
 
       {/* Seção 1.5: Carta Aberta FABRANI 2026 */}
       <section id="carta-aberta" className="py-24 bg-black relative overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-neon-purple/5 to-transparent pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-600/5 to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 font-display">
-                CARTA ABERTA <span className="text-neon-cyan">FABRANI 2026</span>
+                CARTA ABERTA <span className="text-red-500">FABRANI 2026</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto"></div>
             </div>
 
             <div className="prose prose-invert prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6 font-light">
@@ -187,7 +191,7 @@ export default function Home() {
                 Em 2025, nos tornamos a <strong className="text-white">FACULDADE nº1 focada na transformação da Educação com IA</strong> - provando que nossa visão estava certa desde o início. Nosso propósito é audacioso e claro: transformar pessoas comuns em especialistas extraordinários e adaptáveis com IA, conectando o conhecimento acadêmico com as demandas reais do mercado inovador.
               </p>
 
-              <div className="border-l-4 border-neon-purple pl-6 py-2 my-8 bg-white/5 italic text-gray-300">
+              <div className="border-l-4 border-red-500 pl-6 py-2 my-8 bg-white/5 italic text-gray-300">
                 "Esta carta não é um conjunto de regras. É o nosso DNA. É a transcrição da alma da FABRANI em palavras. Cada valor, cada princípio, foi cuidadosamente pensado para guiar nossas ações, nossas decisões e, mais importante, nossas interações."
               </div>
 
@@ -206,7 +210,7 @@ export default function Home() {
 
             <div className="mt-16 flex flex-col items-end">
               <div className="text-right">
-                <div className="font-signature text-4xl text-neon-cyan mb-2 font-handwriting" style={{ fontFamily: 'cursive' }}>Elias Evangelista</div>
+                <div className="font-signature text-4xl text-red-500 mb-2 font-handwriting" style={{ fontFamily: 'cursive' }}>Elias Evangelista</div>
                 <p className="text-white font-bold uppercase tracking-wider text-sm">Diretor e Founder</p>
                 <p className="text-muted-foreground text-xs">FABRANI Education</p>
               </div>
@@ -220,32 +224,32 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <Badge variant="outline" className="border-neon-purple text-neon-purple rounded-none px-4 py-1">FERRAMENTA EXCLUSIVA</Badge>
+              <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1">FERRAMENTA EXCLUSIVA</Badge>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                 Simulador de <br />
-                <span className="text-neon-purple">Obsolescência</span>
+                <span className="text-red-500">Obsolescência</span>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Descubra quanto do seu trabalho será automatizado nos próximos 3 anos e como a FABRANI é a sua vacina contra a irrelevância profissional.
               </p>
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-neon-cyan" />
+                  <CheckCircle2 className="w-5 h-5 text-red-500" />
                   <span>Análise baseada em dados reais do mercado</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-neon-cyan" />
+                  <CheckCircle2 className="w-5 h-5 text-red-500" />
                   <span>Relatório personalizado de risco</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-neon-cyan" />
+                  <CheckCircle2 className="w-5 h-5 text-red-500" />
                   <span>Plano de ação imediato</span>
                 </li>
               </ul>
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-30 blur-xl"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 opacity-30 blur-xl"></div>
               <ObsolescenceSimulator />
             </div>
           </div>
@@ -254,7 +258,7 @@ export default function Home() {
 
       {/* Seção 3: Autoridade (Elite Intelectual) */}
       <section className="py-32 bg-black relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-neon-cyan/5 blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-red-500/5 blur-[100px] pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -266,7 +270,7 @@ export default function Home() {
               Conexão direta com <span className="text-white font-bold">400 mestres e doutores</span>. Não ensinamos teoria, entregamos implementação real.
             </p>
             <Link href="/manifesto" className="inline-block">
-                <Button variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold px-8 py-6 rounded-none transition-all">
+                <Button variant="outline" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-black font-bold px-8 py-6 rounded-none transition-all">
                   <FileText className="mr-2 h-5 w-5" /> LER O MANIFESTO
                 </Button>
             </Link>
@@ -275,12 +279,12 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <GraduationCap className="w-10 h-10 text-neon-cyan" />,
+                icon: <GraduationCap className="w-10 h-10 text-red-500" />,
                 title: "Rigor Acadêmico",
                 desc: "Metodologia validada e corpo docente com a mais alta titulação acadêmica do país."
               },
               {
-                icon: <Cpu className="w-10 h-10 text-neon-purple" />,
+                icon: <Cpu className="w-10 h-10 text-red-600" />,
                 title: "DNA de Inovação",
                 desc: "Professores que lideram projetos de IA em grandes corporações e startups globais."
               },
@@ -291,8 +295,8 @@ export default function Home() {
               }
             ].map((item, i) => (
               <div key={i} className="group p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-neon-cyan to-neon-purple opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="mb-6 bg-black/50 w-20 h-20 flex items-center justify-center rounded-full border border-white/10 group-hover:border-neon-cyan/50 transition-colors">
+                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="mb-6 bg-black/50 w-20 h-20 flex items-center justify-center rounded-full border border-white/10 group-hover:border-red-500/50 transition-colors">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">{item.title}</h3>
@@ -310,18 +314,18 @@ export default function Home() {
       {/* Seção 4: Lead Magnet */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="relative rounded-2xl overflow-hidden border border-neon-cyan/30">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 z-0"></div>
+          <div className="relative rounded-2xl overflow-hidden border border-red-500/30">
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 z-0"></div>
             <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay z-0" style={{backgroundImage: `url(${aiStarterPack})`}}></div>
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-12 md:p-20 gap-10">
               <div className="max-w-2xl space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-cyan text-black text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500 text-black text-xs font-bold uppercase tracking-wider">
                   Download Gratuito
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white">
                   BAIXE O GUIA: <br />
-                  <span className="text-neon-cyan">50 Prompts de Ouro</span> para Executivos
+                  <span className="text-red-500">50 Prompts de Ouro</span> para Executivos
                 </h2>
                 <p className="text-lg text-gray-300">
                   Economize 20h da sua semana. Uma curadoria exclusiva dos comandos mais poderosos para liderança, estratégia e produtividade.

@@ -10,21 +10,22 @@ export default function GraduacaoMarketing() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-purple/10 to-transparent opacity-20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 to-transparent opacity-20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-graduacao-ai-ToHJSGNrRFkKAfbCHC9BjX.webp)`}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <Link href="/">
-            <Button variant="ghost" className="mb-8 text-muted-foreground hover:text-neon-cyan pl-0 hover:bg-transparent">
+            <Button variant="ghost" className="mb-8 text-muted-foreground hover:text-red-500 pl-0 hover:bg-transparent">
               <ArrowLeft className="mr-2 h-4 w-4" /> Voltar para Home
             </Button>
           </Link>
 
           <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <Badge variant="outline" className="border-neon-cyan text-neon-cyan mb-6 px-4 py-1">GRADUAÇÃO 2 ANOS • 100% ONLINE</Badge>
+            <Badge variant="outline" className="border-red-500 text-red-500 mb-6 px-4 py-1">GRADUAÇÃO 2 ANOS • 100% ONLINE</Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-tight">
               O fim do tráfego manual. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">O início dos ecossistemas autônomos.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">O início dos ecossistemas autônomos.</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
               A graduação que une formação superior formal + prática com grandes players — agora com <strong className="text-white">IA como sistema operacional.</strong>
@@ -45,11 +46,11 @@ export default function GraduacaoMarketing() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
-                  <Globe className="w-6 h-6 text-neon-purple" />
+                  <Globe className="w-6 h-6 text-red-500" />
                   <span className="text-gray-300">Trabalhe do Brasil para o mundo. IA reduz barreiras e multiplica sua produtividade.</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Zap className="w-6 h-6 text-neon-cyan" />
+                  <Zap className="w-6 h-6 text-red-600" />
                   <span className="text-gray-300">Empregabilidade acelerada em múltiplas funções digitais.</span>
                 </li>
               </ul>
@@ -68,7 +69,7 @@ export default function GraduacaoMarketing() {
                   "Gestão de Projetos com IA"
                 ].map((area, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                    <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
                     {area}
                   </div>
                 ))}
@@ -83,18 +84,18 @@ export default function GraduacaoMarketing() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Por que estudar Marketing Digital na FABRANI?</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-black border-white/10 hover:border-neon-purple/50 transition-all group">
+            <Card className="bg-black border-white/10 hover:border-red-500/50 transition-all group">
               <CardHeader>
-                <Award className="w-12 h-12 text-neon-purple mb-4 group-hover:scale-110 transition-transform" />
+                <Award className="w-12 h-12 text-red-500 mb-4 group-hover:scale-110 transition-transform" />
                 <CardTitle className="text-xl font-bold text-white">Certificações Rápidas</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-400">
                 Conquiste certificações com grandes players do mercado enquanto cursa a graduação. Seu currículo cresce a cada semestre.
               </CardContent>
             </Card>
-            <Card className="bg-black border-white/10 hover:border-neon-cyan/50 transition-all group">
+            <Card className="bg-black border-white/10 hover:border-red-600/50 transition-all group">
               <CardHeader>
-                <Users className="w-12 h-12 text-neon-cyan mb-4 group-hover:scale-110 transition-transform" />
+                <Users className="w-12 h-12 text-red-600 mb-4 group-hover:scale-110 transition-transform" />
                 <CardTitle className="text-xl font-bold text-white">FABRANI CONECTA</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-400">
@@ -120,7 +121,7 @@ export default function GraduacaoMarketing() {
           <h2 className="text-3xl font-bold mb-10 text-center">Grade Curricular</h2>
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="sem-1" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">1º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">1º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Fundamentos de Marketing I</li>
@@ -133,7 +134,7 @@ export default function GraduacaoMarketing() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-2" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">2º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">2º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Desenvolvimento Pessoal e Profissional II</li>
@@ -146,7 +147,7 @@ export default function GraduacaoMarketing() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-3" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">3º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">3º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Competências Gerenciais I</li>
@@ -155,12 +156,12 @@ export default function GraduacaoMarketing() {
                   <li>Negócios Digitais</li>
                   <li>Ferramentas de Controle de Marketing Digital II</li>
                   <li>Ciências Sociais e Ambientais, Cidadania, Cultura Afro-Brasileira e Indígena</li>
-                  <li className="text-neon-cyan font-bold">Produção de Conteúdo com Inteligência Artificial</li>
+                  <li className="text-red-500 font-bold">Produção de Conteúdo com Inteligência Artificial</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-4" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">4º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">4º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Pesquisa em Marketing</li>

@@ -10,21 +10,22 @@ export default function GraduacaoImobiliaria() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/10 to-transparent opacity-20 pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 to-transparent opacity-20 pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-negocios-imobiliarios-iV7rN3tMsQKWFzn2vQd6W7.webp)`}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <Link href="/">
-            <Button variant="ghost" className="mb-8 text-muted-foreground hover:text-neon-cyan pl-0 hover:bg-transparent">
+            <Button variant="ghost" className="mb-8 text-muted-foreground hover:text-red-500 pl-0 hover:bg-transparent">
               <ArrowLeft className="mr-2 h-4 w-4" /> Voltar para Home
             </Button>
           </Link>
 
           <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <Badge variant="outline" className="border-neon-cyan text-neon-cyan mb-6 px-4 py-1">GRADUAÇÃO 2 ANOS • 100% ONLINE</Badge>
+            <Badge variant="outline" className="border-red-500 text-red-500 mb-6 px-4 py-1">GRADUAÇÃO 2 ANOS • 100% ONLINE</Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-tight">
               Dados, IA e ativos reais: <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">domine o mercado imobiliário que mais cresce.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">domine o mercado imobiliário que mais cresce.</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
               Torne-se consultor, gestor ou empresário imobiliário com <strong className="text-white">IA aplicada a avaliação, aquisição, contratos, locação e gestão de portfólios.</strong>
@@ -45,11 +46,11 @@ export default function GraduacaoImobiliaria() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
-                  <Globe className="w-6 h-6 text-neon-purple" />
+                  <Globe className="w-6 h-6 text-red-500" />
                   <span className="text-gray-300">100% online com encontros ao vivo e a melhor plataforma de alunos com IA.</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Zap className="w-6 h-6 text-neon-cyan" />
+                  <Zap className="w-6 h-6 text-red-600" />
                   <span className="text-gray-300">Operação inovadora e "brutalmente lucrativa" com tecnologia e métodos.</span>
                 </li>
               </ul>
@@ -68,7 +69,7 @@ export default function GraduacaoImobiliaria() {
                   "Precificação Dinâmica"
                 ].map((area, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                    <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
                     {area}
                   </div>
                 ))}
@@ -83,18 +84,18 @@ export default function GraduacaoImobiliaria() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Por que estudar Negócios Imobiliários na FABRANI?</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-black border-white/10 hover:border-neon-purple/50 transition-all group">
+            <Card className="bg-black border-white/10 hover:border-red-500/50 transition-all group">
               <CardHeader>
-                <Building2 className="w-12 h-12 text-neon-purple mb-4 group-hover:scale-110 transition-transform" />
+                <Building2 className="w-12 h-12 text-red-500 mb-4 group-hover:scale-110 transition-transform" />
                 <CardTitle className="text-xl font-bold text-white">Conexão com PropTechs</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-400">
                 União entre conhecimento superior e prática com empresas tecnológicas do setor. Oportunidades via FABRANI CONECTA.
               </CardContent>
             </Card>
-            <Card className="bg-black border-white/10 hover:border-neon-cyan/50 transition-all group">
+            <Card className="bg-black border-white/10 hover:border-red-600/50 transition-all group">
               <CardHeader>
-                <Award className="w-12 h-12 text-neon-cyan mb-4 group-hover:scale-110 transition-transform" />
+                <Award className="w-12 h-12 text-red-600 mb-4 group-hover:scale-110 transition-transform" />
                 <CardTitle className="text-xl font-bold text-white">Certificações Rápidas</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-400">
