@@ -9,6 +9,15 @@ const cardPartners = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/C
 const aiStarterPack = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-starter-pack-red-i4AcVovJiyibvaC9PRrGfb.webp';
 const globalConnection = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-mba-network-red-dTejyexvsHqmh6JVXWR2kn.webp';
 const genesisDig = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-manifesto-red-VCzoQfg49hgeHYPyqD9rkf.webp';
+// Novas imagens de fundo sutis para cada seção
+const bgHeroNeural = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-hero-neural-subtle-FYzBhJLmTbhMqFkWkVJMfB.webp';
+const bgCartaAberta = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-carta-aberta-subtle-2RHj8VRXoWDXqvXfYfqkbv.webp';
+const bgSimulador = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-simulador-brain-subtle-2Jy2nqTkWTnxFNbvDVLbZJ.webp';
+const bgElite = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-elite-hex-subtle-cVb3sDPrTYYqZLuJKRLXfN.webp';
+const bgLeadMagnet = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-leadmagnet-gold-subtle-FxCWpZJKQxPxFjFjr3yTVk.webp';
+const bgParceiros = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-parceiros-network-subtle-hCQT7y5WY22PHcBCHkKdWX.webp';
+const bgGenese = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-genese-digital-subtle-XcqqyPpxfpmmeaM2NDemDf.webp';
+const bgItec = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/bg-itec-protocols-subtle-FoyiPjtfHtiXahPEz3HZau.webp';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
@@ -32,11 +41,11 @@ export default function Home() {
       />
       {/* Seção 1: Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 overflow-x-hidden">
-        {/* Background Video/Image Placeholder */}
+        {/* Background - Camadas sutis de fundo */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-background z-10"></div>
-          <div className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{backgroundImage: `url(${bgHeroNeural})`}}></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black z-10"></div>
         </div>
 
         {/* Destaque MEC - Canto Superior Direito */}
@@ -168,6 +177,7 @@ export default function Home() {
 
       {/* Seção Download Guia de Prompts */}
       <section id="download-guia" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
+        <div className="absolute inset-0 bg-cover bg-center opacity-8" style={{backgroundImage: `url(${bgLeadMagnet})`}}></div>
         <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 via-transparent to-red-600/5 pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
@@ -188,6 +198,8 @@ export default function Home() {
 
       {/* Seção 1.5: Carta Aberta FABRANI 2026 */}
       <section id="carta-aberta" className="py-24 bg-black relative overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{backgroundImage: `url(${bgCartaAberta})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-600/5 to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -240,8 +252,10 @@ export default function Home() {
       </section>
 
       {/* Seção 2: Interatividade (Simulador de Obsolescência) */}
-      <section id="simulador" className="py-24 relative bg-secondary/5 border-y border-white/5 scroll-mt-20">
-        <div className="container mx-auto px-4">
+      <section id="simulador" className="py-24 relative bg-black border-y border-white/5 scroll-mt-20">
+        <div className="absolute inset-0 bg-cover bg-center opacity-12" style={{backgroundImage: `url(${bgSimulador})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1">FERRAMENTA EXCLUSIVA</Badge>
@@ -278,6 +292,8 @@ export default function Home() {
 
       {/* Seção 3: Autoridade (Elite Intelectual) */}
       <section className="py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{backgroundImage: `url(${bgElite})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-red-500/5 blur-[100px] pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -332,8 +348,9 @@ export default function Home() {
 
 
       {/* Seção 4: Lead Magnet */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-cover bg-center opacity-8" style={{backgroundImage: `url(${bgLeadMagnet})`}}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="relative rounded-2xl overflow-hidden border border-red-500/30">
             <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 z-0"></div>
             <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay z-0" style={{backgroundImage: `url(${aiStarterPack})`}}></div>
@@ -359,8 +376,10 @@ export default function Home() {
       </section>
 
       {/* Seção 5: Prova Social e Parceiros */}
-      <section className="py-20 border-t border-white/5 bg-black">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 border-t border-white/5 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{backgroundImage: `url(${bgParceiros})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <p className="text-sm font-mono text-muted-foreground uppercase tracking-[0.2em] mb-12">
             Reconhecimento e Parcerias Estratégicas
           </p>
@@ -381,8 +400,9 @@ export default function Home() {
       {/* Seção 6: Institucional (Sobre a FABRANI) */}
       <section className="py-32 relative overflow-hidden bg-black">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen fixed-bg" style={{backgroundImage: `url(${globalConnection})`}}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{backgroundImage: `url(${bgGenese})`}}></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen" style={{backgroundImage: `url(${globalConnection})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-24">

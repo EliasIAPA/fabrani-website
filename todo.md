@@ -167,3 +167,9 @@
 - [x] TrabalheConosco - testar mobile
 - [x] PIVIC - testar mobile
 - [x] Corrigir problemas encontrados em mobile (títulos responsivos + overflow-x-hidden)
+
+## Novas Imagens de Fundo Sutis na Home
+- [x] Gerar imagens de fundo sutis e disruptivas para seções da Home (hero, carta aberta, simulador, elite, parceiros)
+- [x] Corrigir quebras visuais nas primeiras seções da Home (headline)
+- [x] Aplicar imagens de fundo de forma sutil nas seções
+- [x] Verificar responsividade mobile
