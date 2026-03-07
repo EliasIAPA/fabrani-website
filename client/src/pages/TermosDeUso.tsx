@@ -7,8 +7,8 @@ export default function TermosDeUso() {
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center justify-center p-3 bg-neon-cyan/10 rounded-full mb-6 border border-neon-cyan/20">
-            <FileText className="w-8 h-8 text-neon-cyan" />
+          <div className="inline-flex items-center justify-center p-3 bg-red-500/10 rounded-full mb-6 border border-red-500/20">
+            <FileText className="w-8 h-8 text-red-500" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
             Termos de Uso
@@ -28,7 +28,7 @@ export default function TermosDeUso() {
           {/* Introduction */}
           <section className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
             <p className="mb-4">
-              A <span className="text-neon-cyan font-bold">FABRANI</span> (Faculdade Brasileira de Negócios Inovadores) estabelece abaixo as condições gerais para uso de seus sites e serviços. Ao acessar o site <span className="font-mono">www.fabrani.com.br</span> ou utilizar o AVA, você concorda com estes Termos, com a <Link href="/privacidade" className="text-neon-cyan hover:underline">Política de Privacidade</Link> e com a <Link href="/politica-cookies" className="text-neon-cyan hover:underline">Política de Cookies</Link>.
+              A <span className="text-red-500 font-bold">FABRANI</span> (Faculdade Brasileira de Negócios Inovadores) estabelece abaixo as condições gerais para uso de seus sites e serviços. Ao acessar o site <span className="font-mono">www.fabrani.com.br</span> ou utilizar o AVA, você concorda com estes Termos, com a <Link href="/privacidade" className="text-red-500 hover:underline">Política de Privacidade</Link> e com a <Link href="/politica-cookies" className="text-red-500 hover:underline">Política de Cookies</Link>.
             </p>
             <div className="mt-4 p-4 bg-black/50 rounded-lg border border-white/10 text-sm">
               <p><strong>Mantenedora:</strong> Negócios Inovadores Ltda (Ni1) - CNPJ 37.232.192/0001-71</p>
@@ -39,7 +39,7 @@ export default function TermosDeUso() {
           {/* 1. Definições */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">01</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">01</span>
               Definições e Escopo
             </h2>
             <div className="grid gap-4 md:grid-cols-2">
@@ -62,12 +62,12 @@ export default function TermosDeUso() {
           {/* 2. Aceitação */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">02</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">02</span>
               Aceitação e Cadastro
             </h2>
             <div className="space-y-4">
-              <div className="flex gap-4 items-start p-4 bg-white/5 rounded-lg border-l-4 border-neon-cyan">
-                <Users className="w-6 h-6 text-neon-cyan shrink-0 mt-1" />
+              <div className="flex gap-4 items-start p-4 bg-white/5 rounded-lg border-l-4 border-red-500">
+                <Users className="w-6 h-6 text-red-500 shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-white">Elegibilidade e Cadastro</h3>
                   <p className="text-sm mt-1">Maiores de 18 anos. Adolescentes precisam de autorização. Você declara fornecer dados verídicos e é responsável pela segurança de suas credenciais (login/senha).</p>
@@ -79,7 +79,7 @@ export default function TermosDeUso() {
           {/* 3. Conduta */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">03</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">03</span>
               Conduta e Uso Aceitável
             </h2>
             <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-xl">
@@ -98,17 +98,17 @@ export default function TermosDeUso() {
           {/* 4. Pagamentos */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">04</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">04</span>
               Pagamentos e Cancelamentos
             </h2>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="p-4 border border-white/10 rounded-lg hover:bg-white/5 transition-colors">
-                <CreditCard className="w-6 h-6 text-neon-cyan mb-3" />
+                <CreditCard className="w-6 h-6 text-red-500 mb-3" />
                 <h3 className="font-bold text-white mb-2">Processamento</h3>
                 <p className="text-sm text-muted-foreground">Via Monetizze, Eduzz, Hotmart, etc. Dados de cartão ficam com o provedor.</p>
               </div>
               <div className="p-4 border border-white/10 rounded-lg hover:bg-white/5 transition-colors">
-                <Scale className="w-6 h-6 text-neon-cyan mb-3" />
+                <Scale className="w-6 h-6 text-red-500 mb-3" />
                 <h3 className="font-bold text-white mb-2">Arrependimento</h3>
                 <p className="text-sm text-muted-foreground">7 dias para contratações online (CDC). Reembolsos adicionais conforme contrato específico.</p>
               </div>
@@ -118,11 +118,11 @@ export default function TermosDeUso() {
           {/* 5. Propriedade Intelectual */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">05</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">05</span>
               Propriedade Intelectual
             </h2>
             <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg">
-              <BookOpen className="w-6 h-6 text-neon-purple shrink-0 mt-1" />
+              <BookOpen className="w-6 h-6 text-red-600 shrink-0 mt-1" />
               <div>
                 <p className="text-sm">
                   A FABRANI detém os direitos sobre materiais, marcas e layouts. O Aluno recebe uma <strong>licença pessoal, limitada e intransferível</strong> para uso acadêmico durante o curso. É proibida a cópia, distribuição ou engenharia reversa.
@@ -134,34 +134,34 @@ export default function TermosDeUso() {
           {/* 6. Responsabilidade */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="bg-neon-purple/20 text-neon-purple w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">06</span>
+              <span className="bg-red-600/20 text-red-600 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono">06</span>
               Limitações de Responsabilidade
             </h2>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-2"><span className="text-neon-cyan">•</span> A FABRANI não responde por danos indiretos ou lucros cessantes.</li>
-              <li className="flex gap-2"><span className="text-neon-cyan">•</span> Não nos responsabilizamos por falhas em serviços de terceiros (gateways, nuvem).</li>
-              <li className="flex gap-2"><span className="text-neon-cyan">•</span> Adotamos medidas de segurança, mas nenhuma infraestrutura é 100% imune.</li>
+              <li className="flex gap-2"><span className="text-red-500">•</span> A FABRANI não responde por danos indiretos ou lucros cessantes.</li>
+              <li className="flex gap-2"><span className="text-red-500">•</span> Não nos responsabilizamos por falhas em serviços de terceiros (gateways, nuvem).</li>
+              <li className="flex gap-2"><span className="text-red-500">•</span> Adotamos medidas de segurança, mas nenhuma infraestrutura é 100% imune.</li>
             </ul>
           </section>
 
           {/* 7. Contato */}
           <section className="bg-black border border-white/20 p-8 rounded-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-neon-cyan/5 group-hover:bg-neon-cyan/10 transition-colors" />
+            <div className="absolute inset-0 bg-red-500/5 group-hover:bg-red-500/10 transition-colors" />
             <h2 className="text-2xl font-bold text-white mb-6 relative z-10">Canais de Atendimento</h2>
             <div className="grid md:grid-cols-2 gap-6 relative z-10">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-neon-cyan" />
+                  <Mail className="w-5 h-5 text-red-500" />
                   <a href="mailto:contato@fabrani.com.br" className="hover:text-white transition-colors">contato@fabrani.com.br</a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-neon-cyan" />
+                  <Phone className="w-5 h-5 text-red-500" />
                   <span>(16) 99711-7597</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-neon-cyan shrink-0 mt-1" />
+                  <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-1" />
                   <span className="text-sm">Av. General Carneiro, 380, Centro<br/>Jaboticabal/SP</span>
                 </div>
               </div>

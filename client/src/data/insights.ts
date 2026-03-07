@@ -22,8 +22,8 @@ export const insights = [
     stats: "Custo -80% | Engajamento 5x",
     image: "/images/insight-marketing.jpg",
     icon: "TrendingUp",
-    color: "text-neon-cyan",
-    borderColor: "border-neon-cyan/50"
+    color: "text-red-500",
+    borderColor: "border-red-500/50"
   },
   {
     id: 2,
@@ -46,8 +46,8 @@ export const insights = [
     stats: "Fechamento +40% | Ciclo -50%",
     image: "/images/insight-sales.jpg",
     icon: "DollarSign",
-    color: "text-neon-purple",
-    borderColor: "border-neon-purple/50"
+    color: "text-red-600",
+    borderColor: "border-red-600/50"
   },
   {
     id: 3,
@@ -118,8 +118,8 @@ export const insights = [
     stats: "Produtividade +40% | Erros -95%",
     image: "/images/insight-processes.jpg",
     icon: "Zap",
-    color: "text-blue-400",
-    borderColor: "border-blue-400/50"
+    color: "text-red-400",
+    borderColor: "border-red-400/50"
   },
   {
     id: 6,

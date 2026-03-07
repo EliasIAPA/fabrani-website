@@ -34,19 +34,19 @@ export default function HubInsights() {
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Hero Section - Estilo Netflix Destaque */}
       <section className="relative h-[70vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 via-transparent to-neon-purple/10 bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-red-600/10 bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 h-full flex items-end pb-20 relative z-10">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-bottom-10 duration-1000">
-            <Badge variant="outline" className="border-neon-cyan text-neon-cyan px-4 py-1 mb-4 text-sm tracking-wider uppercase">
+            <Badge variant="outline" className="border-red-500 text-red-500 px-4 py-1 mb-4 text-sm tracking-wider uppercase">
               Relatório Exclusivo 2025
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none">
               A VERDADE BRUTAL <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">SOBRE IA E NEGÓCIOS</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">SOBRE IA E NEGÓCIOS</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
               Enquanto seus concorrentes discutem "se vale a pena", empresas ágeis já estão usando IA para multiplicar lucros por 5x. Descubra as 48 aplicações que estão reescrevendo as regras do jogo.
@@ -55,7 +55,7 @@ export default function HubInsights() {
               <Button 
                 size="lg" 
                 onClick={() => document.getElementById('download-guia')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3 cursor-pointer"
+                className="bg-red-500 text-black hover:bg-red-500/80 font-bold text-lg px-8 py-6 rounded-none flex items-center gap-3 cursor-pointer"
               >
                 <Download className="w-6 h-6" /> BAIXAR RELATÓRIO COMPLETO
               </Button>
@@ -65,20 +65,20 @@ export default function HubInsights() {
       </section>
 
       {/* Seção de Download com Formulário Brevo */}
-      <section id="download-guia" className="py-20 bg-gradient-to-br from-zinc-950 via-black to-zinc-950 border-y border-neon-cyan/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 opacity-5"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl"></div>
+      <section id="download-guia" className="py-20 bg-gradient-to-br from-zinc-950 via-black to-zinc-950 border-y border-red-500/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5 opacity-5"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30 mb-4 text-sm font-bold px-4 py-1">
+              <Badge className="bg-red-500/10 text-red-500 border-red-500/30 mb-4 text-sm font-bold px-4 py-1">
                 MATERIAL EXCLUSIVO
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 BAIXE O GUIA:<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
                   50 Prompts de Ouro para Executivos
                 </span>
               </h2>
@@ -87,21 +87,21 @@ export default function HubInsights() {
               </p>
             </div>
 
-            <div className="bg-zinc-900/50 backdrop-blur-md border border-neon-cyan/20 rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,217,255,0.1)]">
+            <div className="bg-zinc-900/50 backdrop-blur-md border border-red-500/20 rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,217,255,0.1)]">
               <BrevoDownloadForm />
             </div>
 
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-neon-cyan" />
+                <ShieldCheck className="w-4 h-4 text-red-500" />
                 <span>100% Gratuito</span>
               </div>
               <div className="flex items-center gap-2">
-                <Download className="w-4 h-4 text-neon-cyan" />
+                <Download className="w-4 h-4 text-red-500" />
                 <span>Download Instantâneo</span>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-neon-cyan" />
+                <Lock className="w-4 h-4 text-red-500" />
                 <span>Dados Protegidos</span>
               </div>
             </div>
@@ -150,18 +150,18 @@ export default function HubInsights() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card de Download do Guia de Prompts 2026 */}
-          <div className="group relative bg-gradient-to-br from-zinc-900 to-black border border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer h-full flex flex-col shadow-[0_0_20px_rgba(0,217,255,0.1)] hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]">
+          <div className="group relative bg-gradient-to-br from-zinc-900 to-black border border-red-500/30 hover:border-red-500/60 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer h-full flex flex-col shadow-[0_0_20px_rgba(0,217,255,0.1)] hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]">
             <div className="relative h-48 overflow-hidden shrink-0 bg-zinc-900 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/10 to-transparent opacity-30 mix-blend-luminosity"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-red-500/10 to-transparent opacity-30 mix-blend-luminosity"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
               <div className="relative z-20 flex flex-col items-center gap-2">
-                <Download className="w-12 h-12 text-neon-cyan animate-bounce" />
-                <Badge className="bg-neon-cyan text-black font-bold border-none">NOVO</Badge>
+                <Download className="w-12 h-12 text-red-500 animate-bounce" />
+                <Badge className="bg-red-500 text-black font-bold border-none">NOVO</Badge>
               </div>
             </div>
             
             <div className="p-8 relative z-20 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-neon-cyan transition-colors leading-tight">
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-red-500 transition-colors leading-tight">
                 Guia de Prompts 2026
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -170,7 +170,7 @@ export default function HubInsights() {
               
               <Button 
                 onClick={() => document.getElementById('download-guia')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="w-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/50 hover:bg-neon-cyan hover:text-black font-bold transition-all"
+                className="w-full bg-red-500/10 text-red-500 border border-red-500/50 hover:bg-red-500 hover:text-black font-bold transition-all"
               >
                 BAIXAR PDF AGORA
               </Button>
@@ -198,7 +198,7 @@ export default function HubInsights() {
                     {insight.stats}
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-neon-cyan transition-colors leading-tight">
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-red-500 transition-colors leading-tight">
                     {insight.title}
                   </h3>
                   
@@ -218,7 +218,7 @@ export default function HubInsights() {
                       </div>
                     </div>
                     
-                    <Button variant="ghost" className="text-white hover:text-neon-cyan p-0 hover:bg-transparent group-hover:translate-x-2 transition-transform">
+                    <Button variant="ghost" className="text-white hover:text-red-500 p-0 hover:bg-transparent group-hover:translate-x-2 transition-transform">
                       LER AGORA <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </div>
@@ -233,14 +233,14 @@ export default function HubInsights() {
 
       {/* Seção Bloqueada (Lead Magnet) */}
       <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5 opacity-5"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="w-16 h-16 bg-neon-purple/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-neon-purple/50 animate-pulse">
-            <Lock className="w-8 h-8 text-neon-purple" />
+          <div className="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-red-600/50 animate-pulse">
+            <Lock className="w-8 h-8 text-red-600" />
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Diagnóstico de IA <span className="text-neon-purple">Personalizado</span>
+            Diagnóstico de IA <span className="text-red-600">Personalizado</span>
           </h2>
           
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">

@@ -83,12 +83,12 @@ export default function BrevoDownloadForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 border border-neon-cyan/30 rounded-2xl p-12 text-center">
-        <CheckCircle2 className="w-20 h-20 text-neon-cyan mx-auto mb-6 animate-pulse" />
+      <div className="bg-gradient-to-br from-red-500/10 to-red-600/10 border border-red-500/30 rounded-2xl p-12 text-center">
+        <CheckCircle2 className="w-20 h-20 text-red-500 mx-auto mb-6 animate-pulse" />
         <h3 className="text-3xl font-bold mb-4 text-white">
           🎉 Obrigado!
         </h3>
-        <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple mb-4">
+        <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 mb-4">
           Aproveite seu Guia!
         </p>
         <p className="text-xl text-gray-300 mb-6">
@@ -116,7 +116,7 @@ export default function BrevoDownloadForm() {
             placeholder="Seu nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" 
+            className="h-12 text-base text-white focus:ring-red-500 focus:border-red-500" 
             style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
@@ -133,7 +133,7 @@ export default function BrevoDownloadForm() {
             placeholder="seu@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan" 
+            className="h-12 text-base text-white focus:ring-red-500 focus:border-red-500" 
             style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
             disabled={status === "loading"}
             required
@@ -190,7 +190,7 @@ export default function BrevoDownloadForm() {
               placeholder="(11) 99999-9999"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
-              className="h-12 text-base text-white focus:ring-neon-cyan focus:border-neon-cyan flex-1" 
+              className="h-12 text-base text-white focus:ring-red-500 focus:border-red-500 flex-1" 
               style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)', borderWidth: '1px' }}
               disabled={status === "loading"}
               required
@@ -209,7 +209,7 @@ export default function BrevoDownloadForm() {
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-gradient-to-r from-neon-cyan to-neon-purple hover:opacity-90 text-black font-bold text-lg h-14 rounded-lg transition-all shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_50px_rgba(0,217,255,0.5)]"
+        className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:opacity-90 text-black font-bold text-lg h-14 rounded-lg transition-all shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_50px_rgba(0,217,255,0.5)]"
       >
         {status === "loading" ? (
           <>

@@ -50,7 +50,7 @@ export default function IAParaNegociosLP() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-red-500 selection:text-black overflow-x-hidden">
       <SEO 
         title="MBA em IA para Negócios | A Revolução da Gestão"
         description="Domine a Inteligência Artificial e transforme sua carreira. O MBA Executivo da FABRANI ensina como aplicar IA em Vendas, Marketing, RH e Finanças."
@@ -74,7 +74,7 @@ export default function IAParaNegociosLP() {
             </Link>
             <Button 
               onClick={handleScrollToForm}
-              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-sm md:text-base px-6 rounded-full shadow-[0_0_15px_rgba(0,240,255,0.3)] animate-pulse-slow"
+              className="bg-red-500 text-black hover:bg-red-500/80 font-bold text-sm md:text-base px-6 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.3)] animate-pulse-slow"
             >
               GARANTIR MINHA VAGA
             </Button>
@@ -86,7 +86,7 @@ export default function IAParaNegociosLP() {
       <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden">
         <Button 
           onClick={handleScrollToForm}
-          className="w-full bg-neon-purple text-white hover:bg-neon-purple/80 font-bold text-lg py-6 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+          className="w-full bg-red-600 text-white hover:bg-red-600/80 font-bold text-lg py-6 rounded-xl shadow-[0_0_20px_rgba(239,68,68,0.4)]"
         >
           QUERO ME INSCREVER AGORA
         </Button>
@@ -97,41 +97,41 @@ export default function IAParaNegociosLP() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10"></div>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-6xl">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-purple/30 bg-neon-purple/10 text-neon-purple text-xs md:text-sm font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-600/30 bg-red-600/10 text-red-600 text-xs md:text-sm font-mono mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-purple opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-purple"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </span>
             FABRANI - A PRIMEIRA FACULDADE 100% AI-NATIVE DO BRASIL
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter mb-8 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100">
             O MUNDO FOI REESCRITO. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-600">
               VOCÊ JÁ DOMINA O NOVO CÓDIGO?
             </span>
           </h1>
 
           <p className="text-lg md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
             Transforme-se em <strong className="text-white">Líder de IA em 6 Meses</strong> com o Único MBA que Une a Ciência do MEC à Velocidade do Vale do Silício. <br className="hidden md:block" />
-            <span className="text-neon-cyan font-bold">100% Prático. 100% Aplicável. Residência em IA Garantida.</span>
+            <span className="text-red-500 font-bold">100% Prático. 100% Aplicável. Residência em IA Garantida.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 mb-16">
             <Button 
               onClick={handleScrollToForm}
               size="lg" 
-              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-xl px-12 py-8 rounded-xl w-full sm:w-auto shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:shadow-[0_0_50px_rgba(0,240,255,0.6)] transition-all transform hover:-translate-y-1"
+              className="bg-red-500 text-black hover:bg-red-500/80 font-bold text-xl px-12 py-8 rounded-xl w-full sm:w-auto shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:shadow-[0_0_50px_rgba(239,68,68,0.6)] transition-all transform hover:-translate-y-1"
             >
               QUERO DOMINAR IA AGORA <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <Lock className="w-4 h-4 text-neon-purple" />
+              <Lock className="w-4 h-4 text-red-600" />
               <span>Vagas Limitadas: Apenas 50 Alunos/Turma</span>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function IAParaNegociosLP() {
 
           <div className="mt-16 text-center">
             <p className="text-2xl text-white font-light mb-8">
-              "A IA não vai substituir gerentes, mas <strong className="text-neon-cyan">gerentes que usam IA vão substituir os que não usam.</strong>"
+              "A IA não vai substituir gerentes, mas <strong className="text-red-500">gerentes que usam IA vão substituir os que não usam.</strong>"
               <br /><span className="text-sm text-gray-500 mt-2 block">- Rob Thomas, IBM</span>
             </p>
             <Button onClick={handleScrollToForm} variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-lg">
@@ -227,10 +227,10 @@ export default function IAParaNegociosLP() {
         <div className="absolute inset-0 bg-grid-white/[0.03] bg-[length:40px_40px] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
-            <Badge variant="outline" className="border-neon-cyan/50 text-neon-cyan bg-neon-cyan/10 mb-4 px-4 py-1">O NOVO SISTEMA OPERACIONAL</Badge>
+            <Badge variant="outline" className="border-red-500/50 text-red-500 bg-red-500/10 mb-4 px-4 py-1">O NOVO SISTEMA OPERACIONAL</Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
               IA Não é Apenas uma Ferramenta. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">É o Motor que Multiplica Resultados.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">É o Motor que Multiplica Resultados.</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Dominar a Inteligência Artificial muda tudo. Não se trata de pequenos ajustes, mas de reescrever como cada departamento da sua empresa opera para atingir eficiência máxima.
@@ -242,11 +242,11 @@ export default function IAParaNegociosLP() {
               <img 
                 src={aiBusinessPillars} 
                 alt="6 Pilares de Negócios Conectados pela IA" 
-                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(0,240,255,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
+                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(239,68,68,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
             <div className="order-1 lg:order-2 space-y-8">
-              <h3 className="text-3xl font-bold text-white">Integração Total: <span className="text-neon-cyan">6 Áreas, 1 Cérebro</span></h3>
+              <h3 className="text-3xl font-bold text-white">Integração Total: <span className="text-red-500">6 Áreas, 1 Cérebro</span></h3>
               <div className="space-y-6">
                 {[
                   { title: "RH & Gestão de Talentos", desc: "Recrutamento preditivo e análise de performance em tempo real." },
@@ -257,7 +257,7 @@ export default function IAParaNegociosLP() {
                   { title: "Visão de Concorrência", desc: "Monitoramento 24/7 do mercado para antecipar movimentos rivais." }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple font-bold shrink-0 mt-1">
+                    <div className="w-8 h-8 rounded-full bg-red-600/20 flex items-center justify-center text-red-600 font-bold shrink-0 mt-1">
                       {i + 1}
                     </div>
                     <div>
@@ -272,7 +272,7 @@ export default function IAParaNegociosLP() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h3 className="text-3xl font-bold text-white">O Salto Exponencial: <span className="text-neon-purple">Linear vs. AI-Driven</span></h3>
+              <h3 className="text-3xl font-bold text-white">O Salto Exponencial: <span className="text-red-600">Linear vs. AI-Driven</span></h3>
               <p className="text-gray-300 text-lg leading-relaxed">
                 Empresas tradicionais crescem de forma linear: para dobrar o resultado, precisam dobrar a equipe e os custos. 
                 <strong className="text-white block mt-4">Empresas AI-Native quebram essa regra.</strong>
@@ -281,8 +281,8 @@ export default function IAParaNegociosLP() {
                 Com IA, o custo marginal de escala tende a zero. Você atende 10 ou 10.000 clientes com a mesma eficiência. 
                 O gráfico ao lado não é uma promessa vazia, é a realidade matemática da nova economia.
               </p>
-              <div className="p-6 bg-zinc-900/50 border border-neon-cyan/20 rounded-xl">
-                <p className="text-neon-cyan font-bold text-xl mb-2">ROI Comprovado</p>
+              <div className="p-6 bg-zinc-900/50 border border-red-500/20 rounded-xl">
+                <p className="text-red-500 font-bold text-xl mb-2">ROI Comprovado</p>
                 <p className="text-gray-400">Alunos do MBA relatam aumento de produtividade de até 400% nos primeiros 3 meses de implementação.</p>
               </div>
             </div>
@@ -290,7 +290,7 @@ export default function IAParaNegociosLP() {
               <img 
                 src={financialGrowthChart} 
                 alt="Gráfico de Crescimento Exponencial com IA" 
-                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
+                className="w-full h-auto rounded-2xl shadow-[0_0_40px_rgba(239,68,68,0.2)] border border-white/10 hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </div>
@@ -299,19 +299,19 @@ export default function IAParaNegociosLP() {
 
       {/* SEÇÃO 3: SOLUTION SECTION (Apresentação da Oferta Única) */}
       <section className="py-24 bg-black relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-neon-purple/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-neon-cyan/10 blur-[100px]"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-red-600/10 blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-red-500/10 blur-[100px]"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             
             <div className="lg:w-1/2">
-              <div className="inline-block px-4 py-1 rounded-full bg-neon-cyan/10 text-neon-cyan text-sm font-bold mb-6 border border-neon-cyan/30">
+              <div className="inline-block px-4 py-1 rounded-full bg-red-500/10 text-red-500 text-sm font-bold mb-6 border border-red-500/30">
                 A SOLUÇÃO DEFINITIVA
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
                 MBA Executivo em <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">IA para Negócios</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">IA para Negócios</span>
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Não é mais um curso teórico. É a primeira formação executiva que nasceu na era da IA, criada especificamente para transformar líderes em estrategistas de Inteligência Artificial.
@@ -337,11 +337,11 @@ export default function IAParaNegociosLP() {
                   }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 group">
-                    <div className="mt-1 bg-neon-cyan/10 p-3 rounded-xl h-fit group-hover:bg-neon-cyan/20 transition-colors border border-neon-cyan/20">
-                      <CheckCircle2 className="w-6 h-6 text-neon-cyan" />
+                    <div className="mt-1 bg-red-500/10 p-3 rounded-xl h-fit group-hover:bg-red-500/20 transition-colors border border-red-500/20">
+                      <CheckCircle2 className="w-6 h-6 text-red-500" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">{item.title}</h4>
+                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-red-500 transition-colors">{item.title}</h4>
                       <p className="text-gray-400 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -354,9 +354,9 @@ export default function IAParaNegociosLP() {
                 <img src={mbaAugmentedLeadership} alt="Plataforma do MBA" className="rounded-2xl w-full h-auto shadow-inner" />
                 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-8 -left-8 bg-black border border-neon-purple p-6 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] flex items-center gap-4 animate-bounce-slow">
-                  <div className="bg-neon-purple/20 p-4 rounded-full">
-                    <Award className="w-10 h-10 text-neon-purple" />
+                <div className="absolute -bottom-8 -left-8 bg-black border border-red-600 p-6 rounded-2xl shadow-[0_0_30px_rgba(239,68,68,0.3)] flex items-center gap-4 animate-bounce-slow">
+                  <div className="bg-red-600/20 p-4 rounded-full">
+                    <Award className="w-10 h-10 text-red-600" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-400 uppercase tracking-wider">Certificação</div>
@@ -428,16 +428,16 @@ export default function IAParaNegociosLP() {
                 topics: ["Diagnóstico Real do Seu Negócio", "Planejamento e Escopo", "Implementação Hands-on com Mentoria", "Defesa de Projeto e Resultados"]
               }
             ].map((mod, i) => (
-              <div key={i} className={`p-8 rounded-3xl border transition-all hover:-translate-y-2 duration-300 ${mod.highlight ? 'bg-gradient-to-br from-neon-cyan/10 to-black border-neon-cyan shadow-[0_0_30px_rgba(6,182,212,0.15)]' : 'bg-white/5 border-white/10 hover:border-white/30'}`}>
+              <div key={i} className={`p-8 rounded-3xl border transition-all hover:-translate-y-2 duration-300 ${mod.highlight ? 'bg-gradient-to-br from-red-500/10 to-black border-red-500 shadow-[0_0_30px_rgba(6,182,212,0.15)]' : 'bg-white/5 border-white/10 hover:border-white/30'}`}>
                 <div className="flex justify-between items-start mb-6">
-                  <span className={`text-xs font-bold tracking-wider px-4 py-1.5 rounded-full ${mod.highlight ? 'bg-neon-cyan text-black' : 'bg-white/10 text-gray-300'}`}>
+                  <span className={`text-xs font-bold tracking-wider px-4 py-1.5 rounded-full ${mod.highlight ? 'bg-red-500 text-black' : 'bg-white/10 text-gray-300'}`}>
                     {mod.module}
                   </span>
                   <span className="text-sm text-gray-400 flex items-center gap-2 bg-black/30 px-3 py-1 rounded-lg">
                     <Clock className="w-4 h-4" /> {mod.hours}
                   </span>
                 </div>
-                <h3 className={`text-2xl font-bold mb-3 ${mod.highlight ? 'text-neon-cyan' : 'text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-3 ${mod.highlight ? 'text-red-500' : 'text-white'}`}>
                   {mod.title}
                 </h3>
                 <p className="text-gray-400 mb-6 text-sm leading-relaxed border-b border-white/5 pb-4">
@@ -446,7 +446,7 @@ export default function IAParaNegociosLP() {
                 <ul className="space-y-3">
                   {mod.topics.map((topic, j) => (
                     <li key={j} className="flex items-start gap-3 text-gray-300 text-sm">
-                      <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${mod.highlight ? 'text-neon-cyan' : 'text-white/30'}`} />
+                      <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${mod.highlight ? 'text-red-500' : 'text-white/30'}`} />
                       {topic}
                     </li>
                   ))}
@@ -475,7 +475,7 @@ export default function IAParaNegociosLP() {
                 title: "Biblioteca Vitalícia",
                 desc: "Acesso perpétuo a todas as atualizações. Saiu o GPT-5? O Gemini Ultra? Você recebe a aula atualizada sem pagar nada a mais por isso.",
                 icon: Database,
-                color: "text-blue-400"
+                color: "text-red-400"
               },
               {
                 title: "Comunidade de Líderes",
@@ -493,7 +493,7 @@ export default function IAParaNegociosLP() {
                 title: "Mentoria Hands-on",
                 desc: "Suporte direto com quem faz. Tire dúvidas técnicas e estratégicas com professores que vivem o mercado de IA no dia a dia.",
                 icon: MessageSquare,
-                color: "text-purple-400"
+                color: "text-red-500"
               },
               {
                 title: "Certificações Modulares",
@@ -531,13 +531,13 @@ export default function IAParaNegociosLP() {
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-24">
             {/* Elias Evangelista */}
-            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-neon-purple/50 transition-all group">
+            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-red-600/50 transition-all group">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-8 w-48 h-48">
-                  <div className="absolute inset-0 bg-neon-purple/20 rounded-full blur-3xl group-hover:bg-neon-purple/40 transition-all"></div>
+                  <div className="absolute inset-0 bg-red-600/20 rounded-full blur-3xl group-hover:bg-red-600/40 transition-all"></div>
                   <img src={eliasEvangelista} alt="Prof. Me. Elias Evangelista" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
-                <h3 className="text-neon-purple font-bold tracking-wider uppercase mb-2 text-sm">Fundador & Reitor</h3>
+                <h3 className="text-red-600 font-bold tracking-wider uppercase mb-2 text-sm">Fundador & Reitor</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Me. Elias Evangelista</h2>
                 <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                   Possui mestrado e é Advogado, Contabilista. Atua com tecnologia, educação e mercado digital há 20 anos. Nos últimos 4 anos se dedica à implantação de projetos de educação e IA para empresas.
@@ -546,13 +546,13 @@ export default function IAParaNegociosLP() {
             </div>
 
             {/* Carlos Eduardo Pereira */}
-            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-neon-cyan/50 transition-all group">
+            <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 hover:border-red-500/50 transition-all group">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-8 w-48 h-48">
-                  <div className="absolute inset-0 bg-neon-cyan/20 rounded-full blur-3xl group-hover:bg-neon-cyan/40 transition-all"></div>
+                  <div className="absolute inset-0 bg-red-500/20 rounded-full blur-3xl group-hover:bg-red-500/40 transition-all"></div>
                   <img src={carlosEduardo} alt="Prof. Carlos Eduardo Pereira" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/20 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
-                <h3 className="text-neon-cyan font-bold tracking-wider uppercase mb-2 text-sm">Coordenador do MBA</h3>
+                <h3 className="text-red-500 font-bold tracking-wider uppercase mb-2 text-sm">Coordenador do MBA</h3>
                 <h2 className="text-2xl font-bold text-white mb-4">Prof. Carlos Eduardo Pereira</h2>
                 <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                   Doutorando em IA pela Mackenzie. Consultor Independente de IA para Indústria, SaaS e Mercado Digital. Especialista em Agentes de IA e Automação. Atua em projetos na Faculdade HUB (Primo Rico), FAAP e Alura.
@@ -573,7 +573,7 @@ export default function IAParaNegociosLP() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            IA para Negócios em <span className="text-neon-purple">2026</span>
+            IA para Negócios em <span className="text-red-600">2026</span>
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
             Confira a entrevista exclusiva ao SBT/TV Thathi sobre como a Inteligência Artificial está redefinindo o mercado este ano.
@@ -591,7 +591,7 @@ export default function IAParaNegociosLP() {
             </div>
             <div className="bg-zinc-900 p-6 text-left flex flex-col md:flex-row justify-between items-center gap-4">
               <div>
-                <p className="text-neon-cyan font-bold text-sm tracking-wider mb-1">SBT / TV THATHI • 29/01/2026</p>
+                <p className="text-red-500 font-bold text-sm tracking-wider mb-1">SBT / TV THATHI • 29/01/2026</p>
                 <p className="text-white font-medium text-lg">O Impacto da IA nos Negócios e Carreiras</p>
               </div>
               <a href="https://www.youtube.com/watch?v=wm3tGKLWjfI" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white text-sm font-medium transition-colors border border-white/10 flex items-center gap-2">
@@ -629,7 +629,7 @@ export default function IAParaNegociosLP() {
       <section className="py-24 bg-gradient-to-b from-zinc-900 to-black relative">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="bg-black border border-white/10 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-neon-purple via-white to-neon-cyan"></div>
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-white to-red-400"></div>
             
             <div className="p-8 md:p-16">
               <div className="text-center mb-12">
@@ -649,14 +649,14 @@ export default function IAParaNegociosLP() {
                   { item: "Suporte Direto com Professores", value: "R$ 2.400", icon: MessageSquare },
                   { item: "Consultoria 1-on-1 (Bônus Limitado - 20 Primeiros)", value: "R$ 3.500", icon: Star, highlight: true },
                 ].map((row, i) => (
-                  <div key={i} className={`flex flex-col md:flex-row justify-between items-center border-b border-white/5 pb-4 last:border-0 ${row.highlight ? 'bg-neon-purple/10 p-4 rounded-xl border border-neon-purple/30' : ''}`}>
+                  <div key={i} className={`flex flex-col md:flex-row justify-between items-center border-b border-white/5 pb-4 last:border-0 ${row.highlight ? 'bg-red-600/10 p-4 rounded-xl border border-red-600/30' : ''}`}>
                     <div className="flex items-center gap-4 w-full md:w-auto">
-                      <div className={`p-2 rounded-lg ${row.highlight ? 'bg-neon-purple text-white' : 'bg-white/5 text-neon-cyan'}`}>
+                      <div className={`p-2 rounded-lg ${row.highlight ? 'bg-red-600 text-white' : 'bg-white/5 text-red-500'}`}>
                         <row.icon className="w-5 h-5" />
                       </div>
                       <span className={`text-lg ${row.highlight ? 'text-white font-bold' : 'text-gray-200'}`}>{row.item}</span>
                     </div>
-                    <span className={`text-lg font-mono mt-2 md:mt-0 ${row.highlight ? 'text-neon-purple font-bold' : 'text-gray-500 line-through'}`}>{row.value}</span>
+                    <span className={`text-lg font-mono mt-2 md:mt-0 ${row.highlight ? 'text-red-600 font-bold' : 'text-gray-500 line-through'}`}>{row.value}</span>
                   </div>
                 ))}
               </div>
@@ -668,7 +668,7 @@ export default function IAParaNegociosLP() {
                     R$ 7.000
                   </div>
                   <div className="text-left">
-                    <div className="text-neon-cyan font-bold text-xl">ou 12x de R$ 583,33</div>
+                    <div className="text-red-500 font-bold text-xl">ou 12x de R$ 583,33</div>
                     <div className="text-gray-400 text-sm">Desconto de 86% aplicado</div>
                   </div>
                 </div>
@@ -676,7 +676,7 @@ export default function IAParaNegociosLP() {
 
               <Button 
                 onClick={handleScrollToForm}
-                className="w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-2xl py-10 rounded-2xl shadow-[0_0_30px_rgba(0,240,255,0.3)] animate-pulse-slow mb-6"
+                className="w-full bg-red-500 text-black hover:bg-red-500/80 font-bold text-2xl py-10 rounded-2xl shadow-[0_0_30px_rgba(239,68,68,0.3)] animate-pulse-slow mb-6"
               >
                 QUERO APROVEITAR ESSA OFERTA
               </Button>
@@ -704,7 +704,7 @@ export default function IAParaNegociosLP() {
               { q: "Qual a duração do curso?", a: "O MBA tem carga horária de 360 horas. Você pode concluí-lo em 6 meses (modo intensivo) ou até 12 meses, dependendo do seu ritmo." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border border-white/10 rounded-lg bg-white/5 px-4">
-                <AccordionTrigger className="text-white hover:text-neon-cyan text-left">{faq.q}</AccordionTrigger>
+                <AccordionTrigger className="text-white hover:text-red-500 text-left">{faq.q}</AccordionTrigger>
                 <AccordionContent className="text-gray-400">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
@@ -753,7 +753,7 @@ export default function IAParaNegociosLP() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-700"
+                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all placeholder:text-gray-700"
                       placeholder="Digite seu nome completo"
                     />
                   </div>
@@ -765,7 +765,7 @@ export default function IAParaNegociosLP() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-700"
+                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all placeholder:text-gray-700"
                       placeholder="seu@empresa.com"
                     />
                   </div>
@@ -780,7 +780,7 @@ export default function IAParaNegociosLP() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-700"
+                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all placeholder:text-gray-700"
                       placeholder="(DDD) 99999-9999"
                     />
                   </div>
@@ -791,7 +791,7 @@ export default function IAParaNegociosLP() {
                       required
                       value={formData.role}
                       onChange={handleInputChange}
-                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all"
+                      className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all"
                     >
                       <option value="">Selecione seu cargo...</option>
                       <option value="ceo">CEO / Fundador / Sócio</option>
@@ -807,7 +807,7 @@ export default function IAParaNegociosLP() {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-neon-purple text-white hover:bg-neon-purple/80 font-bold text-xl py-8 rounded-xl shadow-lg mt-6 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:-translate-y-1"
+                  className="w-full bg-red-600 text-white hover:bg-red-600/80 font-bold text-xl py-8 rounded-xl shadow-lg mt-6 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:-translate-y-1"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-3">

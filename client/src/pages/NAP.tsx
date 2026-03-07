@@ -47,22 +47,22 @@ export default function NAP() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-neon-cyan/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-red-500/30">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-purple/10 to-transparent opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 to-transparent opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-background"></div>
         
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 mb-4">
-              <Heart className="w-4 h-4 text-neon-purple" />
+              <Heart className="w-4 h-4 text-red-600" />
               <span className="uppercase tracking-wider text-xs">Human Intelligence in the AI Age</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
               INTELIGÊNCIA HUMANA <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-cyan">PARA UM MUNDO DE IA</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">PARA UM MUNDO DE IA</span>
             </h1>
             
             <p className="text-xl text-gray-400 leading-relaxed">
@@ -87,13 +87,13 @@ export default function NAP() {
                 Integramos Psicologia e Pedagogia para criar uma jornada acadêmica equilibrada e de alta performance.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden border border-neon-purple/20 bg-black/50 flex items-center justify-center group">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/10 to-transparent opacity-50"></div>
-              <Brain className="w-48 h-48 text-white/5 group-hover:text-neon-purple/30 transition-colors duration-700 animate-pulse" />
+            <div className="relative h-[400px] rounded-2xl overflow-hidden border border-red-600/20 bg-black/50 flex items-center justify-center group">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-50"></div>
+              <Brain className="w-48 h-48 text-white/5 group-hover:text-red-600/30 transition-colors duration-700 animate-pulse" />
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-black/80 backdrop-blur-sm p-4 rounded-lg border border-white/10">
                   <div className="flex items-center gap-3 mb-2">
-                    <Shield className="w-5 h-5 text-neon-cyan" />
+                    <Shield className="w-5 h-5 text-red-500" />
                     <span className="font-bold text-white">Espaço Seguro</span>
                   </div>
                   <p className="text-sm text-gray-400">Sigilo absoluto e acolhimento profissional.</p>
@@ -114,10 +114,10 @@ export default function NAP() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, i) => (
-              <Card key={i} className="bg-black border-white/10 hover:border-neon-cyan/50 transition-all duration-300 group">
+              <Card key={i} className="bg-black border-white/10 hover:border-red-500/50 transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-neon-cyan/10 transition-colors">
-                    <service.icon className="w-6 h-6 text-neon-purple group-hover:text-neon-cyan transition-colors" />
+                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-red-500/10 transition-colors">
+                    <service.icon className="w-6 h-6 text-red-600 group-hover:text-red-500 transition-colors" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
@@ -141,7 +141,7 @@ export default function NAP() {
               {audiences.map((item, i) => (
                 <div key={i} className="flex gap-4 items-start p-6 rounded-xl bg-black/50 border border-white/5 hover:border-white/20 transition-colors">
                   <div className="mt-1">
-                    <Users className="w-5 h-5 text-neon-cyan" />
+                    <Users className="w-5 h-5 text-red-500" />
                   </div>
                   <div>
                     <h3 className="font-bold text-white mb-2">{item.role}</h3>
@@ -157,8 +157,8 @@ export default function NAP() {
       {/* Selo de Excelência */}
       <section className="py-20">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center p-12 rounded-2xl bg-gradient-to-br from-neon-purple/10 to-transparent border border-neon-purple/20">
-            <Sparkles className="w-8 h-8 text-neon-purple mx-auto mb-6" />
+          <div className="max-w-3xl mx-auto text-center p-12 rounded-2xl bg-gradient-to-br from-red-600/10 to-transparent border border-red-600/20">
+            <Sparkles className="w-8 h-8 text-red-600 mx-auto mb-6" />
             <h3 className="text-2xl font-bold text-white mb-4">O Selo de Excelência FABRANI</h3>
             <p className="text-lg text-gray-300 italic">
               "Formar profissionais de elite para o mercado global exige mais do que ensinar código; exige formar mentes saudáveis. O autoconhecimento é a base da liderança exponencial."
@@ -169,7 +169,7 @@ export default function NAP() {
 
       {/* CTA */}
       <section className="py-24 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-cyan/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-500/10 via-transparent to-transparent"></div>
         <div className="container relative z-10 text-center">
           <h2 className="text-4xl font-bold mb-6">Sua evolução começa com o equilíbrio</h2>
           <p className="text-xl text-gray-400 mb-8">
@@ -183,7 +183,7 @@ export default function NAP() {
               <p className="text-sm text-gray-500">
                 Acesso rápido e sigiloso disponível diretamente no seu dashboard de aluno.
               </p>
-              <p className="text-neon-purple font-mono">
+              <p className="text-red-600 font-mono">
                 nap@fabrani.com.br
               </p>
             </div>

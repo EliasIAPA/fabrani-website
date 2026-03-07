@@ -117,3 +117,13 @@
 - [ ] CertificateMockup.tsx - Atualizar cores
 - [ ] index.css - Atualizar variáveis CSS globais
 - [ ] Testes responsividade mobile
+
+## Substituição Total de Cores (Roxo/Azul → Vermelho/Dourado/Preto)
+- [x] Varredura completa de neon-cyan, neon-purple, cyan, purple, blue em todos os arquivos
+- [x] Atualizar index.css (variáveis CSS globais)
+- [x] Atualizar Layout.tsx (Header/Footer/Menu)
+- [x] Atualizar TODAS as páginas restantes
+- [x] Atualizar componentes compartilhados
+- [x] Revisão final - zero azul/roxo em todo o site
+
+- [x] Incluir LOGOTIPO2.png (com A vermelho) na Home e onde necessário como mockup

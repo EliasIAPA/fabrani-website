@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 
 export default function ResponsabilidadeSocial() {
   return (
-    <div className="min-h-screen bg-void-black text-white selection:bg-neon-cyan selection:text-void-black overflow-hidden pt-20">
+    <div className="min-h-screen bg-void-black text-white selection:bg-red-500 selection:text-void-black overflow-hidden pt-20">
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:px-6 lg:px-8 border-b border-white/10">
@@ -17,12 +17,12 @@ export default function ResponsabilidadeSocial() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-purple/10 border border-neon-purple/30 text-neon-purple text-xs font-mono mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 border border-red-600/30 text-red-600 text-xs font-mono mb-6">
               <Heart className="w-3 h-3" />
               <span>SOCIAL IMPACT</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-display">
-              COMPROMISSO COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">INCLUSÃO</span>
+              COMPROMISSO COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">INCLUSÃO</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A FABRANI reafirma seu comprometimento com a responsabilidade social através de parcerias significativas e apoio a causas nobres. Nosso objetivo é promover a inclusão e melhorar a qualidade de vida de pessoas com deficiência em diversas áreas.
@@ -44,7 +44,7 @@ export default function ResponsabilidadeSocial() {
           >
             <div className="order-2 lg:order-1">
               <div className="flex items-center gap-3 mb-4">
-                <HandHeart className="w-8 h-8 text-neon-cyan" />
+                <HandHeart className="w-8 h-8 text-red-500" />
                 <h2 className="text-3xl font-bold">Instituto Abraçar Guariba</h2>
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -56,22 +56,22 @@ export default function ResponsabilidadeSocial() {
               
               <div className="flex flex-col gap-4 mb-8">
                 <div className="flex items-start gap-3 text-sm text-gray-300">
-                  <MapPin className="w-5 h-5 text-neon-purple shrink-0" />
+                  <MapPin className="w-5 h-5 text-red-600 shrink-0" />
                   <span>Rua São Martinho, 1575 - sala 1, Jardim Boa Vista, Guariba/SP</span>
                 </div>
               </div>
 
-              <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black">
+              <Button asChild variant="outline" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-black">
                 <a href="https://www.institutoabracarguariba.org.br" target="_blank" rel="noopener noreferrer">
                   Visitar Site Oficial <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
               </Button>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <div className="absolute inset-0 bg-neon-cyan/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="absolute inset-0 bg-red-500/20 blur-3xl rounded-full opacity-20"></div>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <HandHeart className="w-24 h-24 text-white/20 group-hover:text-neon-cyan/50 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <HandHeart className="w-24 h-24 text-white/20 group-hover:text-red-500/50 transition-colors duration-500" />
                 <div className="absolute bottom-4 right-4 text-xs font-mono text-white/40">PARCEIRO OFICIAL</div>
               </div>
             </div>
@@ -85,16 +85,16 @@ export default function ResponsabilidadeSocial() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div className="order-1 relative">
-              <div className="absolute inset-0 bg-neon-purple/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="absolute inset-0 bg-red-600/20 blur-3xl rounded-full opacity-20"></div>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-bl from-neon-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <Users className="w-24 h-24 text-white/20 group-hover:text-neon-purple/50 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-bl from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Users className="w-24 h-24 text-white/20 group-hover:text-red-600/50 transition-colors duration-500" />
                 <div className="absolute bottom-4 left-4 text-xs font-mono text-white/40">EVENTO 2025</div>
               </div>
             </div>
             <div className="order-2">
               <div className="flex items-center gap-3 mb-4">
-                <Globe className="w-8 h-8 text-neon-purple" />
+                <Globe className="w-8 h-8 text-red-600" />
                 <h2 className="text-3xl font-bold">Congresso Autismo360</h2>
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -106,14 +106,14 @@ export default function ResponsabilidadeSocial() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                  <div className="flex items-center gap-2 text-neon-cyan mb-2">
+                  <div className="flex items-center gap-2 text-red-500 mb-2">
                     <Calendar className="w-4 h-4" />
                     <span className="font-bold text-sm">DATA</span>
                   </div>
                   <p className="text-sm">07, 08 e 09 de Novembro de 2025</p>
                 </div>
                 <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                  <div className="flex items-center gap-2 text-neon-purple mb-2">
+                  <div className="flex items-center gap-2 text-red-600 mb-2">
                     <MapPin className="w-4 h-4" />
                     <span className="font-bold text-sm">LOCAL</span>
                   </div>
@@ -121,7 +121,7 @@ export default function ResponsabilidadeSocial() {
                 </div>
               </div>
 
-              <Button asChild variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-white">
+              <Button asChild variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">
                 <a href="https://www.congressoautismo360.com" target="_blank" rel="noopener noreferrer">
                   Saiba Mais sobre o Evento <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
@@ -138,7 +138,7 @@ export default function ResponsabilidadeSocial() {
           >
             <div className="order-2 lg:order-1">
               <div className="flex items-center gap-3 mb-4">
-                <Eye className="w-8 h-8 text-neon-cyan" />
+                <Eye className="w-8 h-8 text-red-500" />
                 <h2 className="text-3xl font-bold">Associação Olhos da Alma</h2>
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -150,16 +150,16 @@ export default function ResponsabilidadeSocial() {
               
               <div className="flex flex-col gap-4 mb-8">
                 <div className="flex items-start gap-3 text-sm text-gray-300">
-                  <MapPin className="w-5 h-5 text-neon-purple shrink-0" />
+                  <MapPin className="w-5 h-5 text-red-600 shrink-0" />
                   <span>Rua Maestro Grossi, 348, Jaboticabal/SP</span>
                 </div>
               </div>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <div className="absolute inset-0 bg-neon-cyan/20 blur-3xl rounded-full opacity-20"></div>
+              <div className="absolute inset-0 bg-red-500/20 blur-3xl rounded-full opacity-20"></div>
               <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <Eye className="w-24 h-24 text-white/20 group-hover:text-neon-cyan/50 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Eye className="w-24 h-24 text-white/20 group-hover:text-red-500/50 transition-colors duration-500" />
                 <div className="absolute bottom-4 right-4 text-xs font-mono text-white/40">PARCEIRO LOCAL</div>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function ResponsabilidadeSocial() {
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
             A FABRANI continua comprometida em ser um agente de mudança positiva nas comunidades em que atua. Através dessas parcerias com o Instituto Abraçar, o Congresso Autismo360 e a Associação Olhos da Alma, reafirmamos nosso papel na construção de uma sociedade mais inclusiva e equitativa. Estamos empenhados em continuar nosso apoio a causas que promovem bem-estar social e qualidade de vida para todos.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
         </div>
       </section>
 

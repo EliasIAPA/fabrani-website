@@ -136,7 +136,7 @@ export default function ObsolescenceSimulator() {
     <Card className="relative bg-black/80 border-white/10 backdrop-blur-xl overflow-hidden z-10">
       <CardHeader className="border-b border-white/10 pb-6">
         <CardTitle className="flex items-center gap-3 text-xl font-mono">
-          <Activity className="w-5 h-5 text-neon-purple animate-pulse" />
+          <Activity className="w-5 h-5 text-red-600 animate-pulse" />
           ANÁLISE DE RISCO PROFISSIONAL
         </CardTitle>
       </CardHeader>
@@ -148,7 +148,7 @@ export default function ObsolescenceSimulator() {
               <Input 
                 id="profession" 
                 placeholder="Ex: Advogado, Designer, Contador..." 
-                className="bg-white/5 border-white/10 text-white focus:border-neon-cyan"
+                className="bg-white/5 border-white/10 text-white focus:border-red-500"
                 value={profession}
                 onChange={(e) => setProfession(e.target.value)}
               />
@@ -176,7 +176,7 @@ export default function ObsolescenceSimulator() {
               </div>
               <div className="h-2 bg-white/10 w-full rounded-full overflow-hidden">
                 <div 
-                  className={`h-full w-full relative transition-all duration-1000 ${result.risk > 70 ? "bg-gradient-to-r from-neon-cyan to-red-500" : "bg-gradient-to-r from-neon-cyan to-orange-500"}`}
+                  className={`h-full w-full relative transition-all duration-1000 ${result.risk > 70 ? "bg-gradient-to-r from-red-500 to-red-500" : "bg-gradient-to-r from-red-500 to-orange-500"}`}
                   style={{ width: `${result.risk}%` }}
                 >
                   <div className="absolute right-0 top-0 bottom-0 w-1 bg-white animate-pulse"></div>
@@ -194,8 +194,8 @@ export default function ObsolescenceSimulator() {
               </div>
             </div>
 
-            <div className="bg-neon-purple/10 border border-neon-purple/30 p-4 rounded-sm">
-              <p className="text-sm text-neon-purple font-mono mb-2">DIAGNÓSTICO DA IA:</p>
+            <div className="bg-red-600/10 border border-red-600/30 p-4 rounded-sm">
+              <p className="text-sm text-red-600 font-mono mb-2">DIAGNÓSTICO DA IA:</p>
               <p className="text-sm text-white">
                 {result.diagnosis}
               </p>
@@ -203,7 +203,7 @@ export default function ObsolescenceSimulator() {
 
             <div className="flex gap-3">
               <Button 
-                className="flex-1 bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold rounded-none py-6"
+                className="flex-1 bg-red-500 text-black hover:bg-red-500/80 font-bold rounded-none py-6"
                 onClick={generatePDF}
               >
                 <Download className="mr-2 h-4 w-4" /> BAIXAR RELATÓRIO PDF

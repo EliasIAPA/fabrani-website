@@ -41,102 +41,102 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Custom Neon Colors */
+  /* FABRANI Premium Colors: Red, Black, White, Gold */
   --color-neon-cyan: var(--neon-cyan);
   --color-neon-purple: var(--neon-purple);
   --color-neon-pink: var(--neon-pink);
 }
 
 :root {
-  /* Cyberpunk Industrial Palette - Light Mode (Not primary, but defined for safety) */
-  --primary: oklch(0.6 0.18 250); /* Electric Blue */
+  /* FABRANI Premium Palette - Light Mode */
+  --primary: oklch(0.55 0.22 25); /* Premium Red */
   --primary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.6 0.18 250);
+  --sidebar-primary: oklch(0.55 0.22 25);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --chart-1: oklch(0.6 0.18 250);
-  --chart-2: oklch(0.5 0.2 290);
-  --chart-3: oklch(0.4 0.2 320);
-  --chart-4: oklch(0.3 0.1 250);
-  --chart-5: oklch(0.2 0.1 250);
-  --radius: 0rem; /* Brutalist sharp corners */
+  --chart-1: oklch(0.55 0.22 25); /* Red */
+  --chart-2: oklch(0.75 0.12 80); /* Gold */
+  --chart-3: oklch(0.45 0.2 25); /* Dark Red */
+  --chart-4: oklch(0.3 0.05 25); /* Deep Red */
+  --chart-5: oklch(0.2 0.02 0); /* Near Black */
+  --radius: 0rem;
   --background: oklch(0.98 0 0);
-  --foreground: oklch(0.15 0 0);
+  --foreground: oklch(0.1 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
+  --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.1 0 0);
   --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.15 0 0);
   --muted: oklch(0.95 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.95 0 0);
-  --accent-foreground: oklch(0.2 0 0);
-  --destructive: oklch(0.6 0.2 20);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.95 0.01 25);
+  --accent-foreground: oklch(0.15 0 0);
+  --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
-  --ring: oklch(0.6 0.18 250);
+  --ring: oklch(0.55 0.22 25);
   --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
   --sidebar-accent: oklch(0.95 0 0);
-  --sidebar-accent-foreground: oklch(0.2 0 0);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
   --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.6 0.18 250);
+  --sidebar-ring: oklch(0.55 0.22 25);
   
-  --neon-cyan: oklch(0.85 0.2 200);
-  --neon-purple: oklch(0.65 0.25 290);
-  --neon-pink: oklch(0.7 0.25 340);
+  --neon-cyan: oklch(0.55 0.22 25); /* Now maps to Premium Red */
+  --neon-purple: oklch(0.75 0.12 80); /* Now maps to Gold */
+  --neon-pink: oklch(0.55 0.22 25); /* Now maps to Premium Red */
 }
 
 .dark {
-  /* Cyberpunk Industrial Palette - Dark Mode (Primary) */
-  --primary: oklch(0.85 0.2 200); /* Neon Cyan */
-  --primary-foreground: oklch(0.1 0.05 250);
-  --sidebar-primary: oklch(0.85 0.2 200);
-  --sidebar-primary-foreground: oklch(0.1 0.05 250);
+  /* FABRANI Premium Palette - Dark Mode (Primary) */
+  --primary: oklch(0.6 0.24 25); /* Vibrant Red */
+  --primary-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.6 0.24 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
   
-  /* Void Black Backgrounds */
-  --background: oklch(0.1 0.02 260); /* #050505 approx */
-  --foreground: oklch(0.95 0.02 200); /* Off-white with slight cyan tint */
+  /* Deep Black Backgrounds */
+  --background: oklch(0.08 0.01 0); /* Pure deep black */
+  --foreground: oklch(0.95 0 0); /* Clean white */
   
-  --card: oklch(0.15 0.03 260);
-  --card-foreground: oklch(0.95 0.02 200);
+  --card: oklch(0.12 0.01 0);
+  --card-foreground: oklch(0.95 0 0);
   
-  --popover: oklch(0.12 0.03 260);
-  --popover-foreground: oklch(0.95 0.02 200);
+  --popover: oklch(0.1 0.01 0);
+  --popover-foreground: oklch(0.95 0 0);
   
-  --secondary: oklch(0.25 0.05 260);
-  --secondary-foreground: oklch(0.9 0.05 200);
+  --secondary: oklch(0.18 0.02 0);
+  --secondary-foreground: oklch(0.9 0 0);
   
-  --muted: oklch(0.2 0.03 260);
-  --muted-foreground: oklch(0.6 0.05 250);
+  --muted: oklch(0.18 0.01 0);
+  --muted-foreground: oklch(0.55 0 0);
   
-  --accent: oklch(0.25 0.05 260);
-  --accent-foreground: oklch(0.95 0.02 200);
+  --accent: oklch(0.18 0.02 25);
+  --accent-foreground: oklch(0.95 0 0);
   
-  --destructive: oklch(0.6 0.25 20); /* Glitch Red */
+  --destructive: oklch(0.6 0.24 25); /* Red */
   --destructive-foreground: oklch(0.98 0 0);
   
-  --border: oklch(0.3 0.05 260);
-  --input: oklch(0.2 0.03 260);
-  --ring: oklch(0.85 0.2 200); /* Neon Cyan Ring */
+  --border: oklch(0.25 0.02 0);
+  --input: oklch(0.18 0.01 0);
+  --ring: oklch(0.6 0.24 25); /* Red Ring */
   
-  --chart-1: oklch(0.85 0.2 200); /* Cyan */
-  --chart-2: oklch(0.65 0.25 290); /* Purple */
-  --chart-3: oklch(0.7 0.25 340); /* Pink */
-  --chart-4: oklch(0.8 0.15 150); /* Green */
-  --chart-5: oklch(0.9 0.1 80); /* Yellow */
+  --chart-1: oklch(0.6 0.24 25); /* Red */
+  --chart-2: oklch(0.75 0.12 80); /* Gold */
+  --chart-3: oklch(0.45 0.2 25); /* Dark Red */
+  --chart-4: oklch(0.85 0.08 80); /* Light Gold */
+  --chart-5: oklch(0.95 0 0); /* White */
   
-  --sidebar: oklch(0.1 0.02 260);
-  --sidebar-foreground: oklch(0.95 0.02 200);
-  --sidebar-accent: oklch(0.2 0.03 260);
-  --sidebar-accent-foreground: oklch(0.85 0.2 200);
-  --sidebar-border: oklch(0.3 0.05 260);
-  --sidebar-ring: oklch(0.85 0.2 200);
+  --sidebar: oklch(0.08 0.01 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.15 0.02 0);
+  --sidebar-accent-foreground: oklch(0.6 0.24 25);
+  --sidebar-border: oklch(0.25 0.02 0);
+  --sidebar-ring: oklch(0.6 0.24 25);
   
-  --neon-cyan: oklch(0.85 0.2 200);
-  --neon-purple: oklch(0.65 0.25 290);
-  --neon-pink: oklch(0.7 0.25 340);
+  --neon-cyan: oklch(0.6 0.24 25); /* Now maps to Vibrant Red */
+  --neon-purple: oklch(0.75 0.12 80); /* Now maps to Gold */
+  --neon-pink: oklch(0.6 0.24 25); /* Now maps to Vibrant Red */
 }
 
 @layer base {
@@ -160,24 +160,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -188,16 +175,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 }
@@ -222,12 +209,12 @@
   }
 
   .glitch-hover::before {
-    color: #0ff;
+    color: #ef4444; /* Red glitch */
     z-index: -1;
   }
 
   .glitch-hover::after {
-    color: #f0f;
+    color: #fbbf24; /* Gold glitch */
     z-index: -2;
   }
 
@@ -278,5 +265,9 @@
     background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,20,20,0.95) 100%);
     border: 1px solid rgba(255, 215, 0, 0.3);
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+  }
+
+  .red-glow {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5), 0 0 20px rgba(239, 68, 68, 0.3);
   }
 }

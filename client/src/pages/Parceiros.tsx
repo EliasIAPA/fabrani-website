@@ -44,7 +44,7 @@ export default function Parceiros() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500">
-            Empresas que Confiam na <span className="text-neon-cyan">FABRANI</span>
+            Empresas que Confiam na <span className="text-red-500">FABRANI</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Conheça as organizações líderes que impulsionam a inovação junto conosco.
@@ -57,13 +57,13 @@ export default function Parceiros() {
             
             {/* Search */}
             <div className="relative w-full md:w-96 group">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-neon-cyan transition-colors" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-red-500 transition-colors" />
               <input 
                 type="text" 
                 placeholder="Buscar empresa..." 
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-all placeholder:text-muted-foreground/50"
+                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all placeholder:text-muted-foreground/50"
               />
               {search && (
                 <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-white">
@@ -85,7 +85,7 @@ export default function Parceiros() {
                     className={`
                       flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all border
                       ${isActive 
-                        ? "bg-neon-cyan/10 border-neon-cyan text-neon-cyan shadow-[0_0_15px_rgba(6,182,212,0.2)]" 
+                        ? "bg-red-500/10 border-red-500 text-red-500 shadow-[0_0_15px_rgba(6,182,212,0.2)]" 
                         : "bg-black/30 border-white/10 text-muted-foreground hover:border-white/30 hover:text-white"}
                     `}
                   >
@@ -104,9 +104,9 @@ export default function Parceiros() {
             {filteredPartners.map((partner, index) => (
               <div 
                 key={index}
-                className="group relative bg-white/5 border border-white/10 rounded-xl p-6 flex items-center justify-center aspect-square hover:border-neon-cyan/50 hover:bg-white/10 transition-all duration-300"
+                className="group relative bg-white/5 border border-white/10 rounded-xl p-6 flex items-center justify-center aspect-square hover:border-red-500/50 hover:bg-white/10 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
                 
                 {partner.localPath ? (
                   <img 
@@ -124,19 +124,19 @@ export default function Parceiros() {
                   />
                 ) : (
                   <div className="text-center">
-                     <Building2 className="w-12 h-12 text-white/20 mx-auto mb-2 group-hover:text-neon-cyan transition-colors" />
+                     <Building2 className="w-12 h-12 text-white/20 mx-auto mb-2 group-hover:text-red-500 transition-colors" />
                      <span className="text-sm font-bold text-white/50 group-hover:text-white transition-colors">{partner.name}</span>
                   </div>
                 )}
                 
                 {/* Fallback Text Element (hidden by default) */}
                 <div className="hidden text-center absolute inset-0 flex flex-col items-center justify-center p-4">
-                   <Building2 className="w-12 h-12 text-white/20 mx-auto mb-2 group-hover:text-neon-cyan transition-colors" />
+                   <Building2 className="w-12 h-12 text-white/20 mx-auto mb-2 group-hover:text-red-500 transition-colors" />
                    <span className="text-sm font-bold text-white/50 group-hover:text-white transition-colors">{partner.name}</span>
                 </div>
 
                 <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-2 h-2 rounded-full bg-neon-cyan shadow-[0_0_10px_#06b6d4]" />
+                  <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_#06b6d4]" />
                 </div>
               </div>
             ))}
@@ -150,7 +150,7 @@ export default function Parceiros() {
             <p className="text-muted-foreground">Tente ajustar seus filtros ou busca.</p>
             <button 
               onClick={() => {setSearch(""); setSelectedCategories([]);}}
-              className="mt-4 text-neon-cyan hover:underline"
+              className="mt-4 text-red-500 hover:underline"
             >
               Limpar tudo
             </button>

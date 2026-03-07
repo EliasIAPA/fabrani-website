@@ -189,7 +189,7 @@ export default function GraduacaoMarketing() {
           </p>
           <div className="flex flex-wrap justify-center gap-8 opacity-80">
             {["Marcus Lúcius", "Sofia Gracioli", "Ângelo Sastre", "Danielle Riegermann", "Gustavo Barbieri", "Josney"].map((name, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-medium hover:border-neon-cyan hover:text-neon-cyan transition-colors cursor-default">
+              <div key={i} className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white font-medium hover:border-red-500 hover:text-red-500 transition-colors cursor-default">
                 {name}
               </div>
             ))}
@@ -198,7 +198,7 @@ export default function GraduacaoMarketing() {
       </section>
 
       {/* Processo de Inscrição */}
-      <section className="py-20 bg-gradient-to-b from-black to-neon-purple/10 border-t border-white/10">
+      <section className="py-20 bg-gradient-to-b from-black to-red-600/10 border-t border-white/10">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-12">Vestibular Aberto 2026</h2>
           <div className="grid md:grid-cols-4 gap-4 mb-12">

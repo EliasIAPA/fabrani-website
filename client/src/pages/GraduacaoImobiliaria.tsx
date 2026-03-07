@@ -121,7 +121,7 @@ export default function GraduacaoImobiliaria() {
           <h2 className="text-3xl font-bold mb-10 text-center">Grade Curricular</h2>
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="sem-1" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">1º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">1º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Fundamentos de Marketing I</li>
@@ -134,7 +134,7 @@ export default function GraduacaoImobiliaria() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-2" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">2º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">2º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Fundamentos de Marketing II</li>
@@ -148,7 +148,7 @@ export default function GraduacaoImobiliaria() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-3" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">3º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">3º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Administração de Condomínios</li>
@@ -162,11 +162,11 @@ export default function GraduacaoImobiliaria() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="sem-4" className="border border-white/10 bg-black rounded-lg px-4">
-              <AccordionTrigger className="text-lg font-bold hover:text-neon-cyan py-6">4º SEMESTRE</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold hover:text-red-500 py-6">4º SEMESTRE</AccordionTrigger>
               <AccordionContent className="text-gray-400 pb-6">
                 <ul className="space-y-2 pl-4 border-l-2 border-white/10">
                   <li>Administração e Avaliação de Imóveis e Empreendimentos Imobiliários</li>
-                  <li className="text-neon-cyan font-bold">Produção de Conteúdo com I.A</li>
+                  <li className="text-red-500 font-bold">Produção de Conteúdo com I.A</li>
                   <li>Ética Profissional do Corretor</li>
                   <li>Experiência do Cliente</li>
                   <li>Sistema Registral e Notarial</li>
@@ -180,7 +180,7 @@ export default function GraduacaoImobiliaria() {
       </section>
 
       {/* Processo de Inscrição */}
-      <section className="py-20 bg-gradient-to-b from-black to-neon-purple/10 border-t border-white/10">
+      <section className="py-20 bg-gradient-to-b from-black to-red-600/10 border-t border-white/10">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-12">Vestibular Aberto 2026</h2>
           <div className="grid md:grid-cols-4 gap-4 mb-12">

@@ -7,7 +7,7 @@ export default function CertificateMockup() {
   return (
     <div className="relative w-full max-w-4xl mx-auto perspective-1000 group">
       {/* Efeito de brilho de fundo */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-cyan opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse-slow"></div>
+      <div className="absolute -inset-4 bg-gradient-to-r from-red-500 via-red-600 to-red-400 opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse-slow"></div>
       
       {/* Container do Certificado com efeito 3D */}
       <motion.div 
@@ -32,11 +32,11 @@ export default function CertificateMockup() {
           {/* Cabeçalho */}
           <div className="space-y-4">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 rounded-full border-2 border-neon-cyan/50 flex items-center justify-center bg-black/50 backdrop-blur-sm shadow-[0_0_20px_rgba(0,240,255,0.2)]">
-                <Award className="w-10 h-10 text-neon-cyan" />
+              <div className="w-20 h-20 rounded-full border-2 border-red-500/50 flex items-center justify-center bg-black/50 backdrop-blur-sm shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+                <Award className="w-10 h-10 text-red-500" />
               </div>
             </div>
-            <h2 className="text-xs md:text-sm tracking-[0.3em] text-neon-cyan uppercase font-sans">Certificado de Extensão Universitária</h2>
+            <h2 className="text-xs md:text-sm tracking-[0.3em] text-red-500 uppercase font-sans">Certificado de Extensão Universitária</h2>
             <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight font-display">FABRANI</h1>
             <p className="text-sm text-gray-400 font-sans">Faculdade Brasileira de Negócios Inovadores</p>
           </div>
@@ -54,10 +54,10 @@ export default function CertificateMockup() {
             <div className="space-y-2">
               <p className="text-gray-300 text-sm md:text-base">a Dupla Certificação em:</p>
               <div className="flex flex-col gap-2 items-center justify-center">
-                <span className="px-4 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-bold text-sm md:text-lg shadow-[0_0_10px_rgba(0,240,255,0.1)]">
+                <span className="px-4 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-500 font-bold text-sm md:text-lg shadow-[0_0_10px_rgba(239,68,68,0.1)]">
                   Letramento em Inteligência Artificial
                 </span>
-                <span className="px-4 py-1 rounded-full bg-neon-purple/10 border border-neon-purple/30 text-neon-purple font-bold text-sm md:text-lg shadow-[0_0_10px_rgba(189,0,255,0.1)]">
+                <span className="px-4 py-1 rounded-full bg-red-600/10 border border-red-600/30 text-red-600 font-bold text-sm md:text-lg shadow-[0_0_10px_rgba(189,0,255,0.1)]">
                   Gestor(a) de Engenharia de Prompt
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function CertificateMockup() {
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mt-auto pt-8 border-t border-white/10">
             <div className="text-left space-y-1">
               <p className="text-[10px] text-gray-500 font-mono">Código de Verificação:</p>
-              <p className="text-xs text-neon-cyan font-mono tracking-widest">FAB-2026-IA-XXXX</p>
+              <p className="text-xs text-red-500 font-mono tracking-widest">FAB-2026-IA-XXXX</p>
               <div className="flex items-center gap-2 mt-2 text-[10px] text-gray-400">
                 <ShieldCheck className="w-3 h-3 text-green-500" />
                 Autenticidade verificada via Blockchain

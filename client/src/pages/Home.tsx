@@ -1,5 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 // Imagens geradas com IA - Paleta PRETO E VERMELHO Premium
+const logotipo2 = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/logotipo2-fabrani_ec64c37a.png';
 const heroNeuralNetwork = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-home-fabrani-VYdiygbaJMXdiZSVkJd2Rq.webp';
 const cardManifesto = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
 const cardSimulator = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
@@ -76,13 +77,11 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
           <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white relative inline-block group">
-              <span className="absolute -inset-1 bg-red-600/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-              FABRANI
-              <span className="absolute top-0 left-0 -ml-1 text-red-500 opacity-0 group-hover:opacity-70 animate-glitch-1">FABRANI</span>
-              <span className="absolute top-0 left-0 ml-1 text-red-600 opacity-0 group-hover:opacity-70 animate-glitch-2">FABRANI</span>
-            </h2>
-            <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-2 border-t border-red-500/30 pt-4 inline-block">
+            <div className="relative inline-block group">
+              <span className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+              <img src={logotipo2} alt="FABRANI" className="h-20 md:h-28 lg:h-36 w-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(239,68,68,0.3)] group-hover:drop-shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500" />
+            </div>
+            <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-4 border-t border-red-500/30 pt-4 inline-block">
               Faculdade Brasileira de Negócios Inovadores
             </p>
           </div>
@@ -125,10 +124,10 @@ export default function Home() {
           </div>
           
           <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-8 text-white animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-            VOCÊ JÁ DOMINA O <span className="text-neon-purple underline decoration-neon-purple/50 underline-offset-4">NOVO CÓDIGO?</span>
+            VOCÊ JÁ DOMINA O <span className="text-red-600 underline decoration-red-600/50 underline-offset-4">NOVO CÓDIGO?</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-neon-cyan/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-red-500/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
             A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes de IA</strong> com MBAs e Graduações focadas em <strong>IA para Negócios</strong> e <strong>Vendas</strong>.
           </p>
 
@@ -142,13 +141,13 @@ export default function Home() {
                const element = document.getElementById('carta-aberta');
                element?.scrollIntoView({ behavior: 'smooth' });
              }}>
-          <ChevronDown className="w-10 h-10 text-neon-cyan opacity-70 hover:opacity-100 transition-opacity" />
+          <ChevronDown className="w-10 h-10 text-red-500 opacity-70 hover:opacity-100 transition-opacity" />
         </div>
       </section>
 
       {/* Seção Download Guia de Prompts */}
       <section id="download-guia" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-neon-purple/5 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 via-transparent to-red-600/5 pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">MATERIAL EXCLUSIVO</Badge>
@@ -366,9 +365,9 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-24">
-            <Badge variant="outline" className="border-neon-cyan text-neon-cyan rounded-none px-4 py-1 mb-6">SOBRE A FABRANI</Badge>
+            <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">SOBRE A FABRANI</Badge>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-              <span className="glitch-hover" data-text="A GÊNESE">A GÊNESE</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple glitch-hover" data-text="DIGITAL">DIGITAL</span>
+              <span className="glitch-hover" data-text="A GÊNESE">A GÊNESE</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 glitch-hover" data-text="DIGITAL">DIGITAL</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Não nascemos apenas de um desejo, mas da urgência de reescrever o futuro. A FABRANI surgiu para preencher o abismo entre a formação tradicional e a velocidade exponencial da nova economia.
@@ -377,7 +376,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-red-500 to-red-600 opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               <div className="relative aspect-video overflow-hidden border border-white/10 bg-black">
                 <img src={genesisDig} alt="Digital Genesis" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -389,16 +388,16 @@ export default function Home() {
             </div>
             
             <div className="space-y-12">
-              <div className="border-l-2 border-neon-cyan/30 pl-8 relative">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-neon-cyan rounded-full"></div>
+              <div className="border-l-2 border-red-500/30 pl-8 relative">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-red-500 rounded-full"></div>
                 <h3 className="text-2xl font-bold text-white mb-4 glitch-hover" data-text="O MARCO DE 2025">O MARCO DE 2025</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Este foi o ano da nossa consolidação como a autoridade máxima em Educação <span className="notranslate" translate="no">AI-Native</span> no Brasil. Mais do que uma faculdade, tornamo-nos um ecossistema de elite, reunindo mais de <strong className="text-white">380 Mestres e Doutores</strong> das maiores universidades do mundo em nossa rede <span className="notranslate" translate="no">FABRANI PLAY</span>.
                 </p>
               </div>
 
-              <div className="border-l-2 border-neon-purple/30 pl-8 relative">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-neon-purple rounded-full"></div>
+              <div className="border-l-2 border-red-600/30 pl-8 relative">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-black border-2 border-red-600 rounded-full"></div>
                 <h3 className="text-2xl font-bold text-white mb-4 glitch-hover" data-text="NOSSO PROPÓSITO">NOSSO PROPÓSITO</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   <strong className="text-white">Hackear a obsolescência profissional.</strong> Capacitar indivíduos para não apenas sobreviverem, mas dominarem a nova economia global, criando a ponte definitiva entre a excelência acadêmica e as demandas de um mercado em constante disrupção.
@@ -408,29 +407,29 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-32">
-            <div className="bg-white/5 border border-white/10 p-10 hover:border-neon-cyan/50 transition-colors group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/10 blur-[50px] rounded-full group-hover:bg-neon-cyan/20 transition-all"></div>
+            <div className="bg-white/5 border border-white/10 p-10 hover:border-red-500/50 transition-colors group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-[50px] rounded-full group-hover:bg-red-500/20 transition-all"></div>
               <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="text-neon-cyan">01.</span> <span className="glitch-hover" data-text="MISSÃO">MISSÃO</span>
+                <span className="text-red-500">01.</span> <span className="glitch-hover" data-text="MISSÃO">MISSÃO</span>
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 Formar a elite adaptável da Era Digital. Desenvolver mentes ágeis através de uma metodologia imersiva, onde <strong className="text-white">90% das atividades</strong> são desafios reais propostos por parceiros estratégicos do mercado.
               </p>
               <div className="h-1 w-full bg-white/10 overflow-hidden">
-                <div className="h-full bg-neon-cyan w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
+                <div className="h-full bg-red-500 w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
               </div>
             </div>
 
-            <div className="bg-white/5 border border-white/10 p-10 hover:border-neon-purple/50 transition-colors group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 blur-[50px] rounded-full group-hover:bg-neon-purple/20 transition-all"></div>
+            <div className="bg-white/5 border border-white/10 p-10 hover:border-red-600/50 transition-colors group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 blur-[50px] rounded-full group-hover:bg-red-600/20 transition-all"></div>
               <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="text-neon-purple">02.</span> <span className="glitch-hover" data-text="VISÃO">VISÃO</span>
+                <span className="text-red-600">02.</span> <span className="glitch-hover" data-text="VISÃO">VISÃO</span>
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 Ser o epicentro global da Inteligência Artificial Aplicada. Consolidar-se como a referência indiscutível na formação de talentos que reescrevem o código da sociedade através de negócios inovadores e liderança ética.
               </p>
               <div className="h-1 w-full bg-white/10 overflow-hidden">
-                <div className="h-full bg-neon-purple w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
+                <div className="h-full bg-red-600 w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
               </div>
             </div>
           </div>
@@ -438,7 +437,7 @@ export default function Home() {
           {/* Seção 7: Valores (ITEC) */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
-              PROTOCOLOS DE <span className="text-neon-cyan glitch-hover" data-text="CULTURA">CULTURA</span> (ITEC)
+              PROTOCOLOS DE <span className="text-red-500 glitch-hover" data-text="CULTURA">CULTURA</span> (ITEC)
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               O código-fonte que rege nossas decisões e define quem somos.
@@ -451,8 +450,8 @@ export default function Home() {
                 letter: "I",
                 title: "INICIATIVA",
                 desc: "Proatividade para agir e criar",
-                color: "text-neon-cyan",
-                border: "hover:border-neon-cyan/50"
+                color: "text-red-500",
+                border: "hover:border-red-500/50"
               },
               {
                 letter: "T",
@@ -465,15 +464,15 @@ export default function Home() {
                 letter: "E",
                 title: "EMPATIA",
                 desc: "Compreensão e cuidado mútuo",
-                color: "text-neon-purple",
-                border: "hover:border-neon-purple/50"
+                color: "text-red-600",
+                border: "hover:border-red-600/50"
               },
               {
                 letter: "C",
                 title: "COLABORAÇÃO",
                 desc: "Construa junto. O sucesso é coletivo.",
-                color: "text-neon-cyan",
-                border: "hover:border-neon-cyan/50"
+                color: "text-red-500",
+                border: "hover:border-red-500/50"
               }
             ].map((item, i) => (
               <div key={i} className={`bg-black border border-white/10 p-8 ${item.border} transition-all duration-300 group relative overflow-hidden`}>

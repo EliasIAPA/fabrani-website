@@ -27,21 +27,21 @@ export default function CookieConsent() {
   return (
     <div className={cn(
       "fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6",
-      "bg-black/90 backdrop-blur-xl border-t border-neon-cyan/30 shadow-[0_-10px_40px_-15px_rgba(0,255,255,0.1)]",
+      "bg-black/90 backdrop-blur-xl border-t border-red-500/30 shadow-[0_-10px_40px_-15px_rgba(0,255,255,0.1)]",
       "animate-in slide-in-from-bottom-full duration-500"
     )}>
       <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-start gap-4 flex-1">
-          <div className="p-3 bg-neon-cyan/10 rounded-full shrink-0 hidden md:block">
-            <Cookie className="w-6 h-6 text-neon-cyan" />
+          <div className="p-3 bg-red-500/10 rounded-full shrink-0 hidden md:block">
+            <Cookie className="w-6 h-6 text-red-500" />
           </div>
           <div className="space-y-2">
             <h3 className="font-bold text-white text-lg flex items-center gap-2 md:block">
-              <Cookie className="w-5 h-5 text-neon-cyan md:hidden" />
+              <Cookie className="w-5 h-5 text-red-500 md:hidden" />
               Controle de Privacidade
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Utilizamos cookies para aprimorar sua experiência, analisar o tráfego e personalizar conteúdo, conforme nossa <Link href="/politica-cookies" className="text-neon-cyan hover:underline font-medium">Política de Cookies</Link>. Ao continuar navegando, você concorda com o uso dessas tecnologias.
+              Utilizamos cookies para aprimorar sua experiência, analisar o tráfego e personalizar conteúdo, conforme nossa <Link href="/politica-cookies" className="text-red-500 hover:underline font-medium">Política de Cookies</Link>. Ao continuar navegando, você concorda com o uso dessas tecnologias.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function CookieConsent() {
             Continuar sem aceitar
           </Button>
           <Button 
-            className="bg-neon-cyan text-black hover:bg-neon-cyan/90 font-bold shadow-[0_0_15px_rgba(0,255,255,0.3)]"
+            className="bg-red-500 text-black hover:bg-red-500/90 font-bold shadow-[0_0_15px_rgba(0,255,255,0.3)]"
             onClick={handleAccept}
           >
             Aceitar todos os cookies

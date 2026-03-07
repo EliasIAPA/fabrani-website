@@ -13,8 +13,8 @@ const jobs = [
     icon: Brain,
     description: 'Lidere a revolução. Você será o cérebro por trás das estratégias que integram inteligência artificial em todos os níveis da instituição.',
     requirements: ['Experiência em liderança técnica', 'Visão estratégica de IA', 'Gestão de projetos complexos'],
-    color: 'text-neon-cyan border-neon-cyan shadow-[0_0_15px_rgba(0,240,255,0.5)]',
-    lineColor: '#00f0ff'
+    color: 'text-red-500 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]',
+    lineColor: '#ef4444'
   },
   {
     id: 'professores-ia',
@@ -22,7 +22,7 @@ const jobs = [
     icon: Users,
     description: 'Ensine o futuro. Buscamos mentores capazes de traduzir conceitos complexos de IA para a próxima geração de líderes.',
     requirements: ['Mestrado ou Doutorado', 'Didática inovadora', 'Vivência de mercado'],
-    color: 'text-neon-purple border-neon-purple shadow-[0_0_15px_rgba(180,0,255,0.5)]',
+    color: 'text-red-600 border-red-600 shadow-[0_0_15px_rgba(180,0,255,0.5)]',
     lineColor: '#b400ff'
   },
   {
@@ -58,8 +58,8 @@ const jobs = [
     icon: Cpu,
     description: 'Arquitete o aprendizado. Estruture cursos que preparam os alunos não para o mercado de hoje, mas para o de 2030.',
     requirements: ['Gestão acadêmica', 'Inovação curricular', 'Liderança de corpo docente'],
-    color: 'text-blue-500 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]',
-    lineColor: '#3b82f6'
+    color: 'text-red-500 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]',
+    lineColor: '#ef4444'
   }
 ];
 
@@ -168,11 +168,11 @@ export default function TrabalheConosco() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Badge variant="outline" className="mb-6 border-neon-cyan text-neon-cyan px-4 py-1 text-sm tracking-widest uppercase">
+          <Badge variant="outline" className="mb-6 border-red-500 text-red-500 px-4 py-1 text-sm tracking-widest uppercase">
             Carreiras 2026
           </Badge>
           <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter">
-            VOCÊ É O <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">ELO PERDIDO</span>?
+            VOCÊ É O <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">ELO PERDIDO</span>?
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4">
             Não buscamos funcionários. Buscamos visionários dispostos a codificar o futuro da educação com Inteligência Artificial.
@@ -198,7 +198,7 @@ export default function TrabalheConosco() {
                 </div>
                 <div className="flex-1">
                   <h3 className={`font-bold text-lg ${selectedJob === job.id ? 'text-white' : 'text-gray-300'}`}>{job.title}</h3>
-                  <p className="text-xs text-neon-cyan">Toque para ver detalhes</p>
+                  <p className="text-xs text-red-500">Toque para ver detalhes</p>
                 </div>
                 <ChevronRight className={`w-5 h-5 text-gray-500 transition-transform ${selectedJob === job.id ? 'rotate-90' : ''}`} />
               </CardContent>
@@ -213,13 +213,13 @@ export default function TrabalheConosco() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center">
             <motion.div 
               animate={{ 
-                boxShadow: ['0 0 20px rgba(0,240,255,0.2)', '0 0 60px rgba(0,240,255,0.6)', '0 0 20px rgba(0,240,255,0.2)'] 
+                boxShadow: ['0 0 20px rgba(239,68,68,0.2)', '0 0 60px rgba(239,68,68,0.6)', '0 0 20px rgba(239,68,68,0.2)'] 
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="w-32 h-32 rounded-full bg-black border-2 border-neon-cyan flex items-center justify-center relative z-30"
+              className="w-32 h-32 rounded-full bg-black border-2 border-red-500 flex items-center justify-center relative z-30"
             >
               <img src="/favicon.png" alt="FABRANI" className="w-16 h-16 opacity-80" />
-              <div className="absolute inset-0 rounded-full border border-neon-cyan animate-ping opacity-20"></div>
+              <div className="absolute inset-0 rounded-full border border-red-500 animate-ping opacity-20"></div>
             </motion.div>
           </div>
 
@@ -291,7 +291,7 @@ export default function TrabalheConosco() {
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-bold mb-2 flex flex-wrap items-center gap-3 text-white">
                       {jobs.find(j => j.id === selectedJob)?.title}
-                      <Badge className="bg-neon-cyan text-black hover:bg-neon-cyan/80 border-none">Vaga Aberta</Badge>
+                      <Badge className="bg-red-500 text-black hover:bg-red-500/80 border-none">Vaga Aberta</Badge>
                     </h3>
                     <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
                       {jobs.find(j => j.id === selectedJob)?.description}
@@ -314,11 +314,11 @@ export default function TrabalheConosco() {
                       <h4 className="text-sm font-bold text-gray-400 mb-3">Processo Seletivo</h4>
                       <ol className="space-y-3 text-sm">
                         <li className="flex items-start gap-2">
-                          <span className="bg-neon-cyan text-black w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                          <span className="bg-red-500 text-black w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
                           <span className="text-gray-300">Envie CV + Vídeo (3min)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="bg-neon-purple text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                          <span className="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
                           <span className="text-gray-300">Entrevista Online</span>
                         </li>
                       </ol>
@@ -351,7 +351,7 @@ export default function TrabalheConosco() {
       <section className="py-20 bg-gradient-to-b from-black to-gray-900 mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">NOSSO <span className="text-neon-cyan">DNA</span></h2>
+            <h2 className="text-4xl font-bold mb-4">NOSSO <span className="text-red-500">DNA</span></h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Não contratamos apenas habilidades técnicas. Contratamos pessoas que vibram na mesma frequência dos nossos valores.
             </p>
@@ -359,10 +359,10 @@ export default function TrabalheConosco() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="bg-black border-gray-800 hover:border-neon-cyan transition-colors duration-300 group">
+              <Card key={index} className="bg-black border-gray-800 hover:border-red-500 transition-colors duration-300 group">
                 <CardContent className="p-8 flex flex-col items-center text-center h-full">
-                  <div className="w-16 h-16 rounded-2xl bg-gray-900 flex items-center justify-center mb-6 group-hover:bg-neon-cyan/10 transition-colors">
-                    <value.icon className="w-8 h-8 text-gray-400 group-hover:text-neon-cyan transition-colors" />
+                  <div className="w-16 h-16 rounded-2xl bg-gray-900 flex items-center justify-center mb-6 group-hover:bg-red-500/10 transition-colors">
+                    <value.icon className="w-8 h-8 text-gray-400 group-hover:text-red-500 transition-colors" />
                   </div>
                   <h3 className="text-6xl font-black text-gray-800 mb-4 group-hover:text-white transition-colors">
                     {value.letter}
@@ -378,8 +378,8 @@ export default function TrabalheConosco() {
 
       {/* CTA Final */}
       <section className="py-20 container mx-auto px-4 text-center">
-        <div className="max-w-3xl mx-auto bg-neon-purple/10 border border-neon-purple/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-purple to-transparent"></div>
+        <div className="max-w-3xl mx-auto bg-red-600/10 border border-red-600/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
           
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Pronto para o Desafio?</h2>
           <p className="text-gray-300 mb-8 text-lg">
@@ -390,7 +390,7 @@ export default function TrabalheConosco() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold px-8 w-full sm:w-auto"
+              className="bg-red-500 text-black hover:bg-red-500/80 font-bold px-8 w-full sm:w-auto"
               onClick={() => window.location.href = 'mailto:rh@fabrani.com.br'}
             >
               Enviar CV + Vídeo

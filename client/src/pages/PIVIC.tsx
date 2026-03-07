@@ -68,19 +68,19 @@ export default function PIVIC() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-neon-cyan/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-red-500/30">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neon-purple/20 via-background to-background z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-600/20 via-background to-background z-0"></div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan text-sm font-mono mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-mono mb-4">
               <Microscope className="w-4 h-4" />
               <span>PESQUISA & INOVAÇÃO</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
               PIVIC <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">INICIAÇÃO CIENTÍFICA</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">INICIAÇÃO CIENTÍFICA</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Programa Institucional de Iniciação Científica Voluntária. Estimulando a pluralidade e diversidade da pesquisa nas diversas áreas do conhecimento da FABRANI.
@@ -111,12 +111,12 @@ export default function PIVIC() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {objectives.map((obj) => (
-              <Card key={obj.id} className="bg-black/40 border-white/10 hover:border-neon-cyan/50 transition-all duration-300 group h-full">
+              <Card key={obj.id} className="bg-black/40 border-white/10 hover:border-red-500/50 transition-all duration-300 group h-full">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-neon-cyan/10 transition-colors">
-                    <obj.icon className="w-6 h-6 text-neon-purple group-hover:text-neon-cyan transition-colors" />
+                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-red-500/10 transition-colors">
+                    <obj.icon className="w-6 h-6 text-red-600 group-hover:text-red-500 transition-colors" />
                   </div>
-                  <CardTitle className="text-xl group-hover:text-neon-cyan transition-colors">{obj.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-red-500 transition-colors">{obj.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -130,33 +130,33 @@ export default function PIVIC() {
       </section>
 
       {/* Contato e Edital */}
-      <section className="py-20 bg-gradient-to-b from-black to-neon-purple/5 border-t border-white/10">
+      <section className="py-20 bg-gradient-to-b from-black to-red-600/5 border-t border-white/10">
         <div className="container max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Participe da Pesquisa</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-black border border-white/10 p-8 rounded-2xl hover:border-neon-cyan/30 transition-colors">
-              <FileText className="w-12 h-12 text-neon-cyan mx-auto mb-6" />
+            <div className="bg-black border border-white/10 p-8 rounded-2xl hover:border-red-500/30 transition-colors">
+              <FileText className="w-12 h-12 text-red-500 mx-auto mb-6" />
               <h3 className="text-xl font-bold text-white mb-4">Documentação</h3>
               <div className="space-y-4">
                 <Button variant="outline" className="w-full border-white/20 hover:bg-white/5 justify-between group">
                   Edital PIVIC
-                  <Download className="w-4 h-4 text-gray-500 group-hover:text-neon-cyan" />
+                  <Download className="w-4 h-4 text-gray-500 group-hover:text-red-500" />
                 </Button>
                 <Button variant="outline" className="w-full border-white/20 hover:bg-white/5 justify-between group">
                   Resolução PIVIC
-                  <Download className="w-4 h-4 text-gray-500 group-hover:text-neon-cyan" />
+                  <Download className="w-4 h-4 text-gray-500 group-hover:text-red-500" />
                 </Button>
               </div>
             </div>
 
-            <div className="bg-black border border-white/10 p-8 rounded-2xl hover:border-neon-purple/30 transition-colors">
-              <Mail className="w-12 h-12 text-neon-purple mx-auto mb-6" />
+            <div className="bg-black border border-white/10 p-8 rounded-2xl hover:border-red-600/30 transition-colors">
+              <Mail className="w-12 h-12 text-red-600 mx-auto mb-6" />
               <h3 className="text-xl font-bold text-white mb-4">Fale Conosco</h3>
               <p className="text-gray-400 mb-6">
                 Dúvidas sobre o programa ou submissão de projetos? Nossa equipe de pesquisa está pronta para ajudar.
               </p>
-              <a href="mailto:contato@fabrani.com.br" className="inline-flex items-center gap-2 text-neon-cyan hover:underline text-lg font-medium">
+              <a href="mailto:contato@fabrani.com.br" className="inline-flex items-center gap-2 text-red-500 hover:underline text-lg font-medium">
                 contato@fabrani.com.br <ArrowRight className="w-4 h-4" />
               </a>
             </div>

@@ -136,7 +136,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Se estiver na Landing Page, renderiza apenas o conteúdo sem o layout padrão
   if (location === "/lp/mba-ia-negocios") {
     return (
-      <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+      <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-red-500 selection:text-black overflow-x-hidden">
         {children}
         {/* <FloatingWhatsApp /> */}
         <CookieConsent />
@@ -145,7 +145,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-red-500 selection:text-black overflow-x-hidden">
       {/* Grid Background Effect */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]" 
            style={{ 
@@ -169,112 +169,112 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="/" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
-                location === "/" ? "text-neon-cyan" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-red-500 relative group py-2 notranslate",
+                location === "/" ? "text-red-500" : "text-muted-foreground"
               )} translate="no">
                 Home
                 <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-red-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/" && "scale-x-100"
                 )}></span>
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-red-500 transition-colors flex items-center gap-1 outline-none">
                 Graduação <span className="notranslate" translate="no">AI-Driven</span> <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[250px]">
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/graduacao/marketing-digital">Marketing Digital com Foco em <span className="notranslate" translate="no">IA</span></Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/graduacao/negocios-imobiliarios">Negócios Imobiliários com Foco em <span className="notranslate" translate="no">IA</span></Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <Link href="/mbas" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
-                location.startsWith("/mbas") ? "text-neon-cyan" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-red-500 relative group py-2",
+                location.startsWith("/mbas") ? "text-red-500" : "text-muted-foreground"
               )}>
                 <span className="notranslate" translate="no">MBAs</span> de Aplicação
                 <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-red-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location.startsWith("/mbas") && "scale-x-100"
                 )}></span>
             </Link>
 
             <Link href="/lp/mba-ia-negocios" className={cn(
-                "text-sm font-bold transition-all duration-300 relative group py-1 px-3 border border-neon-purple/50 rounded hover:bg-neon-purple/10 hover:border-neon-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]",
-                location === "/lp/mba-ia-negocios" ? "text-neon-purple border-neon-purple bg-neon-purple/10" : "text-white"
+                "text-sm font-bold transition-all duration-300 relative group py-1 px-3 border border-red-500/50 rounded hover:bg-red-600/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]",
+                location === "/lp/mba-ia-negocios" ? "text-red-500 border-red-500 bg-red-600/10" : "text-white"
               )}>
                 IA PARA NEGÓCIOS
             </Link>
 
             <Link href="/cursos-gratuitos" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2 notranslate",
-                location === "/cursos-gratuitos" ? "text-neon-cyan" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-red-500 relative group py-2 notranslate",
+                location === "/cursos-gratuitos" ? "text-red-500" : "text-muted-foreground"
               )} translate="no">
                 FABRANI IA+
                 <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-red-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/cursos-gratuitos" && "scale-x-100"
                 )}></span>
             </Link>
 
             <Link href="/hub-insights" className={cn(
-                "text-sm font-medium transition-colors hover:text-neon-cyan relative group py-2",
-                location === "/hub-insights" ? "text-neon-cyan" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-red-500 relative group py-2",
+                location === "/hub-insights" ? "text-red-500" : "text-muted-foreground"
               )}>
                 <span className="notranslate" translate="no">Hub</span> de <span className="notranslate" translate="no">Insights</span>
                 <span className={cn(
-                  "absolute bottom-0 left-0 w-full h-[1px] bg-neon-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  "absolute bottom-0 left-0 w-full h-[1px] bg-red-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
                   location === "/hub-insights" && "scale-x-100"
                 )}></span>
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none uppercase">
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-red-500 transition-colors flex items-center gap-1 outline-none uppercase">
                 Parceria <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[250px]">
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/parceiros">Parceiros</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/como-ser-parceiro">Como Ser Parceiro</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-red-500 transition-colors flex items-center gap-1 outline-none">
                 PESQUISA <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]">
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/pesquisa/pivic">PIVIC - Iniciação Científica</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-neon-cyan transition-colors flex items-center gap-1 outline-none">
+              <DropdownMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-red-500 transition-colors flex items-center gap-1 outline-none">
                 Fabrani Conecta <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]">
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/fabrani-conecta/cpa">CPA</Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/fabrani-conecta/nap">NAP</Link>
                 </DropdownMenuItem>
                 
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/fabrani-conecta/responsabilidade-social">Responsabilidade Social</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <Link href="/trabalhe-conosco">Trabalhe Conosco</Link>
                 </DropdownMenuItem>
 
@@ -287,19 +287,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <DropdownMenuTrigger asChild>
                 <Button 
                   variant="outline" 
-                  className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan rounded-none font-mono text-xs tracking-wider flex items-center gap-2"
+                  className="border-red-500/50 text-red-500 hover:bg-red-500/10 hover:text-red-500 rounded-none font-mono text-xs tracking-wider flex items-center gap-2"
                 >
                   ÁREA DO ALUNO <ChevronDown className="w-3 h-3" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-black border border-white/10 text-white p-2 min-w-[200px]" align="end">
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <a href="https://play.fabrani.com.br/auth/login?redirect=%2F" target="_blank" rel="noopener noreferrer">Fabrani Play</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <a href="https://fabrani.ensinio.com/browse" target="_blank" rel="noopener noreferrer">Fabrani Ensinio</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-neon-cyan cursor-pointer">
+                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-red-500 cursor-pointer">
                   <a href="https://portal.fabrani.com.br/m/courses" target="_blank" rel="noopener noreferrer">Fabrani Educa</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -319,15 +319,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6 lg:hidden flex flex-col gap-6 animate-in slide-in-from-right-10 duration-300 overflow-y-auto">
-          <Link href="/" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/" className="text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group border-b border-white/5 pb-4">
               Home
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
           </Link>
 
           <div className="border-b border-white/5 pb-4">
             <button 
               onClick={() => setIsMobileGraduacaoOpen(!isMobileGraduacaoOpen)}
-              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left"
+              className="w-full text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group text-left"
             >
               Graduação AI-Driven
               <ChevronDown className={cn("transition-transform duration-300", isMobileGraduacaoOpen ? "rotate-180" : "")} />
@@ -335,40 +335,40 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {isMobileGraduacaoOpen && (
               <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
-                <Link href="/graduacao/marketing-digital" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/graduacao/marketing-digital" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Marketing Digital com Foco em IA
                 </Link>
-                <Link href="/graduacao/negocios-imobiliarios" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/graduacao/negocios-imobiliarios" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Negócios Imobiliários com Foco em IA
                 </Link>
               </div>
             )}
           </div>
 
-          <Link href="/mbas" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/mbas" className="text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group border-b border-white/5 pb-4">
               MBAs de Aplicação
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
           </Link>
 
-          <Link href="/lp/mba-ia-negocios" className="text-2xl font-bold text-neon-purple hover:text-white flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/lp/mba-ia-negocios" className="text-2xl font-bold text-red-500 hover:text-white flex items-center justify-between group border-b border-white/5 pb-4">
               IA PARA NEGÓCIOS
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-purple" />
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
           </Link>
 
-          <Link href="/cursos-gratuitos" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/cursos-gratuitos" className="text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group border-b border-white/5 pb-4">
               FABRANI IA+
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
           </Link>
 
-          <Link href="/hub-insights" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group border-b border-white/5 pb-4">
+          <Link href="/hub-insights" className="text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group border-b border-white/5 pb-4">
               Hub de Insights
-              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+              <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
           </Link>
 
           <div className="border-b border-white/5 pb-4">
             <button 
               onClick={() => setIsMobileGraduacaoOpen(!isMobileGraduacaoOpen)}
-              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left uppercase"
+              className="w-full text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group text-left uppercase"
             >
               Parceria
               <ChevronDown className={cn("transition-transform duration-300", isMobileGraduacaoOpen ? "rotate-180" : "")} />
@@ -376,10 +376,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {isMobileGraduacaoOpen && (
               <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
-                <Link href="/parceiros" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/parceiros" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Parceiros
                 </Link>
-                <Link href="/como-ser-parceiro" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/como-ser-parceiro" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Como Ser Parceiro
                 </Link>
               </div>
@@ -387,12 +387,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="border-b border-white/5 pb-4">
-            <Link href="/pesquisa/pivic" className="text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group">
+            <Link href="/pesquisa/pivic" className="text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group">
                 PESQUISA
-                <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-cyan" />
+                <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-red-500" />
             </Link>
             <div className="flex flex-col gap-4 mt-4 pl-4">
-              <Link href="/pesquisa/pivic" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+              <Link href="/pesquisa/pivic" className="text-lg text-muted-foreground hover:text-red-500 block">
                 PIVIC - Iniciação Científica
               </Link>
             </div>
@@ -401,7 +401,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="border-b border-white/5 pb-4">
             <button 
               onClick={() => setIsMobileConectaOpen(!isMobileConectaOpen)}
-              className="w-full text-2xl font-bold text-foreground hover:text-neon-cyan flex items-center justify-between group text-left"
+              className="w-full text-2xl font-bold text-foreground hover:text-red-500 flex items-center justify-between group text-left"
             >
               Fabrani Conecta
               <ChevronDown className={cn("transition-transform duration-300", isMobileConectaOpen ? "rotate-180" : "")} />
@@ -409,18 +409,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             {isMobileConectaOpen && (
               <div className="flex flex-col gap-4 mt-4 pl-4 animate-in slide-in-from-top-2">
-                <Link href="/fabrani-conecta/cpa" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/fabrani-conecta/cpa" className="text-lg text-muted-foreground hover:text-red-500 block">
                   CPA
                 </Link>
 
-                <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/fabrani-conecta/nap" className="text-lg text-muted-foreground hover:text-red-500 block">
                   NAP
                 </Link>
                 
-                <Link href="/fabrani-conecta/responsabilidade-social" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/fabrani-conecta/responsabilidade-social" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Responsabilidade Social
                 </Link>
-                <Link href="/trabalhe-conosco" className="text-lg text-muted-foreground hover:text-neon-cyan block">
+                <Link href="/trabalhe-conosco" className="text-lg text-muted-foreground hover:text-red-500 block">
                   Trabalhe Conosco
                 </Link>
               </div>
@@ -428,19 +428,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="w-full mt-4 mb-8 space-y-2">
-            <p className="text-sm font-mono text-neon-cyan uppercase tracking-wider mb-2">Área do Aluno</p>
+            <p className="text-sm font-mono text-red-500 uppercase tracking-wider mb-2">Área do Aluno</p>
             <a href="https://play.fabrani.com.br/auth/login?redirect=%2F" target="_blank" rel="noopener noreferrer" className="block">
-              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+              <Button className="w-full bg-white/5 text-white hover:bg-red-500 hover:text-black border border-white/10 rounded-none justify-start">
                 Fabrani Play
               </Button>
             </a>
             <a href="https://fabrani.ensinio.com/browse" target="_blank" rel="noopener noreferrer" className="block">
-              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+              <Button className="w-full bg-white/5 text-white hover:bg-red-500 hover:text-black border border-white/10 rounded-none justify-start">
                 Fabrani Ensinio
               </Button>
             </a>
             <a href="https://portal.fabrani.com.br/m/courses" target="_blank" rel="noopener noreferrer" className="block">
-              <Button className="w-full bg-white/5 text-white hover:bg-neon-cyan hover:text-black border border-white/10 rounded-none justify-start">
+              <Button className="w-full bg-white/5 text-white hover:bg-red-500 hover:text-black border border-white/10 rounded-none justify-start">
                 Fabrani Educa
               </Button>
             </a>
@@ -465,7 +465,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               
               <div className="space-y-4 text-sm text-muted-foreground">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-neon-cyan mt-1 shrink-0" />
+                  <MapPin className="w-4 h-4 text-red-500 mt-1 shrink-0" />
                   <div>
                     <p className="font-bold text-white mb-1">Sede</p>
                     <p>Av. General Carneiro, 380, Centro</p>
@@ -474,7 +474,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-neon-cyan mt-1 shrink-0" />
+                  <MapPin className="w-4 h-4 text-red-500 mt-1 shrink-0" />
                   <div>
                     <p className="font-bold text-white mb-1">Polo Ribeirão Preto</p>
                     <p>Av. Marechal Deodoro, 1383</p>
@@ -483,17 +483,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-neon-cyan shrink-0" />
+                  <Mail className="w-4 h-4 text-red-500 shrink-0" />
                   <a href="mailto:contato@fabrani.com.br" className="hover:text-white transition-colors">contato@fabrani.com.br</a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-neon-cyan shrink-0" />
+                  <Phone className="w-4 h-4 text-red-500 shrink-0" />
                   
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-neon-cyan shrink-0" />
+                  <Clock className="w-4 h-4 text-red-500 shrink-0" />
                   <span>8:30 - 17:30 (Seg - Sex)</span>
                 </div>
               </div>
@@ -501,7 +501,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Links Institucionais */}
             <div className="space-y-6">
-              <h3 className="font-mono text-neon-cyan text-sm uppercase tracking-wider border-l-2 border-neon-cyan pl-3">Institucional</h3>
+              <h3 className="font-mono text-red-500 text-sm uppercase tracking-wider border-l-2 border-red-500 pl-3">Institucional</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/termos-de-uso" className="hover:text-white transition-colors flex items-center gap-2"><FileText className="w-3 h-3" /> Termos de Uso</Link></li>
                 <li><Link href="/privacidade" className="hover:text-white transition-colors flex items-center gap-2"><ShieldCheck className="w-3 h-3" /> Política de Privacidade</Link></li>
@@ -518,27 +518,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Cursos */}
             <div className="space-y-6">
-              <h3 className="font-mono text-neon-purple text-sm uppercase tracking-wider border-l-2 border-neon-purple pl-3">Educação AI-Driven</h3>
+              <h3 className="font-mono text-red-500 text-sm uppercase tracking-wider border-l-2 border-red-500 pl-3">Educação AI-Driven</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/graduacao/marketing-digital" className="hover:text-white transition-colors">Graduação em Marketing Digital</Link></li>
                 <li><Link href="/graduacao/negocios-imobiliarios" className="hover:text-white transition-colors">Graduação em Negócios Imobiliários</Link></li>
                 <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA para Negócios</Link></li>
                 <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA para Saúde</Link></li>
                 <li><Link href="/mbas" className="hover:text-white transition-colors">MBA IA Jurídico</Link></li>
-                <li><Link href="/cursos-gratuitos" className="hover:text-white transition-colors text-neon-cyan">AI Starter Pack (Grátis)</Link></li>
+                <li><Link href="/cursos-gratuitos" className="hover:text-white transition-colors text-red-500">AI Starter Pack (Grátis)</Link></li>
               </ul>
             </div>
 
             {/* Selo MEC & Social */}
             <div className="space-y-6">
               <div className="bg-white/5 p-6 border border-white/10 flex flex-col items-center text-center">
-                <GraduationCap className="w-12 h-12 text-neon-cyan mb-3" />
+                <GraduationCap className="w-12 h-12 text-red-500 mb-3" />
                 <h4 className="font-bold text-white mb-1">Credenciado pelo MEC</h4>
                 <p className="text-xs text-muted-foreground">Instituição de Ensino Superior reconhecida com excelência.</p>
               </div>
               
               <div className="bg-white/5 p-4 border border-white/10 flex items-center justify-center gap-3 mb-6">
-                <ShieldCheck className="w-8 h-8 text-neon-cyan" />
+                <ShieldCheck className="w-8 h-8 text-red-500" />
                 <div className="text-left">
                   <p className="font-bold text-white text-sm">Site Seguro</p>
                   <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Proteção SSL Ativa</p>
@@ -547,11 +547,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               
               <div className="flex gap-4 justify-center">
                 {/* Social Icons Placeholders */}
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-neon-cyan hover:text-black hover:border-neon-cyan transition-all">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-red-500 hover:text-black hover:border-red-500 transition-all">
                   <span className="sr-only">Instagram</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-3.77 1.795c-.95.045-1.505.254-1.858.391-.412.158-.707.346-.969.607-.261.262-.45.557-.607.969-.137.353-.346.909-.391 1.859-.047.994-.058 1.297-.058 3.917v.473c0 2.663.01 2.923.058 3.917.045.95.254 1.505.391 1.858.158.412.346.707.607.969.262.261.557.45.969.607.353.137.909.346 1.859.391.994.047 1.297.058 3.917.058h.473c2.663 0 2.923-.01 3.917-.058.95-.045 1.505-.254 1.858-.391.412-.158.707-.346.969-.607.262-.261.45-.557.607-.969.137-.353.346-.909.391-1.859.047-.994.058-1.297.058-3.917v-.473c0-2.663-.01-2.923-.058-3.917-.045-.95-.254-1.505-.391-1.858-.158-.412-.346-.707-.607-.969-.261-.262-.557-.45-.969-.607-.353-.137-.909-.346-1.859-.391-.994-.047-1.297-.058-3.917-.058h-.473c-2.663 0-2.923.01-3.917.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" /></svg>
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-neon-cyan hover:text-black hover:border-neon-cyan transition-all">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-red-500 hover:text-black hover:border-red-500 transition-all">
                   <span className="sr-only">LinkedIn</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg>
                 </a>
@@ -561,7 +561,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} FABRANI. Todos os direitos reservados.</p>
-            <p className="font-mono text-neon-cyan">CODIFICANDO O FUTURO DA EDUCAÇÃO</p>
+            <p className="font-mono text-red-500">CODIFICANDO O FUTURO DA EDUCAÇÃO</p>
           </div>
         </div>
       </footer>

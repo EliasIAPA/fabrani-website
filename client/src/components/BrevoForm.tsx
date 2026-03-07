@@ -73,7 +73,7 @@ export default function BrevoForm({
             required
             value={formData.nome}
             onChange={handleChange}
-            className="bg-zinc-900/50 border-white/10 focus:border-neon-cyan/50 text-white"
+            className="bg-zinc-900/50 border-white/10 focus:border-red-500/50 text-white"
           />
         </div>
         
@@ -87,7 +87,7 @@ export default function BrevoForm({
             required
             value={formData.email}
             onChange={handleChange}
-            className="bg-zinc-900/50 border-white/10 focus:border-neon-cyan/50 text-white"
+            className="bg-zinc-900/50 border-white/10 focus:border-red-500/50 text-white"
           />
         </div>
 
@@ -101,7 +101,7 @@ export default function BrevoForm({
             required
             value={formData.whatsapp}
             onChange={handleChange}
-            className="bg-zinc-900/50 border-white/10 focus:border-neon-cyan/50 text-white"
+            className="bg-zinc-900/50 border-white/10 focus:border-red-500/50 text-white"
           />
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function BrevoForm({
       <Button 
         type="submit" 
         disabled={subscribeMutation.isPending}
-        className={`w-full bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold mt-2 ${layout === "horizontal" ? "md:col-span-3" : ""}`}
+        className={`w-full bg-red-500 text-black hover:bg-red-500/80 font-bold mt-2 ${layout === "horizontal" ? "md:col-span-3" : ""}`}
       >
         {subscribeMutation.isPending ? (
           <>
