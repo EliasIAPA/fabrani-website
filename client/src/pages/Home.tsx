@@ -1,6 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 // Imagens geradas com IA - Paleta PRETO E VERMELHO Premium
-const logotipo2 = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/logotipo2-fabrani_ec64c37a.png';
+const logotipo2 = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/logotipo2-transparent_b33c9021.png';
 const heroNeuralNetwork = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/hero-home-fabrani-VYdiygbaJMXdiZSVkJd2Rq.webp';
 const cardManifesto = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-manifesto-fabrani-fDDiRfVQEia7jjHy3Db84u.webp';
 const cardSimulator = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/card-simulator-fabrani-oDS6yDdCzo56KpAvKtDDzh.webp';
@@ -76,12 +76,12 @@ export default function Home() {
 
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
-          <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="relative inline-block group">
-              <span className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
-              <img src={logotipo2} alt="FABRANI" className="h-20 md:h-28 lg:h-36 w-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(239,68,68,0.3)] group-hover:drop-shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500" />
+              <span className="absolute -inset-8 bg-red-600/10 blur-[60px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700"></span>
+              <img src={logotipo2} alt="FABRANI" className="h-16 md:h-24 lg:h-32 w-auto object-contain relative z-10 brightness-110 contrast-110 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_40px_rgba(239,68,68,0.4)] transition-all duration-500" />
             </div>
-            <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-4 border-t border-red-500/30 pt-4 inline-block">
+            <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-6 border-t border-red-500/30 pt-4 inline-block">
               Faculdade Brasileira de Negócios Inovadores
             </p>
           </div>
