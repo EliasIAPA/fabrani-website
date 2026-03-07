@@ -40,7 +40,7 @@ export default function Home() {
         keywords="Faculdade IA, Inteligência Artificial, Graduação Marketing Digital, MBA Executivo, Cursos Gratuitos IA, FABRANI, Negócios Inovadores"
       />
       {/* Seção 1: Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 overflow-x-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-24 pt-44 overflow-x-hidden">
         {/* Background - Camadas sutis de fundo */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{backgroundImage: `url(${bgHeroNeural})`}}></div>

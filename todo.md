@@ -107,9 +107,9 @@
 - [x] ResponsabilidadeSocial.tsx
 - [x] TrabalheConosco.tsx
 - [x] PIVIC.tsx
-- [ ] PoliticaCookies.tsx
-- [ ] PoliticaPrivacidade.tsx
-- [ ] TermosDeUso.tsx
+- [x] PoliticaCookies.tsx
+- [x] PoliticaPrivacidade.tsx
+- [x] TermosDeUso.tsx
 
 ### Componentes Globais Pendentes
 - [x] Layout.tsx (Header/Footer) - Atualizar cores
@@ -173,3 +173,7 @@
 - [x] Corrigir quebras visuais nas primeiras seções da Home (headline)
 - [x] Aplicar imagens de fundo de forma sutil nas seções
 - [x] Verificar responsividade mobile
+- [x] Remover faixa cinza entre menu e hero na Home (RESOLVIDO: -mt-24 pt-44 na hero section)
+- [x] Adicionar overflow-x-hidden em todas as páginas restantes (PoliticaCookies, PoliticaPrivacidade, TermosDeUso, InsightDetail, NotFound)
+- [x] Reescrever NotFound.tsx com paleta preta/vermelha/branca premium
+- [x] Zero erros TypeScript confirmado

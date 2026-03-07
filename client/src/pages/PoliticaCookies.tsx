@@ -4,7 +4,7 @@ import { Link } from "wouter";
 
 export default function PoliticaCookies() {
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-16">
+    <div className="min-h-screen bg-black text-white pt-24 pb-16 overflow-x-hidden">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="mb-12 text-center">

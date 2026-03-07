@@ -28,7 +28,7 @@ export default function InsightDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen bg-black text-white pt-20 overflow-x-hidden">
       {/* Hero do Artigo */}
       <div className="relative h-[50vh] w-full overflow-hidden">
         <div 
