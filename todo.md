@@ -127,3 +127,4 @@
 - [x] Revisão final - zero azul/roxo em todo o site
 
 - [x] Incluir LOGOTIPO2.png (com A vermelho) na Home e onde necessário como mockup
+- [x] Remover faixa cinza no topo da Home

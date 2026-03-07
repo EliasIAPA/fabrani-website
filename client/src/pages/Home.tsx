@@ -34,7 +34,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Video/Image Placeholder */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/90 to-background z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-background z-10"></div>
           <div className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-luminosity" style={{backgroundImage: `url(${heroNeuralNetwork})`}}></div>
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
         </div>
