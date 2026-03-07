@@ -17,7 +17,7 @@ export default function InsightDetail() {
   if (!insight) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center flex-col gap-4">
-        <h1 className="text-4xl font-bold text-red-500">Insight não encontrado</h1>
+        <h1 className="text-2xl sm:text-4xl font-bold text-red-500">Insight não encontrado</h1>
         <Link href="/hub-insights">
           <Button variant="outline" className="border-red-500 text-red-500 hover:bg-red-500/10">
             <ChevronLeft className="mr-2 h-4 w-4" /> Voltar para o Hub

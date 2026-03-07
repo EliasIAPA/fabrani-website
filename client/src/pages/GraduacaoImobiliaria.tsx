@@ -7,7 +7,7 @@ import { Link } from "wouter";
 
 export default function GraduacaoImobiliaria() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="overflow-x-hidden min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 to-transparent opacity-20 pointer-events-none mix-blend-overlay"></div>

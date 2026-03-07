@@ -3,17 +3,17 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function ComoSerParceiro() {
   return (
-    <div className="flex flex-col gap-0 min-h-screen bg-background">
+    <div className="overflow-x-hidden flex flex-col gap-0 min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/90 to-background z-10"></div>
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-como-ser-parceiro-red-V5HH9mVw9jmue6Bzc2g3aJ.webp" alt="" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-background/90 to-background z-10"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-20 text-center max-w-4xl">
           <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-[0.9]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-[0.9]">
               Como Ser <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-600 drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]">
                 Parceiro FABRANI

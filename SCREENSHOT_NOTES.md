@@ -1,5 +1,13 @@
-# Review Visual - MBAs Page (07/03/2026)
+# Screenshot Notes - Review Completo
 
-Página MBAs está com cores corretas: vermelho, preto, branco. Sem azul ou roxo visível.
-Cards com ícones vermelhos, botões brancos com hover vermelho. Background com imagem IA vermelha.
-Tudo OK nesta página. Agora preciso salvar checkpoint e entregar.
+## Desktop Home - OK
+- Logotipo FABRANI CSS nativo: OK, detalhes vermelhos nos As e ponto do i
+- Badge MEC dourado: OK, canto superior direito
+- Cores vermelho/preto/branco/dourado: CORRETO
+- Sem faixa cinza: OK
+- 20 novas imagens IA aplicadas em todas as seções
+
+## Mobile Fixes Aplicados
+- Títulos responsivos: text-3xl/2xl em mobile, escalando para desktop
+- overflow-x-hidden: adicionado em todas as 15 páginas
+- Layout global: overflow-x-hidden no Layout.tsx

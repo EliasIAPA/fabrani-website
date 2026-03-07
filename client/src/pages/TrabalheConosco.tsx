@@ -22,8 +22,8 @@ const jobs = [
     icon: Users,
     description: 'Ensine o futuro. Buscamos mentores capazes de traduzir conceitos complexos de IA para a próxima geração de líderes.',
     requirements: ['Mestrado ou Doutorado', 'Didática inovadora', 'Vivência de mercado'],
-    color: 'text-red-600 border-red-600 shadow-[0_0_15px_rgba(180,0,255,0.5)]',
-    lineColor: '#b400ff'
+    color: 'text-red-600 border-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]',
+    lineColor: '#dc2626'
   },
   {
     id: 'videomaker-ia',
@@ -111,7 +111,7 @@ export default function TrabalheConosco() {
       if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.1)';
+      ctx.strokeStyle = 'rgba(220, 38, 38, 0.1)';
       ctx.lineWidth = 0.5;
 
       particles.forEach((p, i) => {
@@ -121,7 +121,7 @@ export default function TrabalheConosco() {
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        ctx.fillStyle = 'rgba(0, 240, 255, 0.3)';
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.3)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -154,7 +154,12 @@ export default function TrabalheConosco() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden pt-20">
+    <div className="overflow-x-hidden min-h-screen bg-black text-white relative overflow-hidden pt-20">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-trabalhe-conosco-red-VaNs7ZxZE42ttug7G36bzj.webp" alt="" className="w-full h-full object-cover opacity-20" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
       {/* Background Neural Network Canvas */}
       <canvas 
         id="neural-network" 
@@ -171,7 +176,7 @@ export default function TrabalheConosco() {
           <Badge variant="outline" className="mb-6 border-red-500 text-red-500 px-4 py-1 text-sm tracking-widest uppercase">
             Carreiras 2026
           </Badge>
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-2xl sm:text-4xl md:text-7xl font-bold mb-6 tracking-tighter">
             VOCÊ É O <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">ELO PERDIDO</span>?
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4">
@@ -351,7 +356,7 @@ export default function TrabalheConosco() {
       <section className="py-20 bg-gradient-to-b from-black to-gray-900 mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">NOSSO <span className="text-red-500">DNA</span></h2>
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4">NOSSO <span className="text-red-500">DNA</span></h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Não contratamos apenas habilidades técnicas. Contratamos pessoas que vibram na mesma frequência dos nossos valores.
             </p>

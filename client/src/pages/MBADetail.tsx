@@ -145,14 +145,17 @@ export default function MBADetail() {
   const mba = params && mbaData[params.id];
 
   if (!match || !mba) {
-    return <div className="min-h-screen flex items-center justify-center text-white">MBA não encontrado.</div>;
+    return <div className="overflow-x-hidden min-h-screen flex items-center justify-center text-white">MBA não encontrado.</div>;
   }
 
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-mba-business-detail-red-XPtrTQtzZKbx2zDQvMjVPR.webp" alt="" className="w-full h-full object-cover opacity-15" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/90 to-black pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <Link href="/mbas">
             <Button variant="ghost" className="mb-8 text-muted-foreground hover:text-red-500 pl-0 hover:bg-transparent">
@@ -250,7 +253,7 @@ export default function MBADetail() {
       {/* CTA Final */}
       <section className="py-24 text-center bg-gradient-to-b from-black to-red-600/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">Pronto para liderar a revolução no seu setor?</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold mb-8">Pronto para liderar a revolução no seu setor?</h2>
           
         </div>
       </section>

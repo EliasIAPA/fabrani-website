@@ -65,7 +65,7 @@ export default function ObsolescenceSimulator() {
     doc.setFillColor(10, 14, 39); // Dark Navy Background
     doc.rect(0, 0, 210, 297, "F");
     
-    doc.setTextColor(0, 240, 255); // Neon Cyan
+    doc.setTextColor(220, 38, 38); // Premium Red
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
     doc.text("RELATÓRIO DE RISCO PROFISSIONAL", 105, 30, { align: "center" });
@@ -75,7 +75,7 @@ export default function ObsolescenceSimulator() {
     doc.text("FABRANI - AI-NATIVE EDUCATION", 105, 40, { align: "center" });
     
     // Linha divisória
-    doc.setDrawColor(0, 240, 255);
+    doc.setDrawColor(220, 38, 38); // Premium Red
     doc.line(20, 45, 190, 45);
     
     // Dados do Usuário
@@ -96,7 +96,7 @@ export default function ObsolescenceSimulator() {
     // Preenchimento baseado no risco
     if (result.risk > 70) doc.setFillColor(255, 50, 50); // Red
     else if (result.risk > 40) doc.setFillColor(255, 165, 0); // Orange
-    else doc.setFillColor(0, 240, 255); // Cyan
+    else doc.setFillColor(34, 197, 94); // Green (low risk)
     
     doc.rect(30, 100, 150 * (result.risk / 100), 5, "F");
     doc.text(`${result.risk}%`, 185, 104);
@@ -112,7 +112,7 @@ export default function ObsolescenceSimulator() {
     doc.text(splitDiagnosis, 20, 145);
     
     // Recomendação (A Vacina)
-    doc.setFillColor(112, 0, 255); // Neon Purple
+    doc.setFillColor(180, 130, 30); // Premium Gold
     doc.rect(20, 170, 170, 60, "F");
     
     doc.setTextColor(255, 255, 255);

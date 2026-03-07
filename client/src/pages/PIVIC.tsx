@@ -68,10 +68,13 @@ export default function PIVIC() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-red-500/30">
+    <div className="overflow-x-hidden min-h-screen bg-background text-foreground selection:bg-red-500/30">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-600/20 via-background to-background z-0"></div>
+        <div className="absolute inset-0">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-growth-chart-red-7hfCjfLgTxaJqEBZfDKR3Q.webp" alt="" className="w-full h-full object-cover opacity-15" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-background/90 to-background z-0"></div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-mono mb-4">

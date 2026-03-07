@@ -24,14 +24,14 @@ export default function Home() {
   let { user, loading, error, isAuthenticated, logout } = useAuth();
 
   return (
-    <div className="flex flex-col gap-0">
+    <div className="flex flex-col gap-0 overflow-x-hidden">
       <SEO 
         title="Faculdade Brasileira de Negócios Inovadores | 100% IA"
         description="A FABRANI é a primeira faculdade 100% focada em Inteligência Artificial do Brasil. Graduações, MBAs e cursos gratuitos para formar líderes do futuro digital."
         keywords="Faculdade IA, Inteligência Artificial, Graduação Marketing Digital, MBA Executivo, Cursos Gratuitos IA, FABRANI, Negócios Inovadores"
       />
       {/* Seção 1: Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 overflow-x-hidden">
         {/* Background Video/Image Placeholder */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-background z-10"></div>
@@ -80,7 +80,7 @@ export default function Home() {
             <div className="relative inline-block group">
               <span className="absolute -inset-12 bg-red-600/8 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
               {/* Logotipo FABRANI em texto estilizado - replica o design original */}
-              <h2 className="relative z-10 text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.25em] md:tracking-[0.35em] text-white select-none leading-none whitespace-nowrap" style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", fontWeight: 200 }}>
+              <h2 className="relative z-10 text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.35em] text-white select-none leading-none whitespace-nowrap" style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", fontWeight: 200 }}>
                 <span>F</span>
                 <span className="relative inline-block">
                   <span className="text-white">A</span>
@@ -115,7 +115,7 @@ export default function Home() {
             PROTOCOLO DE EVOLUÇÃO: ATIVO
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
             O MUNDO FOI <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">REESCRITO PELA IA.</span>
           </h1>
@@ -144,11 +144,11 @@ export default function Home() {
             </div>
           </div>
           
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-8 text-white animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight mb-8 text-white animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
             VOCÊ JÁ DOMINA O <span className="text-red-600 underline decoration-red-600/50 underline-offset-4">NOVO CÓDIGO?</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-red-500/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 border-l-2 border-red-500/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
             A primeira faculdade <strong className="text-white">100% AI-Native</strong> do Brasil. Transformamos profissionais em <strong className="text-white">Líderes de IA</strong> com MBAs e Graduações focadas em <strong>IA para Negócios</strong> e <strong>Vendas</strong>.
           </p>
 
@@ -172,7 +172,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">MATERIAL EXCLUSIVO</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">
               BAIXE O GUIA:<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">50 Prompts de Ouro para Executivos</span>
             </h2>
@@ -192,7 +192,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 font-display">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-4 font-display">
                 CARTA ABERTA <span className="text-red-500">FABRANI 2026</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto"></div>
@@ -245,7 +245,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1">FERRAMENTA EXCLUSIVA</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                 Simulador de <br />
                 <span className="text-red-500">Obsolescência</span>
               </h2>
@@ -282,7 +282,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-6">
               A Elite Intelectual <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">ao seu lado</span>
             </h2>
@@ -343,7 +343,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500 text-black text-xs font-bold uppercase tracking-wider">
                   Download Gratuito
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
                   BAIXE O GUIA: <br />
                   <span className="text-red-500">50 Prompts de Ouro</span> para Executivos
                 </h2>
@@ -387,7 +387,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-24">
             <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">SOBRE A FABRANI</Badge>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-8">
               <span className="glitch-hover" data-text="A GÊNESE">A GÊNESE</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 glitch-hover" data-text="DIGITAL">DIGITAL</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -457,7 +457,7 @@ export default function Home() {
 
           {/* Seção 7: Valores (ITEC) */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-4">
               PROTOCOLOS DE <span className="text-red-500 glitch-hover" data-text="CULTURA">CULTURA</span> (ITEC)
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">

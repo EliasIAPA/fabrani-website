@@ -5,11 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 
 export default function ResponsabilidadeSocial() {
   return (
-    <div className="min-h-screen bg-void-black text-white selection:bg-red-500 selection:text-void-black overflow-hidden pt-20">
+    <div className="overflow-x-hidden min-h-screen bg-void-black text-white selection:bg-red-500 selection:text-void-black overflow-hidden pt-20">
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:px-6 lg:px-8 border-b border-white/10">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none"></div>
+        <div className="absolute inset-0">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-responsabilidade-social-red-VmxZT6y9hM2bF3eMo6Ua8p.webp" alt="" className="w-full h-full object-cover opacity-15" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-background"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -47,11 +47,13 @@ export default function NAP() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-red-500/30">
+    <div className="overflow-x-hidden min-h-screen bg-background text-foreground selection:bg-red-500/30">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 to-transparent opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-background"></div>
+        <div className="absolute inset-0">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-nap-psico-red-LPM7muxJ95HNCCXkj3FhDh.webp" alt="" className="w-full h-full object-cover opacity-30" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-background"></div>
         
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -60,7 +62,7 @@ export default function NAP() {
               <span className="uppercase tracking-wider text-xs">Human Intelligence in the AI Age</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
               INTELIGÊNCIA HUMANA <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">PARA UM MUNDO DE IA</span>
             </h1>
@@ -171,7 +173,7 @@ export default function NAP() {
       <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-500/10 via-transparent to-transparent"></div>
         <div className="container relative z-10 text-center">
-          <h2 className="text-4xl font-bold mb-6">Sua evolução começa com o equilíbrio</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold mb-6">Sua evolução começa com o equilíbrio</h2>
           <p className="text-xl text-gray-400 mb-8">
             Responsável: <span className="text-white">Natalia Domingues da Silva</span> (Coordenadora do Núcleo)
           </p>

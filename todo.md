@@ -95,18 +95,18 @@
 ### Páginas Pendentes
 - [x] MBADetail.tsx
 - [x] HubInsights.tsx
-- [ ] InsightDetail.tsx
+- [x] InsightDetail.tsx
 - [x] IAParaNegocios.tsx
-- [ ] IAParaNegociosLP.tsx
+- [x] IAParaNegociosLP.tsx
 - [x] Manifesto.tsx
-- [ ] Parceiros.tsx
-- [ ] ComoSerParceiro.tsx
+- [x] Parceiros.tsx
+- [x] ComoSerParceiro.tsx
 - [x] FabraniIAPlus.tsx
-- [ ] NAP.tsx
-- [ ] CPA.tsx
-- [ ] ResponsabilidadeSocial.tsx
-- [ ] TrabalheConosco.tsx
-- [ ] PIVIC.tsx
+- [x] NAP.tsx
+- [x] CPA.tsx
+- [x] ResponsabilidadeSocial.tsx
+- [x] TrabalheConosco.tsx
+- [x] PIVIC.tsx
 - [ ] PoliticaCookies.tsx
 - [ ] PoliticaPrivacidade.tsx
 - [ ] TermosDeUso.tsx
@@ -134,3 +134,36 @@
 - [x] Revisar e corrigir cores roxas/azuis nos MBAs
 - [x] Gerar novas imagens IA disruptivas (preto, vermelho, dourado) para seções
 - [x] Testar e ajustar responsividade mobile em todas as páginas
+
+## Correção Cores Roxas + 20 Novas Imagens IA
+- [x] Corrigir cores roxas/azuis na página IAParaNegociosLP.tsx
+- [x] Gerar 20 novas imagens IA premium (preto, vermelho, dourado)
+- [x] Aplicar novas imagens nas páginas do site
+- [x] Revisão final de cores em todo o site
+
+## Correção Cores Roxas + 20 Novas Imagens IA + Redistribuição
+- [x] Corrigir cores roxas/azuis na página IAParaNegociosLP.tsx
+- [x] Varredura geral de cores roxas/azuis em todo o projeto
+- [x] Gerar 20 novas imagens IA premium (preto, vermelho, dourado)
+- [x] Redistribuir novas imagens por todas as seções e páginas do site
+- [x] Revisão final de cores em todo o site
+
+## Revisão Mobile Completa
+- [x] Home - testar mobile 375px (quebras, cortes, sobreposição, legibilidade)
+- [x] Graduação Marketing - testar mobile
+- [x] Graduação Imobiliária - testar mobile
+- [x] MBAs - testar mobile
+- [x] MBADetail - testar mobile
+- [x] HubInsights - testar mobile
+- [x] FabraniIAPlus - testar mobile
+- [x] IAParaNegocios - testar mobile
+- [x] IAParaNegociosLP - testar mobile
+- [x] Parceiros - testar mobile
+- [x] ComoSerParceiro - testar mobile
+- [x] Manifesto - testar mobile
+- [x] NAP - testar mobile
+- [x] CPA - testar mobile
+- [x] ResponsabilidadeSocial - testar mobile
+- [x] TrabalheConosco - testar mobile
+- [x] PIVIC - testar mobile
+- [x] Corrigir problemas encontrados em mobile (títulos responsivos + overflow-x-hidden)

@@ -10,9 +10,8 @@ export default function IAParaNegocios() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.15),transparent_70%)]" />
-          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-[120px] opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-600/10 opacity-10" />
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-business-pillars-red-CxYxkXqnfE2YGsXuNYhJKj.webp" alt="" className="w-full h-full object-cover opacity-15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -25,7 +24,7 @@ export default function IAParaNegocios() {
               <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-red-500 text-sm font-mono mb-6 backdrop-blur-sm">
                 SOLUÇÕES CORPORATIVAS
               </span>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
                 Acelere seu Negócio com a <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 animate-pulse-slow">
                   Inteligência Artificial

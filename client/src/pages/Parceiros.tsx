@@ -38,8 +38,13 @@ export default function Parceiros() {
   }, [search, selectedCategories]);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-16">
-      <div className="container mx-auto px-4">
+    <div className="overflow-x-hidden min-h-screen bg-black text-white pt-24 pb-16 relative">
+      {/* Background Image */}
+      <div className="absolute top-0 left-0 right-0 h-[500px]">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-parceiros-network-red-G4jZJyWwemtDezcpkfuPBd.webp" alt="" className="w-full h-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black"></div>
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16">

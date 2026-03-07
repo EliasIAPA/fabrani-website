@@ -31,7 +31,7 @@ export default function HubInsights() {
     : insights.filter(insight => insight.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="overflow-x-hidden min-h-screen bg-black text-white pt-20">
       {/* Hero Section - Estilo Netflix Destaque */}
       <section className="relative h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-hub-data-red-i4t9ppDzUkwSQHt7EMhj9r.webp)`}}>
@@ -44,7 +44,7 @@ export default function HubInsights() {
             <Badge variant="outline" className="border-red-500 text-red-500 px-4 py-1 mb-4 text-sm tracking-wider uppercase">
               Relatório Exclusivo 2025
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-none">
               A VERDADE BRUTAL <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">SOBRE IA E NEGÓCIOS</span>
             </h1>

@@ -8,10 +8,10 @@ import CountdownTimer from "@/components/CountdownTimer";
 import { SEO } from "@/components/SEO";
 import logoFabrani from '/images/logo-fabrani.png?url';
 // Imagens movidas para S3
-const heroNeuralNetwork = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/FeSVHhJROYRdOiNj.jpg';
-const aiBusinessPillars = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/iwlbENEsQZXlkZCh.png';
-const financialGrowthChart = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/psKDykTaDcCoIPhT.png';
-const mbaAugmentedLeadership = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/DelGfDjIarGiEjMT.jpg';
+const heroNeuralNetwork = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-lp-negocios-hero-red-Usfxkmw6WAMa2Gb3vPhq36.webp';
+const aiBusinessPillars = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-business-pillars-red-CxYxkXqnfE2YGsXuNYhJKj.webp';
+const financialGrowthChart = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-growth-chart-red-7hfCjfLgTxaJqEBZfDKR3Q.webp';
+const mbaAugmentedLeadership = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-mba-platform-red-Xq9ybNXVXkLdQXaHFRwPZp.webp';
 import eliasEvangelista from '/images/elias-evangelista-new.png?url';
 import carlosEduardo from '/images/carlos-eduardo.jpg?url';
 
@@ -664,7 +664,7 @@ export default function IAParaNegociosLP() {
               <div className="bg-zinc-900/50 rounded-2xl p-8 text-center mb-10 border border-white/10">
                 <div className="text-sm text-gray-500 uppercase tracking-wider mb-2">Valor Total Real: <span className="line-through decoration-red-500">R$ 49.700</span></div>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                  <div className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                  <div className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter">
                     R$ 7.000
                   </div>
                   <div className="text-left">

@@ -5,8 +5,8 @@ import { ArrowRight, CheckCircle2, Brain, Terminal, Zap, Shield, Users, Target, 
 import CertificateMockup from "@/components/CertificateMockup";
 // Imagens movidas para S3
 const iaPlusHero = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/section-starter-pack-red-i4AcVovJiyibvaC9PRrGfb.webp';
-const courseLiteracy = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/courseLiteracy.jpg';
-const coursePromptEng = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030990044/coursePromptEng.jpg';
+const courseLiteracy = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-hero-neural-red-JHZxLfhNvHNLAhZEqfUTsK.webp';
+const coursePromptEng = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/ia-certificate-mec-red-8eFvJVUCcHDwNxGSNcwrxq.webp';
 
 export default function FabraniIAPlus() {
   return (
@@ -43,7 +43,7 @@ export default function FabraniIAPlus() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 leading-[0.9]"
+            className="text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 leading-[0.9]"
           >
             FABRANI <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-600 drop-shadow-[0_0_30px_rgba(239,68,68,0.4)]">IA+</span>
           </motion.h1>
@@ -265,7 +265,7 @@ export default function FabraniIAPlus() {
       <section className="py-32 relative overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 blur-3xl opacity-30"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 text-white">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-8 text-white">
             O FUTURO NÃO ESPERA.
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
