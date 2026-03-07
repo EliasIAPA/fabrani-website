@@ -129,3 +129,4 @@
 - [x] Incluir LOGOTIPO2.png (com A vermelho) na Home e onde necessário como mockup
 - [x] Remover faixa cinza no topo da Home
 - [x] Remover fundo preto do LOGOTIPO2 e integrar como mockup transparente na Home
+- [x] Recriar logotipo FABRANI em SVG/CSS nativo integrado ao design da Home (sem imagem PNG)

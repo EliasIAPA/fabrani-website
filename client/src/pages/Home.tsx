@@ -78,8 +78,29 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-20 text-center max-w-5xl">
           <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <div className="relative inline-block group">
-              <span className="absolute -inset-8 bg-red-600/10 blur-[60px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-700"></span>
-              <img src={logotipo2} alt="FABRANI" className="h-16 md:h-24 lg:h-32 w-auto object-contain relative z-10 brightness-110 contrast-110 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_40px_rgba(239,68,68,0.4)] transition-all duration-500" />
+              <span className="absolute -inset-12 bg-red-600/8 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+              {/* Logotipo FABRANI em texto estilizado - replica o design original */}
+              <h2 className="relative z-10 text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.25em] md:tracking-[0.35em] text-white select-none leading-none whitespace-nowrap" style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", fontWeight: 200 }}>
+                <span>F</span>
+                <span className="relative inline-block">
+                  <span className="text-white">A</span>
+                  {/* Detalhe vermelho no A - linha diagonal */}
+                  <span className="absolute top-[18%] left-[42%] w-[3px] h-[38%] bg-red-500 rotate-[20deg] origin-bottom" aria-hidden="true"></span>
+                </span>
+                <span>B</span>
+                <span>R</span>
+                <span className="relative inline-block">
+                  <span className="text-white">A</span>
+                  {/* Detalhe vermelho no segundo A */}
+                  <span className="absolute top-[18%] left-[42%] w-[3px] h-[38%] bg-red-500 rotate-[20deg] origin-bottom" aria-hidden="true"></span>
+                </span>
+                <span>N</span>
+                <span className="relative inline-block" style={{ fontSize: '0.85em' }}>
+                  <span className="text-white">i</span>
+                  {/* Ponto do i em vermelho - substitui o ponto original */}
+                  <span className="absolute -top-[2px] md:-top-[4px] left-[50%] -translate-x-1/2 w-[5px] h-[5px] md:w-[7px] md:h-[7px] bg-red-500 rounded-sm rotate-45" aria-hidden="true"></span>
+                </span>
+              </h2>
             </div>
             <p className="text-sm md:text-lg text-red-500 font-mono tracking-[0.2em] uppercase mt-6 border-t border-red-500/30 pt-4 inline-block">
               Faculdade Brasileira de Negócios Inovadores

@@ -1,2 +1,2 @@
-# Screenshot - Logotipo Transparente Integrado
-O logotipo FABRANI agora aparece sem fundo preto, integrado diretamente no background da hero section. As letras brancas com o A em vermelho/pink ficam flutuando sobre o background de circuitos tech. Muito mais limpo e premium. O glow sutil vermelho aparece no hover.
+# Screenshot - Logo CSS v2
+O logotipo FABRANI agora está em uma única linha, tamanho adequado. Os detalhes vermelhos nos "A" estão visíveis (linhas diagonais) e o ponto do "i" está em vermelho. O "i" minúsculo está correto. O visual está integrado ao background sem fundo preto. Ficou muito mais limpo e premium. O ponto vermelho do "i" está um pouco deslocado para cima/direita - pode precisar de ajuste fino. No geral está bom e integrado ao design da página.
