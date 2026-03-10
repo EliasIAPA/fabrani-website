@@ -335,6 +335,74 @@ export default function MEC() {
     };
   }, []);
 
+  // Listener para detectar submissão do formulário GoHighLevel e disparar evento Lead
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // GoHighLevel envia postMessage quando o formulário é submetido
+      // Detectar mensagens do iframe do LeadConnector/GoHighLevel
+      if (
+        event.origin?.includes('leadconnectorhq.com') ||
+        event.origin?.includes('msgsndr.com')
+      ) {
+        try {
+          const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+          // GoHighLevel envia eventos como form_submitted, formSubmitted, etc.
+          if (
+            data?.type === 'form_submitted' ||
+            data?.type === 'formSubmitted' ||
+            data?.event === 'form_submitted' ||
+            data?.event === 'formSubmitted' ||
+            data?.action === 'form_submitted' ||
+            data?.formSubmitted === true
+          ) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              console.log('[Meta Pixel] Evento Lead disparado com sucesso');
+            }
+          }
+        } catch {
+          // Se não for JSON, verificar se é string indicando submissão
+          if (
+            typeof event.data === 'string' &&
+            (event.data.includes('form_submitted') || event.data.includes('formSubmitted'))
+          ) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              console.log('[Meta Pixel] Evento Lead disparado com sucesso (string)');
+            }
+          }
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  // Fallback: observar mudanças no iframe (redirecionamento pós-submit = thank you page)
+  useEffect(() => {
+    const checkIframeNavigation = () => {
+      const iframes = document.querySelectorAll<HTMLIFrameElement>(
+        'iframe[src*="leadconnectorhq.com"]'
+      );
+      iframes.forEach((iframe) => {
+        iframe.addEventListener('load', () => {
+          // O iframe recarrega após submissão — segunda carga = formulário enviado
+          const loadCount = parseInt(iframe.dataset.loadCount || '0') + 1;
+          iframe.dataset.loadCount = String(loadCount);
+          if (loadCount > 1 && (window as any).fbq) {
+            (window as any).fbq('track', 'Lead');
+            console.log('[Meta Pixel] Evento Lead disparado (iframe reload)');
+          }
+        });
+      });
+    };
+
+    // Aguardar iframes serem montados
+    const timer = setTimeout(checkIframeNavigation, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
       <SEO

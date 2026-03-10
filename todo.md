@@ -214,4 +214,10 @@
 - [x] Integrar Meta Pixel ID 1101040821159474 na página /mec
 - [x] Ativar evento PageView
 - [x] Atualizar CSP para permitir domínios do Meta Pixel (facebook.net, facebook.com)
+- [x] Salvar checkpoint
+
+## Evento Lead Meta Pixel - Página /mec
+- [x] Adicionar listener postMessage para detectar submissão do formulário GoHighLevel
+- [x] Disparar fbq('track', 'Lead') quando formulário for submetido
+- [x] Fallback: observar reload do iframe como sinal de submissão
 - [ ] Salvar checkpoint
