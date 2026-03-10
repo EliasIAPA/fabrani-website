@@ -291,6 +291,50 @@ export default function MEC() {
   const openForm = () => setFormModalOpen(true);
   const closeForm = () => setFormModalOpen(false);
 
+  // Meta Pixel (Facebook Pixel) - PageView
+  useEffect(() => {
+    // Evitar duplicação se já foi carregado
+    if ((window as any).fbq) return;
+
+    // Inicializar fbq
+    const f = window as any;
+    const b = document;
+    let e: any, n: any;
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = '2.0';
+    n.queue = [];
+    e = b.createElement('script');
+    e.async = true;
+    e.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    const s = b.getElementsByTagName('script')[0];
+    s?.parentNode?.insertBefore(e, s);
+
+    // Inicializar com o Pixel ID e disparar PageView
+    (window as any).fbq('init', '1101040821159474');
+    (window as any).fbq('track', 'PageView');
+
+    // Adicionar noscript fallback
+    const noscript = b.createElement('noscript');
+    const img = b.createElement('img');
+    img.height = 1;
+    img.width = 1;
+    img.style.display = 'none';
+    img.src = 'https://www.facebook.com/tr?id=1101040821159474&ev=PageView&noscript=1';
+    noscript.appendChild(img);
+    b.body.appendChild(noscript);
+
+    return () => {
+      // Cleanup: remover noscript ao desmontar
+      if (noscript.parentNode) noscript.parentNode.removeChild(noscript);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
       <SEO

@@ -205,7 +205,13 @@
 - [x] Salvar checkpoint
 
 ## Bug: Formulário GoHighLevel bloqueado na /mec (produção)
-- [ ] Diagnosticar bloqueio do iframe GoHighLevel em fabrani.com.br/mec
-- [ ] Implementar correção (CSP headers, sandbox attributes, ou abordagem alternativa)
-- [ ] Testar formulário funcionando em produção
+- [x] Diagnosticar bloqueio do iframe GoHighLevel em fabrani.com.br/mec (CAUSA: CSP bloqueava leadconnectorhq.com)
+- [x] Implementar correção (adicionados domínios GoHighLevel ao CSP no index.html)
+- [ ] Testar formulário funcionando em produção (requer publish)
+- [x] Salvar checkpoint
+
+## Meta Pixel - Página /mec
+- [x] Integrar Meta Pixel ID 1101040821159474 na página /mec
+- [x] Ativar evento PageView
+- [x] Atualizar CSP para permitir domínios do Meta Pixel (facebook.net, facebook.com)
 - [ ] Salvar checkpoint
