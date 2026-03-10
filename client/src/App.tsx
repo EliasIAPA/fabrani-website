@@ -30,35 +30,42 @@ import MEC from "@/pages/MEC";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
-    <Layout>
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/manifesto"} component={Manifesto} />
-        <Route path={"/mbas"} component={MBAs} />
-        <Route path={"/mbas/:id"} component={MBADetail} />
-        <Route path={"/graduacao/marketing-digital"} component={GraduacaoMarketing} />
-        <Route path={"/graduacao/negocios-imobiliarios"} component={GraduacaoImobiliaria} />
-        <Route path="/fabrani-conecta/cpa" component={CPA} />
-          <Route path="/fabrani-conecta/nap" component={NAP} />
-        <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
-        <Route path={"/cursos-gratuitos"} component={FabraniIAPlus} />
-        <Route path="/ia-para-negocios" component={IAParaNegocios} />
-      <Route path="/lp/mba-ia-negocios" component={IAParaNegociosLP} />
-        <Route path="/mec" component={MEC} />
-        <Route path="/hub-insights" component={HubInsights} />
-        <Route path="/hub-insights/:id" component={InsightDetail} />
-        <Route path="/pesquisa/pivic" component={PIVIC} />
-        <Route path="/trabalhe-conosco" component={TrabalheConosco} />
-        <Route path="/politica-cookies" component={PoliticaCookies} />
-        <Route path="/privacidade" component={PoliticaPrivacidade} />
-        <Route path="/termos-de-uso" component={TermosDeUso} />
-        <Route path="/parceiros" component={Parceiros} />
-        <Route path="/como-ser-parceiro" component={ComoSerParceiro} />
-        <Route path={"/404"} component={NotFound} />
-        {/* Final fallback route */}
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <Switch>
+      {/* Landing page /mec standalone - sem header/footer */}
+      <Route path="/mec" component={MEC} />
+      
+      {/* Todas as outras rotas com Layout (header + footer) */}
+      <Route>
+        <Layout>
+          <Switch>
+            <Route path={"/"} component={Home} />
+            <Route path={"/manifesto"} component={Manifesto} />
+            <Route path={"/mbas"} component={MBAs} />
+            <Route path={"/mbas/:id"} component={MBADetail} />
+            <Route path={"/graduacao/marketing-digital"} component={GraduacaoMarketing} />
+            <Route path={"/graduacao/negocios-imobiliarios"} component={GraduacaoImobiliaria} />
+            <Route path="/fabrani-conecta/cpa" component={CPA} />
+            <Route path="/fabrani-conecta/nap" component={NAP} />
+            <Route path="/fabrani-conecta/responsabilidade-social" component={ResponsabilidadeSocial} />
+            <Route path={"/cursos-gratuitos"} component={FabraniIAPlus} />
+            <Route path="/ia-para-negocios" component={IAParaNegocios} />
+            <Route path="/lp/mba-ia-negocios" component={IAParaNegociosLP} />
+            <Route path="/hub-insights" component={HubInsights} />
+            <Route path="/hub-insights/:id" component={InsightDetail} />
+            <Route path="/pesquisa/pivic" component={PIVIC} />
+            <Route path="/trabalhe-conosco" component={TrabalheConosco} />
+            <Route path="/politica-cookies" component={PoliticaCookies} />
+            <Route path="/privacidade" component={PoliticaPrivacidade} />
+            <Route path="/termos-de-uso" component={TermosDeUso} />
+            <Route path="/parceiros" component={Parceiros} />
+            <Route path="/como-ser-parceiro" component={ComoSerParceiro} />
+            <Route path={"/404"} component={NotFound} />
+            {/* Final fallback route */}
+            <Route component={NotFound} />
+          </Switch>
+        </Layout>
+      </Route>
+    </Switch>
   );
 }
 

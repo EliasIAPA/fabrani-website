@@ -190,4 +190,9 @@
 - [x] Adaptar cores para paleta do site FABRANI (preto/vermelho/branco/dourado)
 - [x] Registrar rota /mec no App.tsx (sem incluir no menu)
 - [x] Testar responsividade e visual
+- [x] Salvar checkpoint
+
+## Página /mec - Remover Menu Superior
+- [x] Remover header/menu superior da página /mec (landing page standalone)
+- [x] Testar visual sem menu
 - [ ] Salvar checkpoint
