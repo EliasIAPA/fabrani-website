@@ -195,4 +195,11 @@
 ## Página /mec - Remover Menu Superior
 - [x] Remover header/menu superior da página /mec (landing page standalone)
 - [x] Testar visual sem menu
+- [x] Salvar checkpoint
+
+## Integração Formulário GoHighLevel na /mec
+- [x] Criar modal/seção embed com iframe GoHighLevel (LeadConnector)
+- [x] Vincular botões CTA ao formulário embed
+- [x] Carregar script form_embed.js dinamicamente
+- [x] Testar formulário funcionando na página (funciona em produção, bloqueado em preview/sandbox)
 - [ ] Salvar checkpoint

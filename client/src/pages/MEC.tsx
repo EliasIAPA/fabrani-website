@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
-const WHATSAPP_LINK = "https://wa.me/5516997117597?text=Ol%C3%A1!%20Quero%20agendar%20minha%20Avalia%C3%A7%C3%A3o%20Acad%C3%AAmica%20FABRANI";
+const GHL_FORM_URL = "https://api.leadconnectorhq.com/widget/form/NIiX8zUL3aiJ65D44Z8J";
+const GHL_SCRIPT_URL = "https://link.msgsndr.com/js/form_embed.js";
 
 const IMAGES = {
   onm: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/onm-novo-mercado_aa2a11a8.jpg",
@@ -126,7 +127,170 @@ function FAQItem({ item }: { item: typeof faqItems[0] }) {
   );
 }
 
+/* ===== MODAL DO FORMULÁRIO GOHIGHLEVEL ===== */
+function FormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const scriptLoaded = useRef(false);
+
+  useEffect(() => {
+    if (isOpen && !scriptLoaded.current) {
+      // Carregar o script do GoHighLevel dinamicamente
+      const existingScript = document.querySelector(`script[src="${GHL_SCRIPT_URL}"]`);
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = GHL_SCRIPT_URL;
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      scriptLoaded.current = true;
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Fechar ao clicar fora do modal
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      onClose();
+    }
+  };
+
+  // Fechar com ESC
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (isOpen) window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-in fade-in duration-200"
+      onClick={handleBackdropClick}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+
+      {/* Modal */}
+      <div
+        ref={modalRef}
+        className="relative w-full max-w-lg bg-[#0a0a0a] border border-white/10 shadow-[0_0_60px_rgba(200,50,50,0.15)] animate-in zoom-in-95 slide-in-from-bottom-4 duration-300 overflow-hidden"
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-5 border-b border-white/10 bg-gradient-to-r from-neon-cyan/5 to-neon-purple/5">
+          <div>
+            <h3 className="text-lg font-bold text-white">Sessão Estratégica</h3>
+            <p className="text-sm text-muted-foreground">Avaliação Acadêmica Gratuita — FABRANI</p>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Formulário iframe */}
+        <div className="p-1" style={{ minHeight: "480px" }}>
+          <iframe
+            src={GHL_FORM_URL}
+            style={{ width: "100%", height: "480px", border: "none", borderRadius: "3px" }}
+            id="inline-NIiX8zUL3aiJ65D44Z8J"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="SE01 | Sessão Estratégica"
+            data-height="463"
+            data-layout-iframe-id="inline-NIiX8zUL3aiJ65D44Z8J"
+            data-form-id="NIiX8zUL3aiJ65D44Z8J"
+            title="SE01 | Sessão Estratégica"
+          />
+        </div>
+
+        {/* Footer */}
+        <div className="px-5 py-3 border-t border-white/10 bg-white/[0.02]">
+          <p className="text-xs text-muted-foreground text-center">
+            Seus dados estão protegidos. Avaliação 100% gratuita e sem compromisso.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== SEÇÃO INLINE DO FORMULÁRIO (para a seção de oferta) ===== */
+function InlineForm() {
+  const scriptLoaded = useRef(false);
+
+  useEffect(() => {
+    if (!scriptLoaded.current) {
+      const existingScript = document.querySelector(`script[src="${GHL_SCRIPT_URL}"]`);
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = GHL_SCRIPT_URL;
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      scriptLoaded.current = true;
+    }
+  }, []);
+
+  return (
+    <div className="w-full max-w-lg mx-auto mt-8">
+      <div className="bg-[#0a0a0a] border border-white/10 overflow-hidden shadow-[0_0_40px_rgba(200,50,50,0.1)]">
+        <div className="p-4 border-b border-white/10 bg-gradient-to-r from-neon-cyan/5 to-neon-purple/5">
+          <h3 className="text-lg font-bold text-white text-center">Agende Sua Sessão Estratégica</h3>
+          <p className="text-sm text-muted-foreground text-center">Preencha abaixo para garantir sua vaga</p>
+        </div>
+        <div className="p-1" style={{ minHeight: "480px" }}>
+          <iframe
+            src={GHL_FORM_URL}
+            style={{ width: "100%", height: "480px", border: "none", borderRadius: "3px" }}
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="SE01 | Sessão Estratégica"
+            data-height="463"
+            data-form-id="NIiX8zUL3aiJ65D44Z8J"
+            title="SE01 | Sessão Estratégica"
+          />
+        </div>
+        <div className="px-4 py-2 border-t border-white/10 bg-white/[0.02]">
+          <p className="text-xs text-muted-foreground text-center">
+            Avaliação 100% gratuita &bull; Sem compromisso &bull; Dados protegidos
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function MEC() {
+  const [formModalOpen, setFormModalOpen] = useState(false);
+
+  const openForm = () => setFormModalOpen(true);
+  const closeForm = () => setFormModalOpen(false);
+
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
       <SEO
@@ -135,8 +299,11 @@ export default function MEC() {
         keywords="Consultoria MEC, Extensão Universitária, Certificação MEC, FABRANI, Infoproduto, Educação Formal"
       />
 
+      {/* Modal do Formulário */}
+      <FormModal isOpen={formModalOpen} onClose={closeForm} />
+
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center -mt-24 pt-44 pb-20 bg-black overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 bg-black overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-black pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(200,50,50,0.08),transparent_60%)] pointer-events-none" />
 
@@ -164,14 +331,13 @@ export default function MEC() {
             . Quando isso acontece, ele deixa de disputar atenção. Ele passa a operar com Reconhecimento Institucional. O valor percebido sobe. A resistência ao preço diminui. E vender fica mais simples.
           </p>
 
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-            <Button
-              size="lg"
-              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-7 rounded-none shadow-[0_0_20px_rgba(200,50,50,0.3)] hover:shadow-[0_0_40px_rgba(200,50,50,0.5)] transition-all transform hover:-translate-y-1 mt-8"
-            >
-              AGENDAR AGORA
-            </Button>
-          </a>
+          <Button
+            size="lg"
+            onClick={openForm}
+            className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-7 rounded-none shadow-[0_0_20px_rgba(200,50,50,0.3)] hover:shadow-[0_0_40px_rgba(200,50,50,0.5)] transition-all transform hover:-translate-y-1 mt-8 cursor-pointer"
+          >
+            AGENDAR AGORA
+          </Button>
 
           <p className="text-sm text-muted-foreground mt-4 font-mono">
             Avaliação Gratuita &bull; Sem Compromisso
@@ -211,14 +377,13 @@ export default function MEC() {
           </div>
 
           <div className="text-center mt-12">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-transparent border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold text-base px-8 py-6 rounded-none transition-all"
-              >
-                QUERO MUDAR DE CATEGORIA
-              </Button>
-            </a>
+            <Button
+              size="lg"
+              onClick={openForm}
+              className="bg-transparent border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-bold text-base px-8 py-6 rounded-none transition-all cursor-pointer"
+            >
+              QUERO MUDAR DE CATEGORIA
+            </Button>
           </div>
         </div>
       </section>
@@ -265,7 +430,6 @@ export default function MEC() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* O Diferencial */}
             <div className="bg-white/5 border border-white/10 p-8 hover:border-neon-cyan/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <Award className="w-8 h-8 text-neon-cyan" />
@@ -276,7 +440,6 @@ export default function MEC() {
               </p>
             </div>
 
-            {/* O Fechamento */}
             <div className="bg-white/5 border border-white/10 p-8 hover:border-neon-purple/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <TrendingUp className="w-8 h-8 text-neon-purple" />
@@ -287,7 +450,6 @@ export default function MEC() {
               </p>
             </div>
 
-            {/* Explicação Técnica */}
             <div className="bg-white/5 border border-white/10 p-8 hover:border-neon-cyan/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="w-8 h-8 text-neon-cyan" />
@@ -298,7 +460,6 @@ export default function MEC() {
               </p>
             </div>
 
-            {/* Chamada Final */}
             <div className="bg-white/5 border border-white/10 p-8 hover:border-neon-purple/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <Scale className="w-8 h-8 text-neon-purple" />
@@ -311,14 +472,13 @@ export default function MEC() {
           </div>
 
           <div className="text-center mt-12">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-7 rounded-none shadow-[0_0_20px_rgba(200,50,50,0.3)] hover:shadow-[0_0_40px_rgba(200,50,50,0.5)] transition-all transform hover:-translate-y-1"
-              >
-                QUERO ACESSAR
-              </Button>
-            </a>
+            <Button
+              size="lg"
+              onClick={openForm}
+              className="bg-neon-cyan text-black hover:bg-neon-cyan/80 font-bold text-lg px-10 py-7 rounded-none shadow-[0_0_20px_rgba(200,50,50,0.3)] hover:shadow-[0_0_40px_rgba(200,50,50,0.5)] transition-all transform hover:-translate-y-1 cursor-pointer"
+            >
+              QUERO ACESSAR
+            </Button>
           </div>
         </div>
       </section>
@@ -496,7 +656,7 @@ export default function MEC() {
         </div>
       </section>
 
-      {/* ===== OFERTA ===== */}
+      {/* ===== OFERTA + FORMULÁRIO INLINE ===== */}
       <section className="py-24 bg-[#0a0505] relative border-t border-white/5">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
@@ -567,16 +727,10 @@ export default function MEC() {
             <p className="text-neon-purple font-semibold text-sm">
               E as 10 primeiras aplicações contam com participação direta do Diretor da Faculdade.
             </p>
-
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-neon-purple text-white hover:bg-neon-purple/80 font-bold text-lg px-10 py-7 rounded-none shadow-[0_0_20px_rgba(200,150,50,0.3)] hover:shadow-[0_0_40px_rgba(200,150,50,0.5)] transition-all transform hover:-translate-y-1 mt-6"
-              >
-                QUERO MINHA AVALIAÇÃO ACADÊMICA
-              </Button>
-            </a>
           </div>
+
+          {/* Formulário GoHighLevel Inline */}
+          <InlineForm />
         </div>
       </section>
 
