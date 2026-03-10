@@ -26,6 +26,7 @@ import ComoSerParceiro from "@/pages/ComoSerParceiro";
 import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
+import MEC from "@/pages/MEC";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -43,6 +44,7 @@ function Router() {
         <Route path={"/cursos-gratuitos"} component={FabraniIAPlus} />
         <Route path="/ia-para-negocios" component={IAParaNegocios} />
       <Route path="/lp/mba-ia-negocios" component={IAParaNegociosLP} />
+        <Route path="/mec" component={MEC} />
         <Route path="/hub-insights" component={HubInsights} />
         <Route path="/hub-insights/:id" component={InsightDetail} />
         <Route path="/pesquisa/pivic" component={PIVIC} />

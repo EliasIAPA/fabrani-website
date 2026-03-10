@@ -177,3 +177,17 @@
 - [x] Adicionar overflow-x-hidden em todas as páginas restantes (PoliticaCookies, PoliticaPrivacidade, TermosDeUso, InsightDetail, NotFound)
 - [x] Reescrever NotFound.tsx com paleta preta/vermelha/branca premium
 - [x] Zero erros TypeScript confirmado
+
+## Migração para DigitalOcean + Supabase + Cloudflare
+- [x] Analisar dependências do ecossistema Manus no código
+- [x] Mapear substituições necessárias (auth, DB, storage, LLM, env vars)
+- [x] Criar guia de migração completo e detalhado
+- [x] Entregar relatório de migração ao usuário
+
+## Landing Page /mec (Réplica escala.fabrani.com.br)
+- [x] Analisar landing page escala.fabrani.com.br
+- [x] Criar página MEC.tsx replicando conteúdo da landing page
+- [x] Adaptar cores para paleta do site FABRANI (preto/vermelho/branco/dourado)
+- [x] Registrar rota /mec no App.tsx (sem incluir no menu)
+- [x] Testar responsividade e visual
+- [ ] Salvar checkpoint
