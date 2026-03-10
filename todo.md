@@ -202,4 +202,10 @@
 - [x] Vincular botões CTA ao formulário embed
 - [x] Carregar script form_embed.js dinamicamente
 - [x] Testar formulário funcionando na página (funciona em produção, bloqueado em preview/sandbox)
+- [x] Salvar checkpoint
+
+## Bug: Formulário GoHighLevel bloqueado na /mec (produção)
+- [ ] Diagnosticar bloqueio do iframe GoHighLevel em fabrani.com.br/mec
+- [ ] Implementar correção (CSP headers, sandbox attributes, ou abordagem alternativa)
+- [ ] Testar formulário funcionando em produção
 - [ ] Salvar checkpoint
