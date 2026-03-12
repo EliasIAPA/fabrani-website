@@ -27,11 +27,13 @@ import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
 import MEC from "@/pages/MEC";
+import MECObrigado from "@/pages/MECObrigado";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      {/* Landing page /mec standalone - sem header/footer */}
+      {/* Landing pages /mec standalone - sem header/footer */}
+      <Route path="/mec/obrigado" component={MECObrigado} />
       <Route path="/mec" component={MEC} />
       
       {/* Todas as outras rotas com Layout (header + footer) */}

@@ -224,4 +224,11 @@
 
 ## Remover botão flutuante WhatsApp da /mec
 - [x] Remover botão flutuante de WhatsApp (widget Rosana.io/SOPHIA AI) da página /mec via MutationObserver
+- [x] Salvar checkpoint
+
+## Página /mec/obrigado (Thank You Page)
+- [x] Criar componente MECObrigado.tsx com copy fornecida na íntegra
+- [x] Esconder widget flutuante Rosana.io nesta página
+- [x] Registrar rota /mec/obrigado no App.tsx (standalone, sem Layout)
+- [x] Testar visual e responsividade
 - [ ] Salvar checkpoint
