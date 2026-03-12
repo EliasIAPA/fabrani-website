@@ -291,6 +291,55 @@ export default function MEC() {
   const openForm = () => setFormModalOpen(true);
   const closeForm = () => setFormModalOpen(false);
 
+  // Esconder o widget flutuante Rosana.io (SOPHIA AI) nesta página
+  useEffect(() => {
+    const hideWidget = () => {
+      // Esconder o botão flutuante pelo ID
+      const floatingBtn = document.getElementById('click-plug-to-support');
+      if (floatingBtn) {
+        (floatingBtn as HTMLElement).style.display = 'none';
+      }
+      // Esconder qualquer container pai do widget Rosana
+      const allElements = document.querySelectorAll('[id*="rosana"], [class*="rosana"], [id*="plug-to-support"]');
+      allElements.forEach((el) => {
+        (el as HTMLElement).style.display = 'none';
+      });
+      // Esconder pelo seletor mais genérico do widget
+      const widgetContainer = floatingBtn?.parentElement;
+      if (widgetContainer && widgetContainer.id !== 'root') {
+        (widgetContainer as HTMLElement).style.display = 'none';
+      }
+    };
+
+    // Executar imediatamente e após delay (widget pode carregar depois)
+    hideWidget();
+    const timer1 = setTimeout(hideWidget, 1000);
+    const timer2 = setTimeout(hideWidget, 3000);
+    const timer3 = setTimeout(hideWidget, 5000);
+
+    // Observer para detectar quando o widget é inserido no DOM
+    const observer = new MutationObserver(() => {
+      hideWidget();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      observer.disconnect();
+      // Restaurar visibilidade ao sair da página /mec
+      const floatingBtn = document.getElementById('click-plug-to-support');
+      if (floatingBtn) {
+        (floatingBtn as HTMLElement).style.display = '';
+      }
+      const widgetContainer = floatingBtn?.parentElement;
+      if (widgetContainer && widgetContainer.id !== 'root') {
+        (widgetContainer as HTMLElement).style.display = '';
+      }
+    };
+  }, []);
+
   // Meta Pixel (Facebook Pixel) - PageView
   useEffect(() => {
     // Evitar duplicação se já foi carregado

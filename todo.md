@@ -220,4 +220,8 @@
 - [x] Adicionar listener postMessage para detectar submissão do formulário GoHighLevel
 - [x] Disparar fbq('track', 'Lead') quando formulário for submetido
 - [x] Fallback: observar reload do iframe como sinal de submissão
+- [x] Salvar checkpoint
+
+## Remover botão flutuante WhatsApp da /mec
+- [x] Remover botão flutuante de WhatsApp (widget Rosana.io/SOPHIA AI) da página /mec via MutationObserver
 - [ ] Salvar checkpoint
