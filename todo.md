@@ -231,4 +231,9 @@
 - [x] Esconder widget flutuante Rosana.io nesta página
 - [x] Registrar rota /mec/obrigado no App.tsx (standalone, sem Layout)
 - [x] Testar visual e responsividade
+- [x] Salvar checkpoint
+
+## Microsoft Clarity (Mapa de Calor)
+- [x] Adicionar script Microsoft Clarity ID vulwc6ijjh no index.html
+- [x] Atualizar CSP para permitir domínios clarity.ms e bing.com
 - [ ] Salvar checkpoint
