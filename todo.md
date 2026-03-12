@@ -236,4 +236,11 @@
 ## Microsoft Clarity (Mapa de Calor)
 - [x] Adicionar script Microsoft Clarity ID vulwc6ijjh no index.html
 - [x] Atualizar CSP para permitir domínios clarity.ms e bing.com
+- [x] Salvar checkpoint
+
+## Página /mec/agenda2 (Embed Agenda GoHighLevel)
+- [x] Criar MECAgenda2.tsx com embed da agenda GoHighLevel
+- [x] Headline "Realize seu Agendamento Agora!"
+- [x] Registrar rota /mec/agenda2 no App.tsx (standalone, sem Layout)
+- [x] Esconder widget flutuante Rosana.io
 - [ ] Salvar checkpoint

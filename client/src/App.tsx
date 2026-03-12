@@ -28,11 +28,13 @@ import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
 import MEC from "@/pages/MEC";
 import MECObrigado from "@/pages/MECObrigado";
+import MECAgenda2 from "@/pages/MECAgenda2";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       {/* Landing pages /mec standalone - sem header/footer */}
+      <Route path="/mec/agenda2" component={MECAgenda2} />
       <Route path="/mec/obrigado" component={MECObrigado} />
       <Route path="/mec" component={MEC} />
       
