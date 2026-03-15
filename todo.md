@@ -243,4 +243,13 @@
 - [x] Headline "Realize seu Agendamento Agora!"
 - [x] Registrar rota /mec/agenda2 no App.tsx (standalone, sem Layout)
 - [x] Esconder widget flutuante Rosana.io
+- [x] Salvar checkpoint
+
+## Página /mba-servico (Réplica de mbaservico-shdtbkiy.manus.space)
+- [x] Analisar landing page mbaservico-shdtbkiy.manus.space
+- [x] Criar componente MBAServico.tsx replicando conteúdo
+- [x] Adaptar cores para paleta FABRANI (preto/vermelho/branco/dourado)
+- [x] Registrar rota /mba-servico no App.tsx (standalone, sem Layout)
+- [x] Esconder widget flutuante Rosana.io
+- [x] Testar visual e responsividade
 - [ ] Salvar checkpoint
