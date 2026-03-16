@@ -42,6 +42,140 @@ export default function MECAgenda2() {
     };
   }, []);
 
+  // Meta Pixel (2419105295112897) - PageView + Lead
+  useEffect(() => {
+    // Evitar duplicação se já foi carregado
+    if ((window as any).fbq) {
+      // Pixel já inicializado (veio da /mec), apenas disparar PageView
+      (window as any).fbq('track', 'PageView');
+      return;
+    }
+
+    // Inicializar fbq
+    const f = window as any;
+    const b = document;
+    let e: any, n: any;
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = '2.0';
+    n.queue = [];
+    e = b.createElement('script');
+    e.async = true;
+    e.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    const s = b.getElementsByTagName('script')[0];
+    s?.parentNode?.insertBefore(e, s);
+
+    // Inicializar com os Pixel IDs e disparar PageView
+    (window as any).fbq('init', '1101040821159474');
+    (window as any).fbq('init', '2419105295112897');
+    (window as any).fbq('track', 'PageView');
+
+    // Adicionar noscript fallback
+    const noscript = b.createElement('noscript');
+    noscript.id = 'fb-pixel-noscript-agenda2';
+    const img = b.createElement('img');
+    img.height = 1;
+    img.width = 1;
+    img.style.display = 'none';
+    img.src = 'https://www.facebook.com/tr?id=1101040821159474&ev=PageView&noscript=1';
+    noscript.appendChild(img);
+    b.body.appendChild(noscript);
+
+    const noscript2 = b.createElement('noscript');
+    noscript2.id = 'fb-pixel-noscript2-agenda2';
+    const img2 = b.createElement('img');
+    img2.height = 1;
+    img2.width = 1;
+    img2.style.display = 'none';
+    img2.src = 'https://www.facebook.com/tr?id=2419105295112897&ev=PageView&noscript=1';
+    noscript2.appendChild(img2);
+    b.body.appendChild(noscript2);
+
+    return () => {
+      const ns1 = document.getElementById('fb-pixel-noscript-agenda2');
+      const ns2 = document.getElementById('fb-pixel-noscript2-agenda2');
+      if (ns1?.parentNode) ns1.parentNode.removeChild(ns1);
+      if (ns2?.parentNode) ns2.parentNode.removeChild(ns2);
+    };
+  }, []);
+
+  // Detectar agendamento no iframe do GoHighLevel e disparar Lead
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        event.origin?.includes('leadconnectorhq.com') ||
+        event.origin?.includes('msgsndr.com')
+      ) {
+        try {
+          const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+          if (
+            data?.type === 'form_submitted' ||
+            data?.type === 'formSubmitted' ||
+            data?.event === 'form_submitted' ||
+            data?.event === 'formSubmitted' ||
+            data?.action === 'form_submitted' ||
+            data?.formSubmitted === true ||
+            data?.type === 'booking_submitted' ||
+            data?.event === 'booking_submitted'
+          ) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              (window as any).fbq('track', 'Schedule');
+              console.log('[Meta Pixel] Evento Lead + Schedule disparado (agenda2)');
+            }
+            // Redirecionar para página de obrigado
+            window.location.href = '/mec/obrigado';
+          }
+        } catch {
+          if (
+            typeof event.data === 'string' &&
+            (event.data.includes('form_submitted') || event.data.includes('formSubmitted') || event.data.includes('booking'))
+          ) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              (window as any).fbq('track', 'Schedule');
+            }
+            window.location.href = '/mec/obrigado';
+          }
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    // Fallback: detectar reload do iframe (segunda carga = booking confirmado)
+    const checkIframeNavigation = () => {
+      const iframes = document.querySelectorAll<HTMLIFrameElement>(
+        'iframe[src*="leadconnectorhq.com"]'
+      );
+      iframes.forEach((iframe) => {
+        iframe.addEventListener('load', () => {
+          const loadCount = parseInt(iframe.dataset.loadCount || '0') + 1;
+          iframe.dataset.loadCount = String(loadCount);
+          if (loadCount > 1) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              (window as any).fbq('track', 'Schedule');
+              console.log('[Meta Pixel] Lead + Schedule disparado (iframe reload agenda2)');
+            }
+            window.location.href = '/mec/obrigado';
+          }
+        });
+      });
+    };
+    const iframeTimer = setTimeout(checkIframeNavigation, 2000);
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+      clearTimeout(iframeTimer);
+    };
+  }, []);
+
   // Carregar script do GoHighLevel para embed
   useEffect(() => {
     const existingScript = document.querySelector(

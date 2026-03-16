@@ -46,11 +46,68 @@ export default function MECObrigado() {
     };
   }, []);
 
-  // Meta Pixel - Disparar evento Schedule (agendamento confirmado)
+  // Meta Pixel (2419105295112897) - PageView + Lead + Schedule
   useEffect(() => {
+    // Evitar duplicação se já foi carregado
     if ((window as any).fbq) {
+      // Pixel já inicializado (veio da /mec ou /mec/agenda2), disparar PageView + Schedule
+      (window as any).fbq('track', 'PageView');
       (window as any).fbq('track', 'Schedule');
+      return;
     }
+
+    // Inicializar fbq
+    const f = window as any;
+    const b = document;
+    let e: any, n: any;
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = '2.0';
+    n.queue = [];
+    e = b.createElement('script');
+    e.async = true;
+    e.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    const s = b.getElementsByTagName('script')[0];
+    s?.parentNode?.insertBefore(e, s);
+
+    // Inicializar com os Pixel IDs e disparar PageView + Schedule
+    (window as any).fbq('init', '1101040821159474');
+    (window as any).fbq('init', '2419105295112897');
+    (window as any).fbq('track', 'PageView');
+    (window as any).fbq('track', 'Schedule');
+
+    // Adicionar noscript fallback
+    const noscript = b.createElement('noscript');
+    noscript.id = 'fb-pixel-noscript-obrigado';
+    const img = b.createElement('img');
+    img.height = 1;
+    img.width = 1;
+    img.style.display = 'none';
+    img.src = 'https://www.facebook.com/tr?id=1101040821159474&ev=PageView&noscript=1';
+    noscript.appendChild(img);
+    b.body.appendChild(noscript);
+
+    const noscript2 = b.createElement('noscript');
+    noscript2.id = 'fb-pixel-noscript2-obrigado';
+    const img2 = b.createElement('img');
+    img2.height = 1;
+    img2.width = 1;
+    img2.style.display = 'none';
+    img2.src = 'https://www.facebook.com/tr?id=2419105295112897&ev=PageView&noscript=1';
+    noscript2.appendChild(img2);
+    b.body.appendChild(noscript2);
+
+    return () => {
+      const ns1 = document.getElementById('fb-pixel-noscript-obrigado');
+      const ns2 = document.getElementById('fb-pixel-noscript2-obrigado');
+      if (ns1?.parentNode) ns1.parentNode.removeChild(ns1);
+      if (ns2?.parentNode) ns2.parentNode.removeChild(ns2);
+    };
   }, []);
 
   return (

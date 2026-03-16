@@ -264,4 +264,10 @@
 
 ## Bug: Redirect pós-formulário /mec ainda vai para LeadConnector
 - [x] GoHighLevel redireciona página inteira para api.leadconnectorhq.com/widget/bookings - interceptar e forçar /mec/agenda2
+- [x] Salvar checkpoint
+
+## Pixel 2419105295112897 (PageView + Lead) em todas as páginas MEC
+- [x] /mec - verificar pixel PageView existente e garantir Lead no novo pixel
+- [x] /mec/agenda2 - adicionar pixel PageView + Lead
+- [x] /mec/obrigado - adicionar pixel PageView + Lead
 - [ ] Salvar checkpoint
