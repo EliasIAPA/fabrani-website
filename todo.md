@@ -252,4 +252,8 @@
 - [x] Registrar rota /mba-servico no App.tsx (standalone, sem Layout)
 - [x] Esconder widget flutuante Rosana.io
 - [x] Testar visual e responsividade
+- [x] Salvar checkpoint
+
+## Novo Meta Pixel na /mec
+- [x] Adicionar Meta Pixel ID 2419105295112897 com PageView na página /mec (manter pixel existente)
 - [ ] Salvar checkpoint

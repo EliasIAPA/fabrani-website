@@ -364,8 +364,9 @@ export default function MEC() {
     const s = b.getElementsByTagName('script')[0];
     s?.parentNode?.insertBefore(e, s);
 
-    // Inicializar com o Pixel ID e disparar PageView
+    // Inicializar com os Pixel IDs e disparar PageView
     (window as any).fbq('init', '1101040821159474');
+    (window as any).fbq('init', '2419105295112897');
     (window as any).fbq('track', 'PageView');
 
     // Adicionar noscript fallback
@@ -378,9 +379,20 @@ export default function MEC() {
     noscript.appendChild(img);
     b.body.appendChild(noscript);
 
+    // Noscript fallback para o segundo Pixel
+    const noscript2 = b.createElement('noscript');
+    const img2 = b.createElement('img');
+    img2.height = 1;
+    img2.width = 1;
+    img2.style.display = 'none';
+    img2.src = 'https://www.facebook.com/tr?id=2419105295112897&ev=PageView&noscript=1';
+    noscript2.appendChild(img2);
+    b.body.appendChild(noscript2);
+
     return () => {
       // Cleanup: remover noscript ao desmontar
       if (noscript.parentNode) noscript.parentNode.removeChild(noscript);
+      if (noscript2.parentNode) noscript2.parentNode.removeChild(noscript2);
     };
   }, []);
 
