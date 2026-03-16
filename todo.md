@@ -256,4 +256,8 @@
 
 ## Novo Meta Pixel na /mec
 - [x] Adicionar Meta Pixel ID 2419105295112897 com PageView na página /mec (manter pixel existente)
+- [x] Salvar checkpoint
+
+## Substituir URL de agendamento na /mec
+- [x] Substituir api.leadconnectorhq.com/widget/bookings/certificao-mec por /mec/agenda2 na página /mec
 - [ ] Salvar checkpoint

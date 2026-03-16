@@ -420,6 +420,8 @@ export default function MEC() {
               (window as any).fbq('track', 'Lead');
               console.log('[Meta Pixel] Evento Lead disparado com sucesso');
             }
+            // Redirecionar para página de agendamento interna
+            window.location.href = '/mec/agenda2';
           }
         } catch {
           // Se não for JSON, verificar se é string indicando submissão
@@ -431,6 +433,8 @@ export default function MEC() {
               (window as any).fbq('track', 'Lead');
               console.log('[Meta Pixel] Evento Lead disparado com sucesso (string)');
             }
+            // Redirecionar para página de agendamento interna
+            window.location.href = '/mec/agenda2';
           }
         }
       }
@@ -451,9 +455,13 @@ export default function MEC() {
           // O iframe recarrega após submissão — segunda carga = formulário enviado
           const loadCount = parseInt(iframe.dataset.loadCount || '0') + 1;
           iframe.dataset.loadCount = String(loadCount);
-          if (loadCount > 1 && (window as any).fbq) {
-            (window as any).fbq('track', 'Lead');
-            console.log('[Meta Pixel] Evento Lead disparado (iframe reload)');
+          if (loadCount > 1) {
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+              console.log('[Meta Pixel] Evento Lead disparado (iframe reload)');
+            }
+            // Redirecionar para página de agendamento interna
+            window.location.href = '/mec/agenda2';
           }
         });
       });
