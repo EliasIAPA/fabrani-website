@@ -10,7 +10,6 @@ export default function MECAgenda2() {
       widgets.forEach((el) => {
         (el as HTMLElement).style.display = "none";
       });
-      // Também esconder por seletor genérico de widget flutuante
       const floatingWidgets = document.querySelectorAll(
         'div[style*="position: fixed"][style*="bottom"]'
       );
@@ -32,7 +31,6 @@ export default function MECAgenda2() {
 
     return () => {
       observer.disconnect();
-      // Restaurar widgets ao sair
       const widgets = document.querySelectorAll(
         '[id*="rosana"], [class*="rosana"], [id*="sophia"], [class*="sophia"]'
       );
@@ -42,16 +40,13 @@ export default function MECAgenda2() {
     };
   }, []);
 
-  // Meta Pixel (2419105295112897) - PageView + Lead
+  // Meta Pixel - PageView
   useEffect(() => {
-    // Evitar duplicação se já foi carregado
     if ((window as any).fbq) {
-      // Pixel já inicializado (veio da /mec), apenas disparar PageView
       (window as any).fbq('track', 'PageView');
       return;
     }
 
-    // Inicializar fbq
     const f = window as any;
     const b = document;
     let e: any, n: any;
@@ -70,12 +65,10 @@ export default function MECAgenda2() {
     const s = b.getElementsByTagName('script')[0];
     s?.parentNode?.insertBefore(e, s);
 
-    // Inicializar com os Pixel IDs e disparar PageView
     (window as any).fbq('init', '1101040821159474');
     (window as any).fbq('init', '2419105295112897');
     (window as any).fbq('track', 'PageView');
 
-    // Adicionar noscript fallback
     const noscript = b.createElement('noscript');
     noscript.id = 'fb-pixel-noscript-agenda2';
     const img = b.createElement('img');
@@ -101,78 +94,6 @@ export default function MECAgenda2() {
       const ns2 = document.getElementById('fb-pixel-noscript2-agenda2');
       if (ns1?.parentNode) ns1.parentNode.removeChild(ns1);
       if (ns2?.parentNode) ns2.parentNode.removeChild(ns2);
-    };
-  }, []);
-
-  // Detectar agendamento no iframe do GoHighLevel e disparar Lead
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (
-        event.origin?.includes('leadconnectorhq.com') ||
-        event.origin?.includes('msgsndr.com')
-      ) {
-        try {
-          const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-          if (
-            data?.type === 'form_submitted' ||
-            data?.type === 'formSubmitted' ||
-            data?.event === 'form_submitted' ||
-            data?.event === 'formSubmitted' ||
-            data?.action === 'form_submitted' ||
-            data?.formSubmitted === true ||
-            data?.type === 'booking_submitted' ||
-            data?.event === 'booking_submitted'
-          ) {
-            if ((window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-              (window as any).fbq('track', 'Schedule');
-              console.log('[Meta Pixel] Evento Lead + Schedule disparado (agenda2)');
-            }
-            // Redirecionar para página de obrigado
-            window.location.href = '/mec/obrigado';
-          }
-        } catch {
-          if (
-            typeof event.data === 'string' &&
-            (event.data.includes('form_submitted') || event.data.includes('formSubmitted') || event.data.includes('booking'))
-          ) {
-            if ((window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-              (window as any).fbq('track', 'Schedule');
-            }
-            window.location.href = '/mec/obrigado';
-          }
-        }
-      }
-    };
-
-    window.addEventListener('message', handleMessage);
-
-    // Fallback: detectar reload do iframe (segunda carga = booking confirmado)
-    const checkIframeNavigation = () => {
-      const iframes = document.querySelectorAll<HTMLIFrameElement>(
-        'iframe[src*="leadconnectorhq.com"]'
-      );
-      iframes.forEach((iframe) => {
-        iframe.addEventListener('load', () => {
-          const loadCount = parseInt(iframe.dataset.loadCount || '0') + 1;
-          iframe.dataset.loadCount = String(loadCount);
-          if (loadCount > 1) {
-            if ((window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-              (window as any).fbq('track', 'Schedule');
-              console.log('[Meta Pixel] Lead + Schedule disparado (iframe reload agenda2)');
-            }
-            window.location.href = '/mec/obrigado';
-          }
-        });
-      });
-    };
-    const iframeTimer = setTimeout(checkIframeNavigation, 2000);
-
-    return () => {
-      window.removeEventListener('message', handleMessage);
-      clearTimeout(iframeTimer);
     };
   }, []);
 

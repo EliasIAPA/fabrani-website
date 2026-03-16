@@ -270,4 +270,13 @@
 - [x] /mec - verificar pixel PageView existente e garantir Lead no novo pixel
 - [x] /mec/agenda2 - adicionar pixel PageView + Lead
 - [x] /mec/obrigado - adicionar pixel PageView + Lead
-- [ ] Salvar checkpoint
+- [x] Salvar checkpoint
+
+## URGENTE: Reverter interceptação de navegação (loop na /mec/agenda2)
+- [x] Remover sandbox dos iframes na /mec
+- [x] Remover TODOS os interceptores de navegação (window.open, URL polling, beforeunload) na /mec
+- [x] Restaurar fluxo original GHL para api.leadconnectorhq.com/widget/bookings
+- [x] Remover redirect loop e listeners de booking na /mec/agenda2
+- [x] Manter apenas pixel PageView simples na /mec/agenda2 (sem redirects)
+- [x] Manter Lead tracking via postMessage na /mec (sem redirect)
+- [ ] Salvar checkpoint e publicar
