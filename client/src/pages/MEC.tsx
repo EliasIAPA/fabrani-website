@@ -208,6 +208,7 @@ function FormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
             src={GHL_FORM_URL}
             style={{ width: "100%", height: "480px", border: "none", borderRadius: "3px" }}
             id="inline-NIiX8zUL3aiJ65D44Z8J"
+            sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
             data-trigger-value=""
@@ -262,6 +263,7 @@ function InlineForm() {
           <iframe
             src={GHL_FORM_URL}
             style={{ width: "100%", height: "480px", border: "none", borderRadius: "3px" }}
+            sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
             data-trigger-value=""
@@ -396,18 +398,57 @@ export default function MEC() {
     };
   }, []);
 
-  // Listener para detectar submissão do formulário GoHighLevel e disparar evento Lead
+  // Interceptar QUALQUER tentativa de navegação para leadconnectorhq.com/widget/bookings
+  // O GHL form_embed.js redireciona a página inteira (window.top.location) após submissão do formulário
   useEffect(() => {
+    // Interceptar via beforeunload + monitoramento de URL
+    const interceptNavigation = () => {
+      // Sobrescrever window.open para capturar tentativas de abrir bookings
+      const originalOpen = window.open;
+      (window as any).__originalOpen = originalOpen;
+      window.open = function(url?: string | URL, ...args: any[]) {
+        const urlStr = String(url || '');
+        if (urlStr.includes('leadconnectorhq.com/widget/bookings') || urlStr.includes('certificao-mec')) {
+          console.log('[FABRANI] Interceptado window.open para bookings, redirecionando para /mec/agenda2');
+          if ((window as any).fbq) {
+            (window as any).fbq('track', 'Lead');
+          }
+          window.location.href = '/mec/agenda2';
+          return null;
+        }
+        return originalOpen.call(window, url, ...args as [string?, string?]);
+      };
+
+      // Monitorar mudanças na URL via polling (para capturar location.href assignments)
+      let lastHref = window.location.href;
+      const urlChecker = setInterval(() => {
+        const currentHref = window.location.href;
+        if (currentHref !== lastHref) {
+          if (currentHref.includes('leadconnectorhq.com/widget/bookings') || currentHref.includes('certificao-mec')) {
+            console.log('[FABRANI] Interceptado redirect para bookings via URL change');
+            clearInterval(urlChecker);
+            if ((window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+            }
+            window.location.href = '/mec/agenda2';
+          }
+          lastHref = currentHref;
+        }
+      }, 100);
+
+      return urlChecker;
+    };
+
+    const urlChecker = interceptNavigation();
+
+    // Listener para postMessage do GHL
     const handleMessage = (event: MessageEvent) => {
-      // GoHighLevel envia postMessage quando o formulário é submetido
-      // Detectar mensagens do iframe do LeadConnector/GoHighLevel
       if (
         event.origin?.includes('leadconnectorhq.com') ||
         event.origin?.includes('msgsndr.com')
       ) {
         try {
           const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-          // GoHighLevel envia eventos como form_submitted, formSubmitted, etc.
           if (
             data?.type === 'form_submitted' ||
             data?.type === 'formSubmitted' ||
@@ -420,11 +461,9 @@ export default function MEC() {
               (window as any).fbq('track', 'Lead');
               console.log('[Meta Pixel] Evento Lead disparado com sucesso');
             }
-            // Redirecionar para página de agendamento interna
             window.location.href = '/mec/agenda2';
           }
         } catch {
-          // Se não for JSON, verificar se é string indicando submissão
           if (
             typeof event.data === 'string' &&
             (event.data.includes('form_submitted') || event.data.includes('formSubmitted'))
@@ -433,7 +472,6 @@ export default function MEC() {
               (window as any).fbq('track', 'Lead');
               console.log('[Meta Pixel] Evento Lead disparado com sucesso (string)');
             }
-            // Redirecionar para página de agendamento interna
             window.location.href = '/mec/agenda2';
           }
         }
@@ -441,18 +479,14 @@ export default function MEC() {
     };
 
     window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
 
-  // Fallback: observar mudanças no iframe (redirecionamento pós-submit = thank you page)
-  useEffect(() => {
+    // Fallback: observar reload do iframe (segunda carga = formulário enviado)
     const checkIframeNavigation = () => {
       const iframes = document.querySelectorAll<HTMLIFrameElement>(
         'iframe[src*="leadconnectorhq.com"]'
       );
       iframes.forEach((iframe) => {
         iframe.addEventListener('load', () => {
-          // O iframe recarrega após submissão — segunda carga = formulário enviado
           const loadCount = parseInt(iframe.dataset.loadCount || '0') + 1;
           iframe.dataset.loadCount = String(loadCount);
           if (loadCount > 1) {
@@ -460,16 +494,31 @@ export default function MEC() {
               (window as any).fbq('track', 'Lead');
               console.log('[Meta Pixel] Evento Lead disparado (iframe reload)');
             }
-            // Redirecionar para página de agendamento interna
             window.location.href = '/mec/agenda2';
           }
         });
       });
     };
+    const iframeTimer = setTimeout(checkIframeNavigation, 2000);
 
-    // Aguardar iframes serem montados
-    const timer = setTimeout(checkIframeNavigation, 2000);
-    return () => clearTimeout(timer);
+    // Interceptar navegação via beforeunload
+    const handleBeforeUnload = () => {
+      // Verificar se a navegação é para leadconnectorhq bookings
+      // Nota: não podemos ler a URL de destino em beforeunload,
+      // mas o URL checker acima já cobre isso
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      clearInterval(urlChecker);
+      clearTimeout(iframeTimer);
+      window.removeEventListener('message', handleMessage);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      // Restaurar window.open original
+      if ((window as any).__originalOpen) {
+        window.open = (window as any).__originalOpen;
+      }
+    };
   }, []);
 
   return (

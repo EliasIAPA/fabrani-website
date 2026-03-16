@@ -260,4 +260,8 @@
 
 ## Substituir URL de agendamento na /mec
 - [x] Substituir api.leadconnectorhq.com/widget/bookings/certificao-mec por /mec/agenda2 na página /mec
+- [x] Salvar checkpoint
+
+## Bug: Redirect pós-formulário /mec ainda vai para LeadConnector
+- [x] GoHighLevel redireciona página inteira para api.leadconnectorhq.com/widget/bookings - interceptar e forçar /mec/agenda2
 - [ ] Salvar checkpoint
