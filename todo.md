@@ -284,4 +284,8 @@
 ## Embed pesquisa GHL na /mec/obrigado
 - [x] Adicionar iframe da pesquisa Zf9Nfa543xBj272r9Q0g na página /mec/obrigado
 - [x] Carregar script form_embed.js
+- [x] Salvar checkpoint
+
+## Script de rastreamento GHL em todas as páginas
+- [x] Adicionar script external-tracking.js (tk_03e2dcf539394d6aa6e61116833d646e) no index.html global antes de </body>
 - [ ] Salvar checkpoint
