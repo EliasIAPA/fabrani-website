@@ -110,6 +110,19 @@ export default function MECObrigado() {
     };
   }, []);
 
+  // Carregar script do GoHighLevel para embed da pesquisa
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[src="https://link.msgsndr.com/js/form_embed.js"]'
+    );
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://link.msgsndr.com/js/form_embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO
@@ -211,6 +224,22 @@ export default function MECObrigado() {
             </div>
           </div>
 
+        </div>
+
+        {/* Pesquisa de Satisfação */}
+        <div className="w-full max-w-3xl mb-16">
+          <h2 className="text-xl md:text-2xl font-bold text-center text-white mb-6">
+            Responda nossa pesquisa rápida
+          </h2>
+          <div className="bg-zinc-950 border border-white/10 rounded-2xl p-2 md:p-4">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/survey/Zf9Nfa543xBj272r9Q0g"
+              style={{ border: 'none', width: '100%', minHeight: '500px' }}
+              scrolling="no"
+              id="Zf9Nfa543xBj272r9Q0g"
+              title="survey"
+            />
+          </div>
         </div>
 
         {/* Footer mínimo */}

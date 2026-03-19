@@ -280,3 +280,8 @@
 - [x] Manter apenas pixel PageView simples na /mec/agenda2 (sem redirects)
 - [x] Manter Lead tracking via postMessage na /mec (sem redirect)
 - [ ] Salvar checkpoint e publicar
+
+## Embed pesquisa GHL na /mec/obrigado
+- [x] Adicionar iframe da pesquisa Zf9Nfa543xBj272r9Q0g na página /mec/obrigado
+- [x] Carregar script form_embed.js
+- [ ] Salvar checkpoint
