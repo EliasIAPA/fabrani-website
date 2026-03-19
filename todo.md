@@ -288,4 +288,4 @@
 
 ## Script de rastreamento GHL em todas as páginas
 - [x] Adicionar script external-tracking.js (tk_03e2dcf539394d6aa6e61116833d646e) no index.html global antes de </body>
-- [ ] Salvar checkpoint
+- [x] Salvar checkpoint
