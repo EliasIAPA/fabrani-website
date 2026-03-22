@@ -289,3 +289,13 @@
 ## Script de rastreamento GHL em todas as páginas
 - [x] Adicionar script external-tracking.js (tk_03e2dcf539394d6aa6e61116833d646e) no index.html global antes de </body>
 - [x] Salvar checkpoint
+
+## Sistema Anti-Fraude /mec - Detecção de Leads Falsos por IP
+- [x] Criar tabela lead_submissions no banco para registrar IP, fingerprint, dados do lead e timestamps
+- [x] Criar tabela blocked_ips para IPs bloqueados manualmente ou automaticamente
+- [x] Criar API server-side para registrar submissões e verificar rate-limit por IP
+- [x] Adicionar fingerprinting no client-side (IP + browser fingerprint)
+- [x] Integrar detecção na página /mec - bloquear formulário para IPs suspeitos
+- [x] Criar painel admin para visualizar IPs suspeitos e bloquear/desbloquear
+- [x] Notificar owner quando atividade suspeita for detectada
+- [ ] Salvar checkpoint

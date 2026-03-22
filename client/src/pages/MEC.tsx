@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X, ShieldAlert } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { trpc } from "@/lib/trpc";
 
 const GHL_FORM_URL = "https://api.leadconnectorhq.com/widget/form/NIiX8zUL3aiJ65D44Z8J";
 const GHL_SCRIPT_URL = "https://link.msgsndr.com/js/form_embed.js";
@@ -285,10 +286,60 @@ function InlineForm() {
   );
 }
 
+/** Gera um fingerprint simples do navegador para detecção de fraude */
+function generateFingerprint(): string {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillText('fp', 2, 2);
+  }
+  const canvasData = canvas.toDataURL();
+  const nav = [
+    navigator.userAgent,
+    navigator.language,
+    screen.width + 'x' + screen.height,
+    screen.colorDepth?.toString() || '',
+    new Date().getTimezoneOffset().toString(),
+    navigator.hardwareConcurrency?.toString() || '',
+  ].join('|');
+  // Hash simples
+  const raw = canvasData + '|' + nav;
+  let hash = 0;
+  for (let i = 0; i < raw.length; i++) {
+    const char = raw.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash).toString(36);
+}
+
 export default function MEC() {
   const [formModalOpen, setFormModalOpen] = useState(false);
+  const [ipBlocked, setIpBlocked] = useState(false);
+  const [blockMessage, setBlockMessage] = useState("");
 
-  const openForm = () => setFormModalOpen(true);
+  // Verificar IP ao carregar a página
+  const ipCheck = trpc.antiFraud.checkIp.useQuery(undefined, {
+    retry: false,
+    refetchOnWindowFocus: false,
+  });
+
+  // Mutation para registrar submissão
+  const recordMutation = trpc.antiFraud.recordSubmission.useMutation();
+
+  useEffect(() => {
+    if (ipCheck.data && !ipCheck.data.allowed) {
+      setIpBlocked(true);
+      setBlockMessage(ipCheck.data.message || "Acesso restrito.");
+    }
+  }, [ipCheck.data]);
+
+  const openForm = () => {
+    if (ipBlocked) return;
+    setFormModalOpen(true);
+  };
   const closeForm = () => setFormModalOpen(false);
 
   // Esconder o widget flutuante Rosana.io (SOPHIA AI) nesta página
@@ -396,13 +447,16 @@ export default function MEC() {
     };
   }, []);
 
-  // Listener para detectar submissão do formulário GoHighLevel e disparar evento Lead
+  // Listener para detectar submissão do formulário GoHighLevel, disparar Lead e registrar anti-fraude
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (
         event.origin?.includes('leadconnectorhq.com') ||
         event.origin?.includes('msgsndr.com')
       ) {
+        let isFormSubmit = false;
+        let formData: any = {};
+
         try {
           const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
           if (
@@ -413,20 +467,46 @@ export default function MEC() {
             data?.action === 'form_submitted' ||
             data?.formSubmitted === true
           ) {
-            if ((window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-              console.log('[Meta Pixel] Evento Lead disparado com sucesso');
-            }
+            isFormSubmit = true;
+            formData = data;
           }
         } catch {
           if (
             typeof event.data === 'string' &&
             (event.data.includes('form_submitted') || event.data.includes('formSubmitted'))
           ) {
-            if ((window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-              console.log('[Meta Pixel] Evento Lead disparado com sucesso (string)');
-            }
+            isFormSubmit = true;
+          }
+        }
+
+        if (isFormSubmit) {
+          // Disparar Meta Pixel Lead
+          if ((window as any).fbq) {
+            (window as any).fbq('track', 'Lead');
+            console.log('[Meta Pixel] Evento Lead disparado com sucesso');
+          }
+
+          // Registrar submissão no sistema anti-fraude
+          try {
+            const fingerprint = generateFingerprint();
+            recordMutation.mutate({
+              fingerprint,
+              page: '/mec',
+              leadName: formData?.data?.name || formData?.name || formData?.full_name || undefined,
+              leadEmail: formData?.data?.email || formData?.email || undefined,
+              leadPhone: formData?.data?.phone || formData?.phone || formData?.whatsapp || undefined,
+            }, {
+              onSuccess: (result) => {
+                if (result.autoBlocked) {
+                  setIpBlocked(true);
+                  setBlockMessage('IP bloqueado por atividade suspeita.');
+                  console.warn('[AntiFraud] IP bloqueado automaticamente');
+                }
+                console.log('[AntiFraud] Submissão registrada:', result);
+              },
+            });
+          } catch (e) {
+            console.warn('[AntiFraud] Erro ao registrar submissão:', e);
           }
         }
       }
@@ -434,7 +514,7 @@ export default function MEC() {
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, []);
+  }, [recordMutation]);
 
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
@@ -446,6 +526,18 @@ export default function MEC() {
 
       {/* Modal do Formulário */}
       <FormModal isOpen={formModalOpen} onClose={closeForm} />
+
+      {/* Banner de IP Bloqueado */}
+      {ipBlocked && (
+        <div className="fixed top-0 left-0 right-0 z-[10000] bg-red-900/95 backdrop-blur-sm border-b border-red-500/50 px-4 py-3">
+          <div className="container mx-auto flex items-center justify-center gap-3">
+            <ShieldAlert className="w-5 h-5 text-red-300 flex-shrink-0" />
+            <p className="text-red-100 text-sm font-medium text-center">
+              {blockMessage || 'Acesso temporariamente restrito. Tente novamente mais tarde.'}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 bg-black overflow-hidden">

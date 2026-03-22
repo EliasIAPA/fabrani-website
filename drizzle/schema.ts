@@ -25,4 +25,38 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+// ===== SISTEMA ANTI-FRAUDE =====
+
+/** Registra cada submissão de formulário com IP e fingerprint para detecção de fraude */
+export const leadSubmissions = mysqlTable("lead_submissions", {
+  id: int("id").autoincrement().primaryKey(),
+  ip: varchar("ip", { length: 45 }).notNull(), // IPv4 ou IPv6
+  fingerprint: varchar("fingerprint", { length: 64 }), // Browser fingerprint hash
+  page: varchar("page", { length: 100 }).notNull().default("/mec"), // Página de origem
+  userAgent: text("userAgent"),
+  // Dados capturados (se disponíveis)
+  leadName: varchar("leadName", { length: 255 }),
+  leadEmail: varchar("leadEmail", { length: 320 }),
+  leadPhone: varchar("leadPhone", { length: 30 }),
+  // Metadados
+  isSuspicious: mysqlEnum("isSuspicious", ["no", "yes"]).default("no").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type LeadSubmission = typeof leadSubmissions.$inferSelect;
+export type InsertLeadSubmission = typeof leadSubmissions.$inferInsert;
+
+/** IPs bloqueados (manual ou automaticamente) */
+export const blockedIps = mysqlTable("blocked_ips", {
+  id: int("id").autoincrement().primaryKey(),
+  ip: varchar("ip", { length: 45 }).notNull().unique(),
+  reason: text("reason"), // Motivo do bloqueio
+  totalSubmissions: int("totalSubmissions").default(0).notNull(),
+  blockedBy: mysqlEnum("blockedBy", ["auto", "manual"]).default("auto").notNull(),
+  isActive: mysqlEnum("isActive", ["yes", "no"]).default("yes").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlockedIp = typeof blockedIps.$inferSelect;
+export type InsertBlockedIp = typeof blockedIps.$inferInsert;
