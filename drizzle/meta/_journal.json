@@ -15,6 +15,13 @@
       "when": 1774185272082,
       "tag": "0001_furry_king_cobra",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1774189256584,
+      "tag": "0002_sturdy_mach_iv",
+      "breakpoints": true
     }
   ]
 }

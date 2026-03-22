@@ -17,6 +17,7 @@ import {
   blockIpManually,
   unblockIp,
   getSubmissionsByIp,
+  getAllLeads,
 } from "./antiFraud";
 
 export const appRouter = router({
@@ -148,6 +149,23 @@ export const appRouter = router({
       .input(z.object({ ip: z.string().min(1) }))
       .query(async ({ input }) => {
         return await getSubmissionsByIp(input.ip);
+      }),
+
+    /** Lista todas as leads capturadas com dados completos (admin) */
+    allLeads: adminProcedure
+      .input(
+        z.object({
+          search: z.string().optional(),
+          page: z.number().min(1).optional(),
+          limit: z.number().min(1).max(100).optional(),
+        }).optional()
+      )
+      .query(async ({ input }) => {
+        return await getAllLeads({
+          search: input?.search,
+          page: input?.page || 1,
+          limit: input?.limit || 50,
+        });
       }),
   }),
 

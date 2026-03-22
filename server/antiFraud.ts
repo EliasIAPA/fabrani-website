@@ -1,7 +1,8 @@
-import { eq, and, gte, sql, desc, count } from "drizzle-orm";
+import { eq, and, gte, sql, desc, count, like, or } from "drizzle-orm";
 import { getDb } from "./db";
 import { leadSubmissions, blockedIps } from "../drizzle/schema";
 import { notifyOwner } from "./_core/notification";
+import { getGeoFromIp } from "./geoip";
 
 // ===== CONFIGURAÇÃO =====
 const MAX_SUBMISSIONS_PER_HOUR = 3; // Máximo de submissões por IP por hora
@@ -135,6 +136,9 @@ export async function recordSubmission(data: {
     const submissionsLast24h = await countSubmissions(data.ip, 24);
     const isSuspicious = submissionsLast24h >= MAX_SUBMISSIONS_PER_HOUR ? "yes" : "no";
 
+    // Buscar geolocalização do IP
+    const geo = await getGeoFromIp(data.ip);
+
     // Registrar a submissão
     await db.insert(leadSubmissions).values({
       ip: data.ip,
@@ -144,6 +148,12 @@ export async function recordSubmission(data: {
       leadName: data.leadName || null,
       leadEmail: data.leadEmail || null,
       leadPhone: data.leadPhone || null,
+      city: geo.city,
+      region: geo.region,
+      country: geo.country,
+      lat: geo.lat,
+      lon: geo.lon,
+      isp: geo.isp,
       isSuspicious: isSuspicious as "yes" | "no",
     });
 
@@ -337,6 +347,91 @@ export async function unblockIp(ip: string): Promise<boolean> {
   } catch (error) {
     console.error("[AntiFraud] Erro ao desbloquear IP:", error);
     return false;
+  }
+}
+
+/** Lista todas as leads capturadas com dados completos */
+export async function getAllLeads(opts?: {
+  search?: string;
+  page?: number;
+  limit?: number;
+}): Promise<{
+  leads: Array<{
+    id: number;
+    ip: string;
+    leadName: string | null;
+    leadEmail: string | null;
+    leadPhone: string | null;
+    city: string | null;
+    region: string | null;
+    country: string | null;
+    lat: string | null;
+    lon: string | null;
+    isp: string | null;
+    page: string;
+    isSuspicious: string;
+    createdAt: Date;
+  }>;
+  total: number;
+}> {
+  const db = await getDb();
+  if (!db) return { leads: [], total: 0 };
+
+  const limit = opts?.limit || 50;
+  const offset = ((opts?.page || 1) - 1) * limit;
+
+  try {
+    let whereClause;
+    if (opts?.search && opts.search.trim()) {
+      const s = `%${opts.search.trim()}%`;
+      whereClause = or(
+        like(leadSubmissions.ip, s),
+        like(leadSubmissions.leadName, s),
+        like(leadSubmissions.leadEmail, s),
+        like(leadSubmissions.leadPhone, s),
+        like(leadSubmissions.city, s),
+        like(leadSubmissions.region, s),
+        like(leadSubmissions.country, s),
+        like(leadSubmissions.isp, s)
+      );
+    }
+
+    const [leads, totalResult] = await Promise.all([
+      db
+        .select({
+          id: leadSubmissions.id,
+          ip: leadSubmissions.ip,
+          leadName: leadSubmissions.leadName,
+          leadEmail: leadSubmissions.leadEmail,
+          leadPhone: leadSubmissions.leadPhone,
+          city: leadSubmissions.city,
+          region: leadSubmissions.region,
+          country: leadSubmissions.country,
+          lat: leadSubmissions.lat,
+          lon: leadSubmissions.lon,
+          isp: leadSubmissions.isp,
+          page: leadSubmissions.page,
+          isSuspicious: leadSubmissions.isSuspicious,
+          createdAt: leadSubmissions.createdAt,
+        })
+        .from(leadSubmissions)
+        .where(whereClause)
+        .orderBy(desc(leadSubmissions.createdAt))
+        .limit(limit)
+        .offset(offset),
+      db
+        .select({ total: count() })
+        .from(leadSubmissions)
+        .where(whereClause),
+    ]);
+
+    return {
+      leads,
+      total: totalResult[0]?.total || 0,
+    };
+  } catch (error) {
+    console.error("[AntiFraud] Erro ao listar leads:", error);
+    return { leads: [], total: 0 };
   }
 }
 

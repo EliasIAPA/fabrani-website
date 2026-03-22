@@ -38,6 +38,13 @@ export const leadSubmissions = mysqlTable("lead_submissions", {
   leadName: varchar("leadName", { length: 255 }),
   leadEmail: varchar("leadEmail", { length: 320 }),
   leadPhone: varchar("leadPhone", { length: 30 }),
+  // Geolocalização por IP
+  city: varchar("city", { length: 100 }),
+  region: varchar("region", { length: 100 }),
+  country: varchar("country", { length: 100 }),
+  lat: varchar("lat", { length: 20 }),
+  lon: varchar("lon", { length: 20 }),
+  isp: varchar("isp", { length: 200 }),
   // Metadados
   isSuspicious: mysqlEnum("isSuspicious", ["no", "yes"]).default("no").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),

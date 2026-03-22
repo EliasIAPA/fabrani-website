@@ -310,4 +310,12 @@
 - [x] Criar rota server-side para autenticação por email/senha do admin
 - [x] Após login bem-sucedido, redirecionar para /admin/anti-fraude
 - [x] Registrar rota /mec/lgpd no App.tsx (standalone)
+- [x] Salvar checkpoint
+
+## Tabela de Leads no painel anti-fraude
+- [x] Adicionar campos city, region, country ao schema lead_submissions
+- [x] Implementar geolocalização por IP no server (ip-api.com gratuito)
+- [x] Criar rota admin allLeads para listar todas as leads com dados completos
+- [x] Adicionar tabela de leads no AntiFraudDashboard.tsx com nome, email, telefone, cidade, localização, IP
+- [x] Adicionar filtros de busca (por nome, email, telefone, cidade, IP)
 - [ ] Salvar checkpoint
