@@ -1,8 +1,11 @@
-import { COOKIE_NAME } from "@shared/const";
+import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
+import { TRPCError } from "@trpc/server";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, adminProcedure, router } from "./_core/trpc";
 import { z } from "zod";
+import { getUserByEmail } from "./db";
+import { sdk } from "./_core/sdk";
 import { createOrUpdateContact } from "./brevo";
 import {
   getClientIp,
@@ -28,6 +31,38 @@ export const appRouter = router({
         success: true,
       } as const;
     }),
+    /** Login admin por email/senha - verifica se é admin e cria sessão */
+    adminLogin: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email(),
+          password: z.string().min(1),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        // Verificar senha admin (armazenada como env)
+        const adminPassword = process.env.ADMIN_PASSWORD || "fabrani@2026";
+        if (input.password !== adminPassword) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Credenciais inválidas" });
+        }
+
+        // Buscar usuário por email
+        const user = await getUserByEmail(input.email);
+        if (!user || user.role !== "admin") {
+          throw new TRPCError({ code: "FORBIDDEN", message: "Acesso restrito a administradores" });
+        }
+
+        // Criar sessão JWT
+        const sessionToken = await sdk.createSessionToken(user.openId, {
+          name: user.name || "Admin",
+          expiresInMs: ONE_YEAR_MS,
+        });
+
+        const cookieOptions = getSessionCookieOptions(ctx.req);
+        ctx.res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+
+        return { success: true, user: { name: user.name, email: user.email, role: user.role } };
+      }),
   }),
 
   // ===== ANTI-FRAUDE =====

@@ -31,6 +31,7 @@ import MECObrigado from "@/pages/MECObrigado";
 import MECAgenda2 from "@/pages/MECAgenda2";
 import MbaServico from "@/pages/MbaServico";
 import AntiFraudDashboard from "@/pages/AntiFraudDashboard";
+import MECLgpd from "@/pages/MECLgpd";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/mec/obrigado" component={MECObrigado} />
       <Route path="/mec" component={MEC} />
       <Route path="/mba-servico" component={MbaServico} />
+      <Route path="/mec/lgpd" component={MECLgpd} />
       <Route path="/admin/anti-fraude" component={AntiFraudDashboard} />
       
       {/* Todas as outras rotas com Layout (header + footer) */}

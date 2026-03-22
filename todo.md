@@ -304,3 +304,10 @@
 - [x] Verificar estrutura da tabela user e usuários existentes
 - [x] Promover elias.evangelista@gmail.com a admin no banco de dados (já era admin)
 - [x] Salvar checkpoint (sem alterações necessárias)
+
+## Criar página /mec/lgpd com login para painel anti-fraude
+- [x] Criar página MECLgpd.tsx com formulário de login (email/senha + Manus OAuth)
+- [x] Criar rota server-side para autenticação por email/senha do admin
+- [x] Após login bem-sucedido, redirecionar para /admin/anti-fraude
+- [x] Registrar rota /mec/lgpd no App.tsx (standalone)
+- [ ] Salvar checkpoint
