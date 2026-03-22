@@ -318,4 +318,14 @@
 - [x] Criar rota admin allLeads para listar todas as leads com dados completos
 - [x] Adicionar tabela de leads no AntiFraudDashboard.tsx com nome, email, telefone, cidade, localização, IP
 - [x] Adicionar filtros de busca (por nome, email, telefone, cidade, IP)
+- [x] Salvar checkpoint
+
+## Bug: Leads do formulário GHL na /mec não entram no sistema LGPD
+- [x] Analisar como o formulário GHL envia dados (RESULTADO: GHL não envia postMessage ao parent)
+- [x] Solução: Criar webhook endpoint POST /api/webhook/ghl-lead para receber dados do GoHighLevel
+- [x] Processar dados do webhook (nome, email, telefone, IP) e salvar em lead_submissions
+- [x] Aplicar geolocalização por IP nos dados recebidos
+- [x] Integrar com Brevo (criar contato e adicionar à lista S01-A01 | Lead #15)
+- [x] Criar testes para o webhook (35 testes passando)
+- [x] Documentar configuração do webhook no GoHighLevel
 - [ ] Salvar checkpoint
