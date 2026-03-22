@@ -298,4 +298,9 @@
 - [x] Integrar detecção na página /mec - bloquear formulário para IPs suspeitos
 - [x] Criar painel admin para visualizar IPs suspeitos e bloquear/desbloquear
 - [x] Notificar owner quando atividade suspeita for detectada
-- [ ] Salvar checkpoint
+- [x] Salvar checkpoint
+
+## Configurar admin elias.evangelista@gmail.com
+- [x] Verificar estrutura da tabela user e usuários existentes
+- [x] Promover elias.evangelista@gmail.com a admin no banco de dados (já era admin)
+- [x] Salvar checkpoint (sem alterações necessárias)

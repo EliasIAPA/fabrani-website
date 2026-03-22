@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, openId, name, email, role, createdAt FROM users ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user Dz6p7HnQxN5GaK6.3736ef3b8e27 --database CVhAjXry9cXgYyqVqtTxQF --execute SELECT id, openId, name, email, role, createdAt FROM users ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "NKFyFpnDr6n6spRxKJifHJ",
+      "name": "elias evangelista",
+      "email": "elias.evangelista@gmail.com",
+      "role": "admin",
+      "createdAt": "2026-01-06 19:46:59"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\trole\tcreatedAt\n1\tNKFyFpnDr6n6spRxKJifHJ\telias evangelista\telias.evangelista@gmail.com\tadmin\t2026-01-06 19:46:59\n",
+  "stderr": "",
+  "execution_time_ms": 235
+}
