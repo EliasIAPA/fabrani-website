@@ -328,4 +328,39 @@
 - [x] Integrar com Brevo (criar contato e adicionar à lista S01-A01 | Lead #15)
 - [x] Criar testes para o webhook (35 testes passando)
 - [x] Documentar configuração do webhook no GoHighLevel
-- [ ] Salvar checkpoint
+- [x] Salvar checkpoint
+
+## Limpeza de Dados de Teste
+- [x] Remover registro de teste maria.teste@gmail.com do banco de dados e painel anti-fraude
+
+## Painel Administrativo Closer (/closer)
+### Banco de Dados
+- [x] Criar tabela closers (id, nome, email, telefone, senha hash, role, ativo, criado_em)
+- [x] Criar tabela clientes (id, nome_empresa, socio_principal, cnpj, cpf, rg, endereco_completo, whatsapp, closer_id, criado_em)
+- [x] Criar tabela propostas (id, cliente_id, closer_id, tipo_projeto, valor, status [enviada/fechada/perdida], observacao, criado_em)
+- [x] Criar tabela vendas (id, proposta_id, cliente_id, closer_id, tipo_projeto, valor_total, forma_pagamento, qtd_parcelas, valor_entrada, valor_parcela, qtd_cursos, observacao, criado_em)
+- [x] Rodar migração db:push
+
+### Backend (tRPC)
+- [x] CRUD closers (admin: criar, listar, editar, desativar)
+- [x] CRUD clientes (criar, listar, editar, buscar)
+- [x] CRUD propostas (criar, listar, atualizar status, filtrar por closer)
+- [x] CRUD vendas (registrar venda, listar, editar)
+- [x] Dashboard stats (total propostas, vendas, taxa conversão, ranking closers)
+- [x] Autenticação closer (login email/senha separado)
+
+### Frontend
+- [x] Página login closer /closer/login
+- [x] Dashboard principal /closer com cards de métricas
+- [x] Página cadastro de closer /closer/cadastro-closer (admin only)
+- [x] Página cadastro de cliente /closer/novo-cliente
+- [x] Página cadastro de proposta /closer/nova-proposta
+- [x] Página registro de venda /closer/nova-venda
+- [x] Lista de propostas /closer/propostas (filtros por status e closer)
+- [x] Lista de vendas /closer/vendas
+- [x] Lista de clientes /closer/clientes
+- [x] Controle de acesso: admin vê tudo, closer vê só seus dados
+
+### Testes e Deploy
+- [x] Testes vitest para rotas do closer
+- [x] Checkpoint e publicação

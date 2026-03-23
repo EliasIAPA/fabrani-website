@@ -1,0 +1,28 @@
+{
+  "query": "SELECT * FROM lead_submissions WHERE leadEmail = 'maria.teste@gmail.com';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user Dz6p7HnQxN5GaK6.3736ef3b8e27 --database CVhAjXry9cXgYyqVqtTxQF --execute SELECT * FROM lead_submissions WHERE leadEmail = 'maria.teste@gmail.com';",
+  "rows": [
+    {
+      "id": "2",
+      "ip": "::ffff:127.0.0.1",
+      "fingerprint": "NULL",
+      "page": "/mec",
+      "userAgent": "curl/7.81.0",
+      "leadName": "Maria",
+      "leadEmail": "maria.teste@gmail.com",
+      "leadPhone": "+5511988887777",
+      "isSuspicious": "no",
+      "createdAt": "2026-03-22 14:48:22",
+      "city": "NULL",
+      "region": "NULL",
+      "country": "NULL",
+      "lat": "NULL",
+      "lon": "NULL",
+      "isp": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tip\tfingerprint\tpage\tuserAgent\tleadName\tleadEmail\tleadPhone\tisSuspicious\tcreatedAt\tcity\tregion\tcountry\tlat\tlon\tisp\n2\t::ffff:127.0.0.1\tNULL\t/mec\tcurl/7.81.0\tMaria\tmaria.teste@gmail.com\t+5511988887777\tno\t2026-03-22 14:48:22\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}

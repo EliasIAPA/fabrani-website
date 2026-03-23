@@ -32,6 +32,16 @@ import MECAgenda2 from "@/pages/MECAgenda2";
 import MbaServico from "@/pages/MbaServico";
 import AntiFraudDashboard from "@/pages/AntiFraudDashboard";
 import MECLgpd from "@/pages/MECLgpd";
+import CloserLogin from "@/pages/closer/CloserLogin";
+import CloserDashboard from "@/pages/closer/CloserDashboard";
+import CloserClients from "@/pages/closer/CloserClients";
+import CloserNewClient from "@/pages/closer/CloserNewClient";
+import CloserProposals from "@/pages/closer/CloserProposals";
+import CloserNewProposal from "@/pages/closer/CloserNewProposal";
+import CloserSales from "@/pages/closer/CloserSales";
+import CloserNewSale from "@/pages/closer/CloserNewSale";
+import CloserManage from "@/pages/closer/CloserManage";
+import CloserNewCloser from "@/pages/closer/CloserNewCloser";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -43,6 +53,18 @@ function Router() {
       <Route path="/mba-servico" component={MbaServico} />
       <Route path="/mec/lgpd" component={MECLgpd} />
       <Route path="/admin/anti-fraude" component={AntiFraudDashboard} />
+      
+      {/* Painel Closer - standalone */}
+      <Route path="/closer/login" component={CloserLogin} />
+      <Route path="/closer/clientes" component={CloserClients} />
+      <Route path="/closer/novo-cliente" component={CloserNewClient} />
+      <Route path="/closer/propostas" component={CloserProposals} />
+      <Route path="/closer/nova-proposta" component={CloserNewProposal} />
+      <Route path="/closer/vendas" component={CloserSales} />
+      <Route path="/closer/nova-venda" component={CloserNewSale} />
+      <Route path="/closer/closers" component={CloserManage} />
+      <Route path="/closer/novo-closer" component={CloserNewCloser} />
+      <Route path="/closer" component={CloserDashboard} />
       
       {/* Todas as outras rotas com Layout (header + footer) */}
       <Route>

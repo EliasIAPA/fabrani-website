@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO closers (name, email, phone, `passwordHash`, role, isActive) VALUES ('Admin FABRANI', 'admin@fabrani.com.br', '+5516997117597', '3d7f82d510ebecd45a647754568302a087a4f76e14bf9268717f0eda89305373', 'admin', 'yes')",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user Dz6p7HnQxN5GaK6.3736ef3b8e27 --database CVhAjXry9cXgYyqVqtTxQF --execute INSERT INTO closers (name, email, phone, `passwordHash`, role, isActive) VALUES ('Admin FABRANI', 'admin@fabrani.com.br', '+5516997117597', '3d7f82d510ebecd45a647754568302a087a4f76e14bf9268717f0eda89305373', 'admin', 'yes')",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 66
+}

@@ -1,0 +1,138 @@
+{
+  "query": "DESCRIBE lead_submissions;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user Dz6p7HnQxN5GaK6.3736ef3b8e27 --database CVhAjXry9cXgYyqVqtTxQF --execute DESCRIBE lead_submissions;",
+  "rows": [
+    {
+      "Field": "id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": "NULL",
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "ip",
+      "Type": "varchar(45)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "fingerprint",
+      "Type": "varchar(64)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "page",
+      "Type": "varchar(100)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "/mec",
+      "Extra": ""
+    },
+    {
+      "Field": "userAgent",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "leadName",
+      "Type": "varchar(255)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "leadEmail",
+      "Type": "varchar(320)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "leadPhone",
+      "Type": "varchar(30)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "isSuspicious",
+      "Type": "enum('no','yes')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "no",
+      "Extra": ""
+    },
+    {
+      "Field": "createdAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": ""
+    },
+    {
+      "Field": "city",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "region",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "country",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "lat",
+      "Type": "varchar(20)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "lon",
+      "Type": "varchar(20)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "isp",
+      "Type": "varchar(200)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    }
+  ],
+  "messages": [],
+  "stdout": "Field\tType\tNull\tKey\tDefault\tExtra\nid\tint\tNO\tPRI\tNULL\tauto_increment\nip\tvarchar(45)\tNO\t\tNULL\t\nfingerprint\tvarchar(64)\tYES\t\tNULL\t\npage\tvarchar(100)\tNO\t\t/mec\t\nuserAgent\ttext\tYES\t\tNULL\t\nleadName\tvarchar(255)\tYES\t\tNULL\t\nleadEmail\tvarchar(320)\tYES\t\tNULL\t\nleadPhone\tvarchar(30)\tYES\t\tNULL\t\nisSuspicious\tenum('no','yes')\tNO\t\tno\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\ncity\tvarchar(100)\tYES\t\tNULL\t\nregion\tvarchar(100)\tYES\t\tNULL\t\ncountry\tvarchar(100)\tYES\t\tNULL\t\nlat\tvarchar(20)\tYES\t\tNULL\t\nlon\tvarchar(20)\tYES\t\tNULL\t\nisp\tvarchar(200)\tYES\t\tNULL\t\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}
