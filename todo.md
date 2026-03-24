@@ -386,3 +386,7 @@
 - [ ] Implementar modal de confirmação para exclusão
 - [ ] Testar fluxo completo de edição e exclusão
 - [ ] Salvar checkpoint
+
+## Formulário GHL no CTA "AGENDAR AGORA" da primeira quebra /mec
+- [x] Modificar botão AGENDAR AGORA para exibir formulário GHL inline ao clicar
+- [x] Testar e salvar checkpoint

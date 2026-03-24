@@ -3,7 +3,7 @@ import { useEffect } from "react";
 interface GHLFormProps {
   formId?: string;
   title?: string;
-  height?: string;
+  height?: string | number;
   className?: string;
 }
 
@@ -34,7 +34,7 @@ export function GHLForm({
         src={`https://api.leadconnectorhq.com/widget/form/${formId}`}
         style={{
           width: "100%",
-          height: height,
+          height: typeof height === 'number' ? `${height}px` : height,
           border: "none",
           borderRadius: "0px",
         }}
