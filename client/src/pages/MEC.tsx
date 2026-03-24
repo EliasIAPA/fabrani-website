@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X, ShieldAlert } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
+import { GHLForm } from "@/components/GHLForm";
 
 const GHL_FORM_URL = "https://api.leadconnectorhq.com/widget/form/NIiX8zUL3aiJ65D44Z8J";
 const GHL_SCRIPT_URL = "https://link.msgsndr.com/js/form_embed.js";
@@ -508,12 +509,7 @@ export default function MEC() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <script src={GHL_SCRIPT_URL} async></script>
-          <iframe 
-            src={GHL_FORM_URL}
-            style={{width: '100%', height: '600px', border: 'none'}}
-            title="Formulário de Agendamento"
-          ></iframe>
+          <GHLForm height="600" />
         </div>
       </section>
 
