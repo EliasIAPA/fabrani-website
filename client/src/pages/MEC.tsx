@@ -172,27 +172,35 @@ export default function MEC() {
           </div>
           <p className="text-xs text-gray-500 mt-4 font-light">Avaliação Gratuita • Sem Compromisso</p>
 
-          {/* Formulário GHL inline após clicar no CTA */}
+          {/* Modal GHL - abre ao clicar no CTA */}
           {showHeroForm && (
-            <div className="mt-10 max-w-2xl mx-auto border border-gray-200 rounded-sm overflow-hidden shadow-sm">
-              <div className="bg-black text-white px-6 py-4 flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-light text-gray-400 uppercase tracking-widest mb-1">Sessão Estratégica</p>
-                  <h3 className="text-lg font-bold">Agende sua Avaliação Acadêmica</h3>
+            <div
+              className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+              style={{ backgroundColor: 'rgba(0,0,0,0.75)' }}
+              onClick={(e) => { if (e.target === e.currentTarget) setShowHeroForm(false); }}
+            >
+              <div className="bg-white w-full max-w-xl rounded-sm shadow-2xl overflow-hidden">
+                {/* Header do modal */}
+                <div className="bg-black text-white px-6 py-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-light text-gray-400 uppercase tracking-widest mb-1">Sessão Estratégica</p>
+                    <h3 className="text-lg font-bold">Agende sua Avaliação Acadêmica</h3>
+                  </div>
+                  <button
+                    onClick={() => setShowHeroForm(false)}
+                    className="text-gray-400 hover:text-white transition-colors p-1"
+                    aria-label="Fechar formulário"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => setShowHeroForm(false)}
-                  className="text-gray-400 hover:text-white transition-colors p-1"
-                  aria-label="Fechar formulário"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              <div className="bg-white p-2">
-                <GHLForm
-                  formId="NIiX8zUL3aiJ65D44Z8J"
-                  height={500}
-                />
+                {/* Formulário GHL */}
+                <div className="bg-white">
+                  <GHLForm
+                    formId="NIiX8zUL3aiJ65D44Z8J"
+                    height={520}
+                  />
+                </div>
               </div>
             </div>
           )}

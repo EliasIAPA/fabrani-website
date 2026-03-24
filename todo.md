@@ -390,3 +390,8 @@
 ## Formulário GHL no CTA "AGENDAR AGORA" da primeira quebra /mec
 - [x] Modificar botão AGENDAR AGORA para exibir formulário GHL inline ao clicar
 - [x] Testar e salvar checkpoint
+
+## Corrigir botão AGENDAR AGORA /mec (Modal GHL)
+- [ ] Converter formulário GHL de inline para modal/popup centralizado na tela
+- [ ] Resolver problema de publicação travada (mover arquivos grandes para CDN)
+- [ ] Salvar checkpoint e publicar

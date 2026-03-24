@@ -40,7 +40,7 @@ export default function BrevoDownloadForm() {
       
       // Iniciar download do PDF após 2 segundos
       setTimeout(() => {
-        window.open("/downloads/g.prompt2026.pdf", "_blank");
+        window.open("https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/g.prompt2026_bc6e55d2.pdf", "_blank");
       }, 2000);
     },
     onError: (error) => {
