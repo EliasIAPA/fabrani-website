@@ -1,4 +1,3 @@
-import CloserLayout from "@/components/CloserLayout";
 import { useCloserAuth } from "@/hooks/useCloserAuth";
 import { trpc } from "@/lib/trpc";
 import { useState, useMemo } from "react";
@@ -8,15 +7,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, ArrowLeft, Send } from "lucide-react";
+import { FileText, ArrowLeft, Send, Calendar } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "wouter";
+import CloserLayout from "@/components/CloserLayout";
 
 const PROJECT_TYPES = [
   { value: "certificacao_mec", label: "Certificação MEC" },
   { value: "projeto_alianca", label: "Projeto Aliança" },
   { value: "pos_mba_parceiros", label: "Pós/MBA Parceiros" },
   { value: "mentoria_ni1", label: "Mentoria NI1 Negócios Inovadores" },
+];
+
+const PAYMENT_METHODS = [
+  { value: "cartao_credito", label: "Cartão de Crédito" },
+  { value: "pix", label: "PIX" },
+  { value: "boleto", label: "Boleto" },
 ];
 
 export default function CloserNewProposal() {
@@ -36,6 +42,21 @@ export default function CloserNewProposal() {
     value: "",
     numberOfCourses: "1",
     observation: "",
+    // Pagamento
+    paymentMethod: "",
+    installments: "1",
+    downPayment: "",
+    installmentValue: "",
+    // Pagamento Misto
+    mixedPaymentEnabled: "no",
+    pixDownPayment: "",
+    cardInstallments: "0",
+    cardInstallmentValue: "",
+    boletoInstallments: "0",
+    boletoInstallmentValue: "",
+    // Calendário
+    proposalSentDate: "",
+    expectedPaymentDate: "",
   });
 
   const createMutation = trpc.closer.createProposal.useMutation({
@@ -56,18 +77,35 @@ export default function CloserNewProposal() {
       toast.error("Preencha os campos obrigatórios: Cliente, Tipo de Projeto e Valor");
       return;
     }
-    createMutation.mutate({
+
+    const payload: any = {
       clientId: parseInt(form.clientId),
       projectType: form.projectType as any,
       value: form.value,
       numberOfCourses: parseInt(form.numberOfCourses) || 1,
       observation: form.observation || undefined,
-    });
+      paymentMethod: form.paymentMethod || undefined,
+      installments: parseInt(form.installments) || 1,
+      downPayment: form.downPayment || undefined,
+      installmentValue: form.installmentValue || undefined,
+      mixedPaymentEnabled: form.mixedPaymentEnabled as any,
+      pixDownPayment: form.pixDownPayment || undefined,
+      cardInstallments: parseInt(form.cardInstallments) || 0,
+      cardInstallmentValue: form.cardInstallmentValue || undefined,
+      boletoInstallments: parseInt(form.boletoInstallments) || 0,
+      boletoInstallmentValue: form.boletoInstallmentValue || undefined,
+      proposalSentDate: form.proposalSentDate ? new Date(form.proposalSentDate) : undefined,
+      expectedPaymentDate: form.expectedPaymentDate ? new Date(form.expectedPaymentDate) : undefined,
+    };
+
+    createMutation.mutate(payload);
   };
+
+  const showInstallments = form.paymentMethod === "cartao_credito" || form.paymentMethod === "boleto";
 
   return (
     <CloserLayout>
-      <div className="max-w-2xl mx-auto space-y-6">
+      <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex items-center gap-4">
           <Link href="/closer/propostas">
             <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
@@ -80,98 +118,269 @@ export default function CloserNewProposal() {
               <FileText className="w-6 h-6 text-red-400" />
               Nova Proposta
             </h1>
-            <p className="text-sm text-gray-500">Registre uma proposta enviada ao cliente</p>
+            <p className="text-sm text-gray-500">Registre uma proposta com configuração de pagamento</p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 space-y-4">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Dados da Proposta</h2>
+        <form onSubmit={handleSubmit} className="space-y-8 bg-gray-900 rounded-lg p-6 border border-gray-800">
+          {/* Seção 1: Dados Básicos */}
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Dados da Proposta</h2>
 
-            <div className="space-y-2">
-              <Label className="text-gray-400 text-xs">Cliente *</Label>
-              <Select value={form.clientId} onValueChange={(v) => setForm((p) => ({ ...p, clientId: v }))}>
-                <SelectTrigger className="bg-[#0a0a0a] border-white/10 text-white h-11 rounded-xl">
-                  <SelectValue placeholder="Selecione o cliente" />
-                </SelectTrigger>
-                <SelectContent className="bg-[#111111] border-white/10">
-                  {clientsData?.clients?.map((c) => (
-                    <SelectItem key={c.id} value={c.id.toString()} className="text-white hover:bg-white/5">
-                      {c.companyName} - {c.mainPartner}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label className="text-gray-300">Cliente *</Label>
+                <Select value={form.clientId} onValueChange={(v) => setForm((p) => ({ ...p, clientId: v }))}>
+                  <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                    <SelectValue placeholder="Selecione o cliente" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {clientsData?.clients?.map((c: any) => (
+                      <SelectItem key={c.id} value={c.id.toString()}>
+                        {c.companyName} - {c.mainPartner}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-            <div className="space-y-2">
-              <Label className="text-gray-400 text-xs">Tipo de Projeto *</Label>
-              <Select value={form.projectType} onValueChange={(v) => setForm((p) => ({ ...p, projectType: v }))}>
-                <SelectTrigger className="bg-[#0a0a0a] border-white/10 text-white h-11 rounded-xl">
-                  <SelectValue placeholder="Selecione o tipo" />
-                </SelectTrigger>
-                <SelectContent className="bg-[#111111] border-white/10">
-                  {PROJECT_TYPES.map((t) => (
-                    <SelectItem key={t.value} value={t.value} className="text-white hover:bg-white/5">
-                      {t.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+              <div>
+                <Label className="text-gray-300">Tipo de Projeto *</Label>
+                <Select value={form.projectType} onValueChange={(v) => setForm((p) => ({ ...p, projectType: v }))}>
+                  <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                    <SelectValue placeholder="Selecione o tipo" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {PROJECT_TYPES.map((pt) => (
+                      <SelectItem key={pt.value} value={pt.value}>
+                        {pt.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label className="text-gray-400 text-xs">Valor da Proposta (R$) *</Label>
+              <div>
+                <Label className="text-gray-300">Valor da Proposta *</Label>
                 <Input
-                  value={form.value}
-                  onChange={(e) => setForm((p) => ({ ...p, value: e.target.value }))}
-                  placeholder="10000.00"
                   type="number"
                   step="0.01"
-                  className="bg-[#0a0a0a] border-white/10 text-white h-11 rounded-xl focus:border-red-500/50"
+                  value={form.value}
+                  onChange={(e) => setForm((p) => ({ ...p, value: e.target.value }))}
+                  className="bg-gray-800 border-gray-700 text-white"
+                  placeholder="0.00"
                 />
               </div>
-              <div className="space-y-2">
-                <Label className="text-gray-400 text-xs">Quantidade de Cursos</Label>
+
+              <div>
+                <Label className="text-gray-300">Quantidade de Cursos</Label>
                 <Input
-                  value={form.numberOfCourses}
-                  onChange={(e) => setForm((p) => ({ ...p, numberOfCourses: e.target.value }))}
                   type="number"
                   min="1"
-                  className="bg-[#0a0a0a] border-white/10 text-white h-11 rounded-xl focus:border-red-500/50"
+                  value={form.numberOfCourses}
+                  onChange={(e) => setForm((p) => ({ ...p, numberOfCourses: e.target.value }))}
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label className="text-gray-400 text-xs">Observação</Label>
+            <div>
+              <Label className="text-gray-300">Observações</Label>
               <Textarea
                 value={form.observation}
                 onChange={(e) => setForm((p) => ({ ...p, observation: e.target.value }))}
-                placeholder="Detalhes adicionais sobre a proposta..."
-                className="bg-[#0a0a0a] border-white/10 text-white rounded-xl focus:border-red-500/50 min-h-[100px]"
+                placeholder="Adicione observações sobre esta proposta..."
+                className="bg-gray-800 border-gray-700 text-white min-h-20"
               />
             </div>
           </div>
 
-          <Button
-            type="submit"
-            disabled={createMutation.isPending}
-            className="w-full h-12 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold rounded-xl shadow-lg shadow-red-500/20"
-          >
-            {createMutation.isPending ? (
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                Salvando...
+          {/* Seção 2: Configuração de Pagamento */}
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Configuração de Pagamento</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label className="text-gray-300">Tipo de Pagamento</Label>
+                <Select value={form.paymentMethod} onValueChange={(v) => setForm((p) => ({ ...p, paymentMethod: v }))}>
+                  <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                    <SelectValue placeholder="Selecione o método" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {PAYMENT_METHODS.map((pm) => (
+                      <SelectItem key={pm.value} value={pm.value}>
+                        {pm.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Send className="w-4 h-4" />
-                Registrar Proposta
+            </div>
+
+            {/* Pagamento Simples */}
+            {form.paymentMethod && form.mixedPaymentEnabled === "no" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-800 rounded border border-gray-700">
+                <div>
+                  <Label className="text-gray-300">Valor da Entrada</Label>
+                  <Input
+                    type="number"
+                    step="0.01"
+                    value={form.downPayment}
+                    onChange={(e) => setForm((p) => ({ ...p, downPayment: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                    placeholder="0.00"
+                  />
+                </div>
+
+                {showInstallments && (
+                  <>
+                    <div>
+                      <Label className="text-gray-300">Quantidade de Parcelas</Label>
+                      <Input
+                        type="number"
+                        min="1"
+                        value={form.installments}
+                        onChange={(e) => setForm((p) => ({ ...p, installments: e.target.value }))}
+                        className="bg-gray-700 border-gray-600 text-white"
+                      />
+                    </div>
+                    <div>
+                      <Label className="text-gray-300">Valor de Cada Parcela</Label>
+                      <Input
+                        type="number"
+                        step="0.01"
+                        value={form.installmentValue}
+                        onChange={(e) => setForm((p) => ({ ...p, installmentValue: e.target.value }))}
+                        className="bg-gray-700 border-gray-600 text-white"
+                        placeholder="0.00"
+                      />
+                    </div>
+                  </>
+                )}
               </div>
             )}
-          </Button>
+
+            {/* Pagamento Misto */}
+            <div>
+              <Label className="text-gray-300 flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={form.mixedPaymentEnabled === "yes"}
+                  onChange={(e) => setForm((p) => ({ ...p, mixedPaymentEnabled: e.target.checked ? "yes" : "no" }))}
+                  className="w-4 h-4"
+                />
+                Ativar Pagamento Misto (PIX entrada + Cartão + Boleto)
+              </Label>
+            </div>
+
+            {form.mixedPaymentEnabled === "yes" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-blue-900 bg-opacity-20 rounded border border-blue-700">
+                <div>
+                  <Label className="text-blue-300">PIX - Valor da Entrada</Label>
+                  <Input
+                    type="number"
+                    step="0.01"
+                    value={form.pixDownPayment}
+                    onChange={(e) => setForm((p) => ({ ...p, pixDownPayment: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                    placeholder="0.00"
+                  />
+                </div>
+
+                <div>
+                  <Label className="text-blue-300">Cartão - Parcelas</Label>
+                  <Input
+                    type="number"
+                    min="0"
+                    value={form.cardInstallments}
+                    onChange={(e) => setForm((p) => ({ ...p, cardInstallments: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                  />
+                </div>
+
+                <div>
+                  <Label className="text-blue-300">Cartão - Valor por Parcela</Label>
+                  <Input
+                    type="number"
+                    step="0.01"
+                    value={form.cardInstallmentValue}
+                    onChange={(e) => setForm((p) => ({ ...p, cardInstallmentValue: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                    placeholder="0.00"
+                  />
+                </div>
+
+                <div>
+                  <Label className="text-blue-300">Boleto - Parcelas</Label>
+                  <Input
+                    type="number"
+                    min="0"
+                    value={form.boletoInstallments}
+                    onChange={(e) => setForm((p) => ({ ...p, boletoInstallments: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                  />
+                </div>
+
+                <div>
+                  <Label className="text-blue-300">Boleto - Valor por Parcela</Label>
+                  <Input
+                    type="number"
+                    step="0.01"
+                    value={form.boletoInstallmentValue}
+                    onChange={(e) => setForm((p) => ({ ...p, boletoInstallmentValue: e.target.value }))}
+                    className="bg-gray-700 border-gray-600 text-white"
+                    placeholder="0.00"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Seção 3: Calendário */}
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold text-white border-b border-gray-700 pb-2 flex items-center gap-2">
+              <Calendar className="w-5 h-5" />
+              Calendário de Proposta
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label className="text-gray-300">Data de Envio da Proposta</Label>
+                <Input
+                  type="datetime-local"
+                  value={form.proposalSentDate}
+                  onChange={(e) => setForm((p) => ({ ...p, proposalSentDate: e.target.value }))}
+                  className="bg-gray-800 border-gray-700 text-white"
+                />
+              </div>
+
+              <div>
+                <Label className="text-gray-300">Data Prevista de Pagamento</Label>
+                <Input
+                  type="datetime-local"
+                  value={form.expectedPaymentDate}
+                  onChange={(e) => setForm((p) => ({ ...p, expectedPaymentDate: e.target.value }))}
+                  className="bg-gray-800 border-gray-700 text-white"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Botões */}
+          <div className="flex gap-4 pt-4">
+            <Button
+              type="submit"
+              disabled={createMutation.isPending}
+              className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+            >
+              {createMutation.isPending ? "Cadastrando..." : "Cadastrar Proposta"}
+            </Button>
+            <Link href="/closer/propostas">
+              <Button type="button" variant="outline" className="flex-1">
+                Cancelar
+              </Button>
+            </Link>
+          </div>
         </form>
       </div>
     </CloserLayout>

@@ -36,6 +36,13 @@
       "when": 1774374684763,
       "tag": "0004_lean_talkback",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1774377848547,
+      "tag": "0005_chief_katie_power",
+      "breakpoints": true
     }
   ]
 }

@@ -309,6 +309,21 @@ export const closerRouter = router({
         value: z.string().min(1),
         numberOfCourses: z.number().optional(),
         observation: z.string().optional(),
+        // Pagamento
+        paymentMethod: z.enum(["cartao_credito", "pix", "boleto"]).optional(),
+        installments: z.number().optional(),
+        downPayment: z.string().optional(),
+        installmentValue: z.string().optional(),
+        // Pagamento Misto
+        mixedPaymentEnabled: z.enum(["yes", "no"]).optional(),
+        pixDownPayment: z.string().optional(),
+        cardInstallments: z.number().optional(),
+        cardInstallmentValue: z.string().optional(),
+        boletoInstallments: z.number().optional(),
+        boletoInstallmentValue: z.string().optional(),
+        // Calendário
+        proposalSentDate: z.date().optional(),
+        expectedPaymentDate: z.date().optional(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -376,6 +391,21 @@ export const closerRouter = router({
         numberOfCourses: z.number().optional(),
         observation: z.string().optional(),
         status: z.enum(["enviada", "fechada", "perdida"]).optional(),
+        // Pagamento
+        paymentMethod: z.enum(["cartao_credito", "pix", "boleto"]).optional(),
+        installments: z.number().optional(),
+        downPayment: z.string().optional(),
+        installmentValue: z.string().optional(),
+        // Pagamento Misto
+        mixedPaymentEnabled: z.enum(["yes", "no"]).optional(),
+        pixDownPayment: z.string().optional(),
+        cardInstallments: z.number().optional(),
+        cardInstallmentValue: z.string().optional(),
+        boletoInstallments: z.number().optional(),
+        boletoInstallmentValue: z.string().optional(),
+        // Calendário
+        proposalSentDate: z.date().optional(),
+        expectedPaymentDate: z.date().optional(),
       })
     )
     .mutation(async ({ ctx, input }) => {

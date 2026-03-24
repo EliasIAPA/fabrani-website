@@ -126,6 +126,25 @@ export const closerProposals = mysqlTable("closer_proposals", {
   status: mysqlEnum("status", ["enviada", "fechada", "perdida"]).default("enviada").notNull(),
   numberOfCourses: int("numberOfCourses").default(1),
   observation: text("observation"),
+  // Configuração de Pagamento
+  paymentMethod: mysqlEnum("paymentMethod", [
+    "cartao_credito",
+    "pix",
+    "boleto",
+  ]),
+  installments: int("installments").default(1),
+  downPayment: varchar("downPayment", { length: 20 }),
+  installmentValue: varchar("installmentValue", { length: 20 }),
+  // Pagamento Misto
+  mixedPaymentEnabled: mysqlEnum("mixedPaymentEnabled", ["yes", "no"]).default("no").notNull(),
+  pixDownPayment: varchar("pixDownPayment", { length: 20 }),
+  cardInstallments: int("cardInstallments").default(0),
+  cardInstallmentValue: varchar("cardInstallmentValue", { length: 20 }),
+  boletoInstallments: int("boletoInstallments").default(0),
+  boletoInstallmentValue: varchar("boletoInstallmentValue", { length: 20 }),
+  // Calendário
+  proposalSentDate: timestamp("proposalSentDate"),
+  expectedPaymentDate: timestamp("expectedPaymentDate"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -163,10 +182,6 @@ export const closerSales = mysqlTable("closer_sales", {
   cardInstallmentValue: varchar("cardInstallmentValue", { length: 20 }), // Valor de cada parcela do cartão
   boletoInstallments: int("boletoInstallments").default(0), // Parcelas no boleto
   boletoInstallmentValue: varchar("boletoInstallmentValue", { length: 20 }), // Valor de cada parcela do boleto
-  // Datas importantes
-  proposalSentDate: timestamp("proposalSentDate"), // Data de envio da proposta
-  expectedPaymentDate: timestamp("expectedPaymentDate"), // Data prevista de pagamento
-  paymentReceivedDate: timestamp("paymentReceivedDate"), // Data de pagamento realizado
   // Plataforma de pagamento e ID
   paymentPlatform: varchar("paymentPlatform", { length: 100 }), // Ex: Stripe, PagSeguro, Mercado Pago
   paymentId: varchar("paymentId", { length: 255 }), // ID único da transação na plataforma
