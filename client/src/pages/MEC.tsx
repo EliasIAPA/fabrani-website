@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X, ShieldAlert } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
-import { trpc } from "@/lib/trpc";
 import { GHLForm } from "@/components/GHLForm";
-
-const GHL_FORM_URL = "https://api.leadconnectorhq.com/widget/form/NIiX8zUL3aiJ65D44Z8J";
-const GHL_SCRIPT_URL = "https://link.msgsndr.com/js/form_embed.js";
 
 const IMAGES = {
   onm: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/onm-novo-mercado_aa2a11a8.jpg",
@@ -107,7 +103,10 @@ const stats = [
 
 export default function MEC() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [showHeroForm, setShowHeroForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   // Esconder o widget flutuante de WhatsApp/Rosana.io nesta página
   useEffect(() => {
@@ -165,45 +164,12 @@ export default function MEC() {
             <Button 
               size="lg"
               className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-6 text-base"
-              onClick={() => setShowHeroForm(true)}
+              onClick={openModal}
             >
               AGENDAR AGORA
             </Button>
           </div>
           <p className="text-xs text-gray-500 mt-4 font-light">Avaliação Gratuita • Sem Compromisso</p>
-
-          {/* Modal GHL - abre ao clicar no CTA */}
-          {showHeroForm && (
-            <div
-              className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-              style={{ backgroundColor: 'rgba(0,0,0,0.75)' }}
-              onClick={(e) => { if (e.target === e.currentTarget) setShowHeroForm(false); }}
-            >
-              <div className="bg-white w-full max-w-xl rounded-sm shadow-2xl overflow-hidden">
-                {/* Header do modal */}
-                <div className="bg-black text-white px-6 py-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-light text-gray-400 uppercase tracking-widest mb-1">Sessão Estratégica</p>
-                    <h3 className="text-lg font-bold">Agende sua Avaliação Acadêmica</h3>
-                  </div>
-                  <button
-                    onClick={() => setShowHeroForm(false)}
-                    className="text-gray-400 hover:text-white transition-colors p-1"
-                    aria-label="Fechar formulário"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-                {/* Formulário GHL */}
-                <div className="bg-white">
-                  <GHLForm
-                    formId="NIiX8zUL3aiJ65D44Z8J"
-                    height={520}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
@@ -255,6 +221,7 @@ export default function MEC() {
             variant="outline"
             size="lg"
             className="border-2 border-red-600 text-red-600 hover:bg-red-50 font-bold px-8 py-6"
+            onClick={openModal}
           >
             QUERO MUDAR DE CATEGORIA
           </Button>
@@ -329,6 +296,7 @@ export default function MEC() {
           <Button 
             size="lg"
             className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-6 text-base"
+            onClick={openModal}
           >
             QUERO ACESSAR
           </Button>
@@ -580,6 +548,39 @@ export default function MEC() {
 
       {/* Divider */}
       <div className="border-t border-gray-200"></div>
+
+      {/* Modal GHL Global - abre ao clicar em qualquer CTA */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.80)' }}
+          onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
+        >
+          <div className="bg-white w-full max-w-xl rounded-sm shadow-2xl overflow-hidden relative">
+            {/* Header do modal */}
+            <div className="bg-black text-white px-6 py-4 flex items-center justify-between">
+              <div>
+                <p className="text-xs font-light text-gray-400 uppercase tracking-widest mb-1">Sessão Estratégica</p>
+                <h3 className="text-lg font-bold">Agende sua Avaliação Acadêmica</h3>
+              </div>
+              <button
+                onClick={closeModal}
+                className="text-gray-400 hover:text-white transition-colors p-1 ml-4"
+                aria-label="Fechar formulário"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            {/* Formulário GHL */}
+            <div className="bg-white overflow-y-auto" style={{ maxHeight: '80vh' }}>
+              <GHLForm
+                formId="NIiX8zUL3aiJ65D44Z8J"
+                height={465}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 px-4 md:px-8">
