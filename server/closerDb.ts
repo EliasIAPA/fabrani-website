@@ -303,6 +303,28 @@ export async function createSale(data: InsertCloserSale) {
   return result[0];
 }
 
+export async function updateSale(id: number, data: Partial<InsertCloserSale>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(closerSales).set(data).where(eq(closerSales.id, id));
+  const result = await db.select().from(closerSales).where(eq(closerSales.id, id)).limit(1);
+  return result[0];
+}
+
+export async function deleteSale(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(closerSales).where(eq(closerSales.id, id));
+  return { success: true };
+}
+
+export async function deleteProposal(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(closerProposals).where(eq(closerProposals.id, id));
+  return { success: true };
+}
+
 export async function listSales(opts: {
   closerId?: number;
   page?: number;

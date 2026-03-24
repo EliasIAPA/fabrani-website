@@ -18,8 +18,11 @@ import {
   listProposals,
   updateProposalStatus,
   updateProposal,
+  deleteProposal,
   createSale,
   listSales,
+  updateSale,
+  deleteSale,
   getDashboardStats,
   getCloserRanking,
 } from "./closerDb";
@@ -405,6 +408,18 @@ export const closerRouter = router({
         installmentValue: z.string().optional(),
         numberOfCourses: z.number().optional(),
         observation: z.string().optional(),
+        mixedPaymentEnabled: z.enum(["yes", "no"]).optional(),
+        pixDownPayment: z.string().optional(),
+        cardInstallments: z.number().optional(),
+        cardInstallmentValue: z.string().optional(),
+        boletoInstallments: z.number().optional(),
+        boletoInstallmentValue: z.string().optional(),
+        proposalSentDate: z.date().optional(),
+        expectedPaymentDate: z.date().optional(),
+        paymentReceivedDate: z.date().optional(),
+        paymentPlatform: z.string().optional(),
+        paymentId: z.string().optional(),
+        paymentStatus: z.enum(["pending", "processing", "completed", "failed", "refunded"]).optional(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -436,6 +451,65 @@ export const closerRouter = router({
         page: input?.page,
         limit: input?.limit,
       });
+    }),
+
+  updateSale: publicProcedure
+    .input(
+      z.object({
+        id: z.number(),
+        mixedPaymentEnabled: z.enum(["yes", "no"]).optional(),
+        pixDownPayment: z.string().optional(),
+        cardInstallments: z.number().optional(),
+        cardInstallmentValue: z.string().optional(),
+        boletoInstallments: z.number().optional(),
+        boletoInstallmentValue: z.string().optional(),
+        proposalSentDate: z.date().optional(),
+        expectedPaymentDate: z.date().optional(),
+        paymentReceivedDate: z.date().optional(),
+        paymentPlatform: z.string().optional(),
+        paymentId: z.string().optional(),
+        paymentStatus: z.enum(["pending", "processing", "completed", "failed", "refunded"]).optional(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const session = getCloserFromContext(ctx);
+      if (!session) throw new TRPCError({ code: "UNAUTHORIZED", message: "Faça login primeiro" });
+
+      const currentCloser = await getCloserById(session.closerId);
+      if (currentCloser?.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Apenas administradores podem editar vendas" });
+      }
+
+      const { id, ...data } = input;
+      return await updateSale(id, data as any);
+    }),
+
+  deleteSale: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      const session = getCloserFromContext(ctx);
+      if (!session) throw new TRPCError({ code: "UNAUTHORIZED", message: "Faça login primeiro" });
+
+      const currentCloser = await getCloserById(session.closerId);
+      if (currentCloser?.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Apenas administradores podem deletar vendas" });
+      }
+
+      return await deleteSale(input.id);
+    }),
+
+  deleteProposal: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      const session = getCloserFromContext(ctx);
+      if (!session) throw new TRPCError({ code: "UNAUTHORIZED", message: "Faça login primeiro" });
+
+      const currentCloser = await getCloserById(session.closerId);
+      if (currentCloser?.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Apenas administradores podem deletar propostas" });
+      }
+
+      return await deleteProposal(input.id);
     }),
 
   // ===== DASHBOARD =====

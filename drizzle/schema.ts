@@ -156,6 +156,21 @@ export const closerSales = mysqlTable("closer_sales", {
   installmentValue: varchar("installmentValue", { length: 20 }), // Valor de cada parcela
   numberOfCourses: int("numberOfCourses").default(1),
   observation: text("observation"),
+  // Pagamento Misto: PIX entrada + Cartão parcelado + Boleto
+  mixedPaymentEnabled: mysqlEnum("mixedPaymentEnabled", ["yes", "no"]).default("no").notNull(),
+  pixDownPayment: varchar("pixDownPayment", { length: 20 }), // Valor da entrada em PIX
+  cardInstallments: int("cardInstallments").default(0), // Parcelas no cartão
+  cardInstallmentValue: varchar("cardInstallmentValue", { length: 20 }), // Valor de cada parcela do cartão
+  boletoInstallments: int("boletoInstallments").default(0), // Parcelas no boleto
+  boletoInstallmentValue: varchar("boletoInstallmentValue", { length: 20 }), // Valor de cada parcela do boleto
+  // Datas importantes
+  proposalSentDate: timestamp("proposalSentDate"), // Data de envio da proposta
+  expectedPaymentDate: timestamp("expectedPaymentDate"), // Data prevista de pagamento
+  paymentReceivedDate: timestamp("paymentReceivedDate"), // Data de pagamento realizado
+  // Plataforma de pagamento e ID
+  paymentPlatform: varchar("paymentPlatform", { length: 100 }), // Ex: Stripe, PagSeguro, Mercado Pago
+  paymentId: varchar("paymentId", { length: 255 }), // ID único da transação na plataforma
+  paymentStatus: mysqlEnum("paymentStatus", ["pending", "processing", "completed", "failed", "refunded"]).default("pending").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

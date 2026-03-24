@@ -364,3 +364,16 @@
 ### Testes e Deploy
 - [x] Testes vitest para rotas do closer
 - [x] Checkpoint e publicação
+
+
+## Melhorias Painel Closer (Pagamento Misto, Calendário, Admin)
+- [x] Adicionar campos ao schema: pagamento_misto (PIX entrada + cartão parcelado + boleto)
+- [x] Adicionar campos de datas: data_envio_proposta, data_previsao_pagamento, data_pagamento_realizado
+- [x] Adicionar campos de plataforma: plataforma_pagamento, payment_id
+- [x] Atualizar rotas tRPC para suportar novos campos
+- [x] Implementar permissões de admin para editar/excluir propostas e vendas
+- [x] Redesenhar formulário de venda com pagamento misto
+- [x] Adicionar calendário para datas de proposta e pagamento
+- [x] Adicionar campo de edição/exclusão com restrição de admin
+- [x] Testar fluxo completo de pagamento misto
+- [x] Salvar checkpoint
