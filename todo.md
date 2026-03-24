@@ -377,3 +377,12 @@
 - [x] Adicionar campo de edição/exclusão com restrição de admin
 - [x] Testar fluxo completo de pagamento misto
 - [x] Salvar checkpoint
+
+
+## Edição e Exclusão de Propostas e Vendas (Admin Only)
+- [ ] Criar página CloserEditProposal.tsx para editar propostas
+- [ ] Criar página CloserEditSale.tsx para editar vendas
+- [ ] Adicionar botões de editar/excluir nas listas de propostas e vendas
+- [ ] Implementar modal de confirmação para exclusão
+- [ ] Testar fluxo completo de edição e exclusão
+- [ ] Salvar checkpoint

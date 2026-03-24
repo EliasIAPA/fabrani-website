@@ -4,7 +4,8 @@ import { trpc } from "@/lib/trpc";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, Plus, DollarSign, CheckCircle, XCircle, Clock } from "lucide-react";
+import { FileText, Plus, DollarSign, CheckCircle, XCircle, Clock, Download, Edit2 } from "lucide-react";
+import { generateProposalPDF } from "@/lib/generateProposalPDF";
 import { Link } from "wouter";
 import { toast } from "sonner";
 
@@ -114,10 +115,34 @@ export default function CloserProposals() {
                       <p className="text-xs text-gray-600 mt-1">{p.observation}</p>
                     )}
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 flex-wrap">
                     <p className="text-lg text-white font-mono font-bold">
                       {formatCurrency(p.value)}
                     </p>
+                    {closer?.role === "admin" && (
+                      <>
+                        <Link href={`/closer/editar-proposta/${p.id}`}>
+                          <Button
+                            size="sm"
+                            className="text-xs bg-yellow-600 hover:bg-yellow-500 text-white rounded-lg"
+                          >
+                            <Edit2 className="w-3 h-3 mr-1" />
+                            Editar
+                          </Button>
+                        </Link>
+                        <Button
+                          size="sm"
+                          className="text-xs bg-purple-600 hover:bg-purple-500 text-white rounded-lg"
+                          onClick={() => {
+                            const data = trpc.closer.exportProposalPDF.useQuery({ id: p.id }, { enabled: true }).data;
+                            if (data) generateProposalPDF(data);
+                          }}
+                        >
+                          <Download className="w-3 h-3 mr-1" />
+                          PDF
+                        </Button>
+                      </>
+                    )}
                     {p.status === "enviada" && (
                       <div className="flex gap-1">
                         <Button

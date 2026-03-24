@@ -359,6 +359,23 @@ export const closerRouter = router({
       });
     }),
 
+  getProposal: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .query(async ({ ctx, input }) => {
+      const session = getCloserFromContext(ctx);
+      if (!session) throw new TRPCError({ code: "UNAUTHORIZED", message: "Faça login primeiro" });
+
+      const proposal = await getProposalById(input.id);
+      if (!proposal) throw new TRPCError({ code: "NOT_FOUND", message: "Proposta não encontrada" });
+
+      const currentCloser = await getCloserById(session.closerId);
+      if (currentCloser?.role !== "admin" && proposal.closerId !== session.closerId) {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Sem permissão" });
+      }
+
+      return proposal;
+    }),
+
   updateProposalStatus: publicProcedure
     .input(
       z.object({
@@ -540,6 +557,31 @@ export const closerRouter = router({
       }
 
       return await deleteProposal(input.id);
+    }),
+
+  // ===== EXPORTAR PDF =====
+  exportProposalPDF: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .query(async ({ ctx, input }) => {
+      const session = getCloserFromContext(ctx);
+      if (!session) throw new TRPCError({ code: "UNAUTHORIZED", message: "Faca login primeiro" });
+
+      const currentCloser = await getCloserById(session.closerId);
+      if (currentCloser?.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Apenas administradores podem exportar propostas" });
+      }
+
+      const proposal = await getProposalById(input.id);
+      if (!proposal) throw new TRPCError({ code: "NOT_FOUND", message: "Proposta nao encontrada" });
+
+      const client = await getClientById(proposal.clientId);
+      const closer = await getCloserById(proposal.closerId);
+
+      return {
+        proposal,
+        client,
+        closer,
+      };
     }),
 
   // ===== DASHBOARD =====
