@@ -364,10 +364,3 @@
 ### Testes e Deploy
 - [x] Testes vitest para rotas do closer
 - [x] Checkpoint e publicação
-
-## Redesign Página /mec (Minimalista - Fundo Claro)
-- [x] Redesenhar /mec com fundo claro (branco/cinza claro), tipografia minimalista
-- [x] Alterar cores: preto e vermelho, traços finos e elegantes
-- [x] Otimizar CTA e formulário para aumentar conversão
-- [x] Testar responsividade mobile
-- [x] Salvar checkpoint
