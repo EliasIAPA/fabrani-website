@@ -27,6 +27,7 @@ import FabraniIAPlus from "@/pages/FabraniIAPlus";
 import IAParaNegocios from "@/pages/IAParaNegocios";
 import IAParaNegociosLP from "@/pages/IAParaNegociosLP";
 import MEC from "@/pages/MEC";
+import MECSaude from "@/pages/MECSaude";
 import MECObrigado from "@/pages/MECObrigado";
 import MECAgenda2 from "@/pages/MECAgenda2";
 import MbaServico from "@/pages/MbaServico";
@@ -49,6 +50,7 @@ function Router() {
       {/* Landing pages standalone - sem header/footer */}
       <Route path="/mec/agenda2" component={MECAgenda2} />
       <Route path="/mec/obrigado" component={MECObrigado} />
+      <Route path="/mec/saude" component={MECSaude} />
       <Route path="/mec" component={MEC} />
       <Route path="/mba-servico" component={MbaServico} />
       <Route path="/mec/lgpd" component={MECLgpd} />
