@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, Award, TrendingUp, Shield, Users, GraduationCap, Briefcase, Scale, BookOpen, Clock, MapPin, Star, X, ShieldAlert } from "lucide-react";
 import { SEO } from "@/components/SEO";
@@ -106,6 +106,41 @@ const stats = [
 
 export default function MEC() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
+  // Esconder o widget flutuante de WhatsApp/Rosana.io nesta página
+  useEffect(() => {
+    const hideWidget = () => {
+      const floatingBtn = document.getElementById('click-plug-to-support');
+      if (floatingBtn) {
+        (floatingBtn as HTMLElement).style.display = 'none';
+      }
+      const allElements = document.querySelectorAll('[id*="rosana"], [class*="rosana"], [id*="plug-to-support"], [class*="whatsapp-float"]');
+      allElements.forEach((el) => {
+        (el as HTMLElement).style.display = 'none';
+      });
+      const widgetContainer = floatingBtn?.parentElement;
+      if (widgetContainer && widgetContainer.id !== 'root') {
+        (widgetContainer as HTMLElement).style.display = 'none';
+      }
+    };
+
+    hideWidget();
+    const timer1 = setTimeout(hideWidget, 500);
+    const timer2 = setTimeout(hideWidget, 1500);
+    const timer3 = setTimeout(hideWidget, 3000);
+
+    const observer = new MutationObserver(() => {
+      hideWidget();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-black">
