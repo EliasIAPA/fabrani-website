@@ -43,6 +43,7 @@ import CloserSales from "@/pages/closer/CloserSales";
 import CloserNewSale from "@/pages/closer/CloserNewSale";
 import CloserManage from "@/pages/closer/CloserManage";
 import CloserNewCloser from "@/pages/closer/CloserNewCloser";
+import CloserEditProposal from "@/pages/closer/CloserEditProposal";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/closer/nova-venda" component={CloserNewSale} />
       <Route path="/closer/closers" component={CloserManage} />
       <Route path="/closer/novo-closer" component={CloserNewCloser} />
+      <Route path="/closer/editar-proposta/:id" component={CloserEditProposal} />
       <Route path="/closer" component={CloserDashboard} />
       
       {/* Todas as outras rotas com Layout (header + footer) */}
