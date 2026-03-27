@@ -12,6 +12,7 @@ import {
   X,
   Building2,
   ChevronRight,
+  ScrollText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -30,6 +31,7 @@ const NAV_ITEMS = [
 const ADMIN_ITEMS = [
   { path: "/closer/closers", label: "Closers", icon: Users },
   { path: "/closer/novo-closer", label: "Novo Closer", icon: UserPlus },
+  { path: "/closer/logs", label: "Histórico de Logs", icon: ScrollText },
 ];
 
 export default function CloserLayout({ children }: CloserLayoutProps) {

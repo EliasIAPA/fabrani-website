@@ -279,7 +279,7 @@
 - [x] Remover redirect loop e listeners de booking na /mec/agenda2
 - [x] Manter apenas pixel PageView simples na /mec/agenda2 (sem redirects)
 - [x] Manter Lead tracking via postMessage na /mec (sem redirect)
-- [ ] Salvar checkpoint e publicar
+- [x] Salvar checkpoint e publicar
 
 ## Embed pesquisa GHL na /mec/obrigado
 - [x] Adicionar iframe da pesquisa Zf9Nfa543xBj272r9Q0g na página /mec/obrigado
@@ -394,7 +394,7 @@
 ## Corrigir botão AGENDAR AGORA /mec (Modal GHL)
 - [ ] Converter formulário GHL de inline para modal/popup centralizado na tela
 - [ ] Resolver problema de publicação travada (mover arquivos grandes para CDN)
-- [ ] Salvar checkpoint e publicar
+- [x] Salvar checkpoint e publicar
 
 ## Sistema Closer - Edição Completa + PDF
 - [x] Corrigir erro 404 na rota /closer/editar-proposta/:id (rota não estava registrada no App.tsx)
@@ -407,3 +407,15 @@
 - [x] Criar PDFButton como componente separado com query lazy para geração de PDF
 - [x] Instalar jspdf e jspdf-autotable
 - [x] Criar testes unitários para updateClient, updateSale e exportProposalPDF (54/54 passando)
+
+## Sistema de Histórico de Logs - Closer
+- [ ] Criar tabela closer_logs no drizzle/schema.ts
+- [ ] Rodar pnpm db:push para migrar banco
+- [ ] Criar helpers createLog e listLogs em closerDb.ts
+- [ ] Registrar log automático em todas as operações do closerRouter (criar/editar/deletar cliente, proposta, venda, closer)
+- [ ] Criar procedure closer.listLogs (admin only) no closerRouter
+- [x] Criar página CloserLogs.tsx com tabela de logs filtráveis por tipo/data
+- [x] Adicionar link "Logs" no menu do CloserLayout (visível apenas para admin)
+- [x] Registrar rota /closer/logs no App.tsx
+- [x] Criar testes unitários para o sistema de logs
+- [x] Salvar checkpoint e publicar

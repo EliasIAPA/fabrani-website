@@ -26,6 +26,10 @@ vi.mock("./closerDb", () => ({
   deleteSale: vi.fn(),
   getDashboardStats: vi.fn(),
   getCloserRanking: vi.fn(),
+  // Logs
+  createLog: vi.fn().mockResolvedValue(undefined),
+  listLogs: vi.fn().mockResolvedValue({ logs: [], total: 0 }),
+  hashPassword: vi.fn(),
 }));
 
 import {

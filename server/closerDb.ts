@@ -5,10 +5,12 @@ import {
   closerClients,
   closerProposals,
   closerSales,
+  closerLogs,
   InsertCloser,
   InsertCloserClient,
   InsertCloserProposal,
   InsertCloserSale,
+  InsertCloserLog,
 } from "../drizzle/schema";
 import * as crypto from "crypto";
 
@@ -415,6 +417,54 @@ export async function getDashboardStats(closerId?: number) {
         ? (((statusMap["fechada"] || 0) / (totalProposals[0]?.count || 1)) * 100).toFixed(1)
         : "0.0",
   };
+}
+
+// ===== LOGS =====
+
+export async function createLog(data: InsertCloserLog) {
+  try {
+    const db = await getDb();
+    if (!db) return;
+    await db.insert(closerLogs).values(data);
+  } catch (e) {
+    // Log errors should never break the main operation
+    console.error("[CloserLog] Failed to write log:", e);
+  }
+}
+
+export async function listLogs(opts: {
+  closerId?: number;
+  action?: string;
+  entityType?: string;
+  page?: number;
+  limit?: number;
+}) {
+  const db = await getDb();
+  if (!db) return { logs: [], total: 0 };
+
+  const page = opts.page || 1;
+  const limit = opts.limit || 50;
+  const offset = (page - 1) * limit;
+
+  const conditions = [];
+  if (opts.closerId) conditions.push(eq(closerLogs.closerId, opts.closerId));
+  if (opts.action) conditions.push(eq(closerLogs.action, opts.action as any));
+  if (opts.entityType) conditions.push(eq(closerLogs.entityType, opts.entityType as any));
+
+  const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+  const [logs, totalResult] = await Promise.all([
+    db
+      .select()
+      .from(closerLogs)
+      .where(whereClause)
+      .orderBy(desc(closerLogs.createdAt))
+      .limit(limit)
+      .offset(offset),
+    db.select({ count: count() }).from(closerLogs).where(whereClause),
+  ]);
+
+  return { logs, total: totalResult[0]?.count || 0 };
 }
 
 export async function getCloserRanking() {

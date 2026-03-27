@@ -192,3 +192,47 @@ export const closerSales = mysqlTable("closer_sales", {
 
 export type CloserSale = typeof closerSales.$inferSelect;
 export type InsertCloserSale = typeof closerSales.$inferInsert;
+
+/** Histórico de logs de ações realizadas no sistema Closer */
+export const closerLogs = mysqlTable("closer_logs", {
+  id: int("id").autoincrement().primaryKey(),
+  closerId: int("closerId").notNull(), // Quem realizou a ação
+  closerName: varchar("closerName", { length: 255 }).notNull(), // Nome snapshot
+  action: mysqlEnum("action", [
+    // Clientes
+    "client_created",
+    "client_updated",
+    "client_deleted",
+    // Propostas
+    "proposal_created",
+    "proposal_updated",
+    "proposal_status_changed",
+    "proposal_deleted",
+    "proposal_pdf_exported",
+    // Vendas
+    "sale_created",
+    "sale_updated",
+    "sale_deleted",
+    // Closers (admin)
+    "closer_created",
+    "closer_updated",
+    "closer_deleted",
+    // Login
+    "login",
+    "logout",
+  ]).notNull(),
+  entityType: mysqlEnum("entityType", [
+    "client",
+    "proposal",
+    "sale",
+    "closer",
+    "session",
+  ]).notNull(),
+  entityId: int("entityId"), // ID do registro afetado (null para login/logout)
+  description: text("description").notNull(), // Descrição legível da ação
+  metadata: text("metadata"), // JSON com dados antes/depois da alteração
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type CloserLog = typeof closerLogs.$inferSelect;
+export type InsertCloserLog = typeof closerLogs.$inferInsert;
