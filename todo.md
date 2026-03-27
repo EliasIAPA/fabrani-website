@@ -395,3 +395,15 @@
 - [ ] Converter formulário GHL de inline para modal/popup centralizado na tela
 - [ ] Resolver problema de publicação travada (mover arquivos grandes para CDN)
 - [ ] Salvar checkpoint e publicar
+
+## Sistema Closer - Edição Completa + PDF
+- [x] Corrigir erro 404 na rota /closer/editar-proposta/:id (rota não estava registrada no App.tsx)
+- [x] Criar componente CloserEditClient.tsx para edição de clientes
+- [x] Criar componente CloserEditSale.tsx para edição de vendas
+- [x] Registrar rotas /closer/editar-cliente/:id e /closer/editar-venda/:id no App.tsx
+- [x] Adicionar botão Editar em CloserClients.tsx
+- [x] Adicionar botão Editar em CloserSales.tsx
+- [x] Corrigir botão PDF em CloserProposals.tsx (hook não pode ser chamado em onClick)
+- [x] Criar PDFButton como componente separado com query lazy para geração de PDF
+- [x] Instalar jspdf e jspdf-autotable
+- [x] Criar testes unitários para updateClient, updateSale e exportProposalPDF (54/54 passando)

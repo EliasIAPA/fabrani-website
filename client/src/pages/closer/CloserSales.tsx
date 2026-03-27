@@ -3,7 +3,7 @@ import { useCloserAuth } from "@/hooks/useCloserAuth";
 import { trpc } from "@/lib/trpc";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { DollarSign, Plus, CreditCard, Banknote, QrCode } from "lucide-react";
+import { DollarSign, Plus, CreditCard, Banknote, QrCode, Pencil } from "lucide-react";
 import { Link } from "wouter";
 
 const PROJECT_LABELS: Record<string, string> = {
@@ -101,7 +101,7 @@ export default function CloserSales() {
                         <p className="text-xs text-gray-600 mt-1">{s.observation}</p>
                       )}
                     </div>
-                    <div className="text-right space-y-1">
+                    <div className="text-right space-y-2">
                       <p className="text-xl text-green-400 font-mono font-bold">
                         {formatCurrency(s.totalValue)}
                       </p>
@@ -115,6 +115,12 @@ export default function CloserSales() {
                           Parcela: {formatCurrency(s.installmentValue)}
                         </p>
                       )}
+                      <Link href={`/closer/editar-venda/${s.id}`}>
+                        <Button size="sm" variant="outline" className="text-xs border-white/10 text-gray-400 hover:bg-white/5 hover:text-white rounded-lg">
+                          <Pencil className="w-3 h-3 mr-1" />
+                          Editar
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

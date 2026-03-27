@@ -4,7 +4,7 @@ import { trpc } from "@/lib/trpc";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Building2, Search, Plus, Phone, MapPin, FileText } from "lucide-react";
+import { Building2, Search, Plus, Phone, MapPin, FileText, Pencil } from "lucide-react";
 import { Link } from "wouter";
 
 export default function CloserClients() {
@@ -97,12 +97,20 @@ export default function CloserClients() {
                         {client.city}{client.state ? ` - ${client.state}` : ""}
                       </div>
                     )}
-                    <Link href={`/closer/nova-proposta?clientId=${client.id}`}>
-                      <Button size="sm" variant="outline" className="text-xs border-white/10 text-gray-400 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 rounded-lg">
-                        <FileText className="w-3 h-3 mr-1" />
-                        Nova Proposta
-                      </Button>
-                    </Link>
+                    <div className="flex gap-2">
+                      <Link href={`/closer/editar-cliente/${client.id}`}>
+                        <Button size="sm" variant="outline" className="text-xs border-white/10 text-gray-400 hover:bg-white/5 hover:text-white rounded-lg">
+                          <Pencil className="w-3 h-3 mr-1" />
+                          Editar
+                        </Button>
+                      </Link>
+                      <Link href={`/closer/nova-proposta?clientId=${client.id}`}>
+                        <Button size="sm" variant="outline" className="text-xs border-white/10 text-gray-400 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 rounded-lg">
+                          <FileText className="w-3 h-3 mr-1" />
+                          Nova Proposta
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

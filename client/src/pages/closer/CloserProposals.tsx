@@ -1,10 +1,10 @@
 import CloserLayout from "@/components/CloserLayout";
 import { useCloserAuth } from "@/hooks/useCloserAuth";
 import { trpc } from "@/lib/trpc";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, Plus, DollarSign, CheckCircle, XCircle, Clock, Download, Edit2 } from "lucide-react";
+import { FileText, Plus, DollarSign, CheckCircle, XCircle, Clock, Download, Edit2, Loader2 } from "lucide-react";
 import { generateProposalPDF } from "@/lib/generateProposalPDF";
 import { Link } from "wouter";
 import { toast } from "sonner";
@@ -19,6 +19,40 @@ const PROJECT_LABELS: Record<string, string> = {
 function formatCurrency(value: string | number): string {
   const num = typeof value === "string" ? parseFloat(value) : value;
   return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(num);
+}
+
+// Componente separado para o botão PDF — garante que o hook seja chamado no nível correto
+function PDFButton({ proposalId }: { proposalId: number }) {
+  const [enabled, setEnabled] = useState(false);
+
+  const { data, isLoading } = trpc.closer.exportProposalPDF.useQuery(
+    { id: proposalId },
+    { enabled }
+  );
+
+  useEffect(() => {
+    if (data) {
+      generateProposalPDF(data);
+      toast.success("PDF gerado com sucesso!");
+      setEnabled(false); // reset para próximo clique
+    }
+  }, [data]);
+
+  return (
+    <Button
+      size="sm"
+      className="text-xs bg-purple-600 hover:bg-purple-500 text-white rounded-lg"
+      onClick={() => setEnabled(true)}
+      disabled={isLoading}
+    >
+      {isLoading ? (
+        <Loader2 className="w-3 h-3 mr-1 animate-spin" />
+      ) : (
+        <Download className="w-3 h-3 mr-1" />
+      )}
+      PDF
+    </Button>
+  );
 }
 
 export default function CloserProposals() {
@@ -130,17 +164,7 @@ export default function CloserProposals() {
                             Editar
                           </Button>
                         </Link>
-                        <Button
-                          size="sm"
-                          className="text-xs bg-purple-600 hover:bg-purple-500 text-white rounded-lg"
-                          onClick={() => {
-                            const data = trpc.closer.exportProposalPDF.useQuery({ id: p.id }, { enabled: true }).data;
-                            if (data) generateProposalPDF(data);
-                          }}
-                        >
-                          <Download className="w-3 h-3 mr-1" />
-                          PDF
-                        </Button>
+                        <PDFButton proposalId={p.id} />
                       </>
                     )}
                     {p.status === "enviada" && (
