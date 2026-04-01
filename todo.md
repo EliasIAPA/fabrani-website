@@ -419,3 +419,7 @@
 - [x] Registrar rota /closer/logs no App.tsx
 - [x] Criar testes unitários para o sistema de logs
 - [x] Salvar checkpoint e publicar
+
+## Popup GHL Saúde - /mec/saude
+- [x] Integrar formulário GHL qQ6R5J4SI2zEKsjalM2v em popup modal em todos os botões da página /mec/saude
+- [x] Salvar checkpoint e publicar

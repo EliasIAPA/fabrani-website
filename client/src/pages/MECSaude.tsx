@@ -513,8 +513,19 @@ export default function MECSaude() {
           </h2>
           <p className="text-gray-500 font-light">Preencha abaixo para garantir sua vaga no Projeto Aliança FABRANI Saúde</p>
         </div>
-        <div className="max-w-2xl mx-auto border border-gray-200 p-2">
-          <GHLForm height={465} />
+        <div className="max-w-2xl mx-auto border border-gray-200 overflow-hidden">
+          <iframe
+            src="https://ies.fabrani.com.br/v2/location/ksUYR1RWBa5bAE0cpyYA/form-builder-v2/qQ6R5J4SI2zEKsjalM2v"
+            style={{
+              width: "100%",
+              height: "600px",
+              border: "none",
+              display: "block",
+            }}
+            title="Avaliação Acadêmica Gratuita — Projeto Aliança FABRANI Saúde"
+            allow="payment"
+            loading="lazy"
+          />
         </div>
       </section>
 
@@ -608,35 +619,52 @@ export default function MECSaude() {
         </div>
       </footer>
 
-      {/* ─── MODAL GHL GLOBAL ─── */}
+      {/* ─── MODAL FORMULÁRIO SAÚDE ─── */}
       {showModal && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-          style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
+          style={{ backgroundColor: "rgba(0,0,0,0.88)" }}
           onClick={(e) => {
             if (e.target === e.currentTarget) closeModal();
           }}
         >
-          <div className="bg-white w-full max-w-xl shadow-2xl overflow-hidden relative">
+          <div className="bg-white w-full max-w-2xl shadow-2xl overflow-hidden relative">
             {/* Header do modal */}
             <div className="bg-black text-white px-6 py-5 flex items-center justify-between">
               <div>
-                <p className="text-xs font-light text-gray-400 uppercase tracking-[0.2em] mb-1">
+                <p className="text-xs font-light text-red-400 uppercase tracking-[0.2em] mb-1">
                   Projeto Aliança · FABRANI Saúde
                 </p>
-                <h3 className="text-lg font-black tracking-tight">Agende sua Avaliação Acadêmica</h3>
+                <h3 className="text-lg font-black tracking-tight">Agende sua Avaliação Acadêmica Gratuita</h3>
               </div>
               <button
                 onClick={closeModal}
-                className="text-gray-500 hover:text-white transition-colors p-1 ml-4"
+                className="text-gray-500 hover:text-white transition-colors p-1 ml-4 flex-shrink-0"
                 aria-label="Fechar formulário"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
-            {/* Formulário GHL */}
-            <div className="bg-white overflow-y-auto" style={{ maxHeight: "80vh" }}>
-              <GHLForm formId="NIiX8zUL3aiJ65D44Z8J" height={465} />
+            {/* Formulário específico da Saúde */}
+            <div className="bg-white overflow-y-auto" style={{ maxHeight: "82vh" }}>
+              <iframe
+                src="https://ies.fabrani.com.br/v2/location/ksUYR1RWBa5bAE0cpyYA/form-builder-v2/qQ6R5J4SI2zEKsjalM2v"
+                style={{
+                  width: "100%",
+                  height: "600px",
+                  border: "none",
+                  display: "block",
+                }}
+                title="Avaliação Acadêmica Gratuita — Projeto Aliança FABRANI Saúde"
+                allow="payment"
+                loading="lazy"
+              />
+            </div>
+            {/* Rodapé do modal */}
+            <div className="bg-gray-50 border-t border-gray-100 px-6 py-3 text-center">
+              <p className="text-xs text-gray-400 font-light tracking-wide">
+                Avaliação 100% Gratuita · Sem Compromisso · Dados Protegidos pela LGPD
+              </p>
             </div>
           </div>
         </div>
