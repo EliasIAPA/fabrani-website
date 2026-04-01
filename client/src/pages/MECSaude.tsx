@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, X, CheckCircle2, ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { GHLForm } from "@/components/GHLForm";
+import { GHLFormSaude } from "@/components/GHLFormSaude";
 
 const IMAGES = {
   elias: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030990044/CVhAjXry9cXgYyqVqtTxQF/elias-evangelista_db856e4b.png",
@@ -514,18 +515,7 @@ export default function MECSaude() {
           <p className="text-gray-500 font-light">Preencha abaixo para garantir sua vaga no Projeto Aliança FABRANI Saúde</p>
         </div>
         <div className="max-w-2xl mx-auto border border-gray-200 overflow-hidden">
-          <iframe
-            src="https://ies.fabrani.com.br/v2/location/ksUYR1RWBa5bAE0cpyYA/form-builder-v2/qQ6R5J4SI2zEKsjalM2v"
-            style={{
-              width: "100%",
-              height: "600px",
-              border: "none",
-              display: "block",
-            }}
-            title="Avaliação Acadêmica Gratuita — Projeto Aliança FABRANI Saúde"
-            allow="payment"
-            loading="lazy"
-          />
+          <GHLFormSaude />
         </div>
       </section>
 
@@ -619,7 +609,7 @@ export default function MECSaude() {
         </div>
       </footer>
 
-      {/* ─── MODAL FORMULÁRIO SAÚDE ─── */}
+      {/* ─── MODAL FORMULÁRIO SAÚDE SE02 ─── */}
       {showModal && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
@@ -645,20 +635,9 @@ export default function MECSaude() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            {/* Formulário específico da Saúde */}
+            {/* Formulário GHL SE02 | Sessão Estratégica Saúde */}
             <div className="bg-white overflow-y-auto" style={{ maxHeight: "82vh" }}>
-              <iframe
-                src="https://ies.fabrani.com.br/v2/location/ksUYR1RWBa5bAE0cpyYA/form-builder-v2/qQ6R5J4SI2zEKsjalM2v"
-                style={{
-                  width: "100%",
-                  height: "600px",
-                  border: "none",
-                  display: "block",
-                }}
-                title="Avaliação Acadêmica Gratuita — Projeto Aliança FABRANI Saúde"
-                allow="payment"
-                loading="lazy"
-              />
+              <GHLFormSaude />
             </div>
             {/* Rodapé do modal */}
             <div className="bg-gray-50 border-t border-gray-100 px-6 py-3 text-center">

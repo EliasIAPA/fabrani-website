@@ -423,3 +423,7 @@
 ## Popup GHL Saúde - /mec/saude
 - [x] Integrar formulário GHL qQ6R5J4SI2zEKsjalM2v em popup modal em todos os botões da página /mec/saude
 - [x] Salvar checkpoint e publicar
+
+## Formulário SE02 Saúde - /mec/saude
+- [x] Atualizar popup e formulário inline da /mec/saude com iframe exato SE02 (qQ6R5J4SI2zEKsjalM2v via api.leadconnectorhq.com + script embed)
+- [x] Salvar checkpoint e publicar
