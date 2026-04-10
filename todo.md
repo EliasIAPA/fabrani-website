@@ -430,4 +430,8 @@
 
 ## Pesquisa GHL no início da /mec/agenda2
 - [x] Adicionar iframe de pesquisa GHL (Zf9Nfa543xBj272r9Q0g) no início da página /mec/agenda2
+- [x] Salvar checkpoint e publicar
+
+## Reverter pesquisa GHL da /mec/agenda2
+- [ ] Remover bloco da pesquisa GHL do início da página /mec/agenda2
 - [ ] Salvar checkpoint e publicar
