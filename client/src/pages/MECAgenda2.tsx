@@ -121,6 +121,27 @@ export default function MECAgenda2() {
         />
       </div>
 
+      {/* Pesquisa GHL - exibida antes da agenda */}
+      <div className="w-full max-w-3xl mx-auto px-4 pt-10 pb-2">
+        <div className="text-center mb-4">
+          <span className="inline-block text-xs font-mono uppercase tracking-widest text-red-500 border border-red-500/30 px-3 py-1 rounded-full mb-3">
+            Antes de agendar
+          </span>
+          <h2 className="text-xl md:text-2xl font-bold text-white">
+            Responda rapidamente para personalizarmos seu atendimento
+          </h2>
+        </div>
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-2 md:p-4 backdrop-blur-sm">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/survey/Zf9Nfa543xBj272r9Q0g"
+            style={{ border: "none", width: "100%", minHeight: "500px" }}
+            scrolling="no"
+            id="Zf9Nfa543xBj272r9Q0g"
+            title="survey"
+          />
+        </div>
+      </div>
+
       {/* Headline */}
       <div className="w-full max-w-3xl mx-auto px-4 pt-10 pb-6 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">

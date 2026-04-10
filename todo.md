@@ -427,3 +427,7 @@
 ## Formulário SE02 Saúde - /mec/saude
 - [x] Atualizar popup e formulário inline da /mec/saude com iframe exato SE02 (qQ6R5J4SI2zEKsjalM2v via api.leadconnectorhq.com + script embed)
 - [x] Salvar checkpoint e publicar
+
+## Pesquisa GHL no início da /mec/agenda2
+- [x] Adicionar iframe de pesquisa GHL (Zf9Nfa543xBj272r9Q0g) no início da página /mec/agenda2
+- [ ] Salvar checkpoint e publicar
