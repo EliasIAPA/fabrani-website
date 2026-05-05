@@ -435,3 +435,9 @@
 ## Reverter pesquisa GHL da /mec/agenda2
 - [ ] Remover bloco da pesquisa GHL do início da página /mec/agenda2
 - [ ] Salvar checkpoint e publicar
+
+## Seção Novos Parceiros FABRANI - Home
+- [x] Upload do logotipo Instituto Gialluise para CDN
+- [x] Remover simulador de obsolescência da Home
+- [x] Criar seção Novos Parceiros com Instituto Gialluise linkado ao Instagram
+- [x] Salvar checkpoint e publicar

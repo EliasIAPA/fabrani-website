@@ -22,7 +22,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, GraduationCap, ShieldCheck, Users, Activity, Lock, Cpu, BarChart, CheckCircle2, Globe, ChevronDown, FileText, Star, Award } from "lucide-react";
 import { useState } from "react";
-import ObsolescenceSimulator from "@/components/ObsolescenceSimulator";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
 import BrevoFormEmbed from "@/components/BrevoFormEmbed";
@@ -251,41 +250,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 2: Interatividade (Simulador de Obsolescência) */}
-      <section id="simulador" className="py-24 relative bg-black border-y border-white/5 scroll-mt-20">
-        <div className="absolute inset-0 bg-cover bg-center opacity-12" style={{backgroundImage: `url(${bgSimulador})`}}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+      {/* Seção 2: Novos Parceiros FABRANI */}
+      <section id="parceiros" className="py-24 relative bg-black border-y border-white/5 scroll-mt-20 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{backgroundImage: `url(${bgParceiros})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-red-500/5 blur-[120px] pointer-events-none"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1">FERRAMENTA EXCLUSIVA</Badge>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-                Simulador de <br />
-                <span className="text-red-500">Obsolescência</span>
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Descubra quanto do seu trabalho será automatizado nos próximos 3 anos e como a FABRANI é a sua vacina contra a irrelevância profissional.
-              </p>
-              <ul className="space-y-4 text-muted-foreground">
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-red-500" />
-                  <span>Análise baseada em dados reais do mercado</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-red-500" />
-                  <span>Relatório personalizado de risco</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-red-500" />
-                  <span>Plano de ação imediato</span>
-                </li>
-              </ul>
-            </div>
+          {/* Header da seção */}
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="border-red-500 text-red-500 rounded-none px-4 py-1 mb-6">ECOSSISTEMA FABRANI</Badge>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
+              Novos <span className="text-red-500">Parceiros</span>
+            </h2>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A FABRANI cresce com quem transforma. Conheça as instituições que compartilham nossa visão de educação orientada por impacto real.
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 opacity-30 blur-xl"></div>
-              <ObsolescenceSimulator />
-            </div>
+          {/* Grid de parceiros */}
+          <div className="flex justify-center">
+            {/* Card Instituto Gialluise */}
+            <a
+              href="https://www.instagram.com/leticiagialluise/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col items-center gap-6 p-8 md:p-10 bg-white/5 border border-white/10 hover:border-red-500/40 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:bg-white/8 hover:shadow-[0_0_40px_rgba(220,38,38,0.1)] max-w-sm w-full cursor-pointer"
+            >
+              {/* Badge NOVO */}
+              <div className="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg shadow-red-500/30">
+                NOVO
+              </div>
+
+              {/* Logo */}
+              <div className="relative w-48 h-32 flex items-center justify-center">
+                <div className="absolute inset-0 bg-white rounded-xl opacity-95"></div>
+                <img
+                  src="/manus-storage/instituto-gialluise-logo_2a27ca38.jpeg"
+                  alt="Instituto Gialluise — Saúde, Educação e Desenvolvimento"
+                  className="relative z-10 w-44 h-28 object-contain p-2"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="text-center space-y-2">
+                <h3 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors">
+                  Instituto Gialluise
+                </h3>
+                <p className="text-sm text-muted-foreground font-mono tracking-wider uppercase">
+                  Saúde · Educação · Desenvolvimento
+                </p>
+                <p className="text-sm text-gray-400 leading-relaxed mt-3">
+                  Parceiro estratégico da FABRANI no desenvolvimento de profissionais da saúde com metodologias inovadoras e formação orientada por resultados.
+                </p>
+              </div>
+
+              {/* CTA */}
+              <div className="flex items-center gap-2 text-red-500 text-sm font-semibold group-hover:gap-3 transition-all">
+                <span>Ver no Instagram</span>
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </a>
+          </div>
+
+          {/* Rodapé da seção */}
+          <div className="text-center mt-14">
+            <p className="text-sm text-muted-foreground font-mono tracking-wider">
+              QUER SER UM PARCEIRO FABRANI?
+            </p>
+            <a
+              href="https://wa.me/5516997117597"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 text-white/70 hover:text-white text-sm border-b border-white/20 hover:border-white/60 transition-all pb-0.5"
+            >
+              Entre em contato com nossa equipe comercial <ArrowRight className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </section>
