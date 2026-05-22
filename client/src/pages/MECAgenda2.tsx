@@ -136,22 +136,11 @@ export default function MECAgenda2() {
       <div className="w-full max-w-3xl mx-auto px-4 pb-16 flex-1">
         <div className="bg-white/5 border border-white/10 rounded-2xl p-2 md:p-4 backdrop-blur-sm">
           <iframe
-            src="https://api.leadconnectorhq.com/widget/booking/3EMXyG2bzrPgMxV1YHW8"
-            style={{ width: "100%", height: "700px", border: "none", borderRadius: "12px" }}
-            id="inline-3EMXyG2bzrPgMxV1YHW8"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Agenda MEC"
-            data-height="700"
-            data-layout-iframe-id="inline-3EMXyG2bzrPgMxV1YHW8"
-            data-form-id="3EMXyG2bzrPgMxV1YHW8"
+            src="https://api.leadconnectorhq.com/widget/booking/HJLt2GBkeX3Hx6RYtvTd"
+            style={{ width: "100%", border: "none", overflow: "hidden" }}
+            scrolling="no"
+            id="HJLt2GBkeX3Hx6RYtvTd_1779455697531"
             title="Agenda - Avaliação Acadêmica"
-            scrolling="yes"
           />
         </div>
       </div>
